@@ -1,5 +1,8 @@
 # Humberto Sandmann
 
+<a href="http://linkedin.com/in/hsandmann/" target="_blank"><img src="/assets/img/linkedin.png" height="16px"/>/hsandmann</a><br/>
+<a href="https://orcid.org/0000-0001-7758-695X" target="_blank"><img src="/assets/img/orcid.jpg" height="16px"/>/0000-0001-7758-695X</a>
+
 ## Current areas of research
 
 - Machine learning and artificial neural networks
@@ -97,4 +100,3 @@ Supported by:
    Curriculum Lattes: http://lattes.cnpq.br/2867853068965061
    Mendeley's Profile: http://www.mendeley.com/profiles/humberto-sandmann/
 
-<a href="https://orcid.org/0000-0001-7758-695X"><img src="/assets/img/orcid.jpg" height="16px"/>/0000-0001-7758-695X</a>

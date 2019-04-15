@@ -1,5 +1,15 @@
 # Humberto Sandmann
 
+## Current areas of research
+
+- Nonlinear systems and dynamics networks
+- Synchronization of coupled oscillators
+- Machine Learning and Artificial Neural Networks
+- Pattern recognition
+- Digital signal processing
+
+## Background
+
 - **Ph.D. at [Polytechnic School of the Univerty of Sao Paulo](http://ppgee.poli.usp.br/)**
   - Advisor: [Prof. Dr. Emilio Del Moral Hernandez](http://www.lsi.usp.br/~emilio/)
   - from mar/2007 to mar/2012

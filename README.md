@@ -71,7 +71,6 @@ Supported by:
 
 - Polytechnic School of the University of Sao Paulo
   <br/><small>Undergraduate courses</small>
-  
   <table>
     <tr>
       <td><small><a href="http://sistemas2.usp.br/jupiterweb/obterDisciplina?sgldis=PSI2672" target="_blank">PSI&nbsp;2672</a></small></td>
@@ -89,6 +88,5 @@ Supported by:
       <td><small>2008<sup>†</sup></small></td>
     </tr>
   </table>
-
   \* <small>grants from CAPES (PAE)</small>
   <br/>† <small>grants from FAPESP</small>

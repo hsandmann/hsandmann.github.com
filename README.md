@@ -4,13 +4,13 @@
 
 Background:
 	
-> Ph.D. at Polytechnic School of the Univerty of Sao Paulo
-> * Advisor: Prof. Dr. Emilio Del Moral Hernandez
-> * from mar/2007 to mar/2012
+**Ph.D. at Polytechnic School of the Univerty of Sao Paulo**
+ * Advisor: Prof. Dr. Emilio Del Moral Hernandez
+ * from mar/2007 to mar/2012
 
-> Ph.D. Internship at Max Planck Institute für Dynamik und Selbstorganisation
-> * Advisor: Prof. Dr. Marc Timme
-> * from aug/2009 to sep/2010
+**Ph.D. Internship at Max Planck Institute für Dynamik und Selbstorganisation**
+ * Advisor: Prof. Dr. Marc Timme
+ * from aug/2009 to sep/2010
 
 > M.Sc. at Polytechnic School of the Univerty of Sao Paulo
 > * Advisor: Prof. Dr. Marco Túlio Carvalho de Andrade<br/>

@@ -32,3 +32,12 @@ Supported by:
 
 - CAPES under grant number BEX 4076-09-5
   - from jan/2010 to ago/2010 (Ph.D. internship at MPI)
+
+## Current areas of research
+
+- Nonlinear systems and dynamics networks
+- Synchronization of coupled oscillators
+- Machine Learning and Artificial Neural Networks
+- Pattern recognition
+- Digital signal processing
+

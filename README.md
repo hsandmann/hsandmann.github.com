@@ -51,8 +51,8 @@ Supported by:
   - **Computational Intelligence Society** ([CIS](http://www.ieee-cis.org/))
     - since 2004
     - member of the brazilian committee
-      - from oct/2010 to mar/2012    
-      - from apr/2009 to aug/2009 
+      - <small>from oct/2010 to mar/2012</small>
+      - <small>from apr/2009 to aug/2009</small>
 
   - **Signal Processing Society** ([SPS](http://www.signalprocessingsociety.org/))
     - from 2005 to 2009

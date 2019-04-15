@@ -68,6 +68,58 @@ Supported by:
 
 ## Teaching
 
+  <table>
+    <tr><td colspan="2">
+      Insper Learning Institution
+      <br/><small>Undergraduate courses</small>
+    </td></tr>  
+    <tr>
+      <td><small>Foundations for Physical Communication</small></td>
+      <td><small>winter, 2018</small></td>
+    </tr>
+    <tr>
+      <td><small>Software Design</small></td>
+      <td><small>summer, 2019 - now</small></td>
+    </tr>
+  </table>
+
+  <table>
+    <tr><td colspan="2">
+      ESPM
+      <br/><small>Undergraduate courses</small>
+    </td></tr>  
+    <tr>
+      <td><small>Enterprise Environment I: computer architectures and operating systems</small></td>
+      <td><small>spring, 2014 - now</small></td>
+    </tr>
+    <tr>
+      <td><small>Artificial Intelligence for Marketing</small></td>
+      <td><small>summer, 2019 - now</small></td>
+    </tr>
+    <tr>
+      <td><small>Data Structure and Algorithms - DSA</small></td>
+      <td><small>spring, 2017</small></td>
+    </tr>
+  </table>
+
+  <table>
+    <tr><td colspan="2">
+      IBTA
+      <br/><small>Undergraduate courses</small>
+    </td></tr>  
+    <tr>
+      <td><small>Basics of Robotics</small></td>
+      <td><small>spring, 2016</small></td>
+    </tr>
+    <tr>
+      <td><small>Object-Oriented Programming</small></td>
+      <td><small>winter, 2016</small></td>
+    </tr>
+    <tr>
+      <td><small>Data Structures and Algorithms - DSA</small></td>
+      <td><small>2016</small></td>
+    </tr>
+  </table>
 
 
 ## Teaching assistant

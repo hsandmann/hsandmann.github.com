@@ -72,8 +72,10 @@ Supported by:
 - Polytechnic School of the University of Sao Paulo
   <br/><small>Undergraduate courses</small>
   
-  |[PSI 2672](http://sistemas2.usp.br/jupiterweb/obterDisciplina?sgldis=PSI2672&verdis=1)| Práticas em Reconhecimento de Padrões, Modelagem e Neurocomputação | 2011<sup>*</sup> |
-  | | Experimental Pattern Recognition, Modeling and Neurocomputing | |
+  |[PSI 2672](http://sistemas2.usp.br/jupiterweb/obterDisciplina?sgldis=PSI2672&verdis=1)
+  |<small>Práticas em Reconhecimento de Padrões, Modelagem e Neurocomputação<br/>
+   Experimental Pattern Recognition, Modeling and Neurocomputing</small>
+  | 2011<sup>*</sup> |
 
   \* <small>grants from CAPES (PAE)</small>
   <br/>† <small>grants from FAPESP</small>

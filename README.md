@@ -88,5 +88,13 @@ Supported by:
       <td><small>2008<sup>†</sup></small></td>
     </tr>
   </table>
-  * <small>grants from CAPES (PAE)</small>
+  \* <small>grants from CAPES (PAE)</small>
   <br/>† <small>grants from FAPESP</small>
+
+
+## Publications
+
+   Curriculum Lattes: http://lattes.cnpq.br/2867853068965061
+   Mendeley's Profile: http://www.mendeley.com/profiles/humberto-sandmann/
+
+<a href="https://orcid.org/0000-0001-7758-695X"><img src="/assets/img/orcid.jpg" height="16px"/>/0000-0001-7758-695X</a>

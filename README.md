@@ -88,5 +88,5 @@ Supported by:
       <td><small>2008<sup>†</sup></small></td>
     </tr>
   </table>
-  \* <small>grants from CAPES (PAE)</small>
+  * <small>grants from CAPES (PAE)</small>
   <br/>† <small>grants from FAPESP</small>

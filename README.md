@@ -2,9 +2,9 @@
 
 ## Current areas of research
 
+- Machine learning and artificial neural networks
 - Nonlinear systems and dynamics networks
 - Synchronization of coupled oscillators
-- Machine Learning and Artificial Neural Networks
 - Pattern recognition
 - Digital signal processing
 
@@ -27,27 +27,38 @@
 
 Supported by:
 	
-- CNPq under grant number 140632/2007-7
+- [CNPq](http://www.cnpq.br/) under grant number 140632/2007-7
   - from mar/2007 to dec/2009
   - from sep/2010 to feb/2011
 
-- Pró-Reitoria da Pós-Graduação da USP
-  - aug/2009 and dec/2009 (flight between GRU - FRA)
+- [Pró-Reitoria da Pós-Graduação da USP](http://www.usp.br/prpg/)
+  - aug/2009 and dec/2009 (GRU <-> FRA)
 
-- Max Planck Institute - Networks Dynamics Group
+- [Max Planck Institute - Networks Dynamics Group](http://www.mpg.de/)
   - from aug/2009 to nov/2009 (accommodation in Goettingen)
 
 - José Humberto Sandmann - my father
   - from aug/2009 to dec/2009 (German language classes/exams)
 
-- CAPES under grant number BEX 4076-09-5
+- [CAPES](http://www.capes.gov.br/) under grant number BEX 4076-09-5
   - from jan/2010 to ago/2010 (Ph.D. internship at MPI)
 
-## Current areas of research
+## Activities in societies
 
-- Nonlinear systems and dynamics networks
-- Synchronization of coupled oscillators
-- Machine Learning and Artificial Neural Networks
-- Pattern recognition
-- Digital signal processing
+- **[IEEE](http://www.ieee.org/) - Institute of Electrical and Electronics Engineers**
+  <br/><small>Member #80216475</small>
+
+  - **Computational Intelligence Society** ([CIS](http://www.ieee-cis.org/))
+    - since 2004
+    - from apr/2009 to aug/2009 - member of the brazilian committee
+    - since oct/2010 - member of the brazilian committee    
+
+  - **Signal Processing Society** ([SPS](http://www.signalprocessingsociety.org/))
+    - from 2005 to 2009
+
+  - **Engineering in Medicine and Biology Society** ([EMBS](http://www.embs.org/))
+    - from 2005 to 2009
+
+- **[INNS](http://www.inns.org/) - International Neural Network Society**
+  <br/><small>Student member #3951</small>
 

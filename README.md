@@ -1,7 +1,7 @@
 # Humberto Sandmann
 
-<a href="http://linkedin.com/in/hsandmann/" target="_blank"><img src="/assets/img/linkedin.png" height="16px"/>/hsandmann</a><br/>
-<a href="https://orcid.org/0000-0001-7758-695X" target="_blank"><img src="/assets/img/orcid.jpg" height="16px"/>/0000-0001-7758-695X</a>
+> <a href="http://linkedin.com/in/hsandmann/" target="_blank"><img src="/assets/img/linkedin.png" height="16px"/>/hsandmann</a><br/>
+> <a href="https://orcid.org/0000-0001-7758-695X" target="_blank"><img src="/assets/img/orcid.jpg" height="16px"/>/0000-0001-7758-695X</a>
 
 ## Current areas of research
 

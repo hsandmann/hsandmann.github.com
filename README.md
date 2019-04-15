@@ -97,8 +97,10 @@ Supported by:
 
 ## Publications
 
-   Curriculum Lattes: [http://lattes.cnpq.br/2867853068965061](http://lattes.cnpq.br/2867853068965061)<br/>
-   Mendeley's Profile: [http://www.mendeley.com/profiles/humberto-sandmann/](http://www.mendeley.com/profiles/humberto-sandmann/)
+   Curriculum Lattes<br/>
+   <small>[http://lattes.cnpq.br/2867853068965061](http://lattes.cnpq.br/2867853068965061)</small><br/>
+   Mendeley's Profile<br/>
+   <small>[http://www.mendeley.com/profiles/humberto-sandmann/](http://www.mendeley.com/profiles/humberto-sandmann/)</small>
 
 ## Interesting links
 

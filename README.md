@@ -72,10 +72,41 @@ Supported by:
 - Polytechnic School of the University of Sao Paulo
   <br/><small>Undergraduate courses</small>
   
-  |[PSI 2672](http://sistemas2.usp.br/jupiterweb/obterDisciplina?sgldis=PSI2672&verdis=1)
-  |<small>Práticas em Reconhecimento de Padrões, Modelagem e Neurocomputação<br/>
-   Experimental Pattern Recognition, Modeling and Neurocomputing</small>
-  | 2011<sup>*</sup> |
+  <table>
+    <tr>
+      <td>
+        <small><a href="http://sistemas2.usp.br/jupiterweb/obterDisciplina?sgldis=PSI2672" target="_blank">PSI 2672</a></small></td>
+      <td>
+        <small>Práticas em Reconhecimento de Padrões, Modelagem e Neurocomputação</small><br/>
+        <small>Experimental Pattern Recognition, Modeling and Neurocomputing</small>
+      </td>
+      <td>
+        <small>2011<sup>*</sup></small>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <small><a href="http://sistemas2.usp.br/jupiterweb/obterDisciplina?sgldis=PSI2533" target="_blank">PSI 2533</a></small></td>
+      <td>
+        <small>Modelagem em Processamento de Sinais: Redes Neurais e Aprendizado</small><br/>
+        <small>Modeling for Signal Processing: Neural Networks and Learning</small>
+      </td>
+      <td>
+        <small>2009, 2008<sup>*</sup></small>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <small><a href="http://sistemas2.usp.br/jupiterweb/obterDisciplina?sgldis=PCS2302" target="_blank">PCS 2302</a></small></td>
+      <td>
+        <small>Laboratório de Fundamentos de Engenharia de Computação</small><br/>
+        <small>Laboratory of the Foundations of Computing Engineering</small>
+      </td>
+      <td>
+        <small>2008<sup>†</sup></small>
+      </td>
+    </tr>
+  </table>
 
   \* <small>grants from CAPES (PAE)</small>
   <br/>† <small>grants from FAPESP</small>

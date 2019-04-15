@@ -71,7 +71,7 @@ Supported by:
   <table>
     <tr><td colspan="2">
       Insper Learning Institution
-      <br/><small>Undergraduate courses</small>
+      <br/><small><i>Undergraduate courses</i></small>
     </td></tr>  
     <tr>
       <td><small>Foundations for Physical Communication</small></td>
@@ -86,7 +86,7 @@ Supported by:
   <table>
     <tr><td colspan="2">
       ESPM
-      <br/><small>Undergraduate courses</small>
+      <br/><small><i>Undergraduate courses</i></small>
     </td></tr>  
     <tr>
       <td><small>Enterprise Environment I: computer architectures and operating systems</small></td>
@@ -105,7 +105,7 @@ Supported by:
   <table>
     <tr><td colspan="2">
       IBTA
-      <br/><small>Undergraduate courses</small>
+      <br/><small><i>Undergraduate courses</i></small>
     </td></tr>  
     <tr>
       <td><small>Basics of Robotics</small></td>
@@ -121,6 +121,100 @@ Supported by:
     </tr>
   </table>
 
+  <table>
+    <tr><td colspan="2">
+      FIAP
+      <br/><small><i>Graduate courses</i></small>
+    </td></tr>  
+    <tr>
+      <td><small>MBA - NoSQL and Big Data: MongoDB, SparQL, Neo4j, Solr, Hive, Hadoop</small></td>
+      <td><small>summer, 2014 - winter, 2015</small></td>
+    </tr>
+    <tr><td colspan="2">
+      <br/><small><i>Undergraduate courses</i></small>
+    </td></tr>  
+    <tr>
+      <td><small>Distributed Systems</small></td>
+      <td><small>2015</small></td>
+    </tr>
+    <tr>
+      <td><small>Data Structures and Techniques for Algorithms II - DSA</small></td>
+      <td><small>2013</small></td>
+    </tr>
+    <tr>
+      <td><small>Algorithms</small></td>
+      <td><small>winter, 2012 - 2013</small></td>
+    </tr>
+    <tr>
+      <td><small>Advanced Programming Techniques for Java</small></td>
+      <td><small>2012</small></td>
+    </tr>
+    <tr>
+      <td><small>Database I - Oracle</small></td>
+      <td><small>2012 - 2013</small></td>
+    </tr>
+    <tr>
+      <td><small>Database II - Oracle</small></td>
+      <td><small>2012 - 2013</small></td>
+    </tr>
+  </table>
+  
+  <table>
+    <tr><td colspan="2">
+      Toledo Prudente
+      <br/><small><i>Graduate courses</i></small>
+    </td></tr>  
+    <tr>
+      <td><small>MBA course on big data and machine learning</small></td>
+      <td><small>fall, 2015</small></td>
+    </tr>
+  </table>
+
+  <table>
+    <tr><td colspan="2">
+      Universidade Cruzeiro do Sul
+      <br/><small><i>Undergraduate courses</i></small>
+    </td></tr>  
+    <tr>
+      <td><small>Programming for Mobile - Android</small></td>
+      <td><small>winter, 2012</small></td>
+    </tr>
+    <tr>
+      <td><small>Computer Architectures</small></td>
+      <td><small>summer, 2012</small></td>
+    </tr>
+    <tr>
+      <td><small>Software Engineering</small></td>
+      <td><small>summer, 2012</small></td>
+    </tr>
+    <tr>
+      <td><small>Database II - Oracle</small></td>
+      <td><small>summer, 2012 - summer, 2013</small></td>
+    </tr>
+    <tr>
+      <td><small>Languages and Techniques for Programming</small></td>
+      <td><small>summer, 2012</small></td>
+    </tr>
+  </table>
+
+  <table>
+    <tr><td colspan="2">
+      Universidade Nove de Julho
+      <br/><small><i>Undergraduate courses</i></small>
+    </td></tr>  
+    <tr>
+      <td><small>Algorithms for Engineering</small></td>
+      <td><small>fall, 2011</small></td>
+    </tr>
+    <tr>
+      <td><small>Computer Architectures</small></td>
+      <td><small>fall, 2011</small></td>
+    </tr>
+    <tr>
+      <td><small>Programming for Internet</small></td>
+      <td><small>fall, 2011</small></td>
+    </tr>
+  </table>
 
 ## Teaching assistant
 

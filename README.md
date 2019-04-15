@@ -97,6 +97,29 @@ Supported by:
 
 ## Publications
 
-   Curriculum Lattes: http://lattes.cnpq.br/2867853068965061
-   Mendeley's Profile: http://www.mendeley.com/profiles/humberto-sandmann/
+   Curriculum Lattes: [http://lattes.cnpq.br/2867853068965061](http://lattes.cnpq.br/2867853068965061)<br/>
+   Mendeley's Profile: [http://www.mendeley.com/profiles/humberto-sandmann/](http://www.mendeley.com/profiles/humberto-sandmann/)
 
+## Interesting links
+
+- Researchers
+
+  - Sven Boekhoff<br/>
+    <small>[http://www.boekhoff.info/](http://www.boekhoff.info/)</small>
+  - Mirko Lukovic<br/>
+    <small>[http://www.uni-goettingen.de/de/131580.html](http://www.uni-goettingen.de/de/131580.html)</small>
+  - Erik Martens<br/>
+    <small>[http://eam.webhop.net/](http://eam.webhop.net/)</small>
+  - Nicolau Werneck<br/>
+    <small>[http://nwerneck.sdf.org/](http://nwerneck.sdf.org/)</small>
+  - Christian Bick<br/>
+    <small>[http://math.rice.edu/~cb26/](http://math.rice.edu/~cb26/)</small>
+
+- Attracting Fixed Conferences
+
+  - Dynamics Days<br/>
+    <small>[http://dynamicsdays.info/](http://dynamicsdays.info/)</small>    
+  - IJCNN - International Joint Conference on Neural Networks<br/>
+    <small>[http://www.ijcnn.org/](http://www.ijcnn.org/)</small>
+  - NIPS - Neural Information Processing Systems<br/>
+    <small>[http://nips.cc/](http://nips.cc/)</small>

@@ -50,8 +50,9 @@ Supported by:
 
   - **Computational Intelligence Society** ([CIS](http://www.ieee-cis.org/))
     - since 2004
-    - from apr/2009 to aug/2009 - member of the brazilian committee
-    - since oct/2010 - member of the brazilian committee    
+    - member of the brazilian committee
+      - from apr/2009 to aug/2009 
+      - from oct/2010 to mar/2012    
 
   - **Signal Processing Society** ([SPS](http://www.signalprocessingsociety.org/))
     - from 2005 to 2009
@@ -61,4 +62,6 @@ Supported by:
 
 - **[INNS](http://www.inns.org/) - International Neural Network Society**
   <br/><small>Student member #3951</small>
+
+## Teaching
 

@@ -75,10 +75,10 @@ Supported by:
   <table>
     <tr>
       <td>
-        <small><a href="http://sistemas2.usp.br/jupiterweb/obterDisciplina?sgldis=PSI2672" target="_blank">PSI 2672</a></small></td>
+        <small><a href="http://sistemas2.usp.br/jupiterweb/obterDisciplina?sgldis=PSI2672" target="_blank">PSI&nbsp;2672</a></small></td>
       <td>
-        <small>Práticas em Reconhecimento de Padrões, Modelagem e Neurocomputação</small><br/>
-        <small>Experimental Pattern Recognition, Modeling and Neurocomputing</small>
+        <small>Experimental Pattern Recognition, Modeling and Neurocomputing<br/>
+        <small>Práticas em Reconhecimento de Padrões, Modelagem e Neurocomputação</small></small>
       </td>
       <td>
         <small>2011<sup>*</sup></small>
@@ -86,10 +86,10 @@ Supported by:
     </tr>
     <tr>
       <td>
-        <small><a href="http://sistemas2.usp.br/jupiterweb/obterDisciplina?sgldis=PSI2533" target="_blank">PSI 2533</a></small></td>
+        <small><a href="http://sistemas2.usp.br/jupiterweb/obterDisciplina?sgldis=PSI2533" target="_blank">PSI&nbsp;2533</a></small></td>
       <td>
-        <small>Modelagem em Processamento de Sinais: Redes Neurais e Aprendizado</small><br/>
-        <small>Modeling for Signal Processing: Neural Networks and Learning</small>
+        <small>Modeling for Signal Processing: Neural Networks and Learning<br/>
+        <small>Modelagem em Processamento de Sinais: Redes Neurais e Aprendizado</small></small>
       </td>
       <td>
         <small>2009, 2008<sup>*</sup></small>
@@ -97,10 +97,10 @@ Supported by:
     </tr>
     <tr>
       <td>
-        <small><a href="http://sistemas2.usp.br/jupiterweb/obterDisciplina?sgldis=PCS2302" target="_blank">PCS 2302</a></small></td>
+        <small><a href="http://sistemas2.usp.br/jupiterweb/obterDisciplina?sgldis=PCS2302" target="_blank">PCS&nbsp;2302</a></small></td>
       <td>
-        <small>Laboratório de Fundamentos de Engenharia de Computação</small><br/>
-        <small>Laboratory of the Foundations of Computing Engineering</small>
+        <small>Laboratory of the Foundations of Computing Engineering<br/>
+        <small>Laboratório de Fundamentos de Engenharia de Computação</small></small>
       </td>
       <td>
         <small>2008<sup>†</sup></small>

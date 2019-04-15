@@ -74,37 +74,19 @@ Supported by:
   
   <table>
     <tr>
-      <td>
-        <small><a href="http://sistemas2.usp.br/jupiterweb/obterDisciplina?sgldis=PSI2672" target="_blank">PSI&nbsp;2672</a></small></td>
-      <td>
-        <small>Experimental Pattern Recognition, Modeling and Neurocomputing<br/>
-        <small>Práticas em Reconhecimento de Padrões, Modelagem e Neurocomputação</small></small>
-      </td>
-      <td>
-        <small>2011<sup>*</sup></small>
-      </td>
+      <td><small><a href="http://sistemas2.usp.br/jupiterweb/obterDisciplina?sgldis=PSI2672" target="_blank">PSI&nbsp;2672</a></small></td>
+      <td><small>Experimental Pattern Recognition, Modeling and Neurocomputing</small></td>
+      <td><small>2011<sup>*</sup></small></td>
     </tr>
     <tr>
-      <td>
-        <small><a href="http://sistemas2.usp.br/jupiterweb/obterDisciplina?sgldis=PSI2533" target="_blank">PSI&nbsp;2533</a></small></td>
-      <td>
-        <small>Modeling for Signal Processing: Neural Networks and Learning<br/>
-        <small>Modelagem em Processamento de Sinais: Redes Neurais e Aprendizado</small></small>
-      </td>
-      <td>
-        <small>2009, 2008<sup>*</sup></small>
-      </td>
+      <td><small><a href="http://sistemas2.usp.br/jupiterweb/obterDisciplina?sgldis=PSI2533" target="_blank">PSI&nbsp;2533</a></small></td>
+      <td><small>Modeling for Signal Processing: Neural Networks and Learning</small></td>
+      <td><small>2009, 2008<sup>*</sup></small></td>
     </tr>
     <tr>
-      <td>
-        <small><a href="http://sistemas2.usp.br/jupiterweb/obterDisciplina?sgldis=PCS2302" target="_blank">PCS&nbsp;2302</a></small></td>
-      <td>
-        <small>Laboratory of the Foundations of Computing Engineering<br/>
-        <small>Laboratório de Fundamentos de Engenharia de Computação</small></small>
-      </td>
-      <td>
-        <small>2008<sup>†</sup></small>
-      </td>
+      <td><small><a href="http://sistemas2.usp.br/jupiterweb/obterDisciplina?sgldis=PCS2302" target="_blank">PCS&nbsp;2302</a></small></td>
+      <td><small>Laboratory of the Foundations of Computing Engineering</small></td>
+      <td><small>2008<sup>†</sup></small></td>
     </tr>
   </table>
 

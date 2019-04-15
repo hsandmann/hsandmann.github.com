@@ -72,9 +72,11 @@ Supported by:
 
 ## Teaching assistant
 
-- Polytechnic School of the University of Sao Paulo
-  <br/><small>Undergraduate courses</small>
   <table>
+    <tr><td colspan="3">
+      Polytechnic School of the University of Sao Paulo
+      <br/><small>Undergraduate courses</small>
+    </td></tr>  
     <tr>
       <td><small><a href="https://uspdigital.usp.br/jupiterweb/obterDisciplina?sgldis=PSI2672" target="_blank">PSI&nbsp;2672</a></small></td>
       <td><small>Experimental Pattern Recognition, Modeling and Neurocomputing</small></td>

@@ -28,8 +28,8 @@
 Supported by:
 	
 - [CNPq](http://www.cnpq.br/) under grant number 140632/2007-7
-  - from mar/2007 to dec/2009
   - from sep/2010 to feb/2011
+  - from mar/2007 to dec/2009
 
 - [Pró-Reitoria da Pós-Graduação da USP](http://www.usp.br/prpg/)
   - aug/2009 and dec/2009 (GRU <-> FRA)
@@ -51,8 +51,8 @@ Supported by:
   - **Computational Intelligence Society** ([CIS](http://www.ieee-cis.org/))
     - since 2004
     - member of the brazilian committee
-      - from apr/2009 to aug/2009 
       - from oct/2010 to mar/2012    
+      - from apr/2009 to aug/2009 
 
   - **Signal Processing Society** ([SPS](http://www.signalprocessingsociety.org/))
     - from 2005 to 2009
@@ -65,3 +65,15 @@ Supported by:
 
 ## Teaching
 
+
+
+## Teaching assistant
+
+- Polytechnic School of the University of Sao Paulo
+  <br/><small>Undergraduate courses</small>
+  
+  |[PSI 2672](http://sistemas2.usp.br/jupiterweb/obterDisciplina?sgldis=PSI2672&verdis=1)| Práticas em Reconhecimento de Padrões, Modelagem e Neurocomputação | 2011<sup>*</sup> |
+  | | Experimental Pattern Recognition, Modeling and Neurocomputing | |
+
+  \* <small>grants from CAPES (PAE)</small>
+  <br/>† <small>grants from FAPESP</small>

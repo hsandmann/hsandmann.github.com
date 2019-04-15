@@ -124,14 +124,14 @@ Supported by:
   <table>
     <tr><td colspan="2">
       FIAP
-      <br/><small><i>Graduate courses</i></small>
+      <br/><small><i>MBA courses</i></small>
     </td></tr>  
     <tr>
-      <td><small>MBA - NoSQL and Big Data: MongoDB, SparQL, Neo4j, Solr, Hive, Hadoop</small></td>
+      <td><small>NoSQL and Big Data: MongoDB, SparQL, Neo4j, Solr, Hive, Hadoop</small></td>
       <td><small>summer, 2014 - winter, 2015</small></td>
     </tr>
     <tr><td colspan="2">
-      <br/><small><i>Undergraduate courses</i></small>
+      <small><i>Undergraduate courses</i></small>
     </td></tr>  
     <tr>
       <td><small>Distributed Systems</small></td>

@@ -51,7 +51,7 @@ Supported by:
 ## Activities in societies
 
 - **[IEEE](http://www.ieee.org/) - Institute of Electrical and Electronics Engineers**
-  <br/><small>Member #80216475</small>
+  <br/><small>Member #70216475</small>
 
   - **Computational Intelligence Society** ([CIS](http://www.ieee-cis.org/))
     - since 2004
@@ -77,11 +77,11 @@ Supported by:
     </td></tr>  
     <tr>
       <td><small>Software Design</small></td>
-      <td width="80"><small><small>2019 - now</small></small></td>
+      <td width="70"><small><small>2019 - now</small></small></td>
     </tr>
     <tr>
       <td><small>Foundations for Physical Communication</small></td>
-      <td width="80"><small><small>2018</small></small></td>
+      <td width="70"><small><small>2018</small></small></td>
     </tr>
   </table>
 
@@ -92,15 +92,15 @@ Supported by:
     </td></tr>  
     <tr>
       <td><small>Artificial Intelligence for Marketing</small></td>
-      <td width="80"><small><small>2019 - now</small></small></td>
+      <td width="70"><small><small>2019 - now</small></small></td>
     </tr>
     <tr>
       <td><small>Enterprise Environment I: computer architectures and operating systems</small></td>
-      <td width="80"><small><small>2014 - now</small></small></td>
+      <td width="70"><small><small>2014 - now</small></small></td>
     </tr>
     <tr>
       <td><small>Data Structure and Algorithms - DSA</small></td>
-      <td width="80"><small><small>2017</small></small></td>
+      <td width="70"><small><small>2017</small></small></td>
     </tr>
   </table>
 
@@ -111,15 +111,15 @@ Supported by:
     </td></tr>  
     <tr>
       <td><small>Basics of Robotics</small></td>
-      <td width="80"><small><small>2016</small></small></td>
+      <td width="70"><small><small>2016</small></small></td>
     </tr>
     <tr>
       <td><small>Object-Oriented Programming</small></td>
-      <td width="80"><small><small>2016</small></small></td>
+      <td width="70"><small><small>2016</small></small></td>
     </tr>
     <tr>
       <td><small>Data Structures and Algorithms - DSA</small></td>
-      <td width="80"><small><small>2016</small></small></td>
+      <td width="70"><small><small>2016</small></small></td>
     </tr>
   </table>
 
@@ -130,34 +130,34 @@ Supported by:
     </td></tr>  
     <tr>
       <td><small>NoSQL and Big Data: MongoDB, SparQL, Neo4j, Solr, Hive, Hadoop</small></td>
-      <td width="80"><small><small>2014 - 2015</small></small></td>
+      <td width="70"><small><small>2014 - 2015</small></small></td>
     </tr>
     <tr><td colspan="2">
       <small><i>Undergraduate courses</i></small>
     </td></tr>  
     <tr>
       <td><small>Distributed Systems</small></td>
-      <td width="80"><small><small>2015</small></small></td>
+      <td width="70"><small><small>2015</small></small></td>
     </tr>
     <tr>
       <td><small>Data Structures and Techniques for Algorithms II - DSA</small></td>
-      <td width="80"><small><small>2013</small></small></td>
+      <td width="70"><small><small>2013</small></small></td>
     </tr>
     <tr>
       <td><small>Algorithms</small></td>
-      <td width="80"><small><small>2012 - 2013</small></small></td>
+      <td width="70"><small><small>2012 - 2013</small></small></td>
     </tr>
     <tr>
       <td><small>Advanced Programming Techniques for Java</small></td>
-      <td width="80"><small><small>2012</small></small></td>
+      <td width="70"><small><small>2012</small></small></td>
     </tr>
     <tr>
       <td><small>Database I - Oracle</small></td>
-      <td width="80"><small><small>2012 - 2013</small></small></td>
+      <td width="70"><small><small>2012 - 2013</small></small></td>
     </tr>
     <tr>
       <td><small>Database II - Oracle</small></td>
-      <td width="80"><small><small>2012 - 2013</small></small></td>
+      <td width="70"><small><small>2012 - 2013</small></small></td>
     </tr>
   </table>
   
@@ -168,7 +168,7 @@ Supported by:
     </td></tr>  
     <tr>
       <td><small>MBA course on big data and machine learning</small></td>
-      <td width="80"><small><small>2015</small></small></td>
+      <td width="70"><small><small>2015</small></small></td>
     </tr>
   </table>
 
@@ -179,23 +179,23 @@ Supported by:
     </td></tr>  
     <tr>
       <td><small>Programming for Mobile - Android</small></td>
-      <td width="80"><small><small>2012</small></small></td>
+      <td width="70"><small><small>2012</small></small></td>
     </tr>
     <tr>
       <td><small>Computer Architectures</small></td>
-      <td width="80"><small><small>2012</small></small></td>
+      <td width="70"><small><small>2012</small></small></td>
     </tr>
     <tr>
       <td><small>Software Engineering</small></td>
-      <td width="80"><small><small>2012</small></small></td>
+      <td width="70"><small><small>2012</small></small></td>
     </tr>
     <tr>
       <td><small>Database II - Oracle</small></td>
-      <td width="80"><small><small>2012 - 2013</small></small></td>
+      <td width="70"><small><small>2012 - 2013</small></small></td>
     </tr>
     <tr>
       <td><small>Languages and Techniques for Programming</small></td>
-      <td width="80"><small><small>2012</small></small></td>
+      <td width="70"><small><small>2012</small></small></td>
     </tr>
   </table>
 
@@ -206,15 +206,15 @@ Supported by:
     </td></tr>  
     <tr>
       <td><small>Algorithms for Engineering</small></td>
-      <td width="80"><small><small>2011</small></small></td>
+      <td width="70"><small><small>2011</small></small></td>
     </tr>
     <tr>
       <td><small>Computer Architectures</small></td>
-      <td width="80"><small><small>2011</small></small></td>
+      <td width="70"><small><small>2011</small></small></td>
     </tr>
     <tr>
       <td><small>Programming for Internet</small></td>
-      <td width="80"><small><small>2011</small></small></td>
+      <td width="70"><small><small>2011</small></small></td>
     </tr>
   </table>
 
@@ -259,7 +259,7 @@ Supported by:
   - Sven Boekhoff<br/>
     <small>[http://www.boekhoff.info/](http://www.boekhoff.info/)</small>
   - Mirko Lukovic<br/>
-    <small>[http://www.uni-goettingen.de/de/131580.html](http://www.uni-goettingen.de/de/131580.html)</small>
+    <small>[http://www.uni-goettingen.de/de/131570.html](http://www.uni-goettingen.de/de/131570.html)</small>
   - Erik Martens<br/>
     <small>[http://eam.webhop.net/](http://eam.webhop.net/)</small>
   - Nicolau Werneck<br/>

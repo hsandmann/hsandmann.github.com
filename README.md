@@ -70,6 +70,10 @@ Supported by:
 
 ## Teaching
 
+<style>
+    .sc { width: 100px; align: right; }
+</style>
+
   <table>
     <tr><td colspan="2">
       Insper Learning Institution
@@ -77,11 +81,11 @@ Supported by:
     </td></tr>  
     <tr>
       <td><small>Foundations for Physical Communication</small></td>
-      <td width="100"><small>winter, 2018</small></td>
+      <td class="sc"><small>winter, 2018</small></td>
     </tr>
     <tr>
       <td><small>Software Design</small></td>
-      <td><small>summer, 2019 - now</small></td>
+      <td class="sc"><small>summer, 2019 - now</small></td>
     </tr>
   </table>
 
@@ -92,15 +96,15 @@ Supported by:
     </td></tr>  
     <tr>
       <td><small>Enterprise Environment I: computer architectures and operating systems</small></td>
-      <td width="100"><small>spring, 2014 - now</small></td>
+      <td class="sc"><small>spring, 2014 - now</small></td>
     </tr>
     <tr>
       <td><small>Artificial Intelligence for Marketing</small></td>
-      <td><small>summer, 2019 - now</small></td>
+      <td class="sc"><small>summer, 2019 - now</small></td>
     </tr>
     <tr>
       <td><small>Data Structure and Algorithms - DSA</small></td>
-      <td><small>spring, 2017</small></td>
+      <td class="sc"><small>spring, 2017</small></td>
     </tr>
   </table>
 

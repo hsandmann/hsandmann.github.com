@@ -96,7 +96,7 @@ Supported by:
     </tr>
     <tr>
       <td><small>Enterprise Environment: computer architectures and operating systems</small></td>
-      <td width="60"><small><small><a href="/espm.16bits" target="_blank">2014 - now</a></small></small></td>
+      <td width="60"><small><small><a href="/espm.tec.105/" target="_blank">2014 - now</a></small></small></td>
     </tr>
     <tr>
       <td><small>Data Structure and Algorithms - DSA</small></td>

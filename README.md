@@ -76,8 +76,8 @@ Supported by:
       <br/><small><i>Undergraduate courses</i></small>
     </td></tr>  
     <tr>
-      <td width="100"><small>Foundations for Physical Communication</small></td>
-      <td><small>winter, 2018</small></td>
+      <td><small>Foundations for Physical Communication</small></td>
+      <td width="100"><small>winter, 2018</small></td>
     </tr>
     <tr>
       <td><small>Software Design</small></td>
@@ -91,8 +91,8 @@ Supported by:
       <br/><small><i>Undergraduate courses</i></small>
     </td></tr>  
     <tr>
-      <td width="100"><small>Enterprise Environment I: computer architectures and operating systems</small></td>
-      <td><small>spring, 2014 - now</small></td>
+      <td><small>Enterprise Environment I: computer architectures and operating systems</small></td>
+      <td width="100"><small>spring, 2014 - now</small></td>
     </tr>
     <tr>
       <td><small>Artificial Intelligence for Marketing</small></td>
@@ -110,8 +110,8 @@ Supported by:
       <br/><small><i>Undergraduate courses</i></small>
     </td></tr>  
     <tr>
-      <td width="100"><small>Basics of Robotics</small></td>
-      <td><small>spring, 2016</small></td>
+      <td><small>Basics of Robotics</small></td>
+      <td width="100"><small>spring, 2016</small></td>
     </tr>
     <tr>
       <td><small>Object-Oriented Programming</small></td>

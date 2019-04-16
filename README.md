@@ -77,11 +77,11 @@ Supported by:
     </td></tr>  
     <tr>
       <td><small>Software Design</small></td>
-      <td width="90" align="right"><small><small>2019 - now</small></small></td>
+      <td width="80"><small><small>2019 - now</small></small></td>
     </tr>
     <tr>
       <td><small>Foundations for Physical Communication</small></td>
-      <td width="90" align="right"><small><small>2018</small></small></td>
+      <td width="80"><small><small>2018</small></small></td>
     </tr>
   </table>
 
@@ -92,15 +92,15 @@ Supported by:
     </td></tr>  
     <tr>
       <td><small>Artificial Intelligence for Marketing</small></td>
-      <td width="90" align="right"><small><small>2019 - now</small></small></td>
+      <td width="80"><small><small>2019 - now</small></small></td>
     </tr>
     <tr>
       <td><small>Enterprise Environment I: computer architectures and operating systems</small></td>
-      <td width="90" align="right"><small><small>2014 - now</small></small></td>
+      <td width="80"><small><small>2014 - now</small></small></td>
     </tr>
     <tr>
       <td><small>Data Structure and Algorithms - DSA</small></td>
-      <td width="90" align="right"><small><small>2017</small></small></td>
+      <td width="80"><small><small>2017</small></small></td>
     </tr>
   </table>
 
@@ -111,15 +111,15 @@ Supported by:
     </td></tr>  
     <tr>
       <td><small>Basics of Robotics</small></td>
-      <td width="90" align="right"><small><small>2016</small></small></td>
+      <td width="80"><small><small>2016</small></small></td>
     </tr>
     <tr>
       <td><small>Object-Oriented Programming</small></td>
-      <td width="90" align="right"><small><small>2016</small></small></td>
+      <td width="80"><small><small>2016</small></small></td>
     </tr>
     <tr>
       <td><small>Data Structures and Algorithms - DSA</small></td>
-      <td width="90" align="right"><small><small>2016</small></small></td>
+      <td width="80"><small><small>2016</small></small></td>
     </tr>
   </table>
 
@@ -130,34 +130,34 @@ Supported by:
     </td></tr>  
     <tr>
       <td><small>NoSQL and Big Data: MongoDB, SparQL, Neo4j, Solr, Hive, Hadoop</small></td>
-      <td width="90" align="right"><small><small>2014 - 2015</small></small></td>
+      <td width="80"><small><small>2014 - 2015</small></small></td>
     </tr>
     <tr><td colspan="2">
       <small><i>Undergraduate courses</i></small>
     </td></tr>  
     <tr>
       <td><small>Distributed Systems</small></td>
-      <td width="90" align="right"><small><small>2015</small></small></td>
+      <td width="80"><small><small>2015</small></small></td>
     </tr>
     <tr>
       <td><small>Data Structures and Techniques for Algorithms II - DSA</small></td>
-      <td width="90" align="right"><small><small>2013</small></small></td>
+      <td width="80"><small><small>2013</small></small></td>
     </tr>
     <tr>
       <td><small>Algorithms</small></td>
-      <td width="90" align="right"><small><small>2012 - 2013</small></small></td>
+      <td width="80"><small><small>2012 - 2013</small></small></td>
     </tr>
     <tr>
       <td><small>Advanced Programming Techniques for Java</small></td>
-      <td width="90" align="right"><small><small>2012</small></small></td>
+      <td width="80"><small><small>2012</small></small></td>
     </tr>
     <tr>
       <td><small>Database I - Oracle</small></td>
-      <td width="90" align="right"><small><small>2012 - 2013</small></small></td>
+      <td width="80"><small><small>2012 - 2013</small></small></td>
     </tr>
     <tr>
       <td><small>Database II - Oracle</small></td>
-      <td width="90" align="right"><small><small>2012 - 2013</small></small></td>
+      <td width="80"><small><small>2012 - 2013</small></small></td>
     </tr>
   </table>
   
@@ -168,7 +168,7 @@ Supported by:
     </td></tr>  
     <tr>
       <td><small>MBA course on big data and machine learning</small></td>
-      <td width="90" align="right"><small><small>2015</small></small></td>
+      <td width="80"><small><small>2015</small></small></td>
     </tr>
   </table>
 
@@ -179,23 +179,23 @@ Supported by:
     </td></tr>  
     <tr>
       <td><small>Programming for Mobile - Android</small></td>
-      <td width="90" align="right"><small><small>2012</small></small></td>
+      <td width="80"><small><small>2012</small></small></td>
     </tr>
     <tr>
       <td><small>Computer Architectures</small></td>
-      <td width="90" align="right"><small><small>2012</small></small></td>
+      <td width="80"><small><small>2012</small></small></td>
     </tr>
     <tr>
       <td><small>Software Engineering</small></td>
-      <td width="90" align="right"><small><small>2012</small></small></td>
+      <td width="80"><small><small>2012</small></small></td>
     </tr>
     <tr>
       <td><small>Database II - Oracle</small></td>
-      <td width="90" align="right"><small><small>2012 - 2013</small></small></td>
+      <td width="80"><small><small>2012 - 2013</small></small></td>
     </tr>
     <tr>
       <td><small>Languages and Techniques for Programming</small></td>
-      <td width="90" align="right"><small><small>2012</small></small></td>
+      <td width="80"><small><small>2012</small></small></td>
     </tr>
   </table>
 
@@ -205,16 +205,16 @@ Supported by:
       <br/><small><i>Undergraduate courses</i></small>
     </td></tr>  
     <tr>
-      <td width="90"><small>Algorithms for Engineering</small></td>
-      <td width="90" align="right"><small><small>2011</small></small></td>
+      <td><small>Algorithms for Engineering</small></td>
+      <td width="80"><small><small>2011</small></small></td>
     </tr>
     <tr>
       <td><small>Computer Architectures</small></td>
-      <td width="90" align="right"><small><small>2011</small></small></td>
+      <td width="80"><small><small>2011</small></small></td>
     </tr>
     <tr>
       <td><small>Programming for Internet</small></td>
-      <td width="90" align="right"><small><small>2011</small></small></td>
+      <td width="80"><small><small>2011</small></small></td>
     </tr>
   </table>
 
@@ -228,17 +228,17 @@ Supported by:
     <tr>
       <td><small><a href="https://uspdigital.usp.br/jupiterweb/obterDisciplina?sgldis=PSI2672" target="_blank">PSI&nbsp;2672</a></small></td>
       <td><small>Experimental Pattern Recognition, Modeling and Neurocomputing</small></td>
-      <td align="right"><small>2011<sup>*</sup></small></td>
+      <td><small>2011<sup>*</sup></small></td>
     </tr>
     <tr>
       <td><small><a href="https://uspdigital.usp.br/jupiterweb/obterDisciplina?sgldis=PSI2533" target="_blank">PSI&nbsp;2533</a></small></td>
       <td><small>Modeling for Signal Processing: Neural Networks and Learning</small></td>
-      <td align="right"><small>2009, 2008<sup>*</sup></small></td>
+      <td><small>2009, 2008<sup>*</sup></small></td>
     </tr>
     <tr>
       <td><small><a href="https://uspdigital.usp.br/jupiterweb/obterDisciplina?sgldis=PCS2302" target="_blank">PCS&nbsp;2302</a></small></td>
       <td><small>Laboratory of the Foundations of Computing Engineering</small></td>
-      <td align="right"><small>2008<sup>†</sup></small></td>
+      <td><small>2008<sup>†</sup></small></td>
     </tr>
   </table>
   \* <small>grants from CAPES (PAE)</small>

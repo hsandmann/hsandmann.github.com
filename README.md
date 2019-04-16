@@ -76,7 +76,7 @@ Supported by:
       <br/><small><i>Undergraduate courses</i></small>
     </td></tr>  
     <tr>
-      <td width="90px"><small>Foundations for Physical Communication</small></td>
+      <td width="100"><small>Foundations for Physical Communication</small></td>
       <td><small>winter, 2018</small></td>
     </tr>
     <tr>
@@ -91,7 +91,7 @@ Supported by:
       <br/><small><i>Undergraduate courses</i></small>
     </td></tr>  
     <tr>
-      <td width="90px"><small>Enterprise Environment I: computer architectures and operating systems</small></td>
+      <td width="100"><small>Enterprise Environment I: computer architectures and operating systems</small></td>
       <td><small>spring, 2014 - now</small></td>
     </tr>
     <tr>
@@ -110,7 +110,7 @@ Supported by:
       <br/><small><i>Undergraduate courses</i></small>
     </td></tr>  
     <tr>
-      <td width="90px"><small>Basics of Robotics</small></td>
+      <td width="100"><small>Basics of Robotics</small></td>
       <td><small>spring, 2016</small></td>
     </tr>
     <tr>
@@ -130,7 +130,7 @@ Supported by:
     </td></tr>  
     <tr>
       <td><small>NoSQL and Big Data: MongoDB, SparQL, Neo4j, Solr, Hive, Hadoop</small></td>
-      <td width="90px"><small>summer, 2014 - winter, 2015</small></td>
+      <td width="100"><small>summer, 2014 - winter, 2015</small></td>
     </tr>
     <tr><td colspan="2">
       <small><i>Undergraduate courses</i></small>
@@ -168,7 +168,7 @@ Supported by:
     </td></tr>  
     <tr>
       <td><small>MBA course on big data and machine learning</small></td>
-      <td width="90px"><small>fall, 2015</small></td>
+      <td width="100"><small>fall, 2015</small></td>
     </tr>
   </table>
 
@@ -179,7 +179,7 @@ Supported by:
     </td></tr>  
     <tr>
       <td><small>Programming for Mobile - Android</small></td>
-      <td width="90px"><small>winter, 2012</small></td>
+      <td width="100"><small>winter, 2012</small></td>
     </tr>
     <tr>
       <td><small>Computer Architectures</small></td>
@@ -205,7 +205,7 @@ Supported by:
       <br/><small><i>Undergraduate courses</i></small>
     </td></tr>  
     <tr>
-      <td width="90px"><small>Algorithms for Engineering</small></td>
+      <td width="100"><small>Algorithms for Engineering</small></td>
       <td><small>fall, 2011</small></td>
     </tr>
     <tr>

@@ -191,7 +191,7 @@ Supported by:
     </tr>
     <tr>
       <td><small>Database II - Oracle</small></td>
-      <td><small>summer, 2012 - summer, 2013</small></td>
+      <td width="60px"><small>summer, 2012 - summer, 2013</small></td>
     </tr>
     <tr>
       <td><small>Languages and Techniques for Programming</small></td>

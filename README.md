@@ -130,7 +130,7 @@ Supported by:
     </td></tr>  
     <tr>
       <td><small>NoSQL and Big Data: MongoDB, SparQL, Neo4j, Solr, Hive, Hadoop</small></td>
-      <td><small>summer, 2014 - winter, 2015</small></td>
+      <td width="100px"><small>summer, 2014 - winter, 2015</small></td>
     </tr>
     <tr><td colspan="2">
       <small><i>Undergraduate courses</i></small>
@@ -168,7 +168,7 @@ Supported by:
     </td></tr>  
     <tr>
       <td><small>MBA course on big data and machine learning</small></td>
-      <td><small>fall, 2015</small></td>
+      <td width="100px"><small>fall, 2015</small></td>
     </tr>
   </table>
 
@@ -179,7 +179,7 @@ Supported by:
     </td></tr>  
     <tr>
       <td><small>Programming for Mobile - Android</small></td>
-      <td><small>winter, 2012</small></td>
+      <td width="100px"><small>winter, 2012</small></td>
     </tr>
     <tr>
       <td><small>Computer Architectures</small></td>
@@ -191,7 +191,7 @@ Supported by:
     </tr>
     <tr>
       <td><small>Database II - Oracle</small></td>
-      <td width="60px"><small>summer, 2012 - summer, 2013</small></td>
+      <td><small>summer, 2012 - summer, 2013</small></td>
     </tr>
     <tr>
       <td><small>Languages and Techniques for Programming</small></td>

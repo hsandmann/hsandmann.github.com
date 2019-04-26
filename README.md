@@ -77,7 +77,7 @@ Supported by:
     </td></tr>  
     <tr>
       <td><small>Software Design</small></td>
-      <td width="60"><small><small><a href="/espm.ml/" target="_blank">2019 - now</a></small></small></td>
+      <td width="60"><small><small>2019 - now</small></small></td>
     </tr>
     <tr>
       <td><small>Foundations for Physical Communication</small></td>
@@ -92,7 +92,7 @@ Supported by:
     </td></tr>  
     <tr>
       <td><small>Artificial Intelligence for Marketing</small></td>
-      <td width="60"><small><small>2019 - now</small></small></td>
+      <td width="60"><small><small><a href="/espm.ml/" target="_blank">2019 - now</a></small></small></td>
     </tr>
     <tr>
       <td><small>Enterprise Environment: computer architectures and operating systems</small></td>

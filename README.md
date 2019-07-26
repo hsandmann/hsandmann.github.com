@@ -266,6 +266,8 @@ Supported by:
     <small>[http://nwerneck.sdf.org/](http://nwerneck.sdf.org/)</small>
   - Christian Bick<br/>
     <small>[http://math.rice.edu/~cb26/](http://math.rice.edu/~cb26/)</small>
+  - Tatjana Tchumatchenko<br />
+    <small>[http://www.tchumatchenko.de/](http://www.tchumatchenko.de/)</small>
 
 - Attracting Fixed Conferences
 

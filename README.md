@@ -91,6 +91,10 @@ Supported by:
       <br/><small><i>Undergraduate courses</i></small>
     </td></tr>  
     <tr>
+      <td><small>Artificial Intelligence and Society</small></td>
+      <td width="60"><small><small><a href="/espm.ai.society/" target="_blank">2019 - now</a></small></small></td>
+    </tr>
+    <tr>
       <td><small>Artificial Intelligence for Marketing</small></td>
       <td width="60"><small><small><a href="/espm.ml/" target="_blank">2019 - now</a></small></small></td>
     </tr>

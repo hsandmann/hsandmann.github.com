@@ -15,7 +15,7 @@
 
 ## Background
 
-- **Ph.D. at [Polytechnic School of the Univerty of Sao Paulo](http://ppgee.poli.usp.br/)**
+- **Ph.D. at [Polytechnic School of the University of Sao Paulo](http://ppgee.poli.usp.br/)**
   - Advisor: [Prof. Dr. Emilio Del Moral Hernandez](http://www.lsi.usp.br/~emilio/)
   - from mar/2007 to mar/2012
 
@@ -23,7 +23,7 @@
   - Advisor: [Prof. Dr. Marc Timme](http://www.nld.ds.mpg.de/people/timme)
   - from aug/2009 to sep/2010
 
-- **M.Sc. at [Polytechnic School of the Univerty of Sao Paulo](http://ppgee.poli.usp.br/)**
+- **M.Sc. at [Polytechnic School of the University of Sao Paulo](http://ppgee.poli.usp.br/)**
   - Advisor: [Prof. Dr. Marco Túlio Carvalho de Andrade](http://www.lti.pcs.usp.br/~mtulio/)
   - from feb/2003 to jun/2006
 

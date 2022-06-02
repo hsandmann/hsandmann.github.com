@@ -20,7 +20,7 @@
   - from mar/2007 to mar/2012
 
 - **Ph.D. Internship at [Max Planck Institute für Dynamik und Selbstorganisation](http://www.nld.ds.mpg.de/)**
-  - Advisor: [Prof. Dr. Marc Timme](http://www.nld.ds.mpg.de/people/timme)
+  - Advisor: [Prof. Dr. Marc Timme](https://www.ds.mpg.de/person/20494/3509782)
   - from aug/2009 to sep/2010
 
 - **M.Sc. at [Polytechnic School of the University of Sao Paulo](http://ppgee.poli.usp.br/)**

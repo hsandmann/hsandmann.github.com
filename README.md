@@ -16,17 +16,17 @@
 ## Background
 
 - **Ph.D. at [Polytechnic School of the University of Sao Paulo](http://ppgee.poli.usp.br/)**
-  - Advisor: [Prof. Dr. Emilio Del Moral Hernandez](http://www.lsi.usp.br/~emilio/)
-  - Dissertation: Spike patterns and computation in dynamical neural networks
+  - advisor: [Prof. Dr. Emilio Del Moral Hernandez](http://www.lsi.usp.br/~emilio/)
+  - dissertation: Spike patterns and computation in dynamical neural networks
   - from mar/2007 to mar/2012
 
 - **Ph.D. Internship at [Max Planck Institute für Dynamik und Selbstorganisation](http://www.nld.ds.mpg.de/)**
-  - Advisor: [Prof. Dr. Marc Timme](https://www.ds.mpg.de/person/20494/3509782)
+  - advisor: [Prof. Dr. Marc Timme](https://www.ds.mpg.de/person/20494/3509782)
   - from aug/2009 to sep/2010
 
 - **M.Sc. at [Polytechnic School of the University of Sao Paulo](http://ppgee.poli.usp.br/)**
-  - Advisor: [Prof. Dr. Marco Túlio Carvalho de Andrade](http://www.lti.pcs.usp.br/~mtulio/)
-  - Dissertation: Nonlinear time series prediction using neuro-fuzzy architecture systems
+  - advisor: [Prof. Dr. Marco Túlio Carvalho de Andrade](http://www.lti.pcs.usp.br/~mtulio/)
+  - dissertation: Nonlinear time series prediction using neuro-fuzzy architecture systems
   - from feb/2003 to jun/2006
 
 - **B.Sc. at [Faculdade de Engenharia Industrial](http://www.fei.edu.br/)**

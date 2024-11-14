@@ -1,9 +1,3 @@
-<style>
-    table {
-        width: 100%;
-    }
-</style>
-
 # Humberto Sandmann
 
 [hsandmann.github.io](https://hsandmann.github.io/)<br>

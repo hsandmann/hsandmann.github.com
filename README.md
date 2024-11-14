@@ -1,9 +1,10 @@
 # Humberto Sandmann
 
-[hsandmann@ieee.org](mailto:hsandmann@ieee.org)<br/>
+[https://hsandmann.github.io/]hsandmann.github.io/)<br>
+[hsandmann@ieee.org](mailto:hsandmann@ieee.org)<br>
 
-<a href="http://linkedin.com/in/hsandmann" target="_blank">http://linkedin.com/in/hsandmann</a><br>
-<a href="https://orcid.org/0000-0001-7758-695X" target="_blank">https://orcid.org/0000-0001-7758-695X</a><br>
+<a href="http://linkedin.com/in/hsandmann" target="_blank">linkedin.com/in/hsandmann</a><br>
+<a href="https://orcid.org/0000-0001-7758-695X" target="_blank">orcid.org/0000-0001-7758-695X</a><br>
 
 ## Current areas of research
 

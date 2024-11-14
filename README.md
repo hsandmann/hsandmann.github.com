@@ -247,7 +247,7 @@ Supported by:
       <td width="60"><small><small>2008<sup>†</sup></small></small></td>
     </tr>
   </table>
-  <small><small>\* grants from CAPES (PAE)</small></small><br/>
+  <small><small>* grants from CAPES (PAE)</small></small><br/>
   <small><small>† grants from FAPESP</small></small>
 
 

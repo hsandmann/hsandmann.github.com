@@ -1,6 +1,6 @@
 # Humberto Sandmann
 
-[https://hsandmann.github.io/](hsandmann.github.io)<br>
+[hsandmann.github.io](https://hsandmann.github.io/)<br>
 [hsandmann@ieee.org](mailto:hsandmann@ieee.org)<br>
 
 <a href="http://linkedin.com/in/hsandmann" target="_blank">linkedin.com/in/hsandmann</a><br>

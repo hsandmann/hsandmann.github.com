@@ -90,7 +90,7 @@ plugins:
   - git-authors
   - git-committers:
       repository: hsandmann/hsandmann.github.com
-      branch: master
+      branch: main
   - search
   - badges
   - markdown-exec

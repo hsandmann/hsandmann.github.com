@@ -1,8 +1,5 @@
-/.idea/
+.idea/
 .DS_Store
 env/
 site/
 .cache/
-
-
-

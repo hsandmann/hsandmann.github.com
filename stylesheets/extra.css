@@ -43,3 +43,7 @@
     display: inline-block !important;
     margin: 0px !important;
 }
+
+.md-typeset__table {
+    min-width: 100%;
+}

@@ -39,7 +39,7 @@ Synchronization of coupled oscillators
             <a href='./assets/doc/usp-doutorado-grade.pdf' target='_blank'>&#8593;</a><br>
             mar/2007
         </td>
-        <td>
+        <td style='width: 100%;'>
             <span class='details'>D.Sc.</span><a href='http://ppgee.poli.usp.br/' target='_blank'>Polytechnic School of the University of Sao Paulo</a><br>
             <span class='details'>thesis</span><a href='https://doi.org/10.11606/T.3.2012.tde-05092012-165022' target='_blank'>Spike patterns and computation in dynamical neural networks</a><br>
             <hr style='margin: 2px 0px;'>

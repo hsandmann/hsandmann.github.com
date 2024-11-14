@@ -70,7 +70,7 @@ Supported by:
 - **[INNS](http://www.inns.org/) - International Neural Network Society**
   <br/><small>Student member #3951</small>
 
-## Teaching
+## Lecturer
 
   <table>
     <tr><td colspan="2">

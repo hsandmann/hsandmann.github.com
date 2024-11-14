@@ -262,15 +262,15 @@ Supported by:
 
 - Researchers
 
-  - [Sven Boekhoff](http://www.boekhoff.info/){:target='_blank'}
-  - [Mirko Lukovic](https://ifb.ethz.ch/comphys/people/senior-scientists/mirko-lukovic.html){:target='_blank'}
-  - [Erik Martens](http://eam.webhop.net/){:target='_blank'}
-  - [Nicolau Werneck](http://nwerneck.sdf.org/){:target='_blank'}
-  - [Christian Bick](http://www.christianbick.de/){:target='_blank'}
-  - [Tatjana Tchumatchenko](http://www.tchumatchenko.de/){:target='_blank'}
+  - [Sven Boekhoff](http://www.boekhoff.info/)
+  - [Mirko Lukovic](https://ifb.ethz.ch/comphys/people/senior-scientists/mirko-lukovic.html)
+  - [Erik Martens](http://eam.webhop.net/)
+  - [Nicolau Werneck](http://nwerneck.sdf.org/)
+  - [Christian Bick](http://www.christianbick.de/)
+  - [Tatjana Tchumatchenko](http://www.tchumatchenko.de/)
 
 - Attracting Fixed Conferences
 
-  - [Dynamics Days](http://dynamicsdays.info/){:target='_blank'}
-  - [IJCNN - International Joint Conference on Neural Networks](http://www.ijcnn.org/){:target='_blank'}
-  - [NIPS - Neural Information Processing Systems](http://nips.cc/){:target='_blank'}
+  - [Dynamics Days](http://dynamicsdays.info/)
+  - [IJCNN - International Joint Conference on Neural Networks](http://www.ijcnn.org/)
+  - [NIPS - Neural Information Processing Systems](http://nips.cc/)

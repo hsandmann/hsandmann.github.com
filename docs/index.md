@@ -7,7 +7,7 @@ hide:
 
 ![](./assets/img/hsandmann.jpg){ style='border-radius: 10px;', align=left }
 
-!!! custom inline end "Contact"
+!!! custom inline end ""
 
     [:material-email-outline:](mailto:hsandmann@ieee.org){:target='_blank'} [hsandmann@ieee.org](mailto:hsandmann@ieee.org){:target='_blank'}
 
@@ -42,6 +42,7 @@ Synchronization of coupled oscillators
         <td>
             <span class='details'>D.Sc.</span><a href='http://ppgee.poli.usp.br/' target='_blank'>Polytechnic School of the University of Sao Paulo</a><br>
             <span class='details'>thesis</span><a href='https://doi.org/10.11606/T.3.2012.tde-05092012-165022' target='_blank'>Spike patterns and computation in dynamical neural networks</a><br>
+            <hr style='margin: 2px 0px;'>
             <span class='details'>doi</span><a href='https://doi.org/10.11606/T.3.2012.tde-05092012-165022' target='_blank'>10.11606/T.3.2012.tde-05092012-165022</a><br>
             <span class='details'>advisor</span><a href='https://www.lsi.usp.br/~emilio/index.htm' target='_blank'>Prof. Dr. Emilio Del Moral Hernandez</a><br>
             <span class='details'>presentation</span><a href='https://docs.google.com/presentation/d/e/2PACX-1vRz_rBkIJvEPpmL-LFe5bpTcQPEJ7uV1MKlU6L8_seherHmeSdKJ62v9IImdRrqPjX3El32ypNaFToz/pub?start=false&loop=false&delayms=3000' target='_blank'>slides</a><br>
@@ -95,6 +96,7 @@ Synchronization of coupled oscillators
         <td>
             <span class='details'>M.Sc.</span>M.Sc.<a href='http://ppgee.poli.usp.br/' target='_blank'>Polytechnic School of the University of Sao Paulo</a><br>
             <span class='details'>dissertation</span><a href='https://doi.org/10.11606/D.3.2006.tde-01042009-095125' target='_blank'>Prediction of time series using architecture based on neuro-fuzzy systems</a><br>
+            <hr style='margin: 2px 0px;'>
             <span class='details'>doi</span><a href='https://doi.org/10.11606/D.3.2006.tde-01042009-095125' target='_blank'>10.11606/D.3.2006.tde-01042009-095125</a><br>
             <span class='details'>advisor</span><a href='https://www2.pcs.usp.br/~mtulio/' target='_blank'>Prof. Dr. Marco Túlio Carvalho de Andrade</a><br>
         </td>

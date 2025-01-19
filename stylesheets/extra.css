@@ -47,3 +47,7 @@
 .md-typeset__table {
     min-width: 100%;
 }
+
+.lecture-discipline-material {
+    float: right;
+}

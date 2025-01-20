@@ -11,7 +11,7 @@ hide:
 
     [:material-email-outline:](mailto:hsandmann@ieee.org){:target='_blank'} [hsandmann@ieee.org](mailto:hsandmann@ieee.org){:target='_blank'}
 
-    [:material-link:](https://hsandmann.github.io/){:target='_blank'} [hsandmann.github.io](https://hsandmann.github.io/){:target='_blank'}<br>
+    [:material-link:](index.md) [hsandmann.github.io](index.md)<br>
     [:material-github:](https://github.com/hsandmann){:target='_blank'} [hsandmann](https://github.com/hsandmann){:target='_blank'}<br>
     [:material-linkedin:](https://www.linkedin.com/in/hsandmann/){:target='_blank'} [hsandmann](https://www.linkedin.com/in/hsandmann/){:target='_blank'}<br>
     [:simple-orcid:](https://orcid.org/0000-0001-7758-695X){:target='_blank'} [0000-0001-7758-695X](https://orcid.org/0000-0001-7758-695X){:target='_blank'}<br>
@@ -35,9 +35,9 @@ Synchronization of coupled oscillators
 <table>
     <tr>
         <td align='center'>
-            <a href='./assets/doc/usp-doutorado-diploma.pdf' target='_blank'>mar/2012</a><br>
+            <a href='./assets/doc/usp-doutorado-diploma.pdf' target='_blank'>mar.2012</a><br>
             <a href='./assets/doc/usp-doutorado-grade.pdf' target='_blank'>&#8593;</a><br>
-            mar/2007
+            mar.2007
         </td>
         <td style='width: 100%;'>
             <span class='details'>D.Sc.</span><a href='http://ppgee.poli.usp.br/' target='_blank'>Polytechnic School of the University of Sao Paulo</a><br>
@@ -50,7 +50,7 @@ Synchronization of coupled oscillators
             <ul class='support-list'>
                 <li class='support-item'>
                     <a href='http://www.cnpq.br/' target='_blank'>CNPq</a> - grant 140632/2007-7<br>
-                    <small>mar/2007 → dec/2009 ∧ sep/2010 → feb/2011</small>
+                    <small>mar.2007 → dec.2009 ∧ sep.2010 → feb.2011</small>
                 </li>
             </ul>
         </td>
@@ -58,9 +58,9 @@ Synchronization of coupled oscillators
     </tr>
     <tr>
         <td align='center'>
-            <a href='./assets/doc/mpi-report-marc_timme.pdf' target='_blank'>sep/2010</a><br>
+            <a href='./assets/doc/mpi-report-marc_timme.pdf' target='_blank'>sep.2010</a><br>
             &#8593;<br>
-            <a href='./assets/doc/mpi-acceptance.pdf' target='_blank'>aug/2009</a>
+            <a href='./assets/doc/mpi-acceptance.pdf' target='_blank'>aug.2009</a>
         </td>
         <td>
             <span class='details'>D.Sc. Internship</span><a href='https://www.ds.mpg.de/' target='_blank'>Max Planck Gesellschaft für Dynamik und Selbstorganisation</a><br>
@@ -69,19 +69,19 @@ Synchronization of coupled oscillators
             <ul class='support-list'>
                 <li class='support-item'>
                     <a href='http://www.capes.gov.br/' target='_blank'>CAPES</a> - grant <a href='./assets/doc/capes-bex_4076-09-5.pdf' target='_blank'>BEX 4076-09-5</a><br>
-                    <small>jan/2010 → ago/2010</small>
+                    <small>jan.2010 → ago.2010</small>
                 </li>
                 <li class='support-item'>
                     <a href='http://www.usp.br/prpg/' target='_blank'>Pró-Reitoria da Pós-Graduação da USP</a><br>
-                    <small>aug/2009 ∧ dec/2009 (flight tickets GRU ⇄ FRA)</small>
+                    <small>aug.2009 ∧ dec.2009 (flight tickets GRU ⇄ FRA)</small>
                 </li>
                 <li class='support-item'>
                     José Humberto Sandmann - my father<br>
-                    <small>aug/2009 → dec/2009 (German language classes/exams)</small>
+                    <small>aug.2009 → dec.2009 (German language classes/exams)</small>
                 </li>
                 <li class='support-item'>
                     <a href='http://www.mpg.de/' target='_blank'>Max Planck Institute - Networks Dynamics Group</a><br>
-                    <small>aug/2009 → nov/2009 (accommodation in Goettingen)</small>
+                    <small>aug.2009 → nov.2009 (accommodation in Goettingen)</small>
                 </li>
             </ul>
         </td>
@@ -89,12 +89,12 @@ Synchronization of coupled oscillators
     </tr>
     <tr>
         <td align='center'>
-            <a href='./assets/doc/usp-mestrado-diploma.pdf' target='_blank'>jun/2006</a><br>
+            <a href='./assets/doc/usp-mestrado-diploma.pdf' target='_blank'>jun.2006</a><br>
             <a href='./assets/doc/usp-mestrado-grade.pdf' target='_blank'>&#8593;</a><br>
-            feb/2003
+            feb.2003
         </td>
         <td>
-            <span class='details'>M.Sc.</span>M.Sc.<a href='http://ppgee.poli.usp.br/' target='_blank'>Polytechnic School of the University of Sao Paulo</a><br>
+            <span class='details'>M.Sc.</span><a href='http://ppgee.poli.usp.br/' target='_blank'>Polytechnic School of the University of Sao Paulo</a><br>
             <span class='details'>dissertation</span><a href='https://doi.org/10.11606/D.3.2006.tde-01042009-095125' target='_blank'>Prediction of time series using architecture based on neuro-fuzzy systems</a><br>
             <hr style='margin: 2px 0px;'>
             <span class='details'>doi</span><a href='https://doi.org/10.11606/D.3.2006.tde-01042009-095125' target='_blank'>10.11606/D.3.2006.tde-01042009-095125</a><br>
@@ -104,21 +104,21 @@ Synchronization of coupled oscillators
     </tr>
     <tr>
         <td align='center'>
-            <a href='./assets/doc/fei-graduacao-diploma.pdf' target='_blank'>dec/2002</a><br>
+            <a href='./assets/doc/fei-graduacao-diploma.pdf' target='_blank'>dec.2002</a><br>
             <a href='./assets/doc/fei-graduacao-grade.pdf' target='_blank'>&#8593;</a><br>
-            feb/1999
+            feb.1999
         </td>
         <td>
-            B.Sc. at <a href='http://www.fei.edu.br/' target='_blank'>Faculdade de Engenharia Industrial</a><br>
-            Computer Science Bachelor<br>
+            <span class='details'>B.Sc.</span><a href='http://www.fei.edu.br/' target='_blank'>Faculdade de Engenharia Industrial</a><br>
+            <span class='details'></span>Computer Science Bachelor<br>
         </td>
         <td></td>
     </tr>
     <tr>
         <td align='center'>
-            <a href='./assets/doc/ete-grade.pdf' target='_blank'>dec/1998</a><br>
+            <a href='./assets/doc/ete-grade.pdf' target='_blank'>dec.1998</a><br>
             &#8593;<br>
-            feb/1996
+            feb.1996
         </td>
         <td>
             <a href='https://www.jorgestreet.com.br/' target='_blank'>Escola Técnica Jorge Street</a><br>
@@ -130,10 +130,269 @@ Synchronization of coupled oscillators
 
 <div style="page-break-after: always;"></div>
 
+
+## Lectures
+
+<table>
+    <tr>
+        <td align='center'>
+            now<br>
+            &#8593;<br>
+            jun.2018
+        </td>
+        <td style='width: 100%;'>
+            <a href='https://www.insper.edu.br' target='_blank'>Insper</a><br>
+            <small>Sao Paulo, Brazil</small><br>
+            <table>
+                <tr>
+                    <td align='center' style='font-size: small;'>
+                        now<br>
+                        &#8593;<br>
+                        feb.2020
+                    </td>
+                    <td style='width: 100%;'>
+                        Associate Professor
+                        <table>
+                            <tr><td>2025.1</td><td style='width: 100%;'>
+                                Platform, Microsservices and APIs<span class='lecture-discipline-material'><a href='https://insper.github.io/platform/' target='_blank'>material</a></span><br>
+                                Cloud Computing<span class='lecture-discipline-material'><a href='https://insper.github.io/computacao-nuvem/' target='_blank'>material</a></span><br>
+                            </td></tr>
+                            <tr><td>2025.s</td><td>
+                                Design of Software<span class='lecture-discipline-material'><a href='https://insper.github.io/DesignDeSoftware/' target='_blank'>material</a></span><br>
+                            </td></tr>
+                            <tr><td>2024.2</td><td>
+                                Cloud Computing<span class='lecture-discipline-material'><a href='https://insper.github.io/computacao-nuvem/' target='_blank'>material</a></span><br>
+                            </td></tr>
+                            <tr><td>2024.1</td><td>
+                                Platform, Microsservices and APIs<span class='lecture-discipline-material'><a href='https://insper.github.io/platform/' target='_blank'>material</a></span><br>
+                                Design of Software<span class='lecture-discipline-material'><a href='https://servidor-de-desafios-admin.vercel.app/' target='_blank'>material</a></span><br>
+                            </td></tr>
+                            <tr><td>2023.2</td><td>
+                                Design of Software<span class='lecture-discipline-material'><a href='https://servidor-de-desafios-admin.vercel.app/' target='_blank'>material</a></span><br>
+                                Information System for Administration and Economy<br>
+                            </td></tr>
+                            <tr><td>2023.1</td><td>
+                                Information System for Administration and Economy<br>
+                            </td></tr>
+                            <tr><td>2022.2</td><td>
+                                Information System for Administration and Economy<br>
+                            </td></tr>
+                            <tr><td>2022.1</td><td>
+                                Design of Software<span class='lecture-discipline-material'><a href='https://servidor-de-desafios-admin.vercel.app/' target='_blank'>material</a></span><br>
+                            </td></tr>
+                            <tr><td>2021.2</td><td>
+                                Design of Software<span class='lecture-discipline-material'><a href='https://servidor-de-desafios-admin.vercel.app/' target='_blank'>material</a></span><br>
+                            </td></tr>
+                            <tr><td>2021.1</td><td>
+                                Design of Software<span class='lecture-discipline-material'><a href='https://servidor-de-desafios-admin.vercel.app/' target='_blank'>material</a></span><br>
+                                Spreadsheet Automation in Excel<span class='lecture-discipline-material'><a href='https://drive.google.com/drive/folders/1oCj0HpHKN0uUREf-JMe2nutpiVlv0yDb?usp=sharing' target='_blank'>material</a></span>
+                            </td></tr>
+                            <tr><td>2020.1</td><td>
+                                Spreadsheet Automation in Excel<span class='lecture-discipline-material'><a href='https://drive.google.com/drive/folders/1uQu_UovSDZw3YGQD-CBiJyZkk4FHLSDU?usp=sharing' target='_blank'>material</a></span>
+                            </td></tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td align='center' style='font-size: small;'>
+                        jan.2020<br>
+                        &#8593;<br>
+                        aug.2018
+                    </td>
+                    <td>
+                        Assistant Professor
+                        <table>
+                            <tr><td>2019.2</td><td style='width: 100%;'>
+                                Design of Software
+                            </td></tr>
+                            <tr><td>2019.1</td><td>
+                                Design of Software
+                            </td></tr>
+                            <tr><td>2018.2</td><td>
+                                Foundations for Physical Communication
+                            </td></tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- <tr>
+                    <td align='center' style='font-size: small;'>
+                        now<br>
+                        &#8593;<br>
+                        feb.2024
+                    </td>
+                    <td>
+                        Member of the ethics committee
+                    </td>
+                </tr>             -->
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td align='center'>
+            now<br>
+            &#8593;<br>
+            jun.2014
+        </td>
+        <td style='width: 100%;'>
+            <a href='https://www.espm.br' target='_blank'>ESPM</a><br>
+            <small>Sao Paulo, Brazil</small><br>
+            Associate Professor
+        </td>
+    </tr>
+    <tr>
+        <td align='center'>
+            apr.2015<br>
+            &#8593;<br>
+            mar.2015
+        </td>
+        <td style='width: 100%;'>
+            <a href='http://www.toledoprudente.edu.br/' target='_blank'>Toledo Prudente Centro Universitário</a><br>
+            <small>Sao Paulo, Brazil</small><br>
+            Visiting Professor
+        </td>
+    </tr>
+    <tr>
+        <td align='center'>
+            dec.2015<br>
+            &#8593;<br>
+            mar.2012
+        </td>
+        <td style='width: 100%;'>
+            <a href='https://www.fiap.com.br' target='_blank'>FIAP</a><br>
+            <small>Sao Paulo, Brazil</small><br>
+            Associate Professor
+        </td>
+    </tr>
+    <tr>
+        <td align='center'>
+            jul.2013<br>
+            &#8593;<br>
+            mar.2012
+        </td>
+        <td style='width: 100%;'>
+            <a href='https://www.cruzeirodosul.edu.br/' target='_blank'>Universidade Cruzeiro do Sul</a><br>
+            <small>Sao Paulo, Brazil</small><br>
+            Associate Professor
+        </td>
+    </tr>
+    <tr>
+        <td align='center'>
+            jul.2011<br>
+            &#8593;<br>
+            mar.2011
+        </td>
+        <td style='width: 100%;'>
+            <a href='https://www.uninove.br/' target='_blank'>Universidade Nove de Julho</a><br>
+            <small>Sao Paulo, Brazil</small><br>
+            Temporary Professor
+        </td>
+    </tr>
+</table>
+
+
+## Experiences
+
+<table>
+    <tr>
+        <td align='center'>
+            jun.2019<br>
+            &#8593;<br>
+            may.2018
+        </td>
+        <td style='width: 100%;'>
+            <a href='https://www.heraeus-electro-nite.com/' target='_blank'>RockSpoon</a><br>
+            <small>Sao Paulo Area, Brazil - Palo Alto, United States</small><br>
+            Senior Software Architect and Machine Learning Engineer
+        </td>
+    </tr>
+    <tr>
+        <td align='center'>
+            jul.2016<br>
+            &#8593;<br>
+            oct.2015
+        </td>
+        <td style='width: 100%;'>
+            <a href='https://www.bv.com.br/' target='_blank'>Banco Votorantim</a><br>
+            <small>Sao Paulo Area, Brazil</small><br>
+            Contractor: Senior Consultant for Computational Optimization
+        </td>
+    </tr>
+    <tr>
+        <td align='center'>
+            jun.2007<br>
+            &#8593;<br>
+            feb.2006<br>
+        </td>
+        <td style='width: 100%;'>
+            <a href='https://www.abnamro.com/' target='_blank'>ABN Amro Bank</a><br>
+            <small>Sao Paulo, Brazil</small><br>
+            Contractor: Senior Software Engineer/Architect
+        </td>
+    </tr>
+    <tr>
+        <td align='center'>
+            jan.2006<br>
+            &#8593;<br>
+            aug.2005
+        </td>
+        <td style='width: 100%;'>
+            <a href='https://en.wikipedia.org/wiki/Politec' target='_blank'>Politec</a><br>
+            <small>Sao Paulo, Brazil</small><br>
+            Senior System Analyst
+        </td>
+    </tr>
+    <tr>
+        <td align='center'>
+            jul.2005<br>
+            &#8593;<br>
+            jul.2004
+        </td>
+        <td style='width: 100%;'>
+            <a href='https://www.linkedin.com/company/eversystems/' target='_blank'>EverSystems</a><br>
+            <small>Sao Paulo, Brazil</small><br>
+            Senior Software Engineer/Architect
+        </td>
+    </tr>
+    <tr>
+        <td align='center'>
+            mar.2003<br>
+            &#8593;<br>
+            sep.2002
+        </td>
+        <td style='width: 100%;'>
+            Central Online<br>
+            <small>Sao Paulo, Brazil</small><br>
+            Senior System Analyst
+        </td>
+    </tr>
+    <tr>
+        <td align='center'>
+            sep.2002<br>
+            &#8593;<br>
+            oct.1999
+        </td>
+        <td style='width: 100%;'>
+            <a href='http://www.datamace.com.br/' target='_blank'>Datamace</a><br>
+            <small>Sao Paulo Area, Brazil</small><br>
+            Senior System Analyst
+        </td>
+    </tr>
+    <tr>
+        <td align='center'>
+            oct.1999<br>
+            &#8593;<br>
+            mar.1998
+        </td>
+        <td style='width: 100%;'>
+            <a href='https://www.heraeus-electro-nite.com/' target='_blank'>Heraeus Electro-Nite</a><br>
+            <small>Sao Paulo Area, Brazil</small><br>
+            Computer Programmer
+        </td>
+    </tr>
+</table>
+
+
 <!--
-## Projects
-
-
 ## Experiences
 
 <table>

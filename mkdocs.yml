@@ -20,10 +20,12 @@ theme:
         icon: material/toggle-switch
         name: Switch to light mode    
   features:
+    # - announce.dismiss
     - content.code.copy
     - content.code.select
     - content.code.annotate
     - content.tooltips
+    - header.autohide
     - navigation.instant
     - navigation.instant.progress
     - navigation.top

@@ -39,7 +39,7 @@ Synchronization of coupled oscillators
             <a href='./assets/doc/usp-doutorado-grade.pdf' target='_blank'>&#8593;</a><br>
             mar.2007
         </td>
-        <td style='width: 100%;'>
+        <td>
             <span class='details'>D.Sc.</span><a href='http://ppgee.poli.usp.br/' target='_blank'>Polytechnic School of the University of Sao Paulo</a><br>
             <span class='details'>thesis</span><a href='https://doi.org/10.11606/T.3.2012.tde-05092012-165022' target='_blank'>Spike patterns and computation in dynamical neural networks</a><br>
             <hr style='margin: 2px 0px;'>
@@ -140,22 +140,41 @@ Synchronization of coupled oscillators
             &#8593;<br>
             jun.2018
         </td>
-        <td style='width: 100%;'>
+        <td>
             <a href='https://www.insper.edu.br' target='_blank'>Insper</a><br>
             <small>Sao Paulo, Brazil</small><br>
-            <table>
+            <table class='institution'>
                 <tr>
                     <td align='center' style='font-size: small;'>
                         now<br>
                         &#8593;<br>
                         feb.2020
                     </td>
-                    <td style='width: 100%;'>
+                    <td>
                         Associate Professor
-                        <table>
+                        <table class='institution'>
                             <tr><td>2025.1</td><td style='width: 100%;'>
-                                Platform, Microsservices and APIs<span class='lecture-discipline-material'><a href='https://insper.github.io/platform/' target='_blank'>material</a></span><br>
-                                Cloud Computing<span class='lecture-discipline-material'><a href='https://insper.github.io/computacao-nuvem/' target='_blank'>material</a></span><br>
+                                <table class='period'>
+                                    <tr>
+                                        <td>Platform, Microsservices and APIs</td>
+                                        <td><a href='https://insper.github.io/platform/' target='_blank'>material</a></td>
+                                        <td>Spring Cloud, inMemory Database, Redis, JWT, DevOps, Jenkins, Docker, K8s</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cloud Computing</td>
+                                        <td><a href='https://insper.github.io/computacao-nuvem/' target='_blank'>spring</a></td>
+                                        <td>MAAS, Juju, OpenStack, K8s</td>
+                                    </tr>
+                                </table>
+                            </td></tr>
+                            <tr><td>2025.s</td><td style='width: 100%;'>
+                                <table class='period'>
+                                    <tr>
+                                        <td>Design of Software</td>
+                                        <td><a href='https://insper.github.io/DesignDeSoftware/' target='_blank'>material</a></td>
+                                        <td>Python</td>
+                                    </tr>
+                                </table>
                             </td></tr>
                             <tr><td>2025.s</td><td>
                                 Design of Software<span class='lecture-discipline-material'><a href='https://insper.github.io/DesignDeSoftware/' target='_blank'>material</a></span><br>
@@ -201,7 +220,7 @@ Synchronization of coupled oscillators
                     </td>
                     <td>
                         Assistant Professor
-                        <table>
+                        <table class='institution'>
                             <tr><td>2019.2</td><td style='width: 100%;'>
                                 Design of Software
                             </td></tr>
@@ -227,28 +246,64 @@ Synchronization of coupled oscillators
             </table>
         </td>
     </tr>
+
+    <!-- ESPM -->
     <tr>
         <td align='center'>
             now<br>
             &#8593;<br>
             jun.2014
         </td>
-        <td style='width: 100%;'>
+        <td>
             <a href='https://www.espm.br' target='_blank'>ESPM</a><br>
             <small>Sao Paulo, Brazil</small><br>
             Associate Professor
+            <table class='institution'>
+                <tr><td>2025.1</td><td style='width: 100%;'>
+                    <table class='period'>
+                        <tr>
+                            <td>Applied Mathematics</td>
+                            <td><a href='https://colab.research.google.com/drive/1S1Ftle1GDEMaelb1jNRQpg-nZvRq24Z8?usp=sharing' target='_blank'>material</a></td>
+                            <td>Propositional Logic</td>
+                        </tr>
+                        <tr>
+                            <td>Oriented Object Programming</td>
+                            <td><a href='https://hsandmann.github.io/spring/' target='_blank'>spring</a></td>
+                            <td>OOP, Design Patterns, Docker, Spring Boot, Spring Cloud, Microservices</td>
+                        </tr>
+                    </table>
+                </td></tr>
+                <tr><td>2024.1</td><td>
+                    <table class='period'>
+                        <tr>
+                            <td>Applied Mathematics</td>
+                            <td><a href='https://colab.research.google.com/drive/1S1Ftle1GDEMaelb1jNRQpg-nZvRq24Z8?usp=sharing' target='_blank'>material</a></td>
+                            <td>Propositional Logic</td>
+                        </tr>
+                        <tr>
+                            <td>Oriented Object Programming</td>
+                            <td><a href='https://hsandmann.github.io/spring/' target='_blank'>spring</a></td>
+                            <td>OOP, Design Patterns, Docker, Spring Boot, Spring Cloud, Microservices</td>
+                        </tr>
+                    </table>
+                </td></tr>
+            </table>
         </td>
     </tr>
+
+    <!-- Toledo Prudente Centro Universitário -->
     <tr>
         <td align='center'>
             apr.2015<br>
             &#8593;<br>
             mar.2015
         </td>
-        <td style='width: 100%;'>
+        <td>
             <a href='http://www.toledoprudente.edu.br/' target='_blank'>Toledo Prudente Centro Universitário</a><br>
             <small>Sao Paulo, Brazil</small><br>
             Visiting Professor
+            <hr>
+            MBA: Big Data and Machine Learning.
         </td>
     </tr>
     <tr>
@@ -299,10 +354,13 @@ Synchronization of coupled oscillators
             &#8593;<br>
             may.2018
         </td>
-        <td style='width: 100%;'>
+        <td style='width: 60%;'>
             <a href='https://www.heraeus-electro-nite.com/' target='_blank'>RockSpoon</a><br>
             <small>Sao Paulo Area, Brazil - Palo Alto, United States</small><br>
             Senior Software Architect and Machine Learning Engineer
+        </td>
+        <td style='width: 40%; font-size: small;'>
+            POS, ERP, Payroll, JavaEE, Postgres, Software Architecture, OpenCV, Machine Learning, Computer Vision, GoLang, Android, Kotlin.
         </td>
     </tr>
     <tr>
@@ -311,10 +369,43 @@ Synchronization of coupled oscillators
             &#8593;<br>
             oct.2015
         </td>
-        <td style='width: 100%;'>
+        <td>
             <a href='https://www.bv.com.br/' target='_blank'>Banco Votorantim</a><br>
             <small>Sao Paulo Area, Brazil</small><br>
             Contractor: Senior Consultant for Computational Optimization
+        </td>
+        <td style='font-size: small;'>
+            ROE, Banking Business, High-Performance Computing, J2EE, Spring Boot, Automating Testing, Jenkins.
+        </td>
+    </tr>
+    <tr>
+        <td align='center'>
+            oct.2023<br>
+            &#8593;<br>
+            mar.2012
+        </td>
+        <td style='width: 60%;'>
+            SelsanTech<br>
+            <small>Sao Paulo Area, Brazil</small><br>
+            Co-Founder
+        </td>
+        <td style='width: 40%; font-size: small;'>
+            Machine Learning, Software Architecture.
+        </td>
+    </tr>
+    <tr>
+        <td align='center'>
+            nov.2011<br>
+            &#8593;<br>
+            aug.2011
+        </td>
+        <td>
+            <a href='https://www.tecban.com.br/' target='_blank'>TecBan</a><br>
+            <small>Sao Paulo Area, Brazil</small><br>
+            Contractor: Senior Consultant for Computational Optimization
+        </td>
+        <td style='font-size: small;'>
+            ATM, J2EE, InMemory Database, High-Performance Computing.
         </td>
     </tr>
     <tr>
@@ -323,10 +414,28 @@ Synchronization of coupled oscillators
             &#8593;<br>
             feb.2006<br>
         </td>
-        <td style='width: 100%;'>
+        <td>
             <a href='https://www.abnamro.com/' target='_blank'>ABN Amro Bank</a><br>
             <small>Sao Paulo, Brazil</small><br>
             Contractor: Senior Software Engineer/Architect
+        </td>
+        <td style='font-size: small;'>
+            Stock Market, Trading, Core Banking, Software Architecture, Cryptography, HSM, BouncyCastle, PKI, PCKS, Java, Servlet, Database.
+        </td>
+    </tr>
+    <tr>
+        <td align='center'>
+            now<br>
+            &#8593;<br>
+            feb.2006
+        </td>
+        <td style='width: 60%;'>
+            H-Sandmann<br>
+            <small>Sao Paulo Area, Brazil</small><br>
+            Founder
+        </td>
+        <td style='width: 40%; font-size: small;'>
+            Machine Learning, Software Architecture.
         </td>
     </tr>
     <tr>
@@ -335,10 +444,13 @@ Synchronization of coupled oscillators
             &#8593;<br>
             aug.2005
         </td>
-        <td style='width: 100%;'>
+        <td>
             <a href='https://en.wikipedia.org/wiki/Politec' target='_blank'>Politec</a><br>
             <small>Sao Paulo, Brazil</small><br>
             Senior System Analyst
+        </td>
+        <td style='font-size: small;'>
+            J2EE, Software Quality, Software Architecture, Banking Business.
         </td>
     </tr>
     <tr>
@@ -347,10 +459,13 @@ Synchronization of coupled oscillators
             &#8593;<br>
             jul.2004
         </td>
-        <td style='width: 100%;'>
+        <td>
             <a href='https://www.linkedin.com/company/eversystems/' target='_blank'>EverSystems</a><br>
             <small>Sao Paulo, Brazil</small><br>
-            Senior Software Engineer/Architect
+            Senior Software Engineer/Architect - BankBoston - CitiBank - Elly Lilly
+        </td>
+        <td style='font-size: small;'>
+            PKI, BouncyCastle, Cryptography, HSM, Core Banking, Stock Market, Java, Servlet, Database, Communication Protocol, Syncronization and Replication.
         </td>
     </tr>
     <tr>
@@ -359,10 +474,13 @@ Synchronization of coupled oscillators
             &#8593;<br>
             sep.2002
         </td>
-        <td style='width: 100%;'>
+        <td>
             Central Online<br>
             <small>Sao Paulo, Brazil</small><br>
             Senior System Analyst
+        </td>
+        <td style='font-size: small;'>
+            Object-Oriented Programming, <a href='https://en.wikipedia.org/wiki/Learning_management_system' target='_blank'>LMS</a>.
         </td>
     </tr>
     <tr>
@@ -371,10 +489,13 @@ Synchronization of coupled oscillators
             &#8593;<br>
             oct.1999
         </td>
-        <td style='width: 100%;'>
+        <td>
             <a href='http://www.datamace.com.br/' target='_blank'>Datamace</a><br>
             <small>Sao Paulo Area, Brazil</small><br>
             Senior System Analyst
+        </td>
+        <td style='font-size: small;'>
+            Payroll, ERP, Software Architecture.
         </td>
     </tr>
     <tr>
@@ -383,10 +504,13 @@ Synchronization of coupled oscillators
             &#8593;<br>
             mar.1998
         </td>
-        <td style='width: 100%;'>
+        <td>
             <a href='https://www.heraeus-electro-nite.com/' target='_blank'>Heraeus Electro-Nite</a><br>
             <small>Sao Paulo Area, Brazil</small><br>
             Computer Programmer
+        </td>
+        <td style='font-size: small;'>
+            Complaince, ERP, PCP.
         </td>
     </tr>
 </table>

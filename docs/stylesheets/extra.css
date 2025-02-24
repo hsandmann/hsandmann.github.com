@@ -51,3 +51,21 @@
 .lecture-discipline-material {
     float: right;
 }
+
+.lecture-discipline-content {
+    width: 80%;
+    float: right;
+}
+.period TR {
+    border-collapse: collapse !important;
+}
+
+.period TD {
+    min-width: 60px;
+    border: 0px !important;
+    padding: 2px !important;
+}
+
+.md-typeset__table table:not([class]) {
+    display: table
+}

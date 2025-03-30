@@ -95,6 +95,8 @@ plugins:
   - search
   - badges
   - markdown-exec
+  - minify:
+      minify_html: true
   - render_swagger:
       allow_arbitrary_locations : true
   - termynal:

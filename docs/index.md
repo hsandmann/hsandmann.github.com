@@ -425,7 +425,7 @@ Synchronization of coupled oscillators
     </tr>
     <tr>
         <td align='center'>
-            now<br>
+            mar.2025<br>
             &#8593;<br>
             feb.2006
         </td>

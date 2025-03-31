@@ -153,62 +153,34 @@ Synchronization of coupled oscillators
                     <td>
                         Associate Professor
                         <table class='institution'>
-                            <tr><td>2025.1</td><td style='width: 100%;'>
-                                <table class='period'>
-                                    <tr>
-                                        <td>Platform, Microsservices and APIs</td>
-                                        <td><a href='https://insper.github.io/platform/' target='_blank'>material</a></td>
-                                        <td>Spring Cloud, inMemory Database, Redis, JWT, DevOps, Jenkins, Docker, K8s</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Cloud Computing</td>
-                                        <td><a href='https://insper.github.io/computacao-nuvem/' target='_blank'>spring</a></td>
-                                        <td>MAAS, Juju, OpenStack, K8s</td>
-                                    </tr>
-                                </table>
-                            </td></tr>
-                            <tr><td>2025.s</td><td style='width: 100%;'>
-                                <table class='period'>
-                                    <tr>
-                                        <td>Design of Software</td>
-                                        <td><a href='https://insper.github.io/DesignDeSoftware/' target='_blank'>material</a></td>
-                                        <td>Python</td>
-                                    </tr>
-                                </table>
-                            </td></tr>
-                            <tr><td>2025.s</td><td>
-                                Design of Software<span class='lecture-discipline-material'><a href='https://insper.github.io/DesignDeSoftware/' target='_blank'>material</a></span><br>
-                            </td></tr>
-                            <tr><td>2024.2</td><td>
-                                Cloud Computing<span class='lecture-discipline-material'><a href='https://insper.github.io/computacao-nuvem/' target='_blank'>material</a></span><br>
-                            </td></tr>
-                            <tr><td>2024.1</td><td>
-                                Platform, Microsservices and APIs<span class='lecture-discipline-material'><a href='https://insper.github.io/platform/' target='_blank'>material</a></span><br>
-                                Design of Software<span class='lecture-discipline-material'><a href='https://servidor-de-desafios-admin.vercel.app/' target='_blank'>material</a></span><br>
-                            </td></tr>
-                            <tr><td>2023.2</td><td>
-                                Design of Software<span class='lecture-discipline-material'><a href='https://servidor-de-desafios-admin.vercel.app/' target='_blank'>material</a></span><br>
-                                Information System for Administration and Economy<br>
-                            </td></tr>
-                            <tr><td>2023.1</td><td>
-                                Information System for Administration and Economy<br>
-                            </td></tr>
-                            <tr><td>2022.2</td><td>
-                                Information System for Administration and Economy<br>
-                            </td></tr>
-                            <tr><td>2022.1</td><td>
-                                Design of Software<span class='lecture-discipline-material'><a href='https://servidor-de-desafios-admin.vercel.app/' target='_blank'>material</a></span><br>
-                            </td></tr>
-                            <tr><td>2021.2</td><td>
-                                Design of Software<span class='lecture-discipline-material'><a href='https://servidor-de-desafios-admin.vercel.app/' target='_blank'>material</a></span><br>
-                            </td></tr>
-                            <tr><td>2021.1</td><td>
-                                Design of Software<span class='lecture-discipline-material'><a href='https://servidor-de-desafios-admin.vercel.app/' target='_blank'>material</a></span><br>
-                                Spreadsheet Automation in Excel<span class='lecture-discipline-material'><a href='https://drive.google.com/drive/folders/1oCj0HpHKN0uUREf-JMe2nutpiVlv0yDb?usp=sharing' target='_blank'>material</a></span>
-                            </td></tr>
-                            <tr><td>2020.1</td><td>
-                                Spreadsheet Automation in Excel<span class='lecture-discipline-material'><a href='https://drive.google.com/drive/folders/1uQu_UovSDZw3YGQD-CBiJyZkk4FHLSDU?usp=sharing' target='_blank'>material</a></span>
-                            </td></tr>
+                            <tr>
+                                <td><a href='https://insper.github.io/platform/' target='_blank'>Platform, Microsservices and APIs</a></td>
+                                <td>Spring Cloud, inMemory Database, Redis, JWT, DevOps, Jenkins, Docker, K8s</td>
+                                <td>2025.1, 2024.1</td>
+                            </tr>
+                            <tr>
+                                <td><a href='https://insper.github.io/computacao-nuvem/' target='_blank'>Cloud Computing</a></td>
+                                <td>MAAS, Juju, OpenStack, K8s</td>
+                                <td>2025.1, 2024.2</td>
+                            </tr>
+                            <tr>
+                                <td><a href='https://insper.github.io/DesignDeSoftware/' target='_blank'>Design of Software</a></td>
+                                <td>Python</td>
+                                <td>2025.0, 2024.1, 2023.2, 2022.1, 2021.2, 2021.1</td>
+                            </tr>
+                            <tr>
+                                <td>Information System for Administration and Economy</td>
+                                <td>Excel, VBA, Python, NumPy, Pandas, Stochastic Processes, RoI</td>
+                                <td>2023.2, 2023.1, 2022.2</td>
+                            </tr>
+                            <tr>
+                                <td>Spreadsheet Automation in Excel</td>
+                                <td>Excel, VBA</td>
+                                <td>
+                                    <a href='https://drive.google.com/drive/folders/1oCj0HpHKN0uUREf-JMe2nutpiVlv0yDb?usp=sharing' target='_blank'>2021.1</a>,
+                                    <a href='https://drive.google.com/drive/folders/1uQu_UovSDZw3YGQD-CBiJyZkk4FHLSDU?usp=sharing' target='_blank'>2020.1</a>
+                                </td>
+                            </tr>
                         </table>
                     </td>
                 </tr>
@@ -221,15 +193,18 @@ Synchronization of coupled oscillators
                     <td>
                         Assistant Professor
                         <table class='institution'>
-                            <tr><td>2019.2</td><td style='width: 100%;'>
-                                Design of Software
-                            </td></tr>
-                            <tr><td>2019.1</td><td>
-                                Design of Software
-                            </td></tr>
-                            <tr><td>2018.2</td><td>
-                                Foundations for Physical Communication
-                            </td></tr>
+                            <tr>
+                                <td>Design of Software</td>
+                                <td>Python</td>
+                                <td></td>
+                                <td>2019.2, 2019.1</td>
+                            </tr>
+                            <tr>
+                                <td>Foundations for Physical Communication</td>
+                                <td>Python, Fourier Transform, Wavelet Transform, Signal Processing</td>
+                                <td></td>
+                                <td>2018.2</td>
+                            </tr>
                         </table>
                     </td>
                 </tr>
@@ -375,7 +350,7 @@ Synchronization of coupled oscillators
             Contractor: Senior Consultant for Computational Optimization
         </td>
         <td style='font-size: small;'>
-            ROE, Banking Business, High-Performance Computing, J2EE, Spring Boot, Automating Testing, Jenkins.
+            RoE, Banking Business, High-Performance Computing, J2EE, Spring Boot, Automating Testing, Jenkins.
         </td>
     </tr>
     <tr>

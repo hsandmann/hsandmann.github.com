@@ -477,7 +477,7 @@ Synchronization of coupled oscillators
                     <td>Experimental Pattern Recognition, Modeling and Neurocomputing</td>
                     <td>
                         Logic Gates, Linear Regression, Pattern Classification, <a href='https://archive.ics.uci.edu/' target='_blank'>UC Irvine Machine Learning Repository</a>, <a href='https://www.nist.gov/srd' target='_blank'>NIST Data Gateway</a>, Multilayer Perceptron, EEG Signals, PCA
-                    <td><a href='http://sandmann.sdf.org/psi2672/2011/' target='_blank'>2011.1</a></td>
+                    <td><a href='http://sandmann.sdf.org/psi2672/2011/' target='_blank'>2011.1*</a></td>
                 </tr>
                 <tr>
                     <td>Modeling for Signal Processing: Neural Networks and Learning</td>
@@ -485,8 +485,8 @@ Synchronization of coupled oscillators
                         Artificial Neural Networks, Multilayer Perceptron, Backpropagation, Forecasting, Time Series, Classification
                     </td>
                     <td>
-                        <a href='http://sandmann.sdf.org/psi2533/2009/' target='_blank'>2009.1</a>
-                        <a href='http://sandmann.sdf.org/psi2533/2008/' target='_blank'>2008.1</a>
+                        <a href='http://sandmann.sdf.org/psi2533/2009/' target='_blank'>2009.1</a>,
+                        <a href='http://sandmann.sdf.org/psi2533/2008/' target='_blank'>2008.1*</a>
                     </td>
                 </tr>
                 <tr>
@@ -495,10 +495,12 @@ Synchronization of coupled oscillators
                         Computer Architecture,  Assembly Language, Memory Management, Process Management, Register, Stack, Turing Machine, Finite State Machines, Von Neumann Architecture, Java, Orientated Object Programming
                     </td>
                     <td>
-                        <a href='http://sandmann.sdf.org/pcs2302/2008/' target='_blank'>2008.1</a>
+                        <a href='http://sandmann.sdf.org/pcs2302/2008/' target='_blank'>2008.1†</a>
                     </td>
                 </tr>
             </table>
+            <small>* grants from CAPES (PAE)</small><br>
+            <small>† grants from FAPESP</small>
         </td>
     </tr>
 </table>

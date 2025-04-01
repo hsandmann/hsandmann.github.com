@@ -155,12 +155,12 @@ Synchronization of coupled oscillators
                         <table class='institution'>
                             <tr>
                                 <td><a href='https://insper.github.io/platform/' target='_blank'>Platform, Microsservices and APIs</a></td>
-                                <td>Spring Cloud, inMemory Database, Redis, JWT, DevOps, Jenkins, Docker, K8s</td>
+                                <td><a href='https://spring.io/projects/spring-cloud' target='_blank'>Spring Cloud</a>, <a href='https://spring.io/projects/spring-boot' target='_blank'>Spring Boot</a>, <a href='https://www.postgresql.org/' target='_blank'>PostgreSQL</a>, <a href='https://redis.io/' target='_blank'>Redis</a>, <a href='https://www.rabbitmq.com/' target='_blank'>RabbitMQ</a>, <a href='https://kafka.apache.org/' target='_blank'>Kafka</a>, <a href='https://www.docker.com/' target='_blank'>Docker</a>, <a href='https://kubernetes.io/' target='_blank'>K8s</a></td>
                                 <td>2025.1, 2024.1</td>
                             </tr>
                             <tr>
                                 <td><a href='https://insper.github.io/computacao-nuvem/' target='_blank'>Cloud Computing</a></td>
-                                <td>MAAS, Juju, OpenStack, K8s</td>
+                                <td><a href='https://maas.io/' target='_blank'>MAAS</a>, <a href='https://juju.is/' target='_blank'>Juju</a>, <a href='https://www.openstack.org/' target='_blank'>OpenStack</a>, <a href='https://kubernetes.io/' target='_blank'>K8s</a>, <a href='https://en.wikipedia.org/wiki/Infrastructure_as_a_service' target='_blank'>IaaS</a>, <a href='https://en.wikipedia.org/wiki/Platform_as_a_service' target='_blank'>PaaS</a>, Computer Networks</td>
                                 <td>2025.1, 2024.2</td>
                             </tr>
                             <tr>
@@ -221,7 +221,6 @@ Synchronization of coupled oscillators
             </table>
         </td>
     </tr>
-
     <!-- ESPM -->
     <tr>
         <td align='center'>
@@ -234,38 +233,79 @@ Synchronization of coupled oscillators
             <small>Sao Paulo, Brazil</small><br>
             Associate Professor
             <table class='institution'>
-                <tr><td>2025.1</td><td style='width: 100%;'>
-                    <table class='period'>
-                        <tr>
-                            <td>Applied Mathematics</td>
-                            <td><a href='https://colab.research.google.com/drive/1S1Ftle1GDEMaelb1jNRQpg-nZvRq24Z8?usp=sharing' target='_blank'>material</a></td>
-                            <td>Propositional Logic</td>
-                        </tr>
-                        <tr>
-                            <td>Oriented Object Programming</td>
-                            <td><a href='https://hsandmann.github.io/spring/' target='_blank'>spring</a></td>
-                            <td>OOP, Design Patterns, Docker, Spring Boot, Spring Cloud, Microservices</td>
-                        </tr>
-                    </table>
-                </td></tr>
-                <tr><td>2024.1</td><td>
-                    <table class='period'>
-                        <tr>
-                            <td>Applied Mathematics</td>
-                            <td><a href='https://colab.research.google.com/drive/1S1Ftle1GDEMaelb1jNRQpg-nZvRq24Z8?usp=sharing' target='_blank'>material</a></td>
-                            <td>Propositional Logic</td>
-                        </tr>
-                        <tr>
-                            <td>Oriented Object Programming</td>
-                            <td><a href='https://hsandmann.github.io/spring/' target='_blank'>spring</a></td>
-                            <td>OOP, Design Patterns, Docker, Spring Boot, Spring Cloud, Microservices</td>
-                        </tr>
-                    </table>
-                </td></tr>
+                <tr>
+                    <td><a href='https://colab.research.google.com/drive/1S1Ftle1GDEMaelb1jNRQpg-nZvRq24Z8' target='_blank'>Applied Mathematics</a></td>
+                    <td>Propositional Logic, Boolean Algebra, Set Theory, Polynomials, Functions, Sequences, Series, Logarithm, Combinatorial Analysis, Limits, Derivatives, Linear Algebra, Matrix Algebra, Graph Theory</td>
+                    <td>
+                        <a href='https://drive.google.com/drive/folders/1l4CZEEeFUttkbf_RBmv5IttPiEueF4xM?usp=sharing' target='_blank'>2025.1</a>,
+                        <a href='https://drive.google.com/drive/folders/1YQ0c4YgOQSZSC0DJ6zeYageZ9Wn2JrxC?usp=sharing' target='_blank'>2024.1</a>,
+                        <a href='https://drive.google.com/drive/folders/1ilAXZBLJJm2KfBFRU0nt9MVXUbN9cfd1?usp=sharing' target='_blank'>2023.2</a>,
+                        <a href='https://drive.google.com/drive/folders/14eO_WaojYJWFbq4jUFw-ePlXMqMzxawZ?usp=sharing' target='_blank'>2023.1</a>,
+                        <a href='https://drive.google.com/drive/folders/19sGzUxFYWg7QuK8_pxGpMdYV3IxN7uWN?usp=sharing' target='_blank'>2022.2</a>,
+                        <a href='https://drive.google.com/drive/folders/1Wyi3CLZcowy8U_pXw7NFmUNxxHGmW9Ml?usp=sharing' target='_blank'>2022.1</a>,
+                        <a href='https://drive.google.com/drive/folders/14ct68tOu7dY4DI8qiHTWWuxV3dPWlJV7?usp=sharing' target='_blank'>2021.2</a>,
+                        <a href='https://drive.google.com/drive/folders/1SzY4e6nk8mVklMwwE_Fb_gsWGN7kA_V3?usp=sharing' target='_blank'>2021.1</a>,
+                        2020.2, 2020.1
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href='https://hsandmann.github.io/spring/' target='_blank'>Oriented Object Programming</td>
+                    <td>Java, Design Patterns, Docker, Spring Cloud, Microservices</td>
+                    <td>
+                        2025.1, 2024.1, 2023.1, 2022.1, 2021.1
+                    </td>
+                </tr>
+                <tr>
+                    <td>Statistics</td>
+                    <td>Statistics, Probability, Random Variables, Distributions, Sampling, Estimation, Hypothesis Testing, Regression Analysis</td>
+                    <td>
+                        <a href='https://drive.google.com/drive/folders/10G44nzudUoXUx2x4ExF-bGI20l1XkIbp?usp=sharing' target='_blank'>2023.2</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Software Quality</td>
+                    <td>Software Quality, Software Testing, Software Architecture, Software Engineering, Software Development Life Cycle, Agile Methodologies, Test-Driven Development, Behavior-Driven Development, Test Automation, Continuous Integration, Continuous Delivery</td>
+                    <td>
+                        2024.2,
+                        <a href='https://drive.google.com/drive/folders/1iQd9qV_KWQxEb8q698q0-Y_JccwZBP0P?usp=sharing' target='_blank'>2022.2</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Architecture and Operating Systems</td>
+                    <td>Computer Architecture, Operating Systems, Binary and Hexadecimal Number Systems, Number Representation, Data Representation, Assembly Language, Memory Management, Process Management, File Systems</td>
+                    <td>
+                        <a href='https://hsandmann.github.io/espm.16bits/' target='_blank'>ESPM 16-bits</a><br>
+                        2021.1, 2020.2, 2020.1, 2019.2, 2019.1, 2018.2, 2018.1, 2017.1, 2016.2, 2016.1, 2015.2, 2015.1, 2014.2
+                    </td>
+                </tr>
+                <tr>
+                    <td>Artificial Intelligence and Society</td>
+                    <td>Artificial Intelligence, Machine Learning, Deep Learning, Neural Networks, Computer Vision, Natural Language Processing, PCA, KNN, K-Means, GANs, Transformers, LSTMs, BERT, Ethics, Bias</td>
+                    <td>
+                        2022.1 (IR),
+                        <a href='https://hsandmann.github.io/espm.ai.society.2021.1/' target='_blank'>2021.1</a>,
+                        <a href='https://hsandmann.github.io/espm.ai.society.2020.2/' target='_blank'>2020.2</a>,
+                        <a href='https://hsandmann.github.io/espm.ai.society.2020.1/' target='_blank'>2020.1</a>,
+                        <a href='https://hsandmann.github.io/espm.ai.society.2019.2/' target='_blank'>2019.2</a>
+                    </td>
+                <tr>
+                    <td><a href='https://drive.google.com/drive/folders/1ZC_IRWeC-pwYftwxWj-BRBpWgCNhBVVd?usp=sharing' target='_blank'>Introduction for Artificial Intelligence</td>
+                    <td>Machine Learning, Deep Learning, Neural Networks, Computer Vision, Natural Language Processing, PCA, KNN, K-Means, GANs</td>
+                    <td>
+                        <a href='https://hsandmann.github.io/espm.ml.2020.2/' target='_blank'>2020.2</a>,
+                        <a href='https://hsandmann.github.io/espm.ml.2020.1/' target='_blank'>2020.1</a>,
+                        <a href='https://hsandmann.github.io/espm.ml.2019.2/' target='_blank'>2019.2</a>,
+                        <a href='https://hsandmann.github.io/espm.ml.2019.1/' target='_blank'>2019.1</a>
+                    </td>
+                </tr>
+                <!-- <tr>
+                    <td>Mobile Programming</td>
+                    <td>Android</td>
+                    <td>2017.2</td>
+                </tr> -->
             </table>
         </td>
     </tr>
-
     <!-- Toledo Prudente Centro Universitário -->
     <tr>
         <td align='center'>
@@ -275,10 +315,17 @@ Synchronization of coupled oscillators
         </td>
         <td>
             <a href='http://www.toledoprudente.edu.br/' target='_blank'>Toledo Prudente Centro Universitário</a><br>
-            <small>Sao Paulo, Brazil</small><br>
+            <small>Presidente Prudente, Brazil</small><br>
             Visiting Professor
-            <hr>
-            MBA: Big Data and Machine Learning.
+            <table class='institution'>
+                <tr>
+                    <td><a href='http://sandmann.sdf.org/toledo/bigdata/2015/' target='_blank'>MBA: Big Data and Machine Learning</a></td>
+                    <td>
+                        Big Data, Hadoop, Hive, HBase, MongoDB, Neo4j, Solr, R, Octave, Self-Organizing Maps, Bayesian Decision Trees, Multilayer Perceptron
+                    </td>
+                    <td>2015.1</td>
+                </tr>
+            </table>
         </td>
     </tr>
     <tr>
@@ -291,6 +338,50 @@ Synchronization of coupled oscillators
             <a href='https://www.fiap.com.br' target='_blank'>FIAP</a><br>
             <small>Sao Paulo, Brazil</small><br>
             Associate Professor
+            <table class='institution'>
+                <tr>
+                    <td>Distributed systems</td>
+                    <td>
+                        Sockets, RMI, SOAP, Microservices, J2EE, Design Patterns
+                    </td>
+                    <td>2015</td>
+                </tr>
+                <tr>
+                    <td>MBA: Big Data and No-SQL Modelling</td>
+                    <td>
+                        Big Data, Hadoop, Hive, HBase, MongoDB, Neo4j, Solr
+                    </td>
+                    <td>2014.2</td>
+                </tr>
+                <tr>
+                    <td>Data Structure and Algorithm II</td>
+                    <td>
+                        C, Data Structure, Algorithm, Complexity, Linked List, Stack, Queue, Tree, Red-Black Tree, AVL Tree, B-Tree, Hash Table, Graph, Dijkstra Algorithm, Prim Algorithm
+                    </td>
+                    <td>2013</td>
+                </tr>
+                <tr>
+                    <td>Algorithms</td>
+                    <td>
+                        C, Programming, Algorithm, Complexity
+                    </td>
+                    <td>2013, 2012.2</td>
+                </tr>
+                <tr>
+                    <td>Database I and II</td>
+                    <td>
+                        SQL, PL/SQL, Oracle, Transaction, Concurrency Control, Locking, Deadlock, Recovery, Normalization, ER Model, Relational Model, Object-Relational Model, Trigger, View, Index, Stored Procedure, Function, Package, Cursor, Sequence, Synonym
+                    </td>
+                    <td>2013, 2012</td>
+                </tr>
+                <tr>
+                    <td>Programming III</td>
+                    <td>
+                        Pointers, C, C++, Object-Oriented Programming, Inheritance, Polymorphism, Encapsulation, Abstract Class, Interface, Exception Handling
+                    </td>
+                    <td>2012</td>
+                </tr>
+            </table>
         </td>
     </tr>
     <tr>
@@ -303,6 +394,39 @@ Synchronization of coupled oscillators
             <a href='https://www.cruzeirodosul.edu.br/' target='_blank'>Universidade Cruzeiro do Sul</a><br>
             <small>Sao Paulo, Brazil</small><br>
             Associate Professor
+            <table class='institution'>
+                <tr>
+                    <td>Mobile Programming</td>
+                    <td>Android</td>
+                    <td>2012.2</td>
+                </tr>
+                <tr>
+                    <td>Computer Architecture</td>
+                    <td>
+                        Computer Architecture, Operating Systems, Binary and Hexadecimal Number Systems, Number Representation, Data Representation, Assembly Language, Memory Management, Process Management, File Systems
+                    </td>
+                    <td>2012.1</td>
+                </tr>
+                <tr>
+                    <td>Software Engineering</td>
+                    <td>
+                        Software Engineering, Software Development Life Cycle, Agile Methodologies, Test-Driven Development, Behavior-Driven Development, Test Automation
+                    </td>
+                    <td>2012.1</td>
+                </tr>
+                <tr>
+                    <td>Introduction to Programming</td>
+                    <td>C, Programming, Algorithm</td>
+                    <td>2012.1</td>
+                </tr>
+                <tr>
+                    <td>Database II</td>
+                    <td>
+                        SQL, PL/SQL, Oracle, Transaction, Concurrency Control, Locking, Deadlock, Recovery, Normalization, ER Model, Relational Model, Trigger, View, Index, Stored Procedure, Function, Package, Cursor, Sequence
+                    </td>
+                    <td>2013.1, 2012.1</td>
+                </tr>
+            </table>
         </td>
     </tr>
     <tr>
@@ -315,6 +439,66 @@ Synchronization of coupled oscillators
             <a href='https://www.uninove.br/' target='_blank'>Universidade Nove de Julho</a><br>
             <small>Sao Paulo, Brazil</small><br>
             Temporary Professor
+            <table class='institution'>
+                <tr>
+                    <td>Computer Architecture</td>
+                    <td>
+                        Computer Architecture, Operating Systems, Binary and Hexadecimal Number Systems, Number Representation, Data Representation, Assembly Language, Memory Management, Process Management, File Systems
+                    </td>
+                    <td>2011.1</td>
+                </tr>
+                <tr>
+                    <td><a href='http://sandmann.sdf.org/uninove/alg1/2011/' target='_blank'>Introduction to Programming</a></td>
+                    <td>C, Programming, Algorithm</td>
+                    <td>2011.1</td>
+                </tr>
+                <tr>
+                    <td><a href='http://sandmann.sdf.org/uninove/web/2011/' target='_blank'>Web Programming</a></td>
+                    <td>
+                        HTML, CSS, JavaScript
+                    </td>
+                    <td>2011.1</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td align='center'>
+            jul.2011<br>
+            &#8593;<br>
+            mar.2008
+        </td>
+        <td style='width: 100%;'>
+            <a href='https://www.poli.usp.br/' target='_blank'>Polytechnic School of the University of Sao Paulo</a><br>
+            <small>Sao Paulo, Brazil</small><br>
+            Teaching Assistant
+            <table class='institution'>
+                <tr>
+                    <td>Experimental Pattern Recognition, Modeling and Neurocomputing</td>
+                    <td>
+                        Logic Gates, Linear Regression, Pattern Classification, <a href='https://archive.ics.uci.edu/' target='_blank'>UC Irvine Machine Learning Repository</a>, <a href='https://www.nist.gov/srd' target='_blank'>NIST Data Gateway</a>, Multilayer Perceptron, EEG Signals, PCA
+                    <td><a href='http://sandmann.sdf.org/psi2672/2011/' target='_blank'>2011.1</a></td>
+                </tr>
+                <tr>
+                    <td>Modeling for Signal Processing: Neural Networks and Learning</td>
+                    <td>
+                        Artificial Neural Networks, Multilayer Perceptron, Backpropagation, Forecasting, Time Series, Classification
+                    </td>
+                    <td>
+                        <a href='http://sandmann.sdf.org/psi2533/2009/' target='_blank'>2009.1</a>
+                        <a href='http://sandmann.sdf.org/psi2533/2008/' target='_blank'>2008.1</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Laboratory of the Foundations of Computing Engineering</td>
+                    <td>
+                        Computer Architecture,  Assembly Language, Memory Management, Process Management, Register, Stack, Turing Machine, Finite State Machines, Von Neumann Architecture, Java, Orientated Object Programming
+                    </td>
+                    <td>
+                        <a href='http://sandmann.sdf.org/pcs2302/2008/' target='_blank'>2008.1</a>
+                    </td>
+                </tr>
+            </table>
         </td>
     </tr>
 </table>

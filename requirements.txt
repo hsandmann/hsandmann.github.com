@@ -3,6 +3,7 @@ markdown-exec
 mkdocs-badges
 mkdocs-material
 mkdocs-material-extensions
+mkdocs-page-pdf
 mkdocs-minify-plugin
 mkdocs-glightbox
 mkdocs-git-authors-plugin

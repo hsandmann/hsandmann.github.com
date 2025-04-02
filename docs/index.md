@@ -39,10 +39,10 @@ Synchronization of coupled oscillators
             <a href='./assets/doc/usp-doutorado-grade.pdf' target='_blank'>&#8593;</a><br>
             mar.2007
         </td>
-        <td>
+        <td style='width: 100%;'>
             <span class='details'>D.Sc.</span><a href='http://ppgee.poli.usp.br/' target='_blank'>Polytechnic School of the University of Sao Paulo</a><br>
-            <span class='details'>thesis</span><a href='https://doi.org/10.11606/T.3.2012.tde-05092012-165022' target='_blank'>Spike patterns and computation in dynamical neural networks</a><br>
-            <hr style='margin: 2px 0px;'>
+            <span class='details'>thesis</span><a href='https://doi.org/10.11606/T.3.2012.tde-05092012-165022' target='_blank'>Spike patterns and computation in dynamical neural networks</a>
+            <hr>
             <span class='details'>doi</span><a href='https://doi.org/10.11606/T.3.2012.tde-05092012-165022' target='_blank'>10.11606/T.3.2012.tde-05092012-165022</a><br>
             <span class='details'>advisor</span><a href='https://www.lsi.usp.br/~emilio/index.htm' target='_blank'>Prof. Dr. Emilio Del Moral Hernandez</a><br>
             <span class='details'>presentation</span><a href='https://docs.google.com/presentation/d/e/2PACX-1vRz_rBkIJvEPpmL-LFe5bpTcQPEJ7uV1MKlU6L8_seherHmeSdKJ62v9IImdRrqPjX3El32ypNaFToz/pub?start=false&loop=false&delayms=3000' target='_blank'>slides</a><br>
@@ -95,8 +95,8 @@ Synchronization of coupled oscillators
         </td>
         <td>
             <span class='details'>M.Sc.</span><a href='http://ppgee.poli.usp.br/' target='_blank'>Polytechnic School of the University of Sao Paulo</a><br>
-            <span class='details'>dissertation</span><a href='https://doi.org/10.11606/D.3.2006.tde-01042009-095125' target='_blank'>Prediction of time series using architecture based on neuro-fuzzy systems</a><br>
-            <hr style='margin: 2px 0px;'>
+            <span class='details'>dissertation</span><a href='https://doi.org/10.11606/D.3.2006.tde-01042009-095125' target='_blank'>Prediction of time series using architecture based on neuro-fuzzy systems</a>
+            <hr>
             <span class='details'>doi</span><a href='https://doi.org/10.11606/D.3.2006.tde-01042009-095125' target='_blank'>10.11606/D.3.2006.tde-01042009-095125</a><br>
             <span class='details'>advisor</span><a href='https://www2.pcs.usp.br/~mtulio/' target='_blank'>Prof. Dr. Marco Túlio Carvalho de Andrade</a><br>
         </td>
@@ -505,6 +505,7 @@ Synchronization of coupled oscillators
     </tr>
 </table>
 
+<div style="page-break-after: always;"></div>
 
 ## Experiences
 
@@ -520,7 +521,7 @@ Synchronization of coupled oscillators
             <small>Sao Paulo Area, Brazil - Palo Alto, United States</small><br>
             Senior Software Architect and Machine Learning Engineer
         </td>
-        <td style='width: 40%; font-size: small;'>
+        <td style='width: 40%;'>
             POS, ERP, Payroll, JavaEE, Postgres, Software Architecture, OpenCV, Machine Learning, Computer Vision, GoLang, Android, Kotlin.
         </td>
     </tr>
@@ -535,7 +536,7 @@ Synchronization of coupled oscillators
             <small>Sao Paulo Area, Brazil</small><br>
             Contractor: Senior Consultant for Computational Optimization
         </td>
-        <td style='font-size: small;'>
+        <td>
             RoE, Banking Business, High-Performance Computing, J2EE, Spring Boot, Automating Testing, Jenkins.
         </td>
     </tr>
@@ -550,7 +551,7 @@ Synchronization of coupled oscillators
             <small>Sao Paulo Area, Brazil</small><br>
             Co-Founder
         </td>
-        <td style='width: 40%; font-size: small;'>
+        <td>
             Machine Learning, Software Architecture.
         </td>
     </tr>
@@ -565,7 +566,7 @@ Synchronization of coupled oscillators
             <small>Sao Paulo Area, Brazil</small><br>
             Contractor: Senior Consultant for Computational Optimization
         </td>
-        <td style='font-size: small;'>
+        <td>
             ATM, J2EE, InMemory Database, High-Performance Computing.
         </td>
     </tr>
@@ -580,7 +581,7 @@ Synchronization of coupled oscillators
             <small>Sao Paulo, Brazil</small><br>
             Contractor: Senior Software Engineer/Architect
         </td>
-        <td style='font-size: small;'>
+        <td>
             Stock Market, Trading, Core Banking, Software Architecture, Cryptography, HSM, BouncyCastle, PKI, PCKS, Java, Servlet, Database.
         </td>
     </tr>
@@ -595,7 +596,7 @@ Synchronization of coupled oscillators
             <small>Sao Paulo Area, Brazil</small><br>
             Founder
         </td>
-        <td style='width: 40%; font-size: small;'>
+        <td>
             Machine Learning, Software Architecture.
         </td>
     </tr>
@@ -610,7 +611,7 @@ Synchronization of coupled oscillators
             <small>Sao Paulo, Brazil</small><br>
             Senior System Analyst
         </td>
-        <td style='font-size: small;'>
+        <td>
             J2EE, Software Quality, Software Architecture, Banking Business.
         </td>
     </tr>
@@ -625,7 +626,7 @@ Synchronization of coupled oscillators
             <small>Sao Paulo, Brazil</small><br>
             Senior Software Engineer/Architect - BankBoston - CitiBank - Elly Lilly
         </td>
-        <td style='font-size: small;'>
+        <td>
             PKI, BouncyCastle, Cryptography, HSM, Core Banking, Stock Market, Java, Servlet, Database, Communication Protocol, Syncronization and Replication.
         </td>
     </tr>
@@ -640,7 +641,7 @@ Synchronization of coupled oscillators
             <small>Sao Paulo, Brazil</small><br>
             Senior System Analyst
         </td>
-        <td style='font-size: small;'>
+        <td>
             Object-Oriented Programming, <a href='https://en.wikipedia.org/wiki/Learning_management_system' target='_blank'>LMS</a>.
         </td>
     </tr>
@@ -655,7 +656,7 @@ Synchronization of coupled oscillators
             <small>Sao Paulo Area, Brazil</small><br>
             Senior System Analyst
         </td>
-        <td style='font-size: small;'>
+        <td>
             Payroll, ERP, Software Architecture.
         </td>
     </tr>
@@ -670,11 +671,13 @@ Synchronization of coupled oscillators
             <small>Sao Paulo Area, Brazil</small><br>
             Computer Programmer
         </td>
-        <td style='font-size: small;'>
+        <td>
             Complaince, ERP, PCP.
         </td>
     </tr>
 </table>
+
+<div style="page-break-after: always;"></div>
 
 
 <!--

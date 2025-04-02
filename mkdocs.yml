@@ -92,7 +92,7 @@ plugins:
   - git-committers:
       repository: hsandmann/hsandmann.github.com
       branch: main
-  - search
+  # - search
   - badges
   - markdown-exec
   - minify:

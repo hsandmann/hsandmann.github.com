@@ -1,7 +1,19 @@
-.md-typeset .admonition.custom,
-.md-typeset details.custom {
-    border-color: grey;
-    border-style: none;
+.md-typeset__table {
+    display: table;
+    min-width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 0px none transparent;
+    margin: 0;
+    padding: 0;
+}
+
+td, th, table {
+    border: none!important;
+}
+
+hr {
+    margin: 2px 0px!important;
 }
 
 .details {
@@ -16,21 +28,10 @@
     max-width: 100px;
 }
 
-.doi {
-    color: white;
-    font-size: small;
-    font-weight: bold;
-    font-family: sans-serif;
-}
-
-.doi > .title {
-    background-color: rgb(100, 100, 100);
-    padding: 8px 10px;
-}
-
-.doi > .value {
-    background-color: darkgrey;
-    padding: 8px 10px;
+.support-list {
+    list-style-type: none !important;
+    display: inline-block !important;
+    margin: 0px !important;
 }
 
 .support-item {
@@ -38,34 +39,8 @@
     padding-left: 0px !important;
 }
 
-.support-list {
-    list-style-type: none !important;
-    display: inline-block !important;
-    margin: 0px !important;
-}
-
-.md-typeset__table {
-    min-width: 100%;
-}
-
-.lecture-discipline-material {
-    float: right;
-}
-
-.lecture-discipline-content {
-    width: 80%;
-    float: right;
-}
-.period TR {
-    border-collapse: collapse !important;
-}
-
-.period TD {
-    min-width: 60px;
-    border: 0px !important;
-    padding: 2px !important;
-}
-
-.md-typeset__table table:not([class]) {
-    display: table
+@media print {
+    html {
+        font-size: 90%!important;
+    }
 }

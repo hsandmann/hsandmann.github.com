@@ -40,7 +40,24 @@ hr {
 }
 
 @media print {
+
     html {
         font-size: 90%!important;
     }
+
+    .details-img {
+        width: 75px;
+        min-width: 75px;
+        max-width: 75px;
+    }
+
+    .photo {
+        max-width: 120px!important;
+        height: auto!important;
+    }
+    
+    .details {
+        min-width: 100px;
+    }
+    
 }

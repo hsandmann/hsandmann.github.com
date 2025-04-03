@@ -5,7 +5,7 @@ hide:
 
 # **Humberto Sandmann**
 
-![](./assets/img/hsandmann.jpg){ style='border-radius: 10px;', align=left }
+![](./assets/img/hsandmann.jpg){ style='border-radius: 10px;', class='photo', align=left }
 
 !!! custom inline end ""
 
@@ -145,7 +145,7 @@ Synchronization of coupled oscillators
             <small>Sao Paulo, Brazil</small><br>
             <table class='institution'>
                 <tr>
-                    <td align='center' style='font-size: small;'>
+                    <td align='center'>
                         now<br>
                         &#8593;<br>
                         feb.2020
@@ -185,7 +185,7 @@ Synchronization of coupled oscillators
                     </td>
                 </tr>
                 <tr>
-                    <td align='center' style='font-size: small;'>
+                    <td align='center'>
                         jan.2020<br>
                         &#8593;<br>
                         aug.2018

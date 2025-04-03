@@ -32,6 +32,8 @@ theme:
     - navigation.path
     - navigation.tracking
   icon:
+    favicon: material/rocket
+    logo: material/infinity
     admonition:
       note: fontawesome/solid/note-sticky
       abstract: fontawesome/solid/book
@@ -103,7 +105,8 @@ plugins:
       prompt_literal_start:
         - "$"
         - ">"
-  - page-to-pdf
+  - page-to-pdf:
+      format: Letter
 
 extra_javascript:
   # - javascripts/extra.js

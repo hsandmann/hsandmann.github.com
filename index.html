@@ -1,0 +1,381 @@
+<!doctype html><html lang=en class=no-js> <head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><link rel=icon href=assets/images/favicon.png><meta name=generator content="mkdocs-1.6.1, mkdocs-material-9.6.11"><title>Humberto Sandmann</title><link rel=stylesheet href=assets/stylesheets/main.4af4bdda.min.css><link rel=stylesheet href=assets/stylesheets/palette.06af60db.min.css><style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%206.7.2%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202024%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M64%2032C28.7%2032%200%2060.7%200%2096v320c0%2035.3%2028.7%2064%2064%2064h224V368c0-26.5%2021.5-48%2048-48h112V96c0-35.3-28.7-64-64-64zm384%20320H336c-8.8%200-16%207.2-16%2016v112l32-32%2064-64z%22/%3E%3C/svg%3E');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%206.7.2%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202024%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M96%200C43%200%200%2043%200%2096v320c0%2053%2043%2096%2096%2096h320c17.7%200%2032-14.3%2032-32s-14.3-32-32-32v-64c17.7%200%2032-14.3%2032-32V32c0-17.7-14.3-32-32-32H96m0%20384h256v64H96c-17.7%200-32-14.3-32-32s14.3-32%2032-32m32-240c0-8.8%207.2-16%2016-16h192c8.8%200%2016%207.2%2016%2016s-7.2%2016-16%2016H144c-8.8%200-16-7.2-16-16m16%2048h192c8.8%200%2016%207.2%2016%2016s-7.2%2016-16%2016H144c-8.8%200-16-7.2-16-16s7.2-16%2016-16%22/%3E%3C/svg%3E');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%206.7.2%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202024%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%20512a256%20256%200%201%200%200-512%20256%20256%200%201%200%200%20512m-40-176h24v-64h-24c-13.3%200-24-10.7-24-24s10.7-24%2024-24h48c13.3%200%2024%2010.7%2024%2024v88h8c13.3%200%2024%2010.7%2024%2024s-10.7%2024-24%2024h-80c-13.3%200-24-10.7-24-24s10.7-24%2024-24m40-208a32%2032%200%201%201%200%2064%2032%2032%200%201%201%200-64%22/%3E%3C/svg%3E');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%206.7.2%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202024%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M480%2032c0-12.9-7.8-24.6-19.8-29.6S434.5.2%20425.3%209.3L381.7%2053c-48%2048-113.1%2075-181%2075H64c-35.3%200-64%2028.7-64%2064v96c0%2035.3%2028.7%2064%2064%2064v128c0%2017.7%2014.3%2032%2032%2032h64c17.7%200%2032-14.3%2032-32V352h8.7c67.9%200%20133%2027%20181%2075l43.6%2043.6c9.2%209.2%2022.9%2011.9%2034.9%206.9s19.8-16.6%2019.8-29.6V300.3c18.6-8.8%2032-32.5%2032-60.4s-13.4-51.6-32-60.4zm-64%2076.7v262.6C357.2%20317.8%20280.5%20288%20200.7%20288H192v-96h8.7c79.8%200%20156.5-29.8%20215.3-83.3%22/%3E%3C/svg%3E');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%206.7.2%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202024%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M438.6%20105.4c12.5%2012.5%2012.5%2032.8%200%2045.3l-256%20256c-12.5%2012.5-32.8%2012.5-45.3%200l-128-128c-12.5-12.5-12.5-32.8%200-45.3s32.8-12.5%2045.3%200L160%20338.7l233.4-233.3c12.5-12.5%2032.8-12.5%2045.3%200z%22/%3E%3C/svg%3E');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%206.7.2%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202024%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%20512a256%20256%200%201%200%200-512%20256%20256%200%201%200%200%20512m-86.2-346.7c7.9-22.3%2029.1-37.3%2052.8-37.3h58.3c34.9%200%2063.1%2028.3%2063.1%2063.1%200%2022.6-12.1%2043.5-31.7%2054.8L280%20264.4c-.2%2013-10.9%2023.6-24%2023.6-13.3%200-24-10.7-24-24v-13.5c0-8.6%204.6-16.5%2012.1-20.8l44.3-25.4c4.7-2.7%207.6-7.7%207.6-13.1%200-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4%200-6.4%202.1-7.5%205.3l-.4%201.2c-4.4%2012.5-18.2%2019-30.6%2014.6s-19-18.2-14.6-30.6l.4-1.2zM224%20352a32%2032%200%201%201%2064%200%2032%2032%200%201%201-64%200%22/%3E%3C/svg%3E');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%206.7.2%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202024%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%2032c14.2%200%2027.3%207.5%2034.5%2019.8l216%20368c7.3%2012.4%207.3%2027.7.2%2040.1S486.3%20480%20472%20480H40c-14.3%200-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7%2039.5%20241.8%2032%20256%2032m0%20128c-13.3%200-24%2010.7-24%2024v112c0%2013.3%2010.7%2024%2024%2024s24-10.7%2024-24V184c0-13.3-10.7-24-24-24m32%20224a32%2032%200%201%200-64%200%2032%2032%200%201%200%2064%200%22/%3E%3C/svg%3E');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%206.7.2%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202024%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M459.1%2052.4%20442.6%206.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5%202.6-10.4%206.5l-16.5%2045.9-46%2016.8c-4.3%201.6-7.3%205.9-7.2%2010.4%200%204.5%203%208.7%207.2%2010.2l45.7%2016.8%2016.8%2045.8c1.5%204.4%205.8%207.5%2010.4%207.5s8.9-3.1%2010.4-7.5l16.5-45.8%2045.7-16.8c4.2-1.5%207.2-5.7%207.2-10.2%200-4.6-3-8.9-7.2-10.4zm-132.4%2053c-12.5-12.5-32.8-12.5-45.3%200l-2.9%202.9c-22-8-45.8-12.3-70.5-12.3C93.1%2096%200%20189.1%200%20304s93.1%20208%20208%20208%20208-93.1%20208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5%2012.5-32.8%200-45.3l-80-80zM200%20192c-57.4%200-104%2046.6-104%20104v8c0%208.8-7.2%2016-16%2016s-16-7.2-16-16v-8c0-75.1%2060.9-136%20136-136h8c8.8%200%2016%207.2%2016%2016s-7.2%2016-16%2016z%22/%3E%3C/svg%3E');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%206.7.2%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202024%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M416%20398.9c58.5-41.1%2096-104.1%2096-174.9C512%20100.3%20397.4%200%20256%200S0%20100.3%200%20224c0%2070.7%2037.5%20133.8%2096%20174.9V464c0%2026.5%2021.5%2048%2048%2048h48v-48c0-8.8%207.2-16%2016-16s16%207.2%2016%2016v48h64v-48c0-8.8%207.2-16%2016-16s16%207.2%2016%2016v48h48c26.5%200%2048-21.5%2048-48v-65.1M96%20256a64%2064%200%201%201%20128%200%2064%2064%200%201%201-128%200m256-64a64%2064%200%201%201%200%20128%2064%2064%200%201%201%200-128%22/%3E%3C/svg%3E');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20640%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%206.7.2%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202024%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M320%200c17.7%200%2032%2014.3%2032%2032v64h120c39.8%200%2072%2032.2%2072%2072v272c0%2039.8-32.2%2072-72%2072H168c-39.8%200-72-32.2-72-72V168c0-39.8%2032.2-72%2072-72h120V32c0-17.7%2014.3-32%2032-32M208%20384c-8.8%200-16%207.2-16%2016s7.2%2016%2016%2016h32c8.8%200%2016-7.2%2016-16s-7.2-16-16-16zm96%200c-8.8%200-16%207.2-16%2016s7.2%2016%2016%2016h32c8.8%200%2016-7.2%2016-16s-7.2-16-16-16zm96%200c-8.8%200-16%207.2-16%2016s7.2%2016%2016%2016h32c8.8%200%2016-7.2%2016-16s-7.2-16-16-16zM264%20256a40%2040%200%201%200-80%200%2040%2040%200%201%200%2080%200m152%2040a40%2040%200%201%200%200-80%2040%2040%200%201%200%200%2080M48%20224h16v192H48c-26.5%200-48-21.5-48-48v-96c0-26.5%2021.5-48%2048-48m544%200c26.5%200%2048%2021.5%2048%2048v96c0%2026.5-21.5%2048-48%2048h-16V224z%22/%3E%3C/svg%3E');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%206.7.2%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202024%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M288%200H128c-17.7%200-32%2014.3-32%2032s14.3%2032%2032%2032v132.8c0%2011.8-3.3%2023.5-9.5%2033.5L10.3%20406.2C3.6%20417.2%200%20429.7%200%20442.6%200%20480.9%2031.1%20512%2069.4%20512h309.2c38.3%200%2069.4-31.1%2069.4-69.4%200-12.8-3.6-25.4-10.3-36.4L329.5%20230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7%200%2032-14.3%2032-32S337.7%200%20320%200zm-96%20196.8V64h64v132.8c0%2023.7%206.6%2046.9%2019%2067.1l34.5%2056.1h-171l34.5-56.1c12.4-20.2%2019-43.4%2019-67.1%22/%3E%3C/svg%3E');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%206.7.2%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202024%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M96%200C43%200%200%2043%200%2096v320c0%2053%2043%2096%2096%2096h320c17.7%200%2032-14.3%2032-32s-14.3-32-32-32v-64c17.7%200%2032-14.3%2032-32V32c0-17.7-14.3-32-32-32H96m0%20384h256v64H96c-17.7%200-32-14.3-32-32s14.3-32%2032-32m32-240c0-8.8%207.2-16%2016-16h192c8.8%200%2016%207.2%2016%2016s-7.2%2016-16%2016H144c-8.8%200-16-7.2-16-16m16%2048h192c8.8%200%2016%207.2%2016%2016s-7.2%2016-16%2016H144c-8.8%200-16-7.2-16-16s7.2-16%2016-16%22/%3E%3C/svg%3E');}</style><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback"><style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style><link rel=stylesheet href=assets/_markdown_exec_pyodide.css><link rel=stylesheet href=stylesheets/extra.css><link rel=stylesheet href=assets/stylesheets/badge.css><link rel=stylesheet href=termynal.css><script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script><link href=assets/stylesheets/glightbox.min.css rel=stylesheet><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style><script src=assets/javascripts/glightbox.min.js></script></head> <body dir=ltr data-md-color-scheme=default data-md-color-primary=grey data-md-color-accent=indigo> <input class=md-toggle data-md-toggle=drawer type=checkbox id=__drawer autocomplete=off> <input class=md-toggle data-md-toggle=search type=checkbox id=__search autocomplete=off> <label class=md-overlay for=__drawer></label> <div data-md-component=skip> <a href=#humberto-sandmann class=md-skip> Skip to content </a> </div> <div data-md-component=announce> </div> <header class="md-header md-header--shadow" data-md-component=header> <nav class="md-header__inner md-grid" aria-label=Header> <a href=. title="Humberto Sandmann" class="md-header__button md-logo" aria-label="Humberto Sandmann" data-md-component=logo> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M18.6 6.62C21.58 6.62 24 9 24 12c0 2.96-2.42 5.37-5.4 5.37-1.45 0-2.8-.56-3.82-1.57L12 13.34l-2.83 2.51c-.97.97-2.33 1.53-3.77 1.53C2.42 17.38 0 14.96 0 12s2.42-5.38 5.4-5.38c1.44 0 2.8.56 3.82 1.58L12 10.66l2.83-2.51c.97-.97 2.33-1.53 3.77-1.53M7.8 14.39 10.5 12 7.84 9.65c-.68-.68-1.53-1.03-2.44-1.03C3.53 8.62 2 10.13 2 12s1.53 3.38 3.4 3.38c.91 0 1.76-.35 2.4-.99m8.4-4.78L13.5 12l2.66 2.35c.68.68 1.54 1.03 2.44 1.03 1.87 0 3.4-1.51 3.4-3.38s-1.53-3.38-3.4-3.38c-.91 0-1.76.35-2.4.99"/></svg> </a> <label class="md-header__button md-icon" for=__drawer> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg> </label> <div class=md-header__title data-md-component=header-title> <div class=md-header__ellipsis> <div class=md-header__topic> <span class=md-ellipsis> Humberto Sandmann </span> </div> <div class=md-header__topic data-md-component=header-topic> <span class=md-ellipsis> Humberto Sandmann </span> </div> </div> </div> <form class=md-header__option data-md-component=palette> <input class=md-option data-md-color-media data-md-color-scheme=default data-md-color-primary=grey data-md-color-accent=indigo aria-label="Switch to dark mode" type=radio name=__palette id=__palette_0> <label class="md-header__button md-icon" title="Switch to dark mode" for=__palette_1 hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg> </label> <input class=md-option data-md-color-media data-md-color-scheme=slate data-md-color-primary=grey data-md-color-accent=indigo aria-label="Switch to light mode" type=radio name=__palette id=__palette_1> <label class="md-header__button md-icon" title="Switch to light mode" for=__palette_0 hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg> </label> </form> <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script> <div class=md-header__source> <a href=https://github.com/hsandmann/hsandmann.github.com title="Go to repository" class=md-source data-md-component=source> <div class="md-source__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 448 512"><!-- Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg> </div> <div class=md-source__repository> hsandmann.github.com </div> </a> </div> </nav> </header> <div class=md-container data-md-component=container> <main class=md-main data-md-component=main> <div class="md-main__inner md-grid"> <div class="md-sidebar md-sidebar--primary" data-md-component=sidebar data-md-type=navigation hidden> <div class=md-sidebar__scrollwrap> <div class=md-sidebar__inner> <nav class="md-nav md-nav--primary" aria-label=Navigation data-md-level=0> <label class=md-nav__title for=__drawer> <a href=. title="Humberto Sandmann" class="md-nav__button md-logo" aria-label="Humberto Sandmann" data-md-component=logo> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M18.6 6.62C21.58 6.62 24 9 24 12c0 2.96-2.42 5.37-5.4 5.37-1.45 0-2.8-.56-3.82-1.57L12 13.34l-2.83 2.51c-.97.97-2.33 1.53-3.77 1.53C2.42 17.38 0 14.96 0 12s2.42-5.38 5.4-5.38c1.44 0 2.8.56 3.82 1.58L12 10.66l2.83-2.51c.97-.97 2.33-1.53 3.77-1.53M7.8 14.39 10.5 12 7.84 9.65c-.68-.68-1.53-1.03-2.44-1.03C3.53 8.62 2 10.13 2 12s1.53 3.38 3.4 3.38c.91 0 1.76-.35 2.4-.99m8.4-4.78L13.5 12l2.66 2.35c.68.68 1.54 1.03 2.44 1.03 1.87 0 3.4-1.51 3.4-3.38s-1.53-3.38-3.4-3.38c-.91 0-1.76.35-2.4.99"/></svg> </a> Humberto Sandmann </label> <div class=md-nav__source> <a href=https://github.com/hsandmann/hsandmann.github.com title="Go to repository" class=md-source data-md-component=source> <div class="md-source__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 448 512"><!-- Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg> </div> <div class=md-source__repository> hsandmann.github.com </div> </a> </div> <ul class=md-nav__list data-md-scrollfix> <li class="md-nav__item md-nav__item--active"> <input class="md-nav__toggle md-toggle" type=checkbox id=__toc> <label class="md-nav__link md-nav__link--active" for=__toc> <span class=md-ellipsis> Humberto Sandmann </span> <span class="md-nav__icon md-icon"></span> </label> <a href=. class="md-nav__link md-nav__link--active"> <span class=md-ellipsis> Humberto Sandmann </span> </a> <nav class="md-nav md-nav--secondary" aria-label="Humberto Sandmann"> <label class=md-nav__title for=__toc> <span class="md-nav__icon md-icon"></span> Humberto Sandmann </label> <ul class=md-nav__list data-md-component=toc data-md-scrollfix> <li class=md-nav__item> <a href=#research-interests class=md-nav__link> <span class=md-ellipsis> Research Interests </span> </a> </li> <li class=md-nav__item> <a href=#background class=md-nav__link> <span class=md-ellipsis> Background </span> </a> </li> <li class=md-nav__item> <a href=#lectures class=md-nav__link> <span class=md-ellipsis> Lectures </span> </a> </li> <li class=md-nav__item> <a href=#experiences class=md-nav__link> <span class=md-ellipsis> Experiences </span> </a> </li> <li class=md-nav__item> <a href=#languages class=md-nav__link> <span class=md-ellipsis> Languages </span> </a> </li> <li class=md-nav__item> <a href=#publications class=md-nav__link> <span class=md-ellipsis> Publications </span> </a> </li> </ul> </nav> </li> </ul> </nav> </div> </div> </div> <div class="md-sidebar md-sidebar--secondary" data-md-component=sidebar data-md-type=toc> <div class=md-sidebar__scrollwrap> <div class=md-sidebar__inner> <nav class="md-nav md-nav--secondary" aria-label="Humberto Sandmann"> <label class=md-nav__title for=__toc> <span class="md-nav__icon md-icon"></span> Humberto Sandmann </label> <ul class=md-nav__list data-md-component=toc data-md-scrollfix> <li class=md-nav__item> <a href=#research-interests class=md-nav__link> <span class=md-ellipsis> Research Interests </span> </a> </li> <li class=md-nav__item> <a href=#background class=md-nav__link> <span class=md-ellipsis> Background </span> </a> </li> <li class=md-nav__item> <a href=#lectures class=md-nav__link> <span class=md-ellipsis> Lectures </span> </a> </li> <li class=md-nav__item> <a href=#experiences class=md-nav__link> <span class=md-ellipsis> Experiences </span> </a> </li> <li class=md-nav__item> <a href=#languages class=md-nav__link> <span class=md-ellipsis> Languages </span> </a> </li> <li class=md-nav__item> <a href=#publications class=md-nav__link> <span class=md-ellipsis> Publications </span> </a> </li> </ul> </nav> </div> </div> </div> <div class=md-content data-md-component=content> <article class="md-content__inner md-typeset"><a class="md-content__button md-icon" download href="index.pdf" title="PDF"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 10.5h1v3h-1v-3m-5 1h1v-1H7v1M20 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2M9.5 10.5A1.5 1.5 0 0 0 8 9H5.5v6H7v-2h1a1.5 1.5 0 0 0 1.5-1.5v-1m5 0A1.5 1.5 0 0 0 13 9h-2.5v6H13a1.5 1.5 0 0 0 1.5-1.5v-3m4-1.5h-3v6H17v-2h1.5v-1.5H17v-1h1.5V9z"></path></svg></a> <h1 id=humberto-sandmann><strong>Humberto Sandmann</strong></h1> <p><a class=glightbox href=assets/img/hsandmann.jpg data-type=image data-width=auto data-height=auto data-desc-position=bottom><img _=, align=left alt class=photo src=assets/img/hsandmann.jpg style="border-radius: 10px;"></a></p> <div class="admonition custom inline end"> <p><a href=mailto:hsandmann@ieee.org target=_blank><span class=twemoji><svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2zm-2 0-8 5-8-5zm0 12H4V8l8 5 8-5z"/></svg></span></a> <a href=mailto:hsandmann@ieee.org target=_blank>hsandmann@ieee.org</a></p> <p><a href=./ ><span class=twemoji><svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5"/></svg></span></a> <a href=./ >hsandmann.github.io</a><br> <a href=https://github.com/hsandmann target=_blank><span class=twemoji><svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg></span></a> <a href=https://github.com/hsandmann target=_blank>hsandmann</a><br> <a href=https://www.linkedin.com/in/hsandmann/ target=_blank><span class=twemoji><svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"/></svg></span></a> <a href=https://www.linkedin.com/in/hsandmann/ target=_blank>hsandmann</a><br> <a href=https://orcid.org/0000-0001-7758-695X target=_blank><span class=twemoji><svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0M7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947m-.722 3.038h1.444v10.041H6.647zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-2.016-1.284-3.722-4.097-3.722z"/></svg></span></a> <a href=https://orcid.org/0000-0001-7758-695X target=_blank>0000-0001-7758-695X</a><br> <!-- <a href="https://odysee.com/@sandmann">klzzwxh:0032</a>{:target='_blank'} <a href="https://odysee.com/@sandmann">sandmann</a>{:target='_blank'} --></p> </div> <p>Computer scientist specializing in bio-inspired neural computing, computational complexity and dynamics, pattern recognition, small-world theory, and banking knowledge. With a focus on understanding the foundations of human computation, I investigate biological neuronal approaches to replicate processing behaviors in computational intelligence.</p> <p>In the realm of programming, I bring a strong background in highly complex domains, including modeling, software architecture, artificial intelligence, machine learning, deep learning, computer vision, cryptography, and high-performance computing, among others.</p> <h2 id=research-interests>Research Interests</h2> <p>Computational for large-scale systems<br> Machine learning and artificial neural networks<br> Nonlinear systems and dynamics networks<br> Synchronization of coupled oscillators</p> <div style="page-break-after: always;"></div> <h2 id=background>Background</h2> <table> <tr> <td align=center> <a href=./assets/doc/usp-doutorado-diploma.pdf target=_blank>mar.2012</a><br> <a href=./assets/doc/usp-doutorado-grade.pdf target=_blank>&#8593;</a><br> mar.2007 </td> <td style="width: 100%;"> <span class=details>D.Sc.</span><a href=http://ppgee.poli.usp.br/ target=_blank>Polytechnic School of the University of Sao Paulo</a><br> <span class=details>thesis</span><a href=https://doi.org/10.11606/T.3.2012.tde-05092012-165022 target=_blank>Spike patterns and computation in dynamical neural networks</a> <hr> <span class=details>doi</span><a href=https://doi.org/10.11606/T.3.2012.tde-05092012-165022 target=_blank>10.11606/T.3.2012.tde-05092012-165022</a><br> <span class=details>advisor</span><a href=https://www.lsi.usp.br/~emilio/index.htm target=_blank>Prof. Dr. Emilio Del Moral Hernandez</a><br> <span class=details>presentation</span><a href="https://docs.google.com/presentation/d/e/2PACX-1vRz_rBkIJvEPpmL-LFe5bpTcQPEJ7uV1MKlU6L8_seherHmeSdKJ62v9IImdRrqPjX3El32ypNaFToz/pub?start=false&loop=false&delayms=3000" target=_blank>slides</a><br> <span class=details>supported by</span> <ul class=support-list> <li class=support-item> <a href=http://www.cnpq.br/ target=_blank>CNPq</a> - grant 140632/2007-7<br> <small>(mar.2007 → dec.2009) ∧ (sep.2010 → feb.2011)</small> </li> </ul> </td> <td><a href=https://www.poli.usp.br target=_blank><img class=details-img src=./assets/img/poliusp.png></a></td> </tr> <tr> <td align=center> <a href=./assets/doc/mpi-report-marc_timme.pdf target=_blank>sep.2010</a><br> &#8593;<br> <a href=./assets/doc/mpi-acceptance.pdf target=_blank>aug.2009</a> </td> <td> <span class=details>D.Sc. Internship</span><a href=https://www.ds.mpg.de/ target=_blank>Max Planck Gesellschaft für Dynamik und Selbstorganisation</a><br> <span class=details>advisor</span><a href=https://www.ds.mpg.de/person/20494/3509782 target=_blank>Prof. Dr. Marc Timme</a><br> <span class=details>supported by</span> <ul class=support-list> <li class=support-item> <a href=http://www.capes.gov.br/ target=_blank>CAPES</a> - grant <a href=./assets/doc/capes-bex_4076-09-5.pdf target=_blank>BEX 4076-09-5</a><br> <small>jan.2010 → ago.2010</small> </li> <li class=support-item> <a href=http://www.usp.br/prpg/ target=_blank>Pró-Reitoria da Pós-Graduação da USP</a><br> <small>aug.2009 ∧ dec.2009 (flight tickets GRU ⇄ FRA)</small> </li> <li class=support-item> José Humberto Sandmann - my father<br> <small>aug.2009 → dec.2009 (German language classes/exams)</small> </li> <li class=support-item> <a href=http://www.mpg.de/ target=_blank>Max Planck Institute - Networks Dynamics Group</a><br> <small>aug.2009 → nov.2009 (accommodation in Goettingen)</small> </li> </ul> </td> <td><a href=https://www.ds.mpg.de/ target=_blank><img class=details-img src=./assets/img/mpi.png></a></td> </tr> <tr> <td align=center> <a href=./assets/doc/usp-mestrado-diploma.pdf target=_blank>jun.2006</a><br> <a href=./assets/doc/usp-mestrado-grade.pdf target=_blank>&#8593;</a><br> feb.2003 </td> <td> <span class=details>M.Sc.</span><a href=http://ppgee.poli.usp.br/ target=_blank>Polytechnic School of the University of Sao Paulo</a><br> <span class=details>dissertation</span><a href=https://doi.org/10.11606/D.3.2006.tde-01042009-095125 target=_blank>Prediction of time series using architecture based on neuro-fuzzy systems</a> <hr> <span class=details>doi</span><a href=https://doi.org/10.11606/D.3.2006.tde-01042009-095125 target=_blank>10.11606/D.3.2006.tde-01042009-095125</a><br> <span class=details>advisor</span><a href=https://www2.pcs.usp.br/~mtulio/ target=_blank>Prof. Dr. Marco Túlio Carvalho de Andrade</a><br> </td> <td><a href=https://www.poli.usp.br target=_blank><img class=details-img src=./assets/img/poliusp.png></a></td> </tr> <tr> <td align=center> <a href=./assets/doc/fei-graduacao-diploma.pdf target=_blank>dec.2002</a><br> <a href=./assets/doc/fei-graduacao-grade.pdf target=_blank>&#8593;</a><br> feb.1999 </td> <td> <span class=details>B.Sc.</span><a href=http://www.fei.edu.br/ target=_blank>Faculdade de Engenharia Industrial</a><br> <span class=details></span>Computer Science Bachelor<br> </td> <td></td> </tr> <tr> <td align=center> <a href=./assets/doc/ete-grade.pdf target=_blank>dec.1998</a><br> &#8593;<br> feb.1996 </td> <td> <a href=https://www.jorgestreet.com.br/ target=_blank>Escola Técnica Jorge Street</a><br> Technician in Industrial Computation<br> </td> <td></td> </tr> </table> <div style="page-break-after: always;"></div> <h2 id=lectures>Lectures</h2> <table> <tr> <td align=center> now<br> &#8593;<br> jun.2018 </td> <td> <a href=https://www.insper.edu.br target=_blank>Insper</a><br> <small>Sao Paulo, Brazil</small><br> <table class=institution> <tr> <td align=center> now<br> &#8593;<br> feb.2020 </td> <td> Associate Professor <table class=institution> <tr> <td><a href=https://insper.github.io/platform/ target=_blank>Platform, Microsservices and APIs</a></td> <td><a href=https://spring.io/projects/spring-cloud target=_blank>Spring Cloud</a>, <a href=https://spring.io/projects/spring-boot target=_blank>Spring Boot</a>, <a href=https://www.postgresql.org/ target=_blank>PostgreSQL</a>, <a href=https://redis.io/ target=_blank>Redis</a>, <a href=https://www.rabbitmq.com/ target=_blank>RabbitMQ</a>, <a href=https://kafka.apache.org/ target=_blank>Kafka</a>, <a href=https://www.docker.com/ target=_blank>Docker</a>, <a href=https://kubernetes.io/ target=_blank>K8s</a></td> <td>2025.1, 2024.1</td> </tr> <tr> <td><a href=https://insper.github.io/computacao-nuvem/ target=_blank>Cloud Computing</a></td> <td><a href=https://maas.io/ target=_blank>MAAS</a>, <a href=https://juju.is/ target=_blank>Juju</a>, <a href=https://www.openstack.org/ target=_blank>OpenStack</a>, <a href=https://kubernetes.io/ target=_blank>K8s</a>, <a href=https://en.wikipedia.org/wiki/Infrastructure_as_a_service target=_blank>IaaS</a>, <a href=https://en.wikipedia.org/wiki/Platform_as_a_service target=_blank>PaaS</a>, Computer Networks</td> <td>2025.1, 2024.2</td> </tr> <tr> <td><a href=https://insper.github.io/DesignDeSoftware/ target=_blank>Design of Software</a></td> <td>Python</td> <td>2025.0, 2024.1, 2023.2, 2022.1, 2021.2, 2021.1</td> </tr> <tr> <td>Information System for Administration and Economy</td> <td>Excel, VBA, Python, NumPy, Pandas, Stochastic Processes, RoI</td> <td>2023.2, 2023.1, 2022.2</td> </tr> <tr> <td>Spreadsheet Automation in Excel</td> <td>Excel, VBA</td> <td> <a href="https://drive.google.com/drive/folders/1oCj0HpHKN0uUREf-JMe2nutpiVlv0yDb?usp=sharing" target=_blank>2021.1</a>, <a href="https://drive.google.com/drive/folders/1uQu_UovSDZw3YGQD-CBiJyZkk4FHLSDU?usp=sharing" target=_blank>2020.1</a> </td> </tr> </table> </td> </tr> <tr> <td align=center> jan.2020<br> &#8593;<br> aug.2018 </td> <td> Assistant Professor <table class=institution> <tr> <td>Design of Software</td> <td>Python</td> <td></td> <td>2019.2, 2019.1</td> </tr> <tr> <td>Foundations for Physical Communication</td> <td>Python, Fourier Transform, Wavelet Transform, Signal Processing</td> <td></td> <td>2018.2</td> </tr> </table> </td> </tr> <!-- <tr>
+                    <td align='center' style='font-size: small;'>
+                        now<br>
+                        &#8593;<br>
+                        feb.2024
+                    </td>
+                    <td>
+                        Member of the ethics committee
+                    </td>
+                </tr>             --> </table> </td> </tr> <!-- ESPM --> <tr> <td align=center> now<br> &#8593;<br> jun.2014 </td> <td> <a href=https://www.espm.br target=_blank>ESPM</a><br> <small>Sao Paulo, Brazil</small><br> Associate Professor <table class=institution> <tr> <td><a href=https://colab.research.google.com/drive/1S1Ftle1GDEMaelb1jNRQpg-nZvRq24Z8 target=_blank>Applied Mathematics</a></td> <td>Propositional Logic, Boolean Algebra, Set Theory, Polynomials, Functions, Sequences, Series, Logarithm, Combinatorial Analysis, Limits, Derivatives, Linear Algebra, Matrix Algebra, Graph Theory</td> <td> <a href="https://drive.google.com/drive/folders/1l4CZEEeFUttkbf_RBmv5IttPiEueF4xM?usp=sharing" target=_blank>2025.1</a>, <a href="https://drive.google.com/drive/folders/1YQ0c4YgOQSZSC0DJ6zeYageZ9Wn2JrxC?usp=sharing" target=_blank>2024.1</a>, <a href="https://drive.google.com/drive/folders/1ilAXZBLJJm2KfBFRU0nt9MVXUbN9cfd1?usp=sharing" target=_blank>2023.2</a>, <a href="https://drive.google.com/drive/folders/14eO_WaojYJWFbq4jUFw-ePlXMqMzxawZ?usp=sharing" target=_blank>2023.1</a>, <a href="https://drive.google.com/drive/folders/19sGzUxFYWg7QuK8_pxGpMdYV3IxN7uWN?usp=sharing" target=_blank>2022.2</a>, <a href="https://drive.google.com/drive/folders/1Wyi3CLZcowy8U_pXw7NFmUNxxHGmW9Ml?usp=sharing" target=_blank>2022.1</a>, <a href="https://drive.google.com/drive/folders/14ct68tOu7dY4DI8qiHTWWuxV3dPWlJV7?usp=sharing" target=_blank>2021.2</a>, <a href="https://drive.google.com/drive/folders/1SzY4e6nk8mVklMwwE_Fb_gsWGN7kA_V3?usp=sharing" target=_blank>2021.1</a>, 2020.2, 2020.1 </td> </tr> <tr> <td><a href=https://hsandmann.github.io/spring/ target=_blank>Oriented Object Programming</td> <td>Java, Design Patterns, Docker, Spring Cloud, Microservices</td> <td> 2025.1, 2024.1, 2023.1, 2022.1, 2021.1 </td> </tr> <tr> <td>Statistics</td> <td>Statistics, Probability, Random Variables, Distributions, Sampling, Estimation, Hypothesis Testing, Regression Analysis</td> <td> <a href="https://drive.google.com/drive/folders/10G44nzudUoXUx2x4ExF-bGI20l1XkIbp?usp=sharing" target=_blank>2023.2</a> </td> </tr> <tr> <td>Software Quality</td> <td>Software Quality, Software Testing, Software Architecture, Software Engineering, Software Development Life Cycle, Agile Methodologies, Test-Driven Development, Behavior-Driven Development, Test Automation, Continuous Integration, Continuous Delivery</td> <td> 2024.2, <a href="https://drive.google.com/drive/folders/1iQd9qV_KWQxEb8q698q0-Y_JccwZBP0P?usp=sharing" target=_blank>2022.2</a> </td> </tr> <tr> <td>Architecture and Operating Systems</td> <td>Computer Architecture, Operating Systems, Binary and Hexadecimal Number Systems, Number Representation, Data Representation, Assembly Language, Memory Management, Process Management, File Systems</td> <td> <a href=https://hsandmann.github.io/espm.16bits/ target=_blank>ESPM 16-bits</a><br> 2021.1, 2020.2, 2020.1, 2019.2, 2019.1, 2018.2, 2018.1, 2017.1, 2016.2, 2016.1, 2015.2, 2015.1, 2014.2 </td> </tr> <tr> <td>Artificial Intelligence and Society</td> <td>Artificial Intelligence, Machine Learning, Deep Learning, Neural Networks, Computer Vision, Natural Language Processing, PCA, KNN, K-Means, GANs, Transformers, LSTMs, BERT, Ethics, Bias</td> <td> 2022.1 (IR), <a href=https://hsandmann.github.io/espm.ai.society.2021.1/ target=_blank>2021.1</a>, <a href=https://hsandmann.github.io/espm.ai.society.2020.2/ target=_blank>2020.2</a>, <a href=https://hsandmann.github.io/espm.ai.society.2020.1/ target=_blank>2020.1</a>, <a href=https://hsandmann.github.io/espm.ai.society.2019.2/ target=_blank>2019.2</a> </td> <tr> <td><a href="https://drive.google.com/drive/folders/1ZC_IRWeC-pwYftwxWj-BRBpWgCNhBVVd?usp=sharing" target=_blank>Introduction for Artificial Intelligence</td> <td>Machine Learning, Deep Learning, Neural Networks, Computer Vision, Natural Language Processing, PCA, KNN, K-Means, GANs</td> <td> <a href=https://hsandmann.github.io/espm.ml.2020.2/ target=_blank>2020.2</a>, <a href=https://hsandmann.github.io/espm.ml.2020.1/ target=_blank>2020.1</a>, <a href=https://hsandmann.github.io/espm.ml.2019.2/ target=_blank>2019.2</a>, <a href=https://hsandmann.github.io/espm.ml.2019.1/ target=_blank>2019.1</a> </td> </tr> <!-- <tr>
+                    <td>Mobile Programming</td>
+                    <td>Android</td>
+                    <td>2017.2</td>
+                </tr> --> </table> </td> </tr> <!-- Toledo Prudente Centro Universitário --> <tr> <td align=center> apr.2015<br> &#8593;<br> mar.2015 </td> <td> <a href=http://www.toledoprudente.edu.br/ target=_blank>Toledo Prudente Centro Universitário</a><br> <small>Presidente Prudente, Brazil</small><br> Visiting Professor <table class=institution> <tr> <td><a href=http://sandmann.sdf.org/toledo/bigdata/2015/ target=_blank>MBA: Big Data and Machine Learning</a></td> <td> Big Data, Hadoop, Hive, HBase, MongoDB, Neo4j, Solr, R, Octave, Self-Organizing Maps, Bayesian Decision Trees, Multilayer Perceptron </td> <td>2015.1</td> </tr> </table> </td> </tr> <tr> <td align=center> dec.2015<br> &#8593;<br> mar.2012 </td> <td style="width: 100%;"> <a href=https://www.fiap.com.br target=_blank>FIAP</a><br> <small>Sao Paulo, Brazil</small><br> Associate Professor <table class=institution> <tr> <td>Distributed systems</td> <td> Sockets, RMI, SOAP, Microservices, J2EE, Design Patterns </td> <td>2015</td> </tr> <tr> <td>MBA: Big Data and No-SQL Modelling</td> <td> Big Data, Hadoop, Hive, HBase, MongoDB, Neo4j, Solr </td> <td>2014.2</td> </tr> <tr> <td>Data Structure and Algorithm II</td> <td> C, Data Structure, Algorithm, Complexity, Linked List, Stack, Queue, Tree, Red-Black Tree, AVL Tree, B-Tree, Hash Table, Graph, Dijkstra Algorithm, Prim Algorithm </td> <td>2013</td> </tr> <tr> <td>Algorithms</td> <td> C, Programming, Algorithm, Complexity </td> <td>2013, 2012.2</td> </tr> <tr> <td>Database I and II</td> <td> SQL, PL/SQL, Oracle, Transaction, Concurrency Control, Locking, Deadlock, Recovery, Normalization, ER Model, Relational Model, Object-Relational Model, Trigger, View, Index, Stored Procedure, Function, Package, Cursor, Sequence, Synonym </td> <td>2013, 2012</td> </tr> <tr> <td>Programming III</td> <td> Pointers, C, C++, Object-Oriented Programming, Inheritance, Polymorphism, Encapsulation, Abstract Class, Interface, Exception Handling </td> <td>2012</td> </tr> </table> </td> </tr> <tr> <td align=center> jul.2013<br> &#8593;<br> mar.2012 </td> <td style="width: 100%;"> <a href=https://www.cruzeirodosul.edu.br/ target=_blank>Universidade Cruzeiro do Sul</a><br> <small>Sao Paulo, Brazil</small><br> Associate Professor <table class=institution> <tr> <td>Mobile Programming</td> <td>Android</td> <td>2012.2</td> </tr> <tr> <td>Computer Architecture</td> <td> Computer Architecture, Operating Systems, Binary and Hexadecimal Number Systems, Number Representation, Data Representation, Assembly Language, Memory Management, Process Management, File Systems </td> <td>2012.1</td> </tr> <tr> <td>Software Engineering</td> <td> Software Engineering, Software Development Life Cycle, Agile Methodologies, Test-Driven Development, Behavior-Driven Development, Test Automation </td> <td>2012.1</td> </tr> <tr> <td>Introduction to Programming</td> <td>C, Programming, Algorithm</td> <td>2012.1</td> </tr> <tr> <td>Database II</td> <td> SQL, PL/SQL, Oracle, Transaction, Concurrency Control, Locking, Deadlock, Recovery, Normalization, ER Model, Relational Model, Trigger, View, Index, Stored Procedure, Function, Package, Cursor, Sequence </td> <td>2013.1, 2012.1</td> </tr> </table> </td> </tr> <tr> <td align=center> jul.2011<br> &#8593;<br> mar.2011 </td> <td style="width: 100%;"> <a href=https://www.uninove.br/ target=_blank>Universidade Nove de Julho</a><br> <small>Sao Paulo, Brazil</small><br> Temporary Professor <table class=institution> <tr> <td>Computer Architecture</td> <td> Computer Architecture, Operating Systems, Binary and Hexadecimal Number Systems, Number Representation, Data Representation, Assembly Language, Memory Management, Process Management, File Systems </td> <td>2011.1</td> </tr> <tr> <td><a href=http://sandmann.sdf.org/uninove/alg1/2011/ target=_blank>Introduction to Programming</a></td> <td>C, Programming, Algorithm</td> <td>2011.1</td> </tr> <tr> <td><a href=http://sandmann.sdf.org/uninove/web/2011/ target=_blank>Web Programming</a></td> <td> HTML, CSS, JavaScript </td> <td>2011.1</td> </tr> </table> </td> </tr> <tr> <td align=center> jul.2011<br> &#8593;<br> mar.2008 </td> <td style="width: 100%;"> <a href=https://www.poli.usp.br/ target=_blank>Polytechnic School of the University of Sao Paulo</a><br> <small>Sao Paulo, Brazil</small><br> Teaching Assistant <table class=institution> <tr> <td>Experimental Pattern Recognition, Modeling and Neurocomputing</td> <td> Logic Gates, Linear Regression, Pattern Classification, <a href=https://archive.ics.uci.edu/ target=_blank>UC Irvine Machine Learning Repository</a>, <a href=https://www.nist.gov/srd target=_blank>NIST Data Gateway</a>, Multilayer Perceptron, EEG Signals, PCA <td><a href=http://sandmann.sdf.org/psi2672/2011/ target=_blank>2011.1*</a></td> </tr> <tr> <td>Modeling for Signal Processing: Neural Networks and Learning</td> <td> Artificial Neural Networks, Multilayer Perceptron, Backpropagation, Forecasting, Time Series, Classification </td> <td> <a href=http://sandmann.sdf.org/psi2533/2009/ target=_blank>2009.1</a>, <a href=http://sandmann.sdf.org/psi2533/2008/ target=_blank>2008.1*</a> </td> </tr> <tr> <td>Laboratory of the Foundations of Computing Engineering</td> <td> Computer Architecture, Assembly Language, Memory Management, Process Management, Register, Stack, Turing Machine, Finite State Machines, Von Neumann Architecture, Java, Orientated Object Programming </td> <td> <a href=http://sandmann.sdf.org/pcs2302/2008/ target=_blank>2008.1†</a> </td> </tr> </table> <small>* grants from CAPES (PAE)</small><br> <small>† grants from FAPESP</small> </td> </tr> </table> <div style="page-break-after: always;"></div> <h2 id=experiences>Experiences</h2> <table> <tr> <td align=center> jun.2019<br> &#8593;<br> may.2018 </td> <td style="width: 60%;"> <a href=https://www.heraeus-electro-nite.com/ target=_blank>RockSpoon</a><br> <small>Sao Paulo Area, Brazil - Palo Alto, United States</small><br> Senior Software Architect and Machine Learning Engineer </td> <td style="width: 40%;"> POS, ERP, Payroll, JavaEE, Postgres, Software Architecture, OpenCV, Machine Learning, Computer Vision, GoLang, Android, Kotlin. </td> </tr> <tr> <td align=center> jul.2016<br> &#8593;<br> oct.2015 </td> <td> <a href=https://www.bv.com.br/ target=_blank>Banco Votorantim</a><br> <small>Sao Paulo Area, Brazil</small><br> Contractor: Senior Consultant for Computational Optimization </td> <td> RoE, Banking Business, High-Performance Computing, J2EE, Spring Boot, Automating Testing, Jenkins. </td> </tr> <tr> <td align=center> oct.2023<br> &#8593;<br> mar.2012 </td> <td style="width: 60%;"> SelsanTech<br> <small>Sao Paulo Area, Brazil</small><br> Co-Founder </td> <td> Machine Learning, Software Architecture. </td> </tr> <tr> <td align=center> nov.2011<br> &#8593;<br> aug.2011 </td> <td> <a href=https://www.tecban.com.br/ target=_blank>TecBan</a><br> <small>Sao Paulo Area, Brazil</small><br> Contractor: Senior Consultant for Computational Optimization </td> <td> ATM, J2EE, InMemory Database, High-Performance Computing. </td> </tr> <tr> <td align=center> jun.2007<br> &#8593;<br> feb.2006<br> </td> <td> <a href=https://www.abnamro.com/ target=_blank>ABN Amro Bank</a><br> <small>Sao Paulo, Brazil</small><br> Contractor: Senior Software Engineer/Architect </td> <td> Stock Market, Trading, Core Banking, Software Architecture, Cryptography, HSM, BouncyCastle, PKI, PCKS, Java, Servlet, Database. </td> </tr> <tr> <td align=center> mar.2025<br> &#8593;<br> feb.2006 </td> <td style="width: 60%;"> H-Sandmann<br> <small>Sao Paulo Area, Brazil</small><br> Founder </td> <td> Machine Learning, Software Architecture. </td> </tr> <tr> <td align=center> jan.2006<br> &#8593;<br> aug.2005 </td> <td> <a href=https://en.wikipedia.org/wiki/Politec target=_blank>Politec</a><br> <small>Sao Paulo, Brazil</small><br> Senior System Analyst </td> <td> J2EE, Software Quality, Software Architecture, Banking Business. </td> </tr> <tr> <td align=center> jul.2005<br> &#8593;<br> jul.2004 </td> <td> <a href=https://www.linkedin.com/company/eversystems/ target=_blank>EverSystems</a><br> <small>Sao Paulo, Brazil</small><br> Senior Software Engineer/Architect - BankBoston - CitiBank - Elly Lilly </td> <td> PKI, BouncyCastle, Cryptography, HSM, Core Banking, Stock Market, Java, Servlet, Database, Communication Protocol, Syncronization and Replication. </td> </tr> <tr> <td align=center> mar.2003<br> &#8593;<br> sep.2002 </td> <td> Central Online<br> <small>Sao Paulo, Brazil</small><br> Senior System Analyst </td> <td> Object-Oriented Programming, <a href=https://en.wikipedia.org/wiki/Learning_management_system target=_blank>LMS</a>. </td> </tr> <tr> <td align=center> sep.2002<br> &#8593;<br> oct.1999 </td> <td> <a href=http://www.datamace.com.br/ target=_blank>Datamace</a><br> <small>Sao Paulo Area, Brazil</small><br> Senior System Analyst </td> <td> Payroll, ERP, Software Architecture. </td> </tr> <tr> <td align=center> oct.1999<br> &#8593;<br> mar.1998 </td> <td> <a href=https://www.heraeus-electro-nite.com/ target=_blank>Heraeus Electro-Nite</a><br> <small>Sao Paulo Area, Brazil</small><br> Computer Programmer </td> <td> Complaince, ERP, PCP. </td> </tr> </table> <div style="page-break-after: always;"></div> <!--
+## Experiences
+
+<table>
+    <tr>
+        <td align='center'>
+            now<br>
+            &#8593;<br>
+            jun/2024
+        </td>
+        <td>
+            Contractor at <a href='http://ppgee.poli.usp.br/' target='_blank'>Link Business School</a><br>
+        </td>
+    </tr>
+    <tr>
+        <td align='center'>
+            now<br>
+            &#8593;<br>
+            ago/2018
+        </td>
+        <td>
+            Assistant Professor at <a href='http://ppgee.poli.usp.br/' target='_blank'>Insper</a><br>
+        </td>
+    </tr>
+    <tr>
+        <td align='center'>
+            now<br>
+            &#8593;<br>
+            ago/2014
+        </td>
+        <td>
+            Assistant Professor at <a href='http://ppgee.poli.usp.br/' target='_blank'>ESPM</a><br>
+        </td>
+    </tr>
+</table>
+Link
+
+Insper
+
+ESPM
+
+H-Sandmann
+
+
+
+
+
+## Lectures
+
+  <table>
+    <tr><td colspan="2">
+      Insper Learning Institution
+      <br/><small><i>Undergraduate courses</i></small>
+    </td></tr>  
+    <tr>
+      <td><small>Software Design</small></td>
+      <td width="60"><small><small>2019 - now</small></small></td>
+    </tr>
+    <tr>
+      <td><small>Foundations for Physical Communication</small></td>
+      <td width="60"><small><small>2018</small></small></td>
+    </tr>
+  </table>
+
+  <table>
+    <tr><td colspan="2">
+      ESPM
+      <br/><small><i>Undergraduate courses</i></small>
+    </td></tr>  
+    <tr>
+      <td><small>Artificial Intelligence and Society</small></td>
+      <td width="60"><small><small><a href="/espm.ai.society/" target="_blank">2019 - now</a></small></small></td>
+    </tr>
+    <tr>
+      <td><small>Artificial Intelligence for Marketing</small></td>
+      <td width="60"><small><small><a href="/espm.ml/" target="_blank">2019 - now</a></small></small></td>
+    </tr>
+    <tr>
+      <td><small>Enterprise Environment: computer architectures and operating systems</small></td>
+      <td width="60"><small><small><a href="/espm.tec.105/" target="_blank">2014 - now</a></small></small></td>
+    </tr>
+    <tr>
+      <td><small>Data Structure and Algorithms - DSA</small></td>
+      <td width="60"><small><small>2017</small></small></td>
+    </tr>
+  </table>
+
+  <table>
+    <tr><td colspan="2">
+      IBTA
+      <br/><small><i>Undergraduate courses</i></small>
+    </td></tr>  
+    <tr>
+      <td><small>Basics of Robotics</small></td>
+      <td width="60"><small><small>2016</small></small></td>
+    </tr>
+    <tr>
+      <td><small>Object-Oriented Programming</small></td>
+      <td width="60"><small><small>2016</small></small></td>
+    </tr>
+    <tr>
+      <td><small>Data Structures and Algorithms - DSA</small></td>
+      <td width="60"><small><small>2016</small></small></td>
+    </tr>
+  </table>
+
+  <table>
+    <tr><td colspan="2">
+      FIAP
+      <br/><small><i>MBA courses</i></small>
+    </td></tr>  
+    <tr>
+      <td><small>NoSQL and Big Data: MongoDB, SparQL, Neo4j, Solr, Hive, Hadoop</small></td>
+      <td width="60"><small><small>2014 - 2015</small></small></td>
+    </tr>
+    <tr><td colspan="2">
+      <small><i>Undergraduate courses</i></small>
+    </td></tr>  
+    <tr>
+      <td><small>Distributed Systems</small></td>
+      <td width="60"><small><small>2015</small></small></td>
+    </tr>
+    <tr>
+      <td><small>Data Structures and Techniques for Algorithms II - DSA</small></td>
+      <td width="60"><small><small>2013</small></small></td>
+    </tr>
+    <tr>
+      <td><small>Algorithms</small></td>
+      <td width="60"><small><small>2012 - 2013</small></small></td>
+    </tr>
+    <tr>
+      <td><small>Advanced Programming Techniques for Java</small></td>
+      <td width="60"><small><small>2012</small></small></td>
+    </tr>
+    <tr>
+      <td><small>Database I - Oracle</small></td>
+      <td width="60"><small><small>2012 - 2013</small></small></td>
+    </tr>
+    <tr>
+      <td><small>Database II - Oracle</small></td>
+      <td width="60"><small><small>2012 - 2013</small></small></td>
+    </tr>
+  </table>
+
+  <table>
+    <tr><td colspan="2">
+      Toledo Prudente
+      <br/><small><i>Graduate courses</i></small>
+    </td></tr>  
+    <tr>
+      <td><small>MBA course on big data and machine learning</small></td>
+      <td width="60"><small><small>2015</small></small></td>
+    </tr>
+  </table>
+
+  <table>
+    <tr><td colspan="2">
+      Universidade Cruzeiro do Sul
+      <br/><small><i>Undergraduate courses</i></small>
+    </td></tr>  
+    <tr>
+      <td><small>Programming for Mobile - Android</small></td>
+      <td width="60"><small><small>2012</small></small></td>
+    </tr>
+    <tr>
+      <td><small>Computer Architectures</small></td>
+      <td width="60"><small><small>2012</small></small></td>
+    </tr>
+    <tr>
+      <td><small>Software Engineering</small></td>
+      <td width="60"><small><small>2012</small></small></td>
+    </tr>
+    <tr>
+      <td><small>Database II - Oracle</small></td>
+      <td width="60"><small><small>2012 - 2013</small></small></td>
+    </tr>
+    <tr>
+      <td><small>Languages and Techniques for Programming</small></td>
+      <td width="60"><small><small>2012</small></small></td>
+    </tr>
+  </table>
+
+  <table>
+    <tr><td colspan="2">
+      Universidade Nove de Julho
+      <br/><small><i>Undergraduate courses</i></small>
+    </td></tr>  
+    <tr>
+      <td><small>Algorithms for Engineering</small></td>
+      <td width="60"><small><small>2011</small></small></td>
+    </tr>
+    <tr>
+      <td><small>Computer Architectures</small></td>
+      <td width="60"><small><small>2011</small></small></td>
+    </tr>
+    <tr>
+      <td><small>Programming for Internet</small></td>
+      <td width="60"><small><small>2011</small></small></td>
+    </tr>
+  </table>
+
+## Teaching assistant
+
+  <table>
+    <tr><td colspan="3">
+      Polytechnic School of the University of Sao Paulo
+      <br/><small>Undergraduate courses</small>
+    </td></tr>  
+    <tr>
+      <td><small><a href="https://uspdigital.usp.br/jupiterweb/obterDisciplina?sgldis=PSI2672" target="_blank">PSI&nbsp;2672</a></small></td>
+      <td><small>Experimental Pattern Recognition, Modeling and Neurocomputing</small></td>
+      <td width="60"><small><small>2011<sup>*</sup></small></small></td>
+    </tr>
+    <tr>
+      <td><small><a href="https://uspdigital.usp.br/jupiterweb/obterDisciplina?sgldis=PSI2533" target="_blank">PSI&nbsp;2533</a></small></td>
+      <td><small>Modeling for Signal Processing: Neural Networks and Learning</small></td>
+      <td width="60"><small><small>2009, 2008<sup>*</sup></small></small></td>
+    </tr>
+    <tr>
+      <td><small><a href="https://uspdigital.usp.br/jupiterweb/obterDisciplina?sgldis=PCS2302" target="_blank">PCS&nbsp;2302</a></small></td>
+      <td><small>Laboratory of the Foundations of Computing Engineering</small></td>
+      <td width="60"><small><small>2008<sup>†</sup></small></small></td>
+    </tr>
+  </table>
+  <small><small>\* grants from CAPES (PAE)</small></small><br/>
+  <small><small>† grants from FAPESP</small></small>
+
+--> <h2 id=languages>Languages</h2> <table> <thead> <tr> <th></th> <th style="text-align: left;"></th> </tr> </thead> <tbody> <tr> <td><strong>Portuguese</strong></td> <td style="text-align: left;">native</td> </tr> <tr> <td><strong>English</strong></td> <td style="text-align: left;">advanced</td> </tr> <tr> <td><strong>German</strong></td> <td style="text-align: left;">B1</td> </tr> </tbody> </table> <h2 id=publications>Publications</h2> <p>E.Del-Moral-Hernandez; H. Sandmann; G.Araujo; <strong>Context dependent pattern recognition - A framework for hybrid architectures bridging chaotic neural networks based on Recursive Processing Elements and symbolic information</strong>. IEEE Transactions on Neural Networks, 2009. doi: <a href=https://doi.org/10.1109/IJCNN.2009.5179061 target=_blank>10.1109/IJCNN.2009.5179061</a>.</p> <p>L.A. da Silva; H. Sandmann; E.Del-Moral-Hernandez; <strong>A self-organizing architecture of recursive elements for continuous learning</strong>. IEEE Transactions on Neural Networks, 2008. doi: <a href=https://doi.org/10.1109/IJCNN.2008.4634190 target=_blank>10.1109/IJCNN.2008.4634190</a>.</p> <p>E.Del-Moral-Hernandez; H. Sandmann; L.A. da Silva; <strong>Pattern recovery in networks of recursive processing elements with continuous learning</strong>. IEEE Transactions on Neural Networks, 2004. doi: <a href=https://doi.org/10.1109/IJCNN.2004.1379877 target=_blank>10.1109/IJCNN.2004.1379877</a>.</p> <!--
+
+## Activities in societies
+
+<div class="grid cards" markdown>
+
+-   :material-clock-fast:{ .lg .middle } [__Computational Intelligence Society__](http://www.ieee-cis.org/){:target='_blank'}
+
+    ---
+    - since 2004
+    - member of the brazilian committee
+        - <small>oct/2010 - mar/2012</small>
+        - <small>apr/2009 - aug/2009</small>
+
+-   :fontawesome-brands-markdown:{ .lg .middle } __It's just Markdown__
+    ---
+
+    Focus on your content and generate a responsive and searchable static site
+
+    [:octicons-arrow-right-24: Reference](#)
+
+-   :material-format-font:{ .lg .middle } __Made to measure__
+
+    ---
+
+    Change the colors, fonts, language, icons, logo and more with a few lines
+
+    [:octicons-arrow-right-24: Customization](#)
+
+-   :material-scale-balance:{ .lg .middle } __Open Source, MIT__
+
+    ---
+
+    Material for MkDocs is licensed under MIT and available on [GitHub]
+
+    [:octicons-arrow-right-24: License](#)
+
+</div>
+
+- **[IEEE](http://www.ieee.org/) - Institute of Electrical and Electronics Engineers**
+  <br/><small>Member #60216475</small>
+
+  - **Computational Intelligence Society** ([CIS](http://www.ieee-cis.org/))
+    - since 2004
+    - member of the brazilian committee
+      - <small>from oct/2010 to mar/2012</small>
+      - <small>from apr/2009 to aug/2009</small>
+
+  - **Signal Processing Society** ([SPS](http://www.signalprocessingsociety.org/))
+    - from 2005 to 2009
+
+  - **Engineering in Medicine and Biology Society** ([EMBS](http://www.embs.org/))
+    - from 2005 to 2009
+
+- **[INNS](http://www.inns.org/) - International Neural Network Society**
+  <br/><small>Student member #3951</small>
+
+
+## Interesting
+
+<div class="grid cards" markdown>
+
+- [Nicolau Werneck](http://nwerneck.sdf.org/){:target='_blank'}
+- [Mirko Lukovic](https://ifb.ethz.ch/comphys/people/senior-scientists/mirko-lukovic.html){:target='_blank'}
+- [Erik Martens](http://eam.webhop.net/){:target='_blank'}
+- [Christian Bick](https://www.math.vu.nl/~bick/){:target='_blank'}
+- [Tatjana Tchumatchenko](http://www.tchumatchenko.de/){:target='_blank'}
+- [Sven Boekhoff](http://www.boekhoff.info/){:target='_blank'}
+
+- [Dynamics Days](http://dynamicsdays.info/){:target='_blank'}
+- [IJCNN - International Joint Conference on Neural Networks](http://www.ijcnn.org/){:target='_blank'}
+- [NIPS - Neural Information Processing Systems](http://nips.cc/){:target='_blank'}
+
+</div>
+
+
+<a class="glightbox" href="https://img.shields.io/badge/MLP-purple?style=for-the-badge" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src='https://img.shields.io/badge/MLP-purple?style=for-the-badge' title='Multilayer Perceptron'></a>
+<a class="glightbox" href="https://img.shields.io/badge/NLP-grey?style=for-the-badge" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src='https://img.shields.io/badge/NLP-grey?style=for-the-badge' title='Natural Language Processing'></a>
+<a class="glightbox" href="https://img.shields.io/badge/SVM-darkorange?style=for-the-badge" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src='https://img.shields.io/badge/SVM-darkorange?style=for-the-badge' title='Support Vector Machine'></a>
+<a class="glightbox" href="https://img.shields.io/badge/Neuron_Spike_Train-indigo?style=for-the-badge" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src='https://img.shields.io/badge/Neuron_Spike_Train-indigo?style=for-the-badge' title='Neuron Spike Train'></a>
+<a class="glightbox" href="https://img.shields.io/badge/Dynamical_Systems-indigo?style=for-the-badge" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src='https://img.shields.io/badge/Dynamical_Systems-indigo?style=for-the-badge' title='Dynamical Systems'></a>
+<a class="glightbox" href="https://img.shields.io/badge/Coupled_Oscillators-indigo?style=for-the-badge" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src='https://img.shields.io/badge/Coupled_Oscillators-indigo?style=for-the-badge' title='Coupled Oscillators'></a>
+<a class="glightbox" href="https://img.shields.io/badge/Small_Worlds-indigo?style=for-the-badge" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src='https://img.shields.io/badge/Small_Worlds-indigo?style=for-the-badge' title='Small Worlds'></a>
+<a class="glightbox" href="https://img.shields.io/badge/Synchronization-indigo?style=for-the-badge" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src='https://img.shields.io/badge/Synchronization-indigo?style=for-the-badge' title='Synchronization'></a>
+<a class="glightbox" href="https://img.shields.io/badge/Self--Organization-indigo?style=for-the-badge" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src='https://img.shields.io/badge/Self--Organization-indigo?style=for-the-badge' title='Self-Organization'></a>
+<a class="glightbox" href="https://img.shields.io/badge/MLP-purple?style=for-the-badge" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src='https://img.shields.io/badge/MLP-purple?style=for-the-badge' title='MLP'></a>
+<a class="glightbox" href="https://img.shields.io/badge/PCA-orange?style=for-the-badge" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src='https://img.shields.io/badge/PCA-orange?style=for-the-badge' title='Principal Component Analysis'></a>
+<a class="glightbox" href="https://img.shields.io/badge/Face_Recognition-darkorange?style=for-the-badge" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src='https://img.shields.io/badge/Face_Recognition-darkorange?style=for-the-badge' title='Face Recognition'></a>
+<a class="glightbox" href="https://img.shields.io/badge/Computer_Vision-darksalmon?style=for-the-badge" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src='https://img.shields.io/badge/Computer_Vision-darksalmon?style=for-the-badge' title='Computer Vision'></a>
+<a class="glightbox" href="https://img.shields.io/badge/x86-purple?style=for-the-badge" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src='https://img.shields.io/badge/x86-purple?style=for-the-badge' title='x86'></a>
+<a class="glightbox" href="https://img.shields.io/badge/Assembly-orange?style=for-the-badge" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src='https://img.shields.io/badge/Assembly-orange?style=for-the-badge' title='Assembly'></a>
+<a class="glightbox" href="https://img.shields.io/badge/Eletrical-darkorange?style=for-the-badge" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src='https://img.shields.io/badge/Eletrical-darkorange?style=for-the-badge' title='Eletrical'></a>
+<a class="glightbox" href="https://img.shields.io/badge/MLP-purple?style=for-the-badge" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src='https://img.shields.io/badge/MLP-purple?style=for-the-badge' title='Multilayer Perceptron'></a>
+<a class="glightbox" href="https://img.shields.io/badge/NLP-grey?style=for-the-badge" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src='https://img.shields.io/badge/NLP-grey?style=for-the-badge' title='Natural Language Processing'></a>
+<a class="glightbox" href="https://img.shields.io/badge/SVM-darkorange?style=for-the-badge" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src='https://img.shields.io/badge/SVM-darkorange?style=for-the-badge' title='Support Vector Machine'></a><br>
+<a class="glightbox" href="https://img.shields.io/badge/MLP-purple?style=for-the-badge" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src='https://img.shields.io/badge/MLP-purple?style=for-the-badge' title='Multilayer Perceptron'></a>
+<a class="glightbox" href="https://img.shields.io/badge/NLP-grey?style=for-the-badge" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src='https://img.shields.io/badge/NLP-grey?style=for-the-badge' title='Natural Language Processing'></a>
+<a class="glightbox" href="https://img.shields.io/badge/SVM-darkorange?style=for-the-badge" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src='https://img.shields.io/badge/SVM-darkorange?style=for-the-badge' title='Support Vector Machine'></a><br>
+<a class="glightbox" href="https://img.shields.io/badge/MLP-purple?style=for-the-badge" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src='https://img.shields.io/badge/MLP-purple?style=for-the-badge' title='Multilayer Perceptron'></a>
+<a class="glightbox" href="https://img.shields.io/badge/NLP-grey?style=for-the-badge" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src='https://img.shields.io/badge/NLP-grey?style=for-the-badge' title='Natural Language Processing'></a>
+<a class="glightbox" href="https://img.shields.io/badge/SVM-darkorange?style=for-the-badge" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src='https://img.shields.io/badge/SVM-darkorange?style=for-the-badge' title='Support Vector Machine'></a><br>
+<a class="glightbox" href="https://img.shields.io/badge/MLP-purple?style=for-the-badge" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src='https://img.shields.io/badge/MLP-purple?style=for-the-badge' title='Multilayer Perceptron'></a>
+<a class="glightbox" href="https://img.shields.io/badge/NLP-grey?style=for-the-badge" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src='https://img.shields.io/badge/NLP-grey?style=for-the-badge' title='Natural Language Processing'></a>
+<a class="glightbox" href="https://img.shields.io/badge/SVM-darkorange?style=for-the-badge" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src='https://img.shields.io/badge/SVM-darkorange?style=for-the-badge' title='Support Vector Machine'></a><br>
+<!-- <a class="glightbox" href="https://img.shields.io/badge/DOI-10.11606%2FD.3.2006.tde--01042009--095125-lightgray?style=for-the-badge" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src='https://img.shields.io/badge/DOI-10.11606%2FD.3.2006.tde--01042009--095125-lightgray?style=for-the-badge'></a><br>
+<a class="glightbox" href="https://img.shields.io/badge/Fuzzy-darkred?style=for-the-badge" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src='https://img.shields.io/badge/Fuzzy-darkred?style=for-the-badge' title='Fuzzy Engineering'></a>
+<a class="glightbox" href="https://img.shields.io/badge/Neuro--Fuzzy-darksalmon?style=for-the-badge" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src='https://img.shields.io/badge/Neuro--Fuzzy-darksalmon?style=for-the-badge' title='Neuro-Fuzzy Engineering'></a>
+x
+[![Java](https://img.shields.io/badge/Java-yellow?logo=openjdk&style=for-the-badge&logoColor=white)](https://en.wikipedia.org/wiki/Java_(programming_language)){:target='_blank'}
+![Spring](https://img.shields.io/badge/Spring-green?logo=spring&style=for-the-badge&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-blue?logo=docker&style=for-the-badge&logoColor=white)
+![K8s](https://img.shields.io/badge/K8s-darkblue?logo=kubernetes&style=for-the-badge&logoColor=white)
+![Postgres](https://img.shields.io/badge/Postgres-%23316192?style=for-the-badge&logo=postgresql&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-red.svg?style=for-the-badge&logo=redis&logoColor=white)
+![OpenStacl](https://img.shields.io/badge/OpenStack-%23f01742?style=for-the-badge&logo=openstack&logoColor=white)
+![Kafka](https://img.shields.io/badge/Kafka-000?style=for-the-badge&logo=apachekafka)
+![Go](https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white)
+![GraphQL](https://img.shields.io/badge/-GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white)
+
+![Spark](https://img.shields.io/badge/Spark-FDEE21?style=for-the-badge&logo=apachespark&logoColor=black)
+![Angular.js](https://img.shields.io/badge/angular.js-%23E23237.svg?style=for-the-badge&logo=angularjs&logoColor=white)
+![RabbitMQ](https://img.shields.io/badge/Rabbitmq-FF6600?style=for-the-badge&logo=rabbitmq&logoColor=white)
+
+![MLP](https://img.shields.io/badge/MLP-purple?style=for-the-badge)
+![NLP](https://img.shields.io/badge/NLP-grey?style=for-the-badge)
+[![PCA](https://img.shields.io/badge/PCA-orange?style=for-the-badge)](){:target='_blank'}
+![SVM](https://img.shields.io/badge/SVM-darkorange?style=for-the-badge)
+
+![PKI](https://img.shields.io/badge/PKI-darkred?style=for-the-badge)
+--> <aside class=md-source-file> <span class=md-source-file__fact> <span class=md-icon title="Last update"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg> </span> <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 3, 2025 10:49:24">April 3, 2025</span> </span> <span class=md-source-file__fact> <span class=md-icon title=Created> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg> </span> <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 3, 2025 10:49:24">April 3, 2025</span> </span> <span class=md-source-file__fact> <span class=md-icon title=Contributors> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4"/></svg> </span> <nav> <a href=mailto:hsandmann@ieee.org>Humberto Sandmann</a> </nav> </span> <span class=md-source-file__fact> <span class=md-icon title=Contributors> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg> </span> <span>GitHub</span> <nav> <a href=https://github.com/hsandmann class=md-author title=@hsandmann> <img src="https://avatars.githubusercontent.com/u/20843348?v=4&size=72" alt=hsandmann> </a> </nav> </span> </aside> </article> </div> <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script> </div> <button type=button class="md-top md-icon" data-md-component=top hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg> Back to top </button> </main> <footer class=md-footer> <div class="md-footer-meta md-typeset"> <div class="md-footer-meta__inner md-grid"> <div class=md-copyright> Made with <a href=https://squidfunk.github.io/mkdocs-material/ target=_blank rel=noopener> Material for MkDocs </a> </div> </div> </div> </footer> </div> <div class=md-dialog data-md-component=dialog> <div class="md-dialog__inner md-typeset"></div> </div> <div class=md-progress data-md-component=progress role=progressbar></div> <script id=__config type=application/json>{"base": ".", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "content.tooltips", "header.autohide", "navigation.instant", "navigation.instant.progress", "navigation.top", "navigation.path", "navigation.tracking"], "search": "assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script> <script src=assets/javascripts/bundle.c8b220af.min.js></script> <script src=assets/_markdown_exec_pyodide.js></script> <script src=https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js></script> <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> <script src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script> <script src=assets/javascripts/badge.js async></script> <script src=termynal.js></script> <script id=init-glightbox>const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body> </html>

@@ -50,7 +50,7 @@ Synchronization of coupled oscillators
             <ul class='support-list'>
                 <li class='support-item'>
                     <a href='http://www.cnpq.br/' target='_blank'>CNPq</a> - grant 140632/2007-7<br>
-                    <small>mar.2007 → dec.2009 ∧ sep.2010 → feb.2011</small>
+                    <small>(mar.2007 → dec.2009) ∧ (sep.2010 → feb.2011)</small>
                 </li>
             </ul>
         </td>
@@ -907,12 +907,15 @@ H-Sandmann
   <small><small>\* grants from CAPES (PAE)</small></small><br/>
   <small><small>† grants from FAPESP</small></small>
 
-<!-- ## Languages
+-->
 
-**Portuguese** - native<br>
-**English** - advanced<br>
-**German** - B1 -->
+## Languages
 
+| | |
+|---|:--|
+| **Portuguese** | native |
+| **English** | advanced |
+| **German** | B1 |
 
 ## Publications
 

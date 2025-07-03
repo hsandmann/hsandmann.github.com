@@ -154,9 +154,14 @@ Synchronization of coupled oscillators
                         Associate Professor
                         <table class='institution'>
                             <tr>
+                                <td><a href='https://insper.github.io/ann-dl/' target='_blank'>Neural Networks and Deep Learning</a></td>
+                                <td>Artificial Neural Networks, Deep Learning, Convolutional Neural Networks, Recurrent Neural Networks, Transformers, GANs, BERT, LSTMs</td>
+                                <td>2025.2</td>
+                            </tr>
+                            <tr>
                                 <td><a href='https://insper.github.io/platform/' target='_blank'>Platform, Microsservices and APIs</a></td>
                                 <td><a href='https://spring.io/projects/spring-cloud' target='_blank'>Spring Cloud</a>, <a href='https://spring.io/projects/spring-boot' target='_blank'>Spring Boot</a>, <a href='https://www.postgresql.org/' target='_blank'>PostgreSQL</a>, <a href='https://redis.io/' target='_blank'>Redis</a>, <a href='https://www.rabbitmq.com/' target='_blank'>RabbitMQ</a>, <a href='https://kafka.apache.org/' target='_blank'>Kafka</a>, <a href='https://www.docker.com/' target='_blank'>Docker</a>, <a href='https://kubernetes.io/' target='_blank'>K8s</a></td>
-                                <td>2025.1, 2024.1</td>
+                                <td>2025.2, 2025.1, 2024.1</td>
                             </tr>
                             <tr>
                                 <td><a href='https://insper.github.io/computacao-nuvem/' target='_blank'>Cloud Computing</a></td>
@@ -233,6 +238,13 @@ Synchronization of coupled oscillators
             <small>Sao Paulo, Brazil</small><br>
             Associate Professor
             <table class='institution'>
+                <tr>
+                    <td><a href='https://hsandmann.github.io/ml/' target='_blank'>Machine Learning</td>
+                    <td>Machine Learning, PCA, KNN, K-Means, Decision Trees, Random Forests, Support Vector Machines, Prediction, Classification, Regression, Clustering, Pre-processing, Feature Engineering</td>
+                    <td>
+                        2025.2
+                    </td>
+                </tr>
                 <tr>
                     <td><a href='https://colab.research.google.com/drive/1S1Ftle1GDEMaelb1jNRQpg-nZvRq24Z8' target='_blank'>Applied Mathematics</a></td>
                     <td>Propositional Logic, Boolean Algebra, Set Theory, Polynomials, Functions, Sequences, Series, Logarithm, Combinatorial Analysis, Limits, Derivatives, Linear Algebra, Matrix Algebra, Graph Theory</td>

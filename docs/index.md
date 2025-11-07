@@ -244,8 +244,8 @@ Synchronization of coupled oscillators
             Associate Professor
             <table class='institution'>
                 <tr>
-                    <td><a href='https://hsandmann.github.io/ml/' target='_blank'>Machine Learning</td>
-                    <td>Machine Learning, PCA, KNN, K-Means, Decision Trees, Random Forests, Support Vector Machines, Prediction, Classification, Regression, Clustering, Pre-processing, Feature Engineering</td>
+                    <td><a href='https://tech-espm.github.io/ml/' target='_blank'>Machine Learning</td>
+                    <td>Machine Learning, PCA, KNN, K-Means, Decision Trees, Random Forests, Support Vector Machines, Naïve Bayes, Page Rank, PySpark, Classification, Regression, Clustering, Pre-processing, Feature Engineering</td>
                     <td>
                         2025.2
                     </td>

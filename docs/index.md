@@ -155,7 +155,7 @@ Synchronization of coupled oscillators
                         <table class='institution'>
                             <tr>
                                 <td><a href='https://insper.github.io/ann-dl/' target='_blank'>Neural Networks and Deep Learning</a></td>
-                                <td>Artificial Neural Networks, Deep Learning, Convolutional Neural Networks, Recurrent Neural Networks, Transformers, GANs, BERT, LSTMs</td>
+                                <td>Artificial Neural Networks, Perceptron, Multi Layer Perceptron, Convolutional Neural Networks, GAN, VAE, CLIP, Stable Diffusion</td>
                                 <td>2025.2</td>
                             </tr>
                             <tr>

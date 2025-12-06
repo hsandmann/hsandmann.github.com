@@ -234,7 +234,7 @@ Synchronization of coupled oscillators
     <!-- ESPM -->
     <tr>
         <td align='center'>
-            now<br>
+            dec.2025<br>
             &#8593;<br>
             jun.2014
         </td>

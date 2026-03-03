@@ -154,6 +154,21 @@ Synchronization of coupled oscillators
                         Associate Professor
                         <table class='institution'>
                             <tr>
+                                <td><a href='https://insper.github.io/platform/' target='_blank'>Platform, Microsservices and APIs</a></td>
+                                <td><a href='https://spring.io/projects/spring-cloud' target='_blank'>Spring Cloud</a>, <a href='https://spring.io/projects/spring-boot' target='_blank'>Spring Boot</a>, <a href='https://www.postgresql.org/' target='_blank'>PostgreSQL</a>, <a href='https://redis.io/' target='_blank'>Redis</a>, <a href='https://www.rabbitmq.com/' target='_blank'>RabbitMQ</a>, <a href='https://kafka.apache.org/' target='_blank'>Kafka</a>, <a href='https://www.docker.com/' target='_blank'>Docker</a>, <a href='https://kubernetes.io/' target='_blank'>K8s</a></td>
+                                <td>2026.1, 2025.2, 2025.1, 2024.1</td>
+                            </tr>
+                            <tr>
+                                <td><a href='https://coding-interviews.insper-comp.com.br/' target='_blank'>Coding Interviews</a></td>
+                                <td>Course to prepare for coding interviews.</td>
+                                <td>2026.1</td>
+                            </tr>
+                            <tr>
+                                <td><a href='https://drive.google.com/drive/folders/1lyndgoY0AG64AYwreUjy-Xasxj3Z8Sow?usp=sharing' target='_blank'>Machine Learning</a></td>
+                                <td>Machine Learning, PCA, t-SNE, UMAP, KNN, K-Means, Decision Trees, Random Forests, Support Vector Machines, Classification, Regression, Clustering, EDA, Pre-processing, Feature Engineering</td>
+                                <td>2026.1</td>
+                            </tr>
+                            <tr>
                                 <td><a href='https://insper.github.io/ann-dl/' target='_blank'>Neural Networks and Deep Learning</a></td>
                                 <td>Artificial Neural Networks, Perceptron, Multi Layer Perceptron, Convolutional Neural Networks, GAN, VAE, CLIP, Stable Diffusion</td>
                                 <td>2025.2</td>
@@ -162,11 +177,6 @@ Synchronization of coupled oscillators
                                 <td>TecWeb</td>
                                 <td>JS, React</td>
                                 <td><a href='https://barbaratieko.github.io/tecweb.2025.2/' target='_blank'>2025.2</a></td>
-                            </tr>
-                            <tr>
-                                <td><a href='https://insper.github.io/platform/' target='_blank'>Platform, Microsservices and APIs</a></td>
-                                <td><a href='https://spring.io/projects/spring-cloud' target='_blank'>Spring Cloud</a>, <a href='https://spring.io/projects/spring-boot' target='_blank'>Spring Boot</a>, <a href='https://www.postgresql.org/' target='_blank'>PostgreSQL</a>, <a href='https://redis.io/' target='_blank'>Redis</a>, <a href='https://www.rabbitmq.com/' target='_blank'>RabbitMQ</a>, <a href='https://kafka.apache.org/' target='_blank'>Kafka</a>, <a href='https://www.docker.com/' target='_blank'>Docker</a>, <a href='https://kubernetes.io/' target='_blank'>K8s</a></td>
-                                <td>2025.2, 2025.1, 2024.1</td>
                             </tr>
                             <tr>
                                 <td><a href='https://insper.github.io/computacao-nuvem/' target='_blank'>Cloud Computing</a></td>

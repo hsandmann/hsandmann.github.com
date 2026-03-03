@@ -164,9 +164,9 @@ Synchronization of coupled oscillators
                                 <td>2026.1</td>
                             </tr>
                             <tr>
-                                <td><a href='https://drive.google.com/drive/folders/1lyndgoY0AG64AYwreUjy-Xasxj3Z8Sow?usp=sharing' target='_blank'>Machine Learning</a></td>
-                                <td>Machine Learning, PCA, t-SNE, UMAP, KNN, K-Means, Decision Trees, Random Forests, Support Vector Machines, Classification, Regression, Clustering, EDA, Pre-processing, Feature Engineering</td>
-                                <td>2026.1</td>
+                                <td>Machine Learning</td>
+                                <td>PCA, t-SNE, UMAP, KNN, K-Means, Decision Trees, Random Forests, Support Vector Machines, Classification, Regression, Clustering, EDA, Pre-processing, Feature Engineering</td>
+                                <td><a href='https://drive.google.com/drive/folders/1lyndgoY0AG64AYwreUjy-Xasxj3Z8Sow?usp=sharing' target='_blank'>2026.1</a></td>
                             </tr>
                             <tr>
                                 <td><a href='https://insper.github.io/ann-dl/' target='_blank'>Neural Networks and Deep Learning</a></td>

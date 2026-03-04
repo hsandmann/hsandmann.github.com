@@ -23,10 +23,10 @@ In the realm of programming, I bring a strong background in highly complex domai
 
 ## Research Interests
 
-Computational for large-scale systems<br>
-Machine learning and artificial neural networks<br>
+Artificial neural networks and deep learning<br>
 Nonlinear systems and dynamics networks<br>
-Synchronization of coupled oscillators
+Synchronization of coupled oscillators<br>
+Computational for large-scale systems
 
 <div style="page-break-after: always;"></div>
 

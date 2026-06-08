@@ -33,7 +33,7 @@ theme:
     - navigation.path
     - navigation.tracking
   favicon: assets/img/favicon.svg
-  logo: assets/img/favicon.svg
+  logo: assets/img/logo.svg
   icon:
     admonition:
       note: fontawesome/solid/note-sticky

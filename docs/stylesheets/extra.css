@@ -39,6 +39,25 @@ hr {
     padding-left: 0px !important;
 }
 
+/* The page-to-pdf plugin injects its own floating PDF button; we provide an
+   explicit "Download CV (PDF)" link instead, so hide the redundant one. */
+.md-content__button[title="PDF"] {
+    display: none;
+}
+
+/* Section headings — subtle rule under each major CV section */
+.md-typeset h2 {
+    border-bottom: 2px solid var(--md-default-fg-color--lightest);
+    padding-bottom: 0.2em;
+    margin-top: 1.4em;
+}
+
+/* Keep a heading attached to the content that follows it when printing */
+.md-typeset h2,
+.md-typeset h3 {
+    break-after: avoid;
+}
+
 @media print {
 
     html {
@@ -59,5 +78,10 @@ hr {
     .details {
         min-width: 100px;
     }
-    
+
+    /* Avoid breaking a CV row across pages */
+    tr {
+        break-inside: avoid;
+    }
+
 }

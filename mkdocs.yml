@@ -33,8 +33,8 @@ theme:
     - navigation.path
     - navigation.tracking
   favicon: assets/img/favicon.svg
+  logo: assets/img/favicon.svg
   icon:
-    logo: material/infinity
     admonition:
       note: fontawesome/solid/note-sticky
       abstract: fontawesome/solid/book

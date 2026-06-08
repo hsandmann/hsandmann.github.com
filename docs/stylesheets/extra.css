@@ -45,8 +45,16 @@ hr {
     display: none;
 }
 
-/* Section headings — subtle rule under each major CV section */
+/* Larger, more readable base text than Material's default 0.8rem */
+.md-typeset {
+    font-size: 0.9rem;
+}
+
+/* Section headings — subtle rule under each major CV section.
+   clear: both makes each section start below the floated photo/contact box
+   instead of wrapping beside it (fixes the cramped "Research Interests"). */
 .md-typeset h2 {
+    clear: both;
     border-bottom: 2px solid var(--md-default-fg-color--lightest);
     padding-bottom: 0.2em;
     margin-top: 1.4em;

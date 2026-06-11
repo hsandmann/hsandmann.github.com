@@ -771,3 +771,8 @@ doi: <a href='https://doi.org/10.1109/IJCNN.2004.1379877' target='_blank'>10.110
 | **Portuguese** | native |
 | **English** | advanced |
 | **German** | <a href='./assets/doc/zertifikat-deutsch_b1.pdf' target='_blank'>B1</a> |
+
+---
+
+:material-robot-outline: This CV website was designed and built with the assistance of AI — Anthropic's Claude. All content is curated and verified by Humberto Sandmann.
+{ .cv-disclaimer }

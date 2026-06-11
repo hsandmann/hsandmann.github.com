@@ -45,6 +45,12 @@ hr {
     display: none;
 }
 
+/* Keep the header download button the same color as the other header icons
+   (white on the grey bar) instead of the default link blue. */
+.md-header__button.md-icon {
+    color: inherit;
+}
+
 /* Larger, more readable base text than Material's default 0.8rem */
 .md-typeset {
     font-size: 0.9rem;
@@ -72,7 +78,46 @@ hr {
     break-after: avoid;
 }
 
+/* Small AI-contribution disclaimer at the foot of the CV */
+.md-typeset .cv-disclaimer {
+    clear: both;
+    margin-top: 2.5em;
+    color: var(--md-default-fg-color--light);
+    font-size: 0.7rem;
+    text-align: center;
+}
+
 @media print {
+
+    /* Force a light, readable rendering — the PDF is generated via a headless
+       browser, so pin the scheme and text color to avoid white-on-white text. */
+    :root {
+        color-scheme: light;
+    }
+
+    body,
+    .md-typeset {
+        color: #000 !important;
+    }
+
+    /* Print only the CV content: drop the site chrome (the white header text on
+       the unprinted grey bar was the "white font" in the PDF), nav and TOC
+       sidebars, footer, and the floating buttons. */
+    .md-header,
+    .md-sidebar,
+    .md-footer,
+    .md-content__button,
+    .md-source {
+        display: none !important;
+    }
+
+    .md-main__inner {
+        margin-top: 0 !important;
+    }
+
+    .md-content {
+        max-width: none !important;
+    }
 
     html {
         font-size: 90%!important;

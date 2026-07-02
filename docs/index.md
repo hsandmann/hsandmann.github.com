@@ -15,6 +15,7 @@ hide:
     [:material-github:](https://github.com/hsandmann){:target='_blank'} [hsandmann](https://github.com/hsandmann){:target='_blank'}<br>
     [:material-linkedin:](https://www.linkedin.com/in/hsandmann/){:target='_blank'} [hsandmann](https://www.linkedin.com/in/hsandmann/){:target='_blank'}<br>
     [:simple-orcid:](https://orcid.org/0000-0001-7758-695X){:target='_blank'} [0000-0001-7758-695X](https://orcid.org/0000-0001-7758-695X){:target='_blank'}<br>
+    [:material-flask-outline:](https://graphole.com){:target='_blank'} [graphole.com](https://graphole.com){:target='_blank'}
     <!-- [:simple-googlescholar:](https://scholar.google.com/citations?user=YOUR_ID){:target='_blank'} [Google Scholar](https://scholar.google.com/citations?user=YOUR_ID){:target='_blank'} -->
 
 Computer scientist and educator with a D.Sc. from the University of São Paulo and a research stay at the Max Planck Institute for Dynamics and Self-Organization. My research bridges bio-inspired neural computing, nonlinear dynamics, and pattern recognition, investigating how biological neuronal mechanisms can inform computational intelligence. With more than a decade of university teaching alongside senior industry practice in software architecture, machine learning, and high-performance computing, I bring research depth and applied engineering experience into the classroom.

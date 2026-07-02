@@ -749,7 +749,9 @@ Program Committee member and reviewer for the **International Joint Conference o
 
 | | | | |
 |---|:--|:--|:--|
+| **IJCNN 2020** | Reviewer | Glasgow, Scotland |  |
 | **IJCNN 2019** | Program Committee &amp; Reviewer | Budapest, Hungary | <a href='https://www.inns.org/assets/docs/ijcnn2019-program-Jun29-largefont-v2%281%29.pdf' target='_blank'>program</a> |
+| **IJCNN 2018** | Reviewer | Rio de Janeiro, Brazil |  |
 | **IJCNN 2017** | Program Committee &amp; Reviewer | Anchorage, AK, USA | <a href='https://www.inns.org/assets/docs/Program.pdf' target='_blank'>program</a> |
 | **IJCNN 2015** | Reviewer | Killarney, Ireland | <a href='https://www.inns.org/assets/docs/IJCNN%202015%20Program.pdf' target='_blank'>program</a> |
 

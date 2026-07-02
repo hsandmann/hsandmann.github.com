@@ -696,16 +696,16 @@ Synchronization of coupled oscillators
 <small>Selected peer-reviewed publications. Full and up-to-date list:
 <a href='https://orcid.org/0000-0001-7758-695X' target='_blank'>ORCID 0000-0001-7758-695X</a>.</small>
 
-E. Del-Moral-Hernandez; H. Sandmann; G. Araujo; **Context dependent pattern recognition - A framework for hybrid architectures bridging chaotic neural networks based on Recursive Processing Elements and symbolic information**.
-IEEE Transactions on Neural Networks, 2009.
+E. Del-Moral-Hernandez; H. Sandmann; G. Araujo. **Context dependent pattern recognition — A framework for hybrid architectures bridging chaotic neural networks based on Recursive Processing Elements and symbolic information**.
+In Proceedings of the International Joint Conference on Neural Networks (IJCNN), Atlanta, GA, USA, 2009, pp. 663–670. IEEE.
 doi: <a href='https://doi.org/10.1109/IJCNN.2009.5179061' target='_blank'>10.1109/IJCNN.2009.5179061</a>.
 
-L.A. da Silva; H. Sandmann; E. Del-Moral-Hernandez; **A self-organizing architecture of recursive elements for continuous learning**.
-IEEE Transactions on Neural Networks, 2008.
+L.A. da Silva; H. Sandmann; E. Del-Moral-Hernandez. **A self-organizing architecture of recursive elements for continuous learning**.
+In Proceedings of the International Joint Conference on Neural Networks (IJCNN), Hong Kong, China, 2008 (IEEE World Congress on Computational Intelligence). IEEE.
 doi: <a href='https://doi.org/10.1109/IJCNN.2008.4634190' target='_blank'>10.1109/IJCNN.2008.4634190</a>.
 
-E. Del-Moral-Hernandez; H. Sandmann; L.A. da Silva; **Pattern recovery in networks of recursive processing elements with continuous learning**.
-IEEE Transactions on Neural Networks, 2004.
+E. Del-Moral-Hernandez; H. Sandmann; L.A. da Silva. **Pattern recovery in networks of recursive processing elements with continuous learning**.
+In Proceedings of the International Joint Conference on Neural Networks (IJCNN), Budapest, Hungary, 2004. IEEE.
 doi: <a href='https://doi.org/10.1109/IJCNN.2004.1379877' target='_blank'>10.1109/IJCNN.2004.1379877</a>.
 
 ## Grants &amp; Funding
@@ -743,11 +743,15 @@ doi: <a href='https://doi.org/10.1109/IJCNN.2004.1379877' target='_blank'>10.110
 
 </div>
 
-<!-- TODO (Humberto): add peer-review / program-committee service here, e.g.
-## Peer Review & Committees
-- Reviewer for <journal/conference>, <years>
-- Program committee member, <event>, <year>
--->
+## Conference Service
+
+Program Committee member and reviewer for the **International Joint Conference on Neural Networks (IJCNN)** — the flagship conference of the <a href='https://www.inns.org/' target='_blank'>INNS</a> and the IEEE Computational Intelligence Society.
+
+| | | | |
+|---|:--|:--|:--|
+| **IJCNN 2019** | Program Committee &amp; Reviewer | Budapest, Hungary | <a href='https://www.inns.org/assets/docs/ijcnn2019-program-Jun29-largefont-v2%281%29.pdf' target='_blank'>program</a> |
+| **IJCNN 2017** | Program Committee &amp; Reviewer | Anchorage, AK, USA | <a href='https://www.inns.org/assets/docs/Program.pdf' target='_blank'>program</a> |
+| **IJCNN 2015** | Reviewer | Killarney, Ireland | <a href='https://www.inns.org/assets/docs/IJCNN%202015%20Program.pdf' target='_blank'>program</a> |
 
 <!-- TODO (Humberto): add an Awards & Honors section once you have entries, e.g.
 ## Awards & Honors

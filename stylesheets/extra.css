@@ -1,0 +1,146 @@
+.md-typeset__table {
+    display: table;
+    min-width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 0px none transparent;
+    margin: 0;
+    padding: 0;
+}
+
+td, th, table {
+    border: none!important;
+}
+
+hr {
+    margin: 2px 0px!important;
+}
+
+.details {
+    display: inline-block;
+    min-width: 115px;
+    vertical-align: top;
+}
+
+.details-img {
+    width: 100px;
+    min-width: 100px;
+    max-width: 100px;
+}
+
+.support-list {
+    list-style-type: none !important;
+    display: inline-block !important;
+    margin: 0px !important;
+}
+
+.support-item {
+    margin-left: 0px !important;
+    padding-left: 0px !important;
+}
+
+/* The page-to-pdf plugin injects its own floating PDF button; we provide an
+   explicit "Download CV (PDF)" link instead, so hide the redundant one. */
+.md-content__button[title="PDF"] {
+    display: none;
+}
+
+/* Keep the header download button the same color as the other header icons
+   (white on the grey bar) instead of the default link blue. */
+.md-header__button.md-icon {
+    color: inherit;
+}
+
+/* Larger, more readable base text than Material's default 0.8rem */
+.md-typeset {
+    font-size: 0.9rem;
+}
+
+/* Material shrinks class-less tables to 0.64rem; the CV timeline content
+   lives in such tables, so bump it back up for readability. */
+.md-typeset table:not([class]) {
+    font-size: 0.8rem;
+}
+
+/* Section headings — subtle rule under each major CV section.
+   clear: both makes each section start below the floated photo/contact box
+   instead of wrapping beside it (fixes the cramped "Research Interests"). */
+.md-typeset h2 {
+    clear: both;
+    border-bottom: 2px solid var(--md-default-fg-color--lightest);
+    padding-bottom: 0.2em;
+    margin-top: 1.4em;
+}
+
+/* Keep a heading attached to the content that follows it when printing */
+.md-typeset h2,
+.md-typeset h3 {
+    break-after: avoid;
+}
+
+/* Small AI-contribution disclaimer at the foot of the CV */
+.md-typeset .cv-disclaimer {
+    clear: both;
+    margin-top: 2.5em;
+    color: var(--md-default-fg-color--light);
+    font-size: 0.7rem;
+    text-align: center;
+}
+
+@media print {
+
+    /* Force a light, readable rendering — the PDF is generated via a headless
+       browser, so pin the scheme and text color to avoid white-on-white text. */
+    :root {
+        color-scheme: light;
+    }
+
+    body,
+    .md-typeset {
+        color: #000 !important;
+    }
+
+    /* Print only the CV content: drop the site chrome (the white header text on
+       the unprinted grey bar was the "white font" in the PDF), nav and TOC
+       sidebars, footer, and the floating buttons. */
+    .md-header,
+    .md-sidebar,
+    .md-footer,
+    .md-content__button,
+    .md-source {
+        display: none !important;
+    }
+
+    .md-main__inner {
+        margin-top: 0 !important;
+    }
+
+    .md-content {
+        max-width: none !important;
+    }
+
+    html {
+        font-size: 90%!important;
+    }
+
+    .details-img {
+        width: 75px;
+        min-width: 75px;
+        max-width: 75px;
+    }
+
+    .photo {
+        max-width: 120px!important;
+        height: auto!important;
+    }
+    
+    .details {
+        min-width: 100px;
+    }
+
+    /* Avoid breaking a CV row across pages */
+    tr {
+        break-inside: avoid;
+    }
+
+}

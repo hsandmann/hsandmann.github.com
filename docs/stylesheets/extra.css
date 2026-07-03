@@ -78,13 +78,17 @@ hr {
     break-after: avoid;
 }
 
-/* Inline site favicon used as a link icon (e.g. graphole.com), sized to sit
-   next to the Material icons in the contact block. */
-.md-typeset img.favicon-inline {
-    height: 1.1em;
-    width: auto;
-    vertical-align: -0.2em;
-    border-radius: 2px;
+/* Inline site favicon used as a link icon (e.g. graphole.com). Rendered as a
+   currentColor mask so it matches the Material contact icons in both size and
+   color (and adapts to light/dark), rather than a fixed-color raster. */
+.md-typeset .favicon-inline {
+    display: inline-flex;
+    height: 1.125em;
+    width: 1.125em;
+    vertical-align: text-top;
+    background-color: currentColor;
+    -webkit-mask: url(../assets/img/graphole.png) center / contain no-repeat;
+    mask: url(../assets/img/graphole.png) center / contain no-repeat;
 }
 
 /* Small AI-contribution disclaimer at the foot of the CV */

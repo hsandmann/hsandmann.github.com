@@ -9,14 +9,14 @@ hide:
 
 !!! custom inline end ""
 
-    [:material-email-outline:](mailto:hsandmann@ieee.org){:target='_blank'} [hsandmann@ieee.org](mailto:hsandmann@ieee.org){:target='_blank'}
+    [:material-email-outline:](mailto:hsandmann@ieee.org){:target='_blank' title='Email'} [hsandmann@ieee.org](mailto:hsandmann@ieee.org){:target='_blank'}
 
     [:material-link:](index.md) [hsandmann.github.io](index.md)<br>
     [:material-github:](https://github.com/hsandmann){:target='_blank' title='GitHub'} [hsandmann](https://github.com/hsandmann){:target='_blank'}<br>
     [:material-linkedin:](https://www.linkedin.com/in/hsandmann/){:target='_blank' title='LinkedIn'} [hsandmann](https://www.linkedin.com/in/hsandmann/){:target='_blank'}<br>
-    [:simple-orcid:](https://orcid.org/0000-0001-7758-695X){:target='_blank' title='ORCID'} [0000-0001-7758-695X](https://orcid.org/0000-0001-7758-695X){:target='_blank' title='ORCID'}<br>
-    [:simple-googlescholar:](https://scholar.google.com/citations?user=EG3wtRIAAAAJ){:target='_blank' title='Google Scholar'} [EG3wtRIAAAAJ](https://scholar.google.com/citations?user=EG3wtRIAAAAJ){:target='_blank' title='Google Scholar'}<br>
-    <a href='https://graphole.com' target='_blank' title='graphole.com'><span class='favicon-inline'></span></a> [graphole.com](https://graphole.com){:target='_blank' title='graphole.com'}
+    [:simple-orcid:](https://orcid.org/0000-0001-7758-695X){:target='_blank' title='ORCID'} [0000-0001-7758-695X](https://orcid.org/0000-0001-7758-695X){:target='_blank'}<br>
+    [:simple-googlescholar:](https://scholar.google.com/citations?user=EG3wtRIAAAAJ){:target='_blank' title='Google Scholar'} [EG3wtRIAAAAJ](https://scholar.google.com/citations?user=EG3wtRIAAAAJ){:target='_blank'}<br>
+    <a href='https://graphole.com' target='_blank' title='Graphole'><span class='favicon-inline'></span></a> [graphole.com](https://graphole.com){:target='_blank'}
 
 Computer scientist and educator with a D.Sc. from the University of São Paulo and a research stay at the Max Planck Institute for Dynamics and Self-Organization. My research bridges bio-inspired neural computing, nonlinear dynamics, and pattern recognition, investigating how biological neuronal mechanisms can inform computational intelligence. With more than a decade of university teaching alongside senior industry practice in software architecture, machine learning, and high-performance computing, I bring research depth and applied engineering experience into the classroom.
 

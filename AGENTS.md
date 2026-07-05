@@ -1,0 +1,71 @@
+# AGENTS.md
+
+Guidance for AI coding agents working in this repository.
+
+## Project Type
+
+This is a MkDocs Material documentation site published from `main`.
+
+## Start Here
+
+- Read `README.md` for project identity.
+- Read `mkdocs.yml` before changing docs/theme/plugins.
+- Primary authored content is under `docs/` (currently mostly `docs/index.md`).
+
+## Environment And Commands
+
+Use the repo-local virtual environment when available.
+
+```bash
+source env/bin/activate
+pip install -r requirements.txt
+```
+
+Common commands:
+
+```bash
+# local preview
+mkdocs serve
+
+# production build validation
+mkdocs build --strict
+```
+
+If build fails with Playwright browser errors (used by `page-to-pdf`), install browser binaries once:
+
+```bash
+playwright install
+```
+
+CI/CD reference:
+- Workflow: `.github/workflows/main.yaml`
+- CI installs `requirements.txt` and deploys with:
+
+```bash
+mkdocs gh-deploy --force
+```
+
+Only run deploy commands when explicitly requested.
+
+## Editing Conventions
+
+- Prefer editing source docs in `docs/` and configuration in `mkdocs.yml`.
+- Keep custom styling in `stylesheets/extra.css` instead of inline styles when practical.
+- Do not edit files under `env/` (local virtual environment artifacts).
+- Keep plugin/theme changes in `mkdocs.yml` synchronized with `requirements.txt`.
+
+## Validation Checklist
+
+Before finishing:
+
+1. Run `mkdocs build --strict`.
+2. If strict mode fails due only to missing Playwright browser binaries, run `playwright install` and retry.
+3. If content/layout changed, run `mkdocs serve` and spot-check affected pages.
+4. If dependencies changed, ensure `requirements.txt` reflects them.
+
+## Useful References
+
+- Site config: [mkdocs.yml](mkdocs.yml)
+- Dependencies: [requirements.txt](requirements.txt)
+- Main content page: [docs/index.md](docs/index.md)
+- CI deployment workflow: [.github/workflows/main.yaml](.github/workflows/main.yaml)

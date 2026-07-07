@@ -71,6 +71,9 @@ plugins:
       minify_html: true
   - page-to-pdf:
       format: Letter
+      pageLoadOptions:
+        waitUntil: networkidle
+        timeout: 60000
 
 extra_css:
   - stylesheets/extra.css

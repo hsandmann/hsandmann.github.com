@@ -151,9 +151,24 @@ hr {
         min-width: 100px;
     }
 
-    /* Avoid breaking a CV row across pages */
-    tr {
+    /* Neutralise the hardcoded section page-breaks so content flows and fills
+       each page instead of leaving large gaps. */
+    div[style*="page-break-after"] {
+        page-break-after: auto !important;
+    }
+
+    /* Keep each section heading with the content that follows it, and never
+       split a heading itself. */
+    .md-typeset h2,
+    .md-typeset h3 {
         break-inside: avoid;
+        break-after: avoid;
+    }
+
+    /* Give major sections a little breathing room at the top when they do land
+       mid-page. */
+    .md-typeset h2 {
+        margin-top: 1.2em;
     }
 
 }

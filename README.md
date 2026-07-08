@@ -1,13 +1,12 @@
 <div align="center">
 
-# 👋 Humberto Sandmann — Curriculum Vitae
+# Humberto Sandmann
 
 *The source behind my online CV and two tailored, print-ready PDFs.*
 
 [![Live site](https://img.shields.io/badge/live-hsandmann.github.io-3949ab?style=for-the-badge&logo=githubpages&logoColor=white)](https://hsandmann.github.io/)
 [![Academic CV](https://img.shields.io/badge/academic%20CV-PDF-0f4c4f?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://hsandmann.github.io/assets/doc/sandmann-academic.pdf)
 [![Résumé](https://img.shields.io/badge/developer-r%C3%A9sum%C3%A9-0f766e?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://hsandmann.github.io/assets/doc/sandmann-resume.pdf)
-[![Deploy](https://github.com/hsandmann/hsandmann.github.com/actions/workflows/main.yaml/badge.svg)](https://github.com/hsandmann/hsandmann.github.com/actions/workflows/main.yaml)
 
 </div>
 
@@ -25,13 +24,14 @@ from a single structured data source and rebuilt automatically on every push to 
 
 | | |
 |---|---|
-| 🌐 **Online CV** | <https://hsandmann.github.io/> |
-| 🎓 **Academic CV (PDF)** | <https://hsandmann.github.io/assets/doc/sandmann-academic.pdf> |
-| 💻 **Developer résumé (PDF)** | <https://hsandmann.github.io/assets/doc/sandmann-resume.pdf> |
+| 🌐 **Online** | <https://hsandmann.github.io/> |
+| 🎓 **Academic (PDF)** | <https://hsandmann.github.io/assets/doc/sandmann-academic.pdf> |
+| 💻 **Résumé (PDF)** | <https://hsandmann.github.io/assets/doc/sandmann-resume.pdf> |
 | 💼 **LinkedIn** | <https://www.linkedin.com/in/hsandmann/> |
-| 🆔 **ORCID** | [0000-0001-7758-695X](https://orcid.org/0000-0001-7758-695X) |
 
 ## 🧰 Tech stack
+
+[![Deploy](https://github.com/hsandmann/hsandmann.github.com/actions/workflows/main.yaml/badge.svg)](https://github.com/hsandmann/hsandmann.github.com/actions/workflows/main.yaml)
 
 - **[MkDocs](https://www.mkdocs.org/)** + **[Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)** — the online CV
 - **CV PDFs** — generated from `cv/data/cv.yml` by `cv/build.py`: Jinja2 templates (`cv/templates/`) rendered to PDF via headless Chromium (Playwright), with fonts bundled for reliable, universal rendering

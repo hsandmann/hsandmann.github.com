@@ -31,8 +31,8 @@ IMGDIR = ROOT / "docs" / "assets" / "img"
 OUTDIR = ROOT / "docs" / "assets" / "doc"
 
 TARGETS = [
-    ("professor.html.j2", "sandmann-professor.pdf"),
-    ("developer.html.j2", "sandmann-developer.pdf"),
+    ("professor.html.j2", "sandmann-academic.pdf"),
+    ("developer.html.j2", "sandmann-resume.pdf"),
 ]
 
 

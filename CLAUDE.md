@@ -41,7 +41,7 @@ source by a standalone script:
   bundled via `@font-face` (in `cv/assets/fonts/`). Bundling every weight is essential: synthesized
   bold/italic exports as Type3 and renders blank in many PDF viewers; real faces export as Type0.
 - `cv/build.py` — renders each template with Jinja2 and prints to PDF via Playwright/Chromium,
-  writing `docs/assets/doc/sandmann-professor.pdf` and `sandmann-developer.pdf`.
+  writing `docs/assets/doc/sandmann-academic.pdf` and `sandmann-resume.pdf`.
 
 Rebuild locally with `python cv/build.py`. CI runs it on every push and commits the fresh PDFs.
 The site links to both (header button → academic CV; contact block → both).

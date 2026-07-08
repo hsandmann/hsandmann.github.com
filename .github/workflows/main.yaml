@@ -44,15 +44,15 @@ jobs:
       # Fail loudly if either PDF is missing, so we never deploy a dead download link
       - name: Verify CV PDFs were generated
         run: |
-          test -f docs/assets/doc/sandmann-professor.pdf
-          test -f docs/assets/doc/sandmann-developer.pdf
+          test -f docs/assets/doc/sandmann-academic.pdf
+          test -f docs/assets/doc/sandmann-resume.pdf
 
       # Commit the regenerated PDFs back to the repo
       - name: Commit CV PDFs
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/assets/doc/sandmann-professor.pdf docs/assets/doc/sandmann-developer.pdf
+          git add docs/assets/doc/sandmann-academic.pdf docs/assets/doc/sandmann-resume.pdf
           git diff --staged --quiet || git commit -m "chore: update CV PDFs [skip ci]"
           git push
 

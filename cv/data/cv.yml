@@ -17,14 +17,14 @@ personal:
     nonlinear dynamics, and pattern recognition, investigating how biological
     neuronal mechanisms can inform computational intelligence. More than a decade
     of university teaching alongside senior industry practice in software
-    architecture, machine learning, and high-performance computing.
+    architecture, artificial intelligence, and high-performance computing.
   # Industry / short summary (developer résumé)
   summary_dev: >-
-    Senior software architect and machine-learning engineer with 20+ years
+    Senior software architect and artificial intelligence engineer with 20+ years
     building high-stakes systems across banking, fintech, and retail — core
     banking, cryptography (PKI/HSM), high-performance computing, computer vision,
     and cloud-native microservices. D.Sc. in neural computing; also a university
-    professor teaching software design, ML, and distributed systems.
+    professor teaching software design, AI, and distributed systems.
 
 contact:
   email: hsandmann@ieee.org
@@ -39,7 +39,7 @@ research_interests:
   - DeFi, smart contracts, and decentralized applications
   - Small-world networks and complex systems
   - Computation in large-scale systems
-  - Artificial neural networks and deep learning
+  - Artificial intelligence and deep learning
   - Nonlinear systems and network dynamics
   - Synchronization of coupled oscillators
 

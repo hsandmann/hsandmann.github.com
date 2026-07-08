@@ -12,9 +12,7 @@
 
 ---
 
-> Computer scientist and professor — D.Sc. (University of São Paulo) with a research stay at the
-> Max Planck Institute for Dynamics and Self-Organization. Research at the intersection of
-> **bio-inspired neural computing**, **nonlinear network dynamics**, and **pattern recognition**.
+> Computer scientist and professor — D.Sc. (University of São Paulo) with a research stay at the Max Planck Institute for Dynamics and Self-Organization. Research at the intersection of **bio-inspired neural computing**, **nonlinear network dynamics**, and **pattern recognition**.
 
 This repository hosts my **online CV** (a MkDocs Material site published to GitHub Pages) plus two
 purpose-built PDFs — a comprehensive **academic CV** and a concise **résumé** — generated
@@ -25,8 +23,8 @@ from a single structured data source and rebuilt automatically on every push to 
 | | |
 |---|---|
 | 🌐 **Online** | <https://hsandmann.github.io/> |
-| 🎓 **Academic (PDF)** | <https://hsandmann.github.io/assets/doc/sandmann-academic.pdf> |
-| 💻 **Résumé (PDF)** | <https://hsandmann.github.io/assets/doc/sandmann-resume.pdf> |
+| 🎓 **Academic** | <https://hsandmann.github.io/assets/doc/sandmann-academic.pdf> |
+| 💻 **Résumé** | <https://hsandmann.github.io/assets/doc/sandmann-resume.pdf> |
 | 💼 **LinkedIn** | <https://www.linkedin.com/in/hsandmann/> |
 
 ## 🧰 Tech stack

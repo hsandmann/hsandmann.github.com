@@ -37,7 +37,7 @@ source by a standalone script:
 
 - `cv/data/cv.yml` — the single source of truth for CV content. **Edit this**, never the PDFs.
 - `cv/templates/professor.html.j2` (academic CV, Spectral serif) and `developer.html.j2`
-  (senior-developer résumé, IBM Plex) — self-contained HTML/CSS, each with **all** font weights
+  (senior résumé, IBM Plex) — self-contained HTML/CSS, each with **all** font weights
   bundled via `@font-face` (in `cv/assets/fonts/`). Bundling every weight is essential: synthesized
   bold/italic exports as Type3 and renders blank in many PDF viewers; real faces export as Type0.
 - `cv/build.py` — renders each template with Jinja2 and prints to PDF via Playwright/Chromium,

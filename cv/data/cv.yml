@@ -283,7 +283,7 @@ memberships:
   - org: INNS — International Neural Network Society
     detail: "Student member #3951"
 
-# Grouped skills (developer résumé)
+# Grouped skills (résumé)
 skills:
   - { category: Languages,               tags: [Java, Python, Go, Kotlin, C, "C++", JavaScript, SQL] }
   - { category: Machine Learning & AI,   tags: [Deep Learning, Neural Networks, Computer Vision, NLP, PCA, SVM, Clustering] }

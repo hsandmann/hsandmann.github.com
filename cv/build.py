@@ -3,7 +3,7 @@
 
 Outputs:
   docs/assets/doc/cv-professor.pdf   (comprehensive academic CV)
-  docs/assets/doc/cv-developer.pdf   (concise senior-developer résumé)
+  docs/assets/doc/cv-developer.pdf   (concise senior résumé)
 
 Fonts and the photo are embedded as base64 data URIs so Chromium embeds real
 TrueType faces (Type0). Every weight/style used is a real @font-face, avoiding

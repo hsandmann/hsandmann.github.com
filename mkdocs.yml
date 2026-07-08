@@ -70,7 +70,7 @@ plugins:
   - minify:
       minify_html: true
 
-# The downloadable CVs (cv-professor.pdf / cv-developer.pdf) are generated from
+# The downloadable CVs (sandmann-professor-cv.pdf / sandmann-developer-cv.pdf) are generated from
 # cv/data/cv.yml by cv/build.py (run in CI), not by an MkDocs plugin.
 
 extra_css:

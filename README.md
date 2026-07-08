@@ -5,8 +5,8 @@
 *The source behind my online CV and two tailored, print-ready PDFs.*
 
 [![Live site](https://img.shields.io/badge/live-hsandmann.github.io-3949ab?style=for-the-badge&logo=githubpages&logoColor=white)](https://hsandmann.github.io/)
-[![Academic CV](https://img.shields.io/badge/academic%20CV-PDF-0f4c4f?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://hsandmann.github.io/assets/doc/sandmann-academic.pdf)
-[![Résumé](https://img.shields.io/badge/developer-r%C3%A9sum%C3%A9-0f766e?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://hsandmann.github.io/assets/doc/sandmann-resume.pdf)
+[![Academic](https://img.shields.io/badge/academic-CV-0f4c4f?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://hsandmann.github.io/assets/doc/sandmann-academic.pdf)
+[![Résumé](https://img.shields.io/badge/industry-r%C3%A9sum%C3%A9-0f766e?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://hsandmann.github.io/assets/doc/sandmann-resume.pdf)
 
 </div>
 

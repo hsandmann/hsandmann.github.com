@@ -22,7 +22,7 @@ Computer scientist and educator with a D.Sc. from the University of São Paulo a
 
 ## Research Interests
 
-DeFi, Smart contracts and decentralized applications<br>
+DeFi, smart contracts and decentralized applications<br>
 Small-world networks and complex systems<br>
 Computation in large-scale systems<br>
 Artificial neural networks and deep learning<br>

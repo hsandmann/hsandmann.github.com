@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{ personal.name }} — Curriculum Vitae</title>
+<style>
+  @font-face { font-family:'Spectral'; font-weight:400; font-style:normal;  src:url({{ font('Spectral-Regular.ttf') }}) format('truetype'); }
+  @font-face { font-family:'Spectral'; font-weight:500; font-style:normal;  src:url({{ font('Spectral-Medium.ttf') }}) format('truetype'); }
+  @font-face { font-family:'Spectral'; font-weight:600; font-style:normal;  src:url({{ font('Spectral-SemiBold.ttf') }}) format('truetype'); }
+  @font-face { font-family:'Spectral'; font-weight:700; font-style:normal;  src:url({{ font('Spectral-Bold.ttf') }}) format('truetype'); }
+  @font-face { font-family:'Spectral'; font-weight:400; font-style:italic;  src:url({{ font('Spectral-Italic.ttf') }}) format('truetype'); }
+  @font-face { font-family:'Spectral'; font-weight:500; font-style:italic;  src:url({{ font('Spectral-MediumItalic.ttf') }}) format('truetype'); }
+
+  :root{
+    --ink:#1c1c1a; --muted:#5c5c58; --faint:#8a8a85;
+    --accent:#0f4c4f; --hair:#d9d7cf; --paper:#ffffff;
+  }
+  @page{ size:Letter; margin:0.82in 0.86in 0.68in; }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  body{
+    font-family:'Spectral', Georgia, serif; color:var(--ink);
+    font-size:10pt; line-height:1.42; background:var(--paper);
+    font-feature-settings:"onum" 1, "kern" 1;
+  }
+  a{ color:var(--accent); text-decoration:none; }
+
+  /* ---- Header ---- */
+  header{ margin-bottom:16px; }
+  .name{
+    font-weight:600; font-size:29pt; letter-spacing:.2px; line-height:1;
+    color:var(--ink);
+  }
+  .headline{
+    margin-top:6px; font-style:italic; font-size:12pt; color:var(--accent);
+    font-weight:500;
+  }
+  .contacts{
+    margin-top:11px; padding-top:10px; border-top:2px solid var(--accent);
+    font-size:8.9pt; color:var(--muted); line-height:1.7;
+  }
+  .contacts .sep{ color:var(--hair); margin:0 7px; }
+  .contacts a{ color:var(--muted); }
+  .contacts b{ color:var(--ink); font-weight:600; }
+
+  /* ---- Sections ---- */
+  section{ margin-top:17px; }
+  h2{
+    font-size:9.5pt; font-weight:600; text-transform:uppercase;
+    letter-spacing:2.2px; color:var(--accent);
+    padding-bottom:3px; margin-bottom:9px;
+    border-bottom:1px solid var(--hair);
+  }
+
+  .profile{ font-size:10.3pt; line-height:1.5; color:#2b2b28; }
+
+  /* interests */
+  .interests{ columns:2; column-gap:26px; font-size:9.8pt; }
+  .interests li{ list-style:none; padding-left:14px; position:relative; margin-bottom:2px; break-inside:avoid; }
+  .interests li::before{ content:"—"; position:absolute; left:0; color:var(--accent); }
+
+  /* entry (education / experience) */
+  .entry{ margin-bottom:11px; break-inside:avoid; }
+  .entry-head{ display:flex; justify-content:space-between; align-items:baseline; gap:14px; }
+  .entry-title{ font-weight:600; font-size:10.4pt; }
+  .entry-sub{ font-style:italic; color:var(--muted); font-size:9.8pt; }
+  .period{ color:var(--faint); font-size:9pt; white-space:nowrap; font-variant-numeric:tabular-nums; }
+  .detail{ font-size:9.4pt; color:var(--muted); margin-top:1px; }
+  .detail .k{ display:inline-block; min-width:64px; color:var(--faint); font-style:italic; }
+
+  /* publications */
+  .pub{ margin-bottom:9px; font-size:9.6pt; line-height:1.42; break-inside:avoid; }
+  .pub .t{ font-weight:600; color:var(--ink); }
+  .pub .v{ font-style:italic; color:var(--muted); }
+  .pub .doi{ color:var(--faint); font-size:8.8pt; }
+
+  /* two-column compact grids */
+  .rows{ font-size:9.6pt; }
+  .row{ display:flex; gap:14px; padding:2.5px 0; break-inside:avoid; }
+  .row .lead{ font-weight:600; min-width:112px; }
+  .row .body{ flex:1; color:var(--muted); }
+  .row .tail{ color:var(--faint); white-space:nowrap; font-size:9pt; }
+
+  .memb{ margin-bottom:8px; break-inside:avoid; }
+  .memb .org{ font-weight:600; }
+  .memb ul{ margin:2px 0 0 0; }
+  .memb li{ list-style:none; padding-left:14px; position:relative; color:var(--muted); font-size:9.3pt; margin-bottom:1px; }
+  .memb li::before{ content:"·"; position:absolute; left:4px; color:var(--accent); font-weight:700; }
+
+  .langs{ display:flex; gap:26px; font-size:9.8pt; }
+  .langs b{ font-weight:600; }
+  .langs span{ color:var(--muted); }
+
+  .courses{ color:var(--muted); font-size:9.2pt; font-style:italic; margin-top:1px; }
+  h2, h3{ break-after:avoid; }
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="name">{{ personal.name }}</div>
+    <div class="headline">{{ personal.headline }}</div>
+    <div class="contacts">
+      <a href="mailto:{{ contact.email }}"><b>{{ contact.email }}</b></a>
+      <span class="sep">|</span><a href="{{ contact.website.url }}">{{ contact.website.label }}</a>
+      <span class="sep">|</span><a href="{{ contact.scholar.url }}">Google&nbsp;Scholar</a>
+      <span class="sep">|</span><a href="{{ contact.orcid.url }}">ORCID&nbsp;{{ contact.orcid.label }}</a>
+      <span class="sep">|</span><a href="{{ contact.linkedin.url }}">LinkedIn</a>
+      <span class="sep">|</span><a href="{{ contact.github.url }}">GitHub</a>
+    </div>
+  </header>
+
+  <section>
+    <h2>Profile</h2>
+    <p class="profile">{{ personal.summary }}</p>
+  </section>
+
+  <section>
+    <h2>Research Interests</h2>
+    <ul class="interests">
+      {% for r in research_interests %}<li>{{ r }}</li>{% endfor %}
+    </ul>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    {% for e in education %}
+    <div class="entry">
+      <div class="entry-head">
+        <div>
+          <span class="entry-title">{{ e.degree }}{% if e.field %}, {{ e.field }}{% endif %}</span>
+        </div>
+        <div class="period">{{ e.start }}&ndash;{{ e.end }}</div>
+      </div>
+      <div class="entry-sub">{{ e.institution }}{% if e.location %} · {{ e.location }}{% endif %}</div>
+      {% if e.thesis %}<div class="detail"><span class="k">Thesis</span>{{ e.thesis }}</div>{% endif %}
+      {% if e.advisor %}<div class="detail"><span class="k">Advisor</span>{{ e.advisor }}</div>{% endif %}
+      {% if e.doi %}<div class="detail"><span class="k">DOI</span><a href="https://doi.org/{{ e.doi }}">{{ e.doi }}</a></div>{% endif %}
+      {% if e.note %}<div class="detail"><span class="k">Note</span>{{ e.note }}</div>{% endif %}
+    </div>
+    {% endfor %}
+  </section>
+
+  <section>
+    <h2>Publications</h2>
+    {% for p in publications %}
+    <div class="pub">
+      {{ p.authors }}. <span class="t">{{ p.title }}.</span>
+      <span class="v">{{ p.venue }}</span>, {{ p.year }}{% if p.pages %}, pp.&nbsp;{{ p.pages }}{% endif %}.
+      {% if p.doi %}<span class="doi">doi:<a href="https://doi.org/{{ p.doi }}">{{ p.doi }}</a></span>{% endif %}
+    </div>
+    {% endfor %}
+  </section>
+
+  <section>
+    <h2>Academic Appointments &amp; Teaching</h2>
+    {% for t in teaching %}
+    <div class="entry">
+      <div class="entry-head">
+        <div>
+          <span class="entry-title">{{ t.org }}</span>
+          <span class="entry-sub">— {{ t.roles | map(attribute='title') | unique | join(', ') }}</span>
+        </div>
+        <div class="period">{{ t.start }}&ndash;{{ t.end }}</div>
+      </div>
+      <div class="courses">{{ t.courses | join('  ·  ') }}</div>
+    </div>
+    {% endfor %}
+  </section>
+
+  <section>
+    <h2>Professional Experience</h2>
+    <div class="rows">
+      {% for x in experience %}
+      <div class="row">
+        <div class="lead">{{ x.org }}</div>
+        <div class="body">{{ x.role }}</div>
+        <div class="tail">{{ x.start }}&ndash;{{ x.end }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section>
+    <h2>Grants &amp; Funding</h2>
+    <div class="rows">
+      {% for g in grants %}
+      <div class="row">
+        <div class="lead">{{ g.agency }}</div>
+        <div class="body">{{ g.description }}</div>
+        <div class="tail">{{ g.period }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section>
+    <h2>Conference Service</h2>
+    <div class="rows">
+      {% for c in conference_service %}
+      <div class="row">
+        <div class="lead">{% if c.url %}<a href="{{ c.url }}">{{ c.event }}</a>{% else %}{{ c.event }}{% endif %}</div>
+        <div class="body">{{ c.role }}</div>
+        <div class="tail">{{ c.location }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section>
+    <h2>Professional Memberships</h2>
+    {% for m in memberships %}
+    <div class="memb">
+      <span class="org">{{ m.org }}</span> — <span style="color:var(--muted)">{{ m.detail }}</span>
+      {% if m.points %}
+      <ul>{% for i in m.points %}<li>{{ i }}</li>{% endfor %}</ul>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </section>
+
+  <section>
+    <h2>Languages</h2>
+    <div class="langs">
+      {% for l in languages %}<div><b>{{ l.name }}</b> <span>— {{ l.level }}</span></div>{% endfor %}
+    </div>
+  </section>
+
+</body>
+</html>

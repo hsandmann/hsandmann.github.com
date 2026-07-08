@@ -113,6 +113,22 @@ hr {
         color: #000 !important;
     }
 
+    /* Force embeddable fonts for the PDF. The headless browser cannot embed the
+       macOS system font (San Francisco) or the Roboto web font, so it falls back
+       to Type3 glyphs that render blank in many PDF viewers. Helvetica/Arial
+       (macOS) and Liberation/DejaVu Sans (CI) embed as TrueType (Type0) and
+       display everywhere. Screen typography is unaffected. */
+    html, body,
+    .md-typeset, .md-typeset *,
+    h1, h2, h3, h4, h5, h6 {
+        font-family: Helvetica, Arial, "Liberation Sans", "DejaVu Sans", sans-serif !important;
+    }
+
+    /* Subdue the bright web links to a document-like tone in print. */
+    .md-typeset a {
+        color: #1f3a5f !important;
+    }
+
     /* Print only the CV content: drop the site chrome (the white header text on
        the unprinted grey bar was the "white font" in the PDF), nav and TOC
        sidebars, footer, and the floating buttons. */

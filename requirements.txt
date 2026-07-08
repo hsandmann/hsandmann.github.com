@@ -1,5 +1,8 @@
 mkdocs-material
 mkdocs-material-extensions
-mkdocs-page-pdf
 mkdocs-minify-plugin
 mkdocs-glightbox
+# CV PDF pipeline (cv/build.py)
+jinja2
+pyyaml
+playwright

@@ -32,27 +32,28 @@ jobs:
       - run: |
           pip install -r requirements.txt
 
-      # Chromium for the page-to-pdf plugin (renders the CV PDF)
+      # Chromium for the CV PDF renderer (cv/build.py)
       - run: |
           playwright install --with-deps chromium
 
-      # Build the site (page-to-pdf renders site/index.pdf during the build)
-      - run: |
-          mkdocs build --strict
-
-      # Fail loudly if the PDF was not produced, so we never deploy a dead download link
-      - name: Verify CV PDF was generated
+      # Render the two CV PDFs from cv/data/cv.yml into docs/assets/doc/
+      - name: Build CV PDFs
         run: |
-          test -f site/index.pdf
+          python cv/build.py
 
-      # Commit the regenerated CV PDF back to the repo under a recruiter-friendly name
-      - name: Commit CV PDF
+      # Fail loudly if either PDF is missing, so we never deploy a dead download link
+      - name: Verify CV PDFs were generated
         run: |
-          cp site/index.pdf docs/assets/doc/humberto-sandmann-cv.pdf
+          test -f docs/assets/doc/cv-professor.pdf
+          test -f docs/assets/doc/cv-developer.pdf
+
+      # Commit the regenerated PDFs back to the repo
+      - name: Commit CV PDFs
+        run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/assets/doc/humberto-sandmann-cv.pdf
-          git diff --staged --quiet || git commit -m "chore: update CV PDF [skip ci]"
+          git add docs/assets/doc/cv-professor.pdf docs/assets/doc/cv-developer.pdf
+          git diff --staged --quiet || git commit -m "chore: update CV PDFs [skip ci]"
           git push
 
       # Deploy to GitHub Pages

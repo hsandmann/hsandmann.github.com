@@ -1,0 +1,302 @@
+# ---------------------------------------------------------------------------
+# Single source of truth for the generated CV PDFs (professor + developer).
+# Rendered by cv/build.py through cv/templates/*.html.j2.
+# Edit THIS file to change PDF content — never the PDFs directly.
+# ---------------------------------------------------------------------------
+
+personal:
+  name: Humberto Sandmann
+  headline: Computer Scientist & Professor
+  location: São Paulo, Brazil
+  photo: hsandmann.jpg
+  # Academic / long summary
+  summary: >-
+    Computer scientist and educator with a D.Sc. from the University of São Paulo
+    and a research stay at the Max Planck Institute for Dynamics and
+    Self-Organization. My research bridges bio-inspired neural computing,
+    nonlinear dynamics, and pattern recognition, investigating how biological
+    neuronal mechanisms can inform computational intelligence. More than a decade
+    of university teaching alongside senior industry practice in software
+    architecture, machine learning, and high-performance computing.
+  # Industry / short summary (developer résumé)
+  summary_dev: >-
+    Senior software architect and machine-learning engineer with 20+ years
+    building high-stakes systems across banking, fintech, and retail — core
+    banking, cryptography (PKI/HSM), high-performance computing, computer vision,
+    and cloud-native microservices. D.Sc. in neural computing; also a university
+    professor teaching software design, ML, and distributed systems.
+
+contact:
+  email: hsandmann@ieee.org
+  website:  { label: hsandmann.github.io, url: "https://hsandmann.github.io/" }
+  github:   { label: hsandmann,           url: "https://github.com/hsandmann" }
+  linkedin: { label: in/hsandmann,        url: "https://www.linkedin.com/in/hsandmann/" }
+  orcid:    { label: 0000-0001-7758-695X, url: "https://orcid.org/0000-0001-7758-695X" }
+  scholar:  { label: Google Scholar,      url: "https://scholar.google.com/citations?user=EG3wtRIAAAAJ" }
+  project:  { label: graphole.com,        url: "https://graphole.com" }
+
+research_interests:
+  - DeFi, smart contracts, and decentralized applications
+  - Small-world networks and complex systems
+  - Computation in large-scale systems
+  - Artificial neural networks and deep learning
+  - Nonlinear systems and network dynamics
+  - Synchronization of coupled oscillators
+
+education:
+  - degree: D.Sc.
+    field: Electrical Engineering
+    institution: Polytechnic School, University of São Paulo
+    start: 2007
+    end: 2012
+    thesis: Spike patterns and computation in dynamical neural networks
+    advisor: Prof. Dr. Emílio Del Moral Hernandez
+    doi: 10.11606/T.3.2012.tde-05092012-165022
+  - degree: D.Sc. Research Internship
+    institution: Max Planck Institute for Dynamics and Self-Organization
+    location: Göttingen, Germany
+    start: 2009
+    end: 2010
+    advisor: Prof. Dr. Marc Timme
+    note: Networks Dynamics Group — CAPES grant BEX 4076-09-5
+  - degree: M.Sc.
+    field: Electrical Engineering
+    institution: Polytechnic School, University of São Paulo
+    start: 2003
+    end: 2006
+    thesis: Prediction of time series using architecture based on neuro-fuzzy systems
+    advisor: Prof. Dr. Marco Túlio Carvalho de Andrade
+    doi: 10.11606/D.3.2006.tde-01042009-095125
+  - degree: B.Sc.
+    field: Computer Science
+    institution: Faculdade de Engenharia Industrial (FEI)
+    location: São Bernardo do Campo, Brazil
+    start: 1999
+    end: 2002
+  - degree: Technician
+    field: Industrial Computation
+    institution: Escola Técnica Jorge Street
+    location: São Caetano do Sul, Brazil
+    start: 1996
+    end: 1998
+
+# Reverse-chronological professional experience (industry)
+experience:
+  - org: H-Sandmann
+    role: Founder
+    location: São Paulo, Brazil
+    start: 2006
+    end: present
+    summary: Independent consultancy in machine learning and software architecture.
+    stack: [Machine Learning, Software Architecture]
+  - org: SelsanTech
+    role: Co-Founder
+    location: São Paulo, Brazil
+    start: 2012
+    end: 2023
+    summary: Co-founded a venture delivering machine-learning and software-architecture solutions.
+    stack: [Machine Learning, Software Architecture]
+  - org: RockSpoon
+    role: Senior Software Architect & Machine Learning Engineer
+    location: São Paulo, Brazil · Palo Alto, USA
+    start: 2018
+    end: 2019
+    summary: Architected POS/ERP/payroll platforms and computer-vision/ML features for a restaurant-tech company.
+    stack: [POS, ERP, JavaEE, PostgreSQL, OpenCV, Computer Vision, Go, Android, Kotlin]
+  - org: Banco Votorantim
+    role: Senior Consultant, Computational Optimization
+    location: São Paulo, Brazil
+    start: 2015
+    end: 2016
+    summary: Return-on-equity optimization on high-performance computing infrastructure for a major bank.
+    stack: [RoE, High-Performance Computing, J2EE, Spring Boot, Jenkins, Test Automation]
+  - org: TecBan
+    role: Senior Consultant, Computational Optimization
+    location: São Paulo, Brazil
+    start: 2011
+    end: 2011
+    summary: ATM network optimization with in-memory databases and high-performance computing.
+    stack: [ATM, J2EE, In-Memory DB, High-Performance Computing]
+  - org: ABN Amro Bank
+    role: Senior Software Engineer / Architect
+    location: São Paulo, Brazil
+    start: 2006
+    end: 2007
+    summary: Core-banking, stock-market and trading systems with cryptography and PKI.
+    stack: [Core Banking, Trading, Cryptography, HSM, BouncyCastle, PKI, PKCS, Java, Servlet]
+  - org: Politec
+    role: Senior System Analyst
+    location: São Paulo, Brazil
+    start: 2005
+    end: 2006
+    summary: Banking software quality and architecture on J2EE.
+    stack: [J2EE, Software Quality, Software Architecture, Banking]
+  - org: EverSystems
+    role: Senior Software Engineer / Architect
+    location: São Paulo, Brazil
+    start: 2004
+    end: 2005
+    summary: Core-banking and stock-market platforms (BankBoston, CitiBank, Eli Lilly) with cryptography and replication.
+    stack: [PKI, BouncyCastle, Cryptography, HSM, Core Banking, Java, Replication]
+  - org: Central Online
+    role: Senior System Analyst
+    location: São Paulo, Brazil
+    start: 2002
+    end: 2003
+    summary: Object-oriented development of a learning-management system.
+    stack: [OOP, LMS]
+  - org: Datamace
+    role: Senior System Analyst
+    location: São Paulo, Brazil
+    start: 1999
+    end: 2002
+    summary: Payroll and ERP software architecture.
+    stack: [Payroll, ERP, Software Architecture]
+  - org: Heraeus Electro-Nite
+    role: Computer Programmer
+    location: São Paulo, Brazil
+    start: 1998
+    end: 1999
+    summary: Compliance, ERP and production-planning software.
+    stack: [Compliance, ERP, PCP]
+
+# Academic appointments and teaching (condensed by institution)
+teaching:
+  - org: Insper
+    location: São Paulo, Brazil
+    start: 2018
+    end: present
+    roles:
+      - { title: Associate Professor, period: "2020 – present" }
+      - { title: Assistant Professor, period: "2018 – 2020" }
+    courses:
+      - Platform, Microservices and APIs
+      - Machine Learning
+      - Neural Networks and Deep Learning
+      - Cloud Computing
+      - Design of Software
+      - Coding Interviews
+      - Foundations for Physical Communication
+  - org: ESPM
+    location: São Paulo, Brazil
+    start: 2014
+    end: 2025
+    roles:
+      - { title: Associate Professor, period: "2014 – 2025" }
+    courses:
+      - Machine Learning
+      - Applied Mathematics
+      - Object-Oriented Programming
+      - Software Quality
+      - Statistics
+      - Architecture and Operating Systems
+      - Artificial Intelligence and Society
+  - org: FIAP
+    location: São Paulo, Brazil
+    start: 2012
+    end: 2015
+    roles:
+      - { title: Associate Professor, period: "2012 – 2015" }
+    courses:
+      - "Distributed Systems"
+      - "MBA: Big Data & NoSQL Modelling"
+      - Data Structures and Algorithms
+      - Databases (Oracle PL/SQL)
+  - org: Toledo Prudente Centro Universitário
+    location: Presidente Prudente, Brazil
+    start: 2015
+    end: 2015
+    roles:
+      - { title: Visiting Professor, period: "2015" }
+    courses:
+      - "MBA: Big Data and Machine Learning"
+  - org: Universidade Cruzeiro do Sul
+    location: São Paulo, Brazil
+    start: 2012
+    end: 2013
+    roles:
+      - { title: Associate Professor, period: "2012 – 2013" }
+    courses:
+      - Computer Architecture
+      - Software Engineering
+      - Mobile Programming (Android)
+      - Databases
+  - org: Universidade Nove de Julho
+    location: São Paulo, Brazil
+    start: 2011
+    end: 2011
+    roles:
+      - { title: Temporary Professor, period: "2011" }
+    courses:
+      - Computer Architecture
+      - Introduction to Programming
+      - Web Programming
+  - org: Polytechnic School, University of São Paulo
+    location: São Paulo, Brazil
+    start: 2008
+    end: 2011
+    roles:
+      - { title: Teaching Assistant, period: "2008 – 2011" }
+    courses:
+      - Experimental Pattern Recognition, Modeling and Neurocomputing
+      - "Modeling for Signal Processing: Neural Networks and Learning"
+      - Foundations of Computing Engineering Laboratory
+
+publications:
+  - authors: "E. Del-Moral-Hernandez, H. Sandmann, G. Araujo"
+    title: "Context dependent pattern recognition — A framework for hybrid architectures bridging chaotic neural networks based on Recursive Processing Elements and symbolic information"
+    venue: "Proc. International Joint Conference on Neural Networks (IJCNN), Atlanta, GA, USA"
+    year: 2009
+    pages: "663–670"
+    doi: 10.1109/IJCNN.2009.5179061
+  - authors: "L. A. da Silva, H. Sandmann, E. Del-Moral-Hernandez"
+    title: "A self-organizing architecture of recursive elements for continuous learning"
+    venue: "Proc. IJCNN (IEEE World Congress on Computational Intelligence), Hong Kong, China"
+    year: 2008
+    doi: 10.1109/IJCNN.2008.4634190
+  - authors: "E. Del-Moral-Hernandez, H. Sandmann, L. A. da Silva"
+    title: "Pattern recovery in networks of recursive processing elements with continuous learning"
+    venue: "Proc. IJCNN, Budapest, Hungary"
+    year: 2004
+    doi: 10.1109/IJCNN.2004.1379877
+
+grants:
+  - { agency: CNPq,        description: "Doctoral fellowship — grant 140632/2007-7",                    period: "2007 – 2011" }
+  - { agency: CAPES,       description: "Doctoral internship abroad (Max Planck Institute) — BEX 4076-09-5", period: "2010" }
+  - { agency: "CAPES (PAE)", description: "Teaching-assistantship fellowship — Polytechnic School, USP",  period: "2008, 2011" }
+  - { agency: FAPESP,      description: "Teaching-assistantship fellowship — Polytechnic School, USP",   period: "2008" }
+
+conference_service:
+  - { event: "IJCNN 2020", role: "Reviewer",                     location: "Glasgow, Scotland" }
+  - { event: "IJCNN 2019", role: "Program Committee & Reviewer",  location: "Budapest, Hungary", url: "https://www.inns.org/assets/docs/ijcnn2019-program-Jun29-largefont-v2%281%29.pdf" }
+  - { event: "IJCNN 2018", role: "Reviewer",                      location: "Rio de Janeiro, Brazil" }
+  - { event: "IJCNN 2017", role: "Program Committee & Reviewer",  location: "Anchorage, AK, USA", url: "https://www.inns.org/assets/docs/Program.pdf" }
+  - { event: "IJCNN 2015", role: "Reviewer",                      location: "Killarney, Ireland", url: "https://www.inns.org/assets/docs/IJCNN%202015%20Program.pdf" }
+
+memberships:
+  - org: IEEE — Institute of Electrical and Electronics Engineers
+    detail: "Member #60216475"
+    points:
+      - "Computational Intelligence Society (CIS) — member since 2004; Brazilian committee (2009; 2010–2012)"
+      - "Signal Processing Society (SPS) — 2005–2009"
+      - "Engineering in Medicine and Biology Society (EMBS) — 2005–2009"
+  - org: INNS — International Neural Network Society
+    detail: "Student member #3951"
+
+# Grouped skills (developer résumé)
+skills:
+  - { category: Languages,               tags: [Java, Python, Go, Kotlin, C, "C++", JavaScript, SQL] }
+  - { category: Machine Learning & AI,   tags: [Deep Learning, Neural Networks, Computer Vision, NLP, PCA, SVM, Clustering] }
+  - { category: Backend & Architecture,  tags: [Spring Boot, Spring Cloud, Microservices, Design Patterns, Software Architecture] }
+  - { category: Data & Infrastructure,   tags: [PostgreSQL, Redis, Kafka, RabbitMQ, Docker, Kubernetes, Spark, MongoDB, Neo4j] }
+  - { category: Domains,                 tags: [Banking & Fintech, "Cryptography (PKI/HSM)", High-Performance Computing, "POS/ERP"] }
+
+projects:
+  - name: Graphole
+    url: "https://graphole.com"
+    description: Personal project.
+
+languages:
+  - { name: Portuguese, level: Native }
+  - { name: English,    level: Advanced }
+  - { name: German,     level: "B1" }

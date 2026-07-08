@@ -69,11 +69,9 @@ plugins:
   - glightbox
   - minify:
       minify_html: true
-  - page-to-pdf:
-      format: Letter
-      pageLoadOptions:
-        waitUntil: networkidle
-        timeout: 60000
+
+# The downloadable CVs (cv-professor.pdf / cv-developer.pdf) are generated from
+# cv/data/cv.yml by cv/build.py (run in CI), not by an MkDocs plugin.
 
 extra_css:
   - stylesheets/extra.css

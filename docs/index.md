@@ -16,7 +16,8 @@ hide:
     [:material-linkedin:](https://www.linkedin.com/in/hsandmann/){:target='_blank' title='LinkedIn'} [hsandmann](https://www.linkedin.com/in/hsandmann/){:target='_blank'}<br>
     [:simple-orcid:](https://orcid.org/0000-0001-7758-695X){:target='_blank' title='ORCID'} [0000-0001-7758-695X](https://orcid.org/0000-0001-7758-695X){:target='_blank'}<br>
     [:simple-googlescholar:](https://scholar.google.com/citations?user=EG3wtRIAAAAJ){:target='_blank' title='Google Scholar'} [EG3wtRIAAAAJ](https://scholar.google.com/citations?user=EG3wtRIAAAAJ){:target='_blank'}<br>
-    <a href='https://graphole.com' target='_blank' title='Graphole'><span class='favicon-inline'></span></a> [sandmann](https://graphole.com){:target='_blank'}
+    <a href='https://graphole.com' target='_blank' title='Graphole'><span class='favicon-inline'></span></a> [sandmann](https://graphole.com){:target='_blank'}<br>
+    :material-passport:{ title='Citizenship' } Brazilian &amp; German
 
 Computer scientist and professor with a D.Sc. from the University of São Paulo and a research stay at the Max Planck Institute for Dynamics and Self-Organization. My research bridges bio-inspired neural computing, nonlinear dynamics, and pattern recognition, investigating how biological neuronal mechanisms can inform computational intelligence. With more than a decade of university teaching alongside senior industry practice in software architecture, artificial intelligence, and high-performance computing, I bring research depth and applied engineering experience into the classroom.
 

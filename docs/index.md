@@ -763,8 +763,8 @@ Program Committee member and reviewer for the **International Joint Conference o
 
 | | | | |
 |---|:--|:--|:--|
-| **Jornal da Band** — TV Bandeirantes | Interview on children's images published online | jul.2023 | <a href='https://www.youtube.com/watch?v=706vzDaaLcQ' target='_blank'>watch</a> |
-| **Jornal da Band** — TV Bandeirantes | Interview on security of cryptocurrency wallets | mar.2023 | <a href='https://www.youtube.com/watch?v=lfh9akgkmGE' target='_blank'>watch</a> |
+| **Jornal da Band** — TV Bandeirantes | Interview on children's images published online | jul.2023 | <a href='https://www.youtube.com/watch?v=706vzDaaLcQ&t=2955s' target='_blank'>watch</a> |
+| **Jornal da Band** — TV Bandeirantes | Interview on security of cryptocurrency wallets | mar.2023 | <a href='https://www.youtube.com/watch?v=lfh9akgkmGE&t=2217s' target='_blank'>watch</a> |
 | **GloboNews Em Ponto** — GloboNews | Live commentary on the 5G rollout in Brazil | nov.2019 | |
 | **Jornal da Globo** — TV Globo | Economic sectors prepare for the 5G network | oct.2019 | <a href='https://globoplay.globo.com/v/8051355/' target='_blank'>watch</a> |
 | **Brazil Journal** | "O squad da ciência contra o óleo no mar" — Brazilian team's NASA-awarded algorithm | oct.2019 | <a href='https://braziljournal.com/o-squad-da-ciencia-contra-o-oleo-no-mar' target='_blank'>read</a> |

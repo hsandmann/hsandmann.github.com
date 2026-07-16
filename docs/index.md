@@ -752,10 +752,29 @@ Program Committee member and reviewer for the **International Joint Conference o
 | | | | |
 |---|:--|:--|:--|
 | **IJCNN 2020** | Reviewer | Glasgow, Scotland |  |
-| **IJCNN 2019** | Program Committee &amp; Reviewer | Budapest, Hungary | <a href='https://www.inns.org/assets/docs/ijcnn2019-program-Jun29-largefont-v2%281%29.pdf' target='_blank'>program</a> |
+| **IJCNN 2019** | Program Committee &amp; Reviewer | Budapest, Hungary | <a href='./assets/archive/ijcnn/2019-program.pdf' target='_blank'>program</a> |
 | **IJCNN 2018** | Reviewer | Rio de Janeiro, Brazil |  |
-| **IJCNN 2017** | Program Committee &amp; Reviewer | Anchorage, AK, USA | <a href='https://www.inns.org/assets/docs/Program.pdf' target='_blank'>program</a> |
-| **IJCNN 2015** | Reviewer | Killarney, Ireland | <a href='https://www.inns.org/assets/docs/IJCNN%202015%20Program.pdf' target='_blank'>program</a> |
+| **IJCNN 2017** | Program Committee &amp; Reviewer | Anchorage, AK, USA | <a href='./assets/archive/ijcnn/2017-program.pdf' target='_blank'>program</a> |
+| **IJCNN 2015** | Reviewer | Killarney, Ireland | <a href='./assets/archive/ijcnn/2015-program.pdf' target='_blank'>program</a> |
+
+## Media &amp; Press
+
+<small>Interviews and expert commentary in Brazilian broadcast and print media.</small>
+
+| | | | |
+|---|:--|:--|:--|
+| **Jornal da Band** — TV Bandeirantes | Interview on children's images published online | jul.2023 | <a href='https://www.youtube.com/watch?v=706vzDaaLcQ' target='_blank'>watch</a> |
+| **Jornal da Band** — TV Bandeirantes | Interview on security of cryptocurrency wallets | mar.2023 | <a href='https://www.youtube.com/watch?v=lfh9akgkmGE' target='_blank'>watch</a> |
+| **GloboNews Em Ponto** — GloboNews | Live commentary on the 5G rollout in Brazil | nov.2019 | |
+| **Jornal da Globo** — TV Globo | Economic sectors prepare for the 5G network | oct.2019 | <a href='https://globoplay.globo.com/v/8051355/' target='_blank'>watch</a> |
+| **Brazil Journal** | "O squad da ciência contra o óleo no mar" — Brazilian team's NASA-awarded algorithm | oct.2019 | <a href='https://braziljournal.com/o-squad-da-ciencia-contra-o-oleo-no-mar' target='_blank'>read</a> |
+| **SP1** — TV Globo | Technology opening possibilities for kindness in traffic | aug.2019 | <a href='https://globoplay.globo.com/v/7810288/' target='_blank'>watch</a> |
+| **CBN** — radio | Personal assistants solving everyday problems automatically | aug.2019 | <a href='https://cbn.globoradio.globo.com/media/audio/270518/assistentes-pessoais-resolvem-problemas-do-cotidia.htm' target='_blank'>listen</a> |
+| **O Estado de S. Paulo** | "Google registra falha para indexar conteúdos" — expert commentary | aug.2019 | |
+| **TM Juntos** | "8 dicas para evitar a invasão de seu celular e a exposição dos seus dados" | aug.2019 | <a href='https://tmjuntos.com.br/tecnologia/8-dicas-para-evitar-a-invasao-de-seu-celular-e-a-exposicao-dos-seus-dados/' target='_blank'>read</a> |
+| **Supernova** — ESPM | Interview at the Supernova innovation summit | may.2019 | <a href='https://www.youtube.com/watch?v=m8JH8q6umbE' target='_blank'>watch</a> |
+| **Matéria de Capa** | "Mistérios da Ciência" — interview on bio-engineering perspectives | mar.2015 | <a href='https://www.youtube.com/watch?v=JX59lLxRwAc' target='_blank'>watch</a> |
+| **FIAP Café** — podcast | Bioengineering and neurodynamics: brain-controlled prostheses | mar.2013 | |
 
 <!-- TODO (Humberto): add an Awards & Honors section once you have entries, e.g.
 ## Awards & Honors

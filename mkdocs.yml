@@ -67,6 +67,9 @@ markdown_extensions:
 
 plugins:
   - glightbox
+  - git-revision-date-localized:
+      type: date
+      enable_creation_date: false
   - minify:
       minify_html: true
 

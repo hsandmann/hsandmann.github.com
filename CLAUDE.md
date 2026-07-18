@@ -27,7 +27,7 @@ There are no tests or linters — `mkdocs build --strict` is the validation gate
 
 - **Content** lives in `docs/`. Authored content is essentially one large file, `docs/index.md` (~1100 lines); assets are in `docs/assets/` (`img/`, `doc/`) and custom CSS in `docs/stylesheets/extra.css`.
 - **All site behavior is driven by `mkdocs.yml`** — theme, palette, markdown extensions, and plugins. Read it before changing docs, theme, or rendering behavior.
-- **Plugins must stay in sync with `requirements.txt`.** The site enables only `glightbox` and `minify`; each maps to a pip package. Adding/removing a plugin requires editing both files.
+- **Plugins must stay in sync with `requirements.txt`.** The site enables only `glightbox`, `git-revision-date-localized` (page-bottom "Last update" date; needs full git history, hence `fetch-depth: 0` in CI), and `minify`; each maps to a pip package. Adding/removing a plugin requires editing both files.
 - Enabled markdown extensions are intentionally minimal (`admonition`, `attr_list`, `md_in_html`, `pymdownx.details`, `pymdownx.superfences`, `footnotes`, `tables`, `pymdownx.emoji`, `toc`).
 
 ## CV PDFs

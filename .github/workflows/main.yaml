@@ -20,8 +20,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      # Checkout source form GitHub
+      # Checkout source form GitHub (full history for git-revision-date-localized)
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       # Install Python runtime and dependencies
       - uses: actions/setup-python@v4

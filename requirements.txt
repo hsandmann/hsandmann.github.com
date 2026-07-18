@@ -2,6 +2,7 @@ mkdocs-material
 mkdocs-material-extensions
 mkdocs-minify-plugin
 mkdocs-glightbox
+mkdocs-git-revision-date-localized-plugin
 # CV PDF pipeline (cv/build.py)
 jinja2
 pyyaml

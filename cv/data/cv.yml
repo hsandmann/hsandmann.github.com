@@ -8,6 +8,7 @@ personal:
   name: Humberto Sandmann
   headline: Computer Scientist & Professor
   location: São Paulo, Brazil
+  availability: Open to international relocation — on-site
   photo: hsandmann.jpg
   # Academic / long summary
   summary: >-
@@ -47,6 +48,7 @@ education:
   - degree: D.Sc.
     field: Electrical Engineering
     institution: Polytechnic School, University of São Paulo
+    short: Polytechnic School, USP
     start: 2007
     end: 2012
     thesis: Spike patterns and computation in dynamical neural networks
@@ -62,6 +64,7 @@ education:
   - degree: M.Sc.
     field: Electrical Engineering
     institution: Polytechnic School, University of São Paulo
+    short: Polytechnic School, USP
     start: 2003
     end: 2006
     thesis: Prediction of time series using architecture based on neuro-fuzzy systems
@@ -70,6 +73,7 @@ education:
   - degree: B.Sc.
     field: Computer Science
     institution: Faculdade de Engenharia Industrial (FEI)
+    short: FEI
     location: São Bernardo do Campo, Brazil
     start: 1999
     end: 2002
@@ -86,7 +90,7 @@ experience:
     role: Founder
     location: São Paulo, Brazil
     start: 2006
-    end: present
+    end: 2025
     summary: Independent consultancy in machine learning and software architecture.
     stack: [Machine Learning, Software Architecture]
   - org: SelsanTech
@@ -267,7 +271,7 @@ grants:
   - { agency: FAPESP,      description: "Teaching-assistantship fellowship — Polytechnic School, USP",   period: "2008" }
 
 conference_service:
-  - { event: "IJCNN 2020", role: "Reviewer",                     location: "Glasgow, Scotland" }
+  - { event: "IJCNN 2020", role: "Program Committee & Reviewer",  location: "Glasgow, Scotland" }
   - { event: "IJCNN 2019", role: "Program Committee & Reviewer",  location: "Budapest, Hungary", url: "https://www.inns.org/assets/docs/ijcnn2019-program-Jun29-largefont-v2%281%29.pdf" }
   - { event: "IJCNN 2018", role: "Reviewer",                      location: "Rio de Janeiro, Brazil" }
   - { event: "IJCNN 2017", role: "Program Committee & Reviewer",  location: "Anchorage, AK, USA", url: "https://www.inns.org/assets/docs/Program.pdf" }

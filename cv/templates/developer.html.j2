@@ -31,28 +31,28 @@
 
   /* ---------- Sidebar ---------- */
   .side{ width:var(--sidew); flex:0 0 var(--sidew); background:var(--side); color:var(--side-ink);
-         padding:0.4in 0.26in 0.35in; }
-  .photo{ width:1.08in; height:1.08in; border-radius:50%; object-fit:cover; display:block;
-          margin:0 auto 12px; border:2px solid var(--accent); }
+         padding:0.3in 0.26in 0.3in; }
+  .photo{ width:1.0in; height:1.0in; border-radius:50%; object-fit:cover; display:block;
+          margin:0 auto 6px; border:2px solid var(--accent); }
   .side h3{ font-family:'PlexMono',monospace; font-size:7.4pt; font-weight:500; letter-spacing:1.5px;
-            text-transform:uppercase; color:var(--accent); margin:11px 0 6px;
+            text-transform:uppercase; color:var(--accent); margin:8px 0 5px;
             padding-bottom:3px; border-bottom:1px solid rgba(255,255,255,.12); }
   .side h3:first-of-type{ margin-top:0; }
 
-  .contact{ font-size:8.2pt; line-height:1.4; }
+  .contact{ font-size:8.2pt; line-height:1.33; }
   .contact div{ color:var(--side-ink); word-break:break-word; }
   .contact .lbl{ color:var(--side-muted); font-family:'PlexMono',monospace; font-size:6.6pt;
                  letter-spacing:.5px; text-transform:uppercase; margin-top:4px; }
   .contact .lbl:first-child{ margin-top:0; }
 
-  .skillgroup{ margin-bottom:6px; }
+  .skillgroup{ margin-bottom:4px; }
   .skillgroup .cat{ font-size:7.8pt; font-weight:600; color:var(--side-ink); margin-bottom:3px; }
   .tags{ display:flex; flex-wrap:wrap; gap:3px; }
   .tag{ font-family:'PlexMono',monospace; font-size:6.6pt; letter-spacing:.1px;
         color:#d6f5ee; background:rgba(37,211,184,.12); border:1px solid rgba(37,211,184,.35);
         border-radius:3px; padding:1px 4px; }
 
-  .side .lang{ display:flex; justify-content:space-between; font-size:8.2pt; padding:1.5px 0; }
+  .side .lang{ display:flex; justify-content:space-between; font-size:8.2pt; padding:1px 0; }
   .side .lang b{ font-weight:600; } .side .lang span{ color:var(--side-muted); }
 
   .side .edu{ font-size:8.4pt; margin-bottom:8px; }
@@ -105,10 +105,12 @@
     <h3>Contact</h3>
     <div class="contact">
       <div class="lbl">Email</div><div><a href="mailto:{{ contact.email }}">{{ contact.email }}</a></div>
-      <div class="lbl" style="margin-top:5px">Web</div><div><a href="{{ contact.website.url }}">{{ contact.website.label }}</a></div>
-      <div class="lbl" style="margin-top:5px">GitHub</div><div><a href="{{ contact.github.url }}">{{ contact.github.label }}</a></div>
-      <div class="lbl" style="margin-top:5px">LinkedIn</div><div><a href="{{ contact.linkedin.url }}">{{ contact.linkedin.label }}</a></div>
-      <div class="lbl" style="margin-top:5px">Project</div><div><a href="{{ contact.project.url }}">{{ contact.project.label }}</a></div>
+      <div class="lbl" style="margin-top:3px">Web</div><div><a href="{{ contact.website.url }}">{{ contact.website.label }}</a></div>
+      <div class="lbl" style="margin-top:3px">GitHub</div><div><a href="{{ contact.github.url }}">{{ contact.github.label }}</a></div>
+      <div class="lbl" style="margin-top:3px">LinkedIn</div><div><a href="{{ contact.linkedin.url }}">{{ contact.linkedin.label }}</a></div>
+      <div class="lbl" style="margin-top:3px">Project</div><div><a href="{{ contact.project.url }}">{{ contact.project.label }}</a></div>
+      <div class="lbl" style="margin-top:3px">Location</div><div>{{ personal.location }}</div>
+      <div class="lbl" style="margin-top:3px">Relocation</div><div>{{ personal.availability }}</div>
     </div>
 
     <h3>Skills</h3>
@@ -116,6 +118,14 @@
     <div class="skillgroup">
       <div class="cat">{{ s.category }}</div>
       <div class="tags">{% for i in s.tags %}<span class="tag">{{ i }}</span>{% endfor %}</div>
+    </div>
+    {% endfor %}
+
+    <h3>Education</h3>
+    {% for e in education if e.degree in ['D.Sc.', 'M.Sc.', 'B.Sc.'] %}
+    <div class="edu" style="margin-bottom:5px">
+      <div class="d">{{ e.degree }} · {{ e.field }}</div>
+      <div class="i">{{ e.short or e.institution }} · <span class="y">{{ e.start }}&ndash;{{ e.end }}</span></div>
     </div>
     {% endfor %}
 
@@ -138,35 +148,32 @@
 
     <section>
       <h2>Experience</h2>
-      {% for x in experience[:6] %}
+      {% for x in experience[:4] %}
       <div class="job">
         <div class="job-head">
           <div class="r">{{ x.role }} <span class="c">· {{ x.org }}</span></div>
-          <div class="p">{{ x.start }}&ndash;{{ x.end }}</div>
+          <div class="p">{{ x.start }}{% if x.end != x.start %}&ndash;{{ x.end }}{% endif %}</div>
         </div>
         <div class="s">{{ x.summary }}</div>
         {% if x.stack %}<div class="tags">{% for i in x.stack %}<span class="tag">{{ i }}</span>{% endfor %}</div>{% endif %}
       </div>
       {% endfor %}
 
-      {% if experience[6:] %}
+      {% if experience[4:] %}
       <div class="earlier">
-        {% for x in experience[6:] %}
-        <div class="er"><span><b>{{ x.role }}</b> · {{ x.org }}</span><span class="p">{{ x.start }}&ndash;{{ x.end }}</span></div>
+        {% for x in experience[4:] %}
+        <div class="er"><span><b>{{ x.role }}</b> · {{ x.org }}</span><span class="p">{{ x.start }}{% if x.end != x.start %}&ndash;{{ x.end }}{% endif %}</span></div>
         {% endfor %}
       </div>
       {% endif %}
     </section>
 
     <section>
-      <h2>Education</h2>
-      <div class="edu-main">
-      {% for e in education if e.degree in ['D.Sc.', 'M.Sc.', 'B.Sc.'] %}
-        <div class="edu-row">
-          <div class="et"><b>{{ e.degree }}</b> · {{ e.field }} — <span class="ei">{{ e.institution }}</span></div>
-          <div class="p">{{ e.start }}&ndash;{{ e.end }}</div>
-        </div>
-      {% endfor %}
+      <h2>Academic Positions</h2>
+      <div class="earlier">
+        {% for t in teaching %}
+        <div class="er"><span><b>{{ t.roles[0].title }}</b> · {{ t.org }}</span><span class="p">{{ t.start }}{% if t.end != t.start %}&ndash;{{ t.end }}{% endif %}</span></div>
+        {% endfor %}
       </div>
     </section>
 

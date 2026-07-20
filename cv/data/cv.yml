@@ -271,7 +271,7 @@ grants:
   - { agency: FAPESP,      description: "Teaching-assistantship fellowship — Polytechnic School, USP",   period: "2008" }
 
 conference_service:
-  - { event: "IJCNN 2020", role: "Program Committee & Reviewer",  location: "Glasgow, Scotland" }
+  - { event: "IJCNN 2020", role: "Reviewer",                      location: "Glasgow, Scotland" }
   - { event: "IJCNN 2019", role: "Program Committee & Reviewer",  location: "Budapest, Hungary", url: "https://www.inns.org/assets/docs/ijcnn2019-program-Jun29-largefont-v2%281%29.pdf" }
   - { event: "IJCNN 2018", role: "Reviewer",                      location: "Rio de Janeiro, Brazil" }
   - { event: "IJCNN 2017", role: "Program Committee & Reviewer",  location: "Anchorage, AK, USA", url: "https://www.inns.org/assets/docs/Program.pdf" }

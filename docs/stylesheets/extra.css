@@ -28,6 +28,16 @@ hr {
     max-width: 100px;
 }
 
+/* The institution logos are dark artwork on a transparent background, so they
+   vanish on the dark (slate) scheme. Give them a white card there, keeping the
+   official colors instead of inverting them. */
+[data-md-color-scheme="slate"] .details-img {
+    box-sizing: border-box;
+    padding: 6px;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
 .support-list {
     list-style-type: none !important;
     display: inline-block !important;

@@ -74,6 +74,9 @@ build/check job — pushing to `main` deploys directly to GitHub Pages.
 
 - Do not edit anything under `env/` (local virtualenv, gitignored along with `site/` and `.cache/`).
 - Keep styling in `docs/stylesheets/extra.css` rather than inline HTML/CSS where practical.
+- `docs/index.md` lays the CV out as wide HTML tables (period | details | logo/keywords). `extra.css` has a
+  mobile block (`max-width: 44.9375em`) that restacks them as blocks, so keep that column order when
+  adding entries, and check new sections at phone width in both light and dark schemes.
 - **Archive — `docs/archive/`** holds every supporting file, by category: `documents/` (diplomas,
   transcripts, letters, certificates), `academic/` (thesis, dissertation, defense slides),
   `publications/`, `ijcnn/` (conference programs), `media/` (press copies, videos, audio).

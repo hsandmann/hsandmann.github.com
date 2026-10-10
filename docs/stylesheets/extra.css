@@ -29,13 +29,10 @@ hr {
 }
 
 /* The institution logos are dark artwork on a transparent background, so they
-   vanish on the dark (slate) scheme. Give them a white card there, keeping the
-   official colors instead of inverting them. */
+   vanish on the dark (slate) scheme. Render them there as white line art
+   (every opaque pixel turns white), keeping the transparent background. */
 [data-md-color-scheme="slate"] .details-img {
-    box-sizing: border-box;
-    padding: 6px;
-    border-radius: 8px;
-    background-color: #fff;
+    filter: brightness(0) invert(1);
 }
 
 .support-list {
@@ -108,6 +105,184 @@ hr {
     color: var(--md-default-fg-color--light);
     font-size: 0.7rem;
     text-align: center;
+}
+
+/* ----------------------------------------------------------------------------
+   Mobile layout (below Material's 45em tablet breakpoint, ~720px).
+   The CV is written as wide multi-column HTML tables; on a phone they are
+   restacked as blocks: date line on top, institution logo beside it, then
+   the details full width. Nested course tables become indented lists.
+   ---------------------------------------------------------------------------- */
+@media screen and (max-width: 44.9375em) {
+
+    /* Header: photo, then the contact card full width (it was squeezed into a
+       narrow column beside the photo). */
+    .md-typeset img.photo {
+        float: none;
+        display: block;
+        width: 140px;
+        margin: 0 0 1em;
+    }
+
+    .md-typeset .admonition.inline.end {
+        float: none;
+        width: auto;
+        margin: 0 0 1.2em;
+    }
+
+    /* Material pulls table wrappers to the screen edge on phones; keep them
+       aligned with the text instead. */
+    .md-typeset__scrollwrap {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .md-typeset__table {
+        padding: 0;
+    }
+
+    /* Timeline tables (raw HTML, no header row) -> stacked entries */
+    .md-typeset table:not(:has(thead)),
+    .md-typeset table:not(:has(thead)) > tbody,
+    .md-typeset table:not(:has(thead)) > tbody > tr > td {
+        display: block;
+        width: auto !important;
+        padding: 0 !important;
+    }
+
+    .md-typeset table:not(:has(thead)) {
+        overflow: visible;
+    }
+
+    .md-typeset table:not(:has(thead)) > tbody > tr {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        column-gap: 0.8em;
+        padding: 0.9em 0;
+        border-bottom: 1px solid var(--md-default-fg-color--lightest);
+    }
+
+    .md-typeset table:not(:has(thead)) > tbody > tr:last-child {
+        border-bottom: none;
+    }
+
+    .md-typeset table:not(:has(thead)) > tbody > tr > td {
+        grid-column: 1 / -1;
+    }
+
+    .md-typeset table:not(:has(thead)) > tbody > tr > td:empty {
+        display: none;
+    }
+
+    /* Period cell ("mar.2012 ↑ mar.2007") on one line, as a small caption */
+    .md-typeset table:not(:has(thead)) > tbody > tr > td[align="center"] {
+        grid-column: 1;
+        text-align: left;
+        font-size: 0.75rem;
+        color: var(--md-default-fg-color--light);
+        margin-bottom: 0.3em;
+    }
+
+    .md-typeset table:not(:has(thead)) > tbody > tr > td[align="center"] br {
+        display: none;
+    }
+
+    /* Institution logo: top right, beside the period */
+    .md-typeset table:not(:has(thead)) > tbody > tr > td:has(.details-img) {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+    }
+
+    .md-typeset .details-img {
+        width: 56px;
+        min-width: 56px;
+        max-width: 56px;
+    }
+
+    /* Third column without a logo (Experience keywords): a muted caption */
+    .md-typeset table:not(:has(thead)) > tbody > tr > td:nth-child(3):not(:has(.details-img)) {
+        margin-top: 0.3em;
+        font-size: 0.75rem;
+        color: var(--md-default-fg-color--light);
+    }
+
+    /* Field labels (thesis, advisor, doi...) become small captions above
+       their value instead of a fixed-width left column. */
+    .md-typeset .details {
+        display: block;
+        min-width: 0;
+        margin-top: 0.5em;
+        font-size: 0.7rem;
+        color: var(--md-default-fg-color--light);
+    }
+
+    .md-typeset .details:empty {
+        display: none;
+    }
+
+    /* Nested course tables (Teaching): indented, one course per entry */
+    .md-typeset table.institution {
+        margin: 0.6em 0 0;
+        padding-left: 0.8em;
+        border-left: 2px solid var(--md-default-fg-color--lightest);
+    }
+
+    .md-typeset table.institution > tbody > tr {
+        padding: 0.6em 0;
+    }
+
+    .md-typeset table.institution > tbody > tr:not(:has(> td[align])) > td:first-child {
+        font-weight: 600;
+    }
+
+    .md-typeset table.institution > tbody > tr:not(:has(> td[align])) > td:nth-child(n+2) {
+        font-size: 0.75rem;
+        color: var(--md-default-fg-color--light);
+    }
+
+    /* Markdown tables (Grants, Conference, Media, Languages): first column as a
+       title, second as text, the rest (date, place, link) as a caption line. */
+    .md-typeset__table {
+        display: block;
+    }
+
+    .md-typeset table:has(thead) {
+        display: block;
+    }
+
+    .md-typeset table:has(thead) thead {
+        display: none;
+    }
+
+    .md-typeset table:has(thead) tbody,
+    .md-typeset table:has(thead) tr {
+        display: block;
+    }
+
+    .md-typeset table:has(thead) tr {
+        padding: 0.7em 0;
+        border-bottom: 1px solid var(--md-default-fg-color--lightest);
+    }
+
+    .md-typeset table:has(thead) tr:last-child {
+        border-bottom: none;
+    }
+
+    .md-typeset table:has(thead) td {
+        display: block;
+        padding: 0 !important;
+    }
+
+    .md-typeset table:has(thead) td:nth-child(n+3) {
+        display: inline-block;
+        margin-right: 0.8em;
+        font-size: 0.75rem;
+        color: var(--md-default-fg-color--light);
+    }
+
+    .md-typeset table:has(thead) td:empty {
+        display: none;
+    }
 }
 
 @media print {

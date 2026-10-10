@@ -1,0 +1,111 @@
+# Zensical configuration (native format; replaces the MkDocs-style mkdocs.yml).
+# Reference: https://zensical.org/docs/setup/basics/
+
+[project]
+site_name = "Humberto Sandmann"
+repo_url = "https://github.com/hsandmann/hsandmann.github.com"
+repo_name = "hsandmann.github.com"
+extra_css = ["stylesheets/extra.css"]
+
+# The downloadable CVs (sandmann-academic.pdf / sandmann-resume.pdf) are generated from
+# cv/data/cv.yml by cv/build.py (run in CI), not by a Zensical plugin.
+
+# ----------------------------------------------------------------------------
+# Theme
+# ----------------------------------------------------------------------------
+
+[project.theme]
+# Zensical's modern look (Inter / JetBrains Mono, light header). "classic" restores the
+# Material for MkDocs look.
+variant = "modern"
+custom_dir = "overrides"
+favicon = "assets/img/favicon.svg"
+features = [
+  # "announce.dismiss",
+  "content.tooltips",
+  "header.autohide",
+  "navigation.instant",
+  "navigation.instant.progress",
+  "navigation.top",
+  "navigation.path",
+  "navigation.tracking",
+]
+
+# Light mode
+[[project.theme.palette]]
+scheme = "default"
+primary = "grey"
+toggle.icon = "material/toggle-switch-off-outline"
+toggle.name = "Switch to dark mode"
+
+# Dark mode
+[[project.theme.palette]]
+scheme = "slate"
+primary = "grey"
+toggle.icon = "material/toggle-switch"
+toggle.name = "Switch to light mode"
+
+[project.theme.icon]
+# Inline icon instead of assets/img/logo.svg: the SVG file is hard-coded white and
+# vanishes on the modern variant's light header; an inline icon follows the text color.
+logo = "material/school"
+repo = "fontawesome/brands/git-alt"
+
+[project.theme.icon.admonition]
+note = "fontawesome/solid/note-sticky"
+abstract = "fontawesome/solid/book"
+info = "fontawesome/solid/circle-info"
+tip = "fontawesome/solid/bullhorn"
+success = "fontawesome/solid/check"
+question = "fontawesome/solid/circle-question"
+warning = "fontawesome/solid/triangle-exclamation"
+failure = "fontawesome/solid/bomb"
+danger = "fontawesome/solid/skull"
+bug = "fontawesome/solid/robot"
+example = "fontawesome/solid/flask"
+# quote = "fontawesome/solid/quote-left"
+quote = "fontawesome/solid/book"
+
+# ----------------------------------------------------------------------------
+# Markdown extensions
+# ----------------------------------------------------------------------------
+
+[project.markdown_extensions.admonition]
+[project.markdown_extensions.attr_list]
+[project.markdown_extensions.md_in_html]
+[project.markdown_extensions.footnotes]
+[project.markdown_extensions.tables]
+[project.markdown_extensions.pymdownx.details]
+[project.markdown_extensions.pymdownx.superfences]
+
+[project.markdown_extensions.pymdownx.emoji]
+emoji_index = "zensical.extensions.emoji.twemoji"
+emoji_generator = "zensical.extensions.emoji.to_svg"
+
+[project.markdown_extensions.toc]
+title = "Humberto Sandmann"
+
+# ----------------------------------------------------------------------------
+# Plugins
+# ----------------------------------------------------------------------------
+
+# Zensical enables search by default; this is a single page, so it adds nothing.
+[project.plugins.search]
+enabled = false
+
+[project.plugins.minify]
+minify_html = true
+
+# ----------------------------------------------------------------------------
+# "Last update" date
+# ----------------------------------------------------------------------------
+
+# WORKAROUND (gambiarra): Zensical does not support git-revision-date-localized yet
+# (listed as "Planned" at https://zensical.org/compatibility/plugins/), and TOML has no
+# environment-variable substitution. Until a viable alternative exists, CI rewrites the
+# value below in place with the date of the pushed commit (see .github/workflows/main.yaml)
+# and overrides/partials/source-file.html renders it. Local builds leave it empty, so no
+# date is shown. Replace this with the native plugin (and delete the override and the CI
+# step) once Zensical supports it.
+[project.extra]
+last_update = ""

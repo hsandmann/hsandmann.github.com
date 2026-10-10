@@ -7,8 +7,8 @@ A companion [AGENTS.md](AGENTS.md) exists with overlapping guidance; keep the tw
 ## What this is
 
 A personal documentation site for Humberto Sandmann, published to https://hsandmann.github.io/, built with
-**[Zensical](https://zensical.org/)** (the successor to MkDocs Material, from the same team). Zensical reads
-the MkDocs-style `mkdocs.yml`, so the config file keeps that name. Despite the legacy `_config.yaml` (Jekyll)
+**[Zensical](https://zensical.org/)** (the successor to MkDocs Material, from the same team). It is configured with
+Zensical's native `zensical.toml` (migrated from `mkdocs.yml`; the generated HTML was byte-identical). Despite the legacy `_config.yaml` (Jekyll)
 at the root, the site is not Jekyll — `_config.yaml` is vestigial and unused by the build.
 
 ## Commands
@@ -24,12 +24,12 @@ zensical build --strict   # production build validation — run before finishing
 ```
 
 There are no tests or linters — `zensical build --strict` is the validation gate. Deployment is done by CI
-only (see below). Local builds show no "Last update" date unless `SITE_LAST_UPDATE` is exported.
+only (see below). Local builds show no "Last update" date (CI injects it; see below).
 
 ## Architecture
 
 - **Content** lives in `docs/`. Authored content is essentially one large file, `docs/index.md` (~800 lines); assets are in `docs/assets/` (`img/`, `doc/` for the CVs) and `docs/archive/` and custom CSS in `docs/stylesheets/extra.css`.
-- **All site behavior is driven by `mkdocs.yml`** — theme, palette, markdown extensions, and plugins. Read it before changing docs, theme, or rendering behavior.
+- **All site behavior is driven by `zensical.toml`** — theme, palette, markdown extensions, and plugins. Read it before changing docs, theme, or rendering behavior.
 - **Theme:** `variant: modern` (Zensical's default look: Inter / JetBrains Mono, light header). The logo is the
   inline `material/school` icon (`theme.icon.logo`), not an image, so it follows the header text color. Template
   overrides live in `overrides/partials/` (`header.html` adds the two CV buttons; it is a copy of Zensical's
@@ -39,9 +39,10 @@ only (see below). Local builds show no "Last update" date unless `SITE_LAST_UPDA
   `zensical` plus the CV pipeline deps; if a plugin ever needs a pip package, add it there too.
 - **"Last update" date — WORKAROUND (gambiarra), to be removed when a viable alternative exists:** Zensical
   does not support `git-revision-date-localized` yet ("Planned" at https://zensical.org/compatibility/plugins/).
-  CI exports `SITE_LAST_UPDATE` (the pushed commit's date) → `mkdocs.yml` `extra.last_update` (`!ENV`) →
-  rendered by `overrides/partials/source-file.html`. When Zensical supports the plugin, enable it and delete
-  the override, the `extra.last_update` entry, and the env export in CI.
+  TOML has no env-var substitution, so CI rewrites `last_update = ""` in `zensical.toml` (`[project.extra]`)
+  with the pushed commit's date right before the build (the edit is not committed) → rendered by
+  `overrides/partials/source-file.html`. When Zensical supports the plugin, enable it and delete the
+  override, the `last_update` entry, and the `sed` step in CI.
 - Enabled markdown extensions are intentionally minimal (`admonition`, `attr_list`, `md_in_html`, `pymdownx.details`, `pymdownx.superfences`, `footnotes`, `tables`, `pymdownx.emoji`, `toc`).
 
 ## CV PDFs
@@ -65,7 +66,7 @@ The site links to both (header button → academic CV; contact block → both).
 
 CI is `.github/workflows/main.yaml`: on every push to `main` it installs `requirements.txt`,
 installs Chromium, runs `python cv/build.py`, commits the regenerated PDFs (`[skip ci]`), runs
-`zensical build --strict` with `SITE_LAST_UPDATE` set, and force-pushes `site/` to the `gh-pages`
+`zensical build --strict` with the commit date written into `zensical.toml`, and force-pushes `site/` to the `gh-pages`
 branch with `ghp-import` (Python 3.12). GitHub Pages serves from `gh-pages`. There is no PR
 build/check job — pushing to `main` deploys directly to GitHub Pages.
 

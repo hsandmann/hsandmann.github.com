@@ -1,6 +1,6 @@
 {#-
   WORKAROUND (gambiarra): stands in for git-revision-date-localized, which Zensical does not
-  support yet. Renders config.extra.last_update (set from SITE_LAST_UPDATE in CI; see mkdocs.yml).
+  support yet. Renders config.extra.last_update (written into zensical.toml by CI; see there).
   Delete this file once Zensical supports the plugin natively.
 -#}
 {% if config.extra.last_update %}

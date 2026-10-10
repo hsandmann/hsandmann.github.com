@@ -5,12 +5,12 @@ Guidance for AI coding agents working in this repository.
 ## Project Type
 
 This is a [Zensical](https://zensical.org/) site (successor to MkDocs Material) published from `main`.
-Zensical reads the MkDocs-style `mkdocs.yml`, so the config file keeps that name.
+It is configured with Zensical's native `zensical.toml` (migrated from `mkdocs.yml`).
 
 ## Start Here
 
 - Read `README.md` for project identity.
-- Read `mkdocs.yml` before changing docs/theme/plugins.
+- Read `zensical.toml` before changing docs/theme/plugins.
 - Primary authored content is under `docs/` (currently mostly `docs/index.md`).
 
 ## Environment And Commands
@@ -50,22 +50,23 @@ as Type3 and render blank in many viewers). CI runs `cv/build.py` and commits th
 
 CI/CD reference:
 - Workflow: `.github/workflows/main.yaml`
-- CI installs `requirements.txt`, runs `zensical build --strict` with `SITE_LAST_UPDATE` set, and
+- CI installs `requirements.txt`, runs `zensical build --strict` with the commit date written into `zensical.toml`, and
   force-pushes `site/` to the `gh-pages` branch with `ghp-import` (GitHub Pages serves from `gh-pages`).
 
 Only run deploy commands when explicitly requested.
 
 "Last update" date — WORKAROUND (gambiarra), to be removed when a viable alternative exists: Zensical does
-not support `git-revision-date-localized` yet. CI exports `SITE_LAST_UPDATE` (pushed commit's date) →
-`mkdocs.yml` `extra.last_update` (`!ENV`) → `overrides/partials/source-file.html`. Once Zensical supports the
-plugin natively, enable it and delete the override, the `extra.last_update` entry and the CI env export.
+not support `git-revision-date-localized` yet. TOML has no env-var substitution, so CI
+rewrites `last_update = ""` in `zensical.toml` (`[project.extra]`) with the pushed commit's date right before
+the build (not committed) → `overrides/partials/source-file.html`. Once Zensical supports the plugin natively,
+enable it and delete the override, the `last_update` entry and the CI `sed` step.
 
 ## Editing Conventions
 
-- Prefer editing source docs in `docs/` and configuration in `mkdocs.yml`.
+- Prefer editing source docs in `docs/` and configuration in `zensical.toml`.
 - Keep custom styling in `stylesheets/extra.css` instead of inline styles when practical.
 - Do not edit files under `env/` (local virtual environment artifacts).
-- Keep plugin/theme changes in `mkdocs.yml` synchronized with `requirements.txt`.
+- Keep plugin/theme changes in `zensical.toml` synchronized with `requirements.txt`.
 - Theme uses `variant: modern`; the logo is the inline `material/school` icon (`theme.icon.logo`). `overrides/partials/header.html` is a copy of Zensical's
   header plus the two CV buttons — keep it in sync on Zensical upgrades.
 - Supporting files live in `docs/archive/` (`documents/`, `academic/`, `publications/`, `ijcnn/`, `media/`),
@@ -85,7 +86,7 @@ Before finishing:
 
 ## Useful References
 
-- Site config: [mkdocs.yml](mkdocs.yml)
+- Site config: [zensical.toml](zensical.toml)
 - Dependencies: [requirements.txt](requirements.txt)
 - Main content page: [docs/index.md](docs/index.md)
 - CI deployment workflow: [.github/workflows/main.yaml](.github/workflows/main.yaml)

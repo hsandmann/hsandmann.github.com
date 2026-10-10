@@ -57,14 +57,16 @@ jobs:
           git push
 
       # Build the site with Zensical.
-      # WORKAROUND (gambiarra): Zensical has no git-revision-date-localized yet, so the
-      # "Last update" date is the pushed commit's date, injected via SITE_LAST_UPDATE
-      # (read by mkdocs.yml -> extra.last_update -> overrides/partials/source-file.html).
-      # Drop this once Zensical supports the plugin natively.
+      # WORKAROUND (gambiarra): Zensical has no git-revision-date-localized yet and TOML has no
+      # env-var substitution, so the "Last update" date (the pushed commit's date) is written
+      # into zensical.toml (extra.last_update -> overrides/partials/source-file.html) right
+      # before the build. The edit is not committed. Drop this once Zensical supports the plugin.
       - name: Build site
         run: |
-          export SITE_LAST_UPDATE="$(git log -1 --format=%cd --date=format:'%B %-d, %Y' ${{ github.sha }})"
-          echo "Last update: $SITE_LAST_UPDATE"
+          LAST_UPDATE="$(git log -1 --format=%cd --date=format:'%B %-d, %Y' ${{ github.sha }})"
+          echo "Last update: $LAST_UPDATE"
+          sed -i "s/^last_update = \"\"$/last_update = \"$LAST_UPDATE\"/" zensical.toml
+          grep -q "^last_update = \"$LAST_UPDATE\"$" zensical.toml || { echo "last_update not set in zensical.toml"; exit 1; }
           zensical build --strict
 
       # Deploy to GitHub Pages (force-push site/ to the gh-pages branch, as mkdocs gh-deploy did)

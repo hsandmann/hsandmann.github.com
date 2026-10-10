@@ -31,6 +31,6 @@ from a single structured data source and rebuilt automatically on every push to 
 
 [![Deploy](https://github.com/hsandmann/hsandmann.github.com/actions/workflows/main.yaml/badge.svg)](https://github.com/hsandmann/hsandmann.github.com/actions/workflows/main.yaml)
 
-- **[Zensical](https://zensical.org/)** (successor to Material for MkDocs, classic look) — the online CV, with native HTML minification
+- **[Zensical](https://zensical.org/)** (successor to Material for MkDocs, modern look) — the online CV, with native HTML minification
 - **CV PDFs** — generated from `cv/data/cv.yml` by `cv/build.py`: Jinja2 templates (`cv/templates/`) rendered to PDF via headless Chromium (Playwright), with fonts bundled for reliable, universal rendering
 - **GitHub Actions → GitHub Pages** — continuous deploy on every push to `main`

@@ -30,7 +30,8 @@ only (see below). Local builds show no "Last update" date unless `SITE_LAST_UPDA
 
 - **Content** lives in `docs/`. Authored content is essentially one large file, `docs/index.md` (~800 lines); assets are in `docs/assets/` (`img/`, `doc/` for the CVs) and `docs/archive/` and custom CSS in `docs/stylesheets/extra.css`.
 - **All site behavior is driven by `mkdocs.yml`** — theme, palette, markdown extensions, and plugins. Read it before changing docs, theme, or rendering behavior.
-- **Theme:** `variant: classic` keeps the Material for MkDocs look (`extra.css` is tuned for it). Template
+- **Theme:** `variant: modern` (Zensical's default look: Inter / JetBrains Mono, light header). The logo is the
+  inline `material/school` icon (`theme.icon.logo`), not an image, so it follows the header text color. Template
   overrides live in `overrides/partials/` (`header.html` adds the two CV buttons; it is a copy of Zensical's
   header — keep it in sync on Zensical upgrades).
 - **Plugins:** only `minify` (native to Zensical). Search is explicitly disabled (single page). `glightbox`

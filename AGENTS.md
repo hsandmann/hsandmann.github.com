@@ -66,7 +66,7 @@ plugin natively, enable it and delete the override, the `extra.last_update` entr
 - Keep custom styling in `stylesheets/extra.css` instead of inline styles when practical.
 - Do not edit files under `env/` (local virtual environment artifacts).
 - Keep plugin/theme changes in `mkdocs.yml` synchronized with `requirements.txt`.
-- Theme uses `variant: classic` (Material look). `overrides/partials/header.html` is a copy of Zensical's
+- Theme uses `variant: modern`; the logo is the inline `material/school` icon (`theme.icon.logo`). `overrides/partials/header.html` is a copy of Zensical's
   header plus the two CV buttons — keep it in sync on Zensical upgrades.
 - Supporting files live in `docs/archive/` (`documents/`, `academic/`, `publications/`, `ijcnn/`, `media/`),
   named `YYYYMMDD-<issuer/outlet>-<subject>[-<type>].<ext>` (lowercase, hyphens, date = issue date).

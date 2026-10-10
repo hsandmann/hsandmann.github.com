@@ -39,8 +39,8 @@ Synchronization of coupled oscillators
 <table>
     <tr>
         <td align='center'>
-            <a href='./assets/doc/usp-doutorado-diploma.pdf' target='_blank'>mar.2012</a><br>
-            <a href='./assets/doc/usp-doutorado-grade.pdf' target='_blank'>&#8593;</a><br>
+            <a href='./assets/doc/20120706-usp-doctorate-diploma.pdf' target='_blank'>mar.2012</a><br>
+            <a href='./assets/doc/20120612-usp-doctorate-transcript.pdf' target='_blank'>&#8593;</a><br>
             mar.2007
         </td>
         <td style='width: 100%;'>
@@ -62,9 +62,9 @@ Synchronization of coupled oscillators
     </tr>
     <tr>
         <td align='center'>
-            <a href='./assets/doc/mpi-report-marc_timme.pdf' target='_blank'>sep.2010</a><br>
+            <a href='./assets/doc/20101111-mpi-research-stay-report.pdf' target='_blank'>sep.2010</a><br>
             &#8593;<br>
-            <a href='./assets/doc/mpi-acceptance.pdf' target='_blank'>aug.2009</a>
+            <a href='./assets/doc/20090623-mpi-research-stay-acceptance-letter.pdf' target='_blank'>aug.2009</a>
         </td>
         <td>
             <span class='details'>D.Sc. Internship</span><a href='https://www.ds.mpg.de/' target='_blank'>Max Planck Gesellschaft für Dynamik und Selbstorganisation</a><br>
@@ -72,7 +72,7 @@ Synchronization of coupled oscillators
             <span class='details'>supported by</span>
             <ul class='support-list'>
                 <li class='support-item'>
-                    <a href='http://www.capes.gov.br/' target='_blank'>CAPES</a> - grant <a href='./assets/doc/capes-bex_4076-09-5.pdf' target='_blank'>BEX 4076-09-5</a><br>
+                    <a href='http://www.capes.gov.br/' target='_blank'>CAPES</a> - grant <a href='./assets/doc/20101116-capes-research-stay-grant-declaration.pdf' target='_blank'>BEX 4076-09-5</a><br>
                     <small>jan.2010 → aug.2010</small>
                 </li>
                 <li class='support-item'>
@@ -93,8 +93,8 @@ Synchronization of coupled oscillators
     </tr>
     <tr>
         <td align='center'>
-            <a href='./assets/doc/usp-mestrado-diploma.pdf' target='_blank'>jun.2006</a><br>
-            <a href='./assets/doc/usp-mestrado-grade.pdf' target='_blank'>&#8593;</a><br>
+            <a href='./assets/doc/20060721-usp-masters-diploma.pdf' target='_blank'>jun.2006</a><br>
+            <a href='./assets/doc/20060620-usp-masters-transcript.pdf' target='_blank'>&#8593;</a><br>
             feb.2003
         </td>
         <td>
@@ -108,8 +108,8 @@ Synchronization of coupled oscillators
     </tr>
     <tr>
         <td align='center'>
-            <a href='./assets/doc/fei-graduacao-diploma.pdf' target='_blank'>dec.2002</a><br>
-            <a href='./assets/doc/fei-graduacao-grade.pdf' target='_blank'>&#8593;</a><br>
+            <a href='./assets/doc/20040609-fei-bachelor-diploma.pdf' target='_blank'>dec.2002</a><br>
+            <a href='./assets/doc/20130812-fei-bachelor-transcript.pdf' target='_blank'>&#8593;</a><br>
             feb.1999
         </td>
         <td>
@@ -120,7 +120,7 @@ Synchronization of coupled oscillators
     </tr>
     <tr>
         <td align='center'>
-            <a href='./assets/doc/ete-grade.pdf' target='_blank'>dec.1998</a><br>
+            <a href='./assets/doc/19990104-ete-technician-transcript.pdf' target='_blank'>dec.1998</a><br>
             &#8593;<br>
             feb.1996
         </td>
@@ -799,7 +799,7 @@ Program Committee member and reviewer for the **International Joint Conference o
 |---|:--|
 | **Portuguese** | native |
 | **English** | advanced |
-| **German** | <a href='./assets/doc/zertifikat-deutsch_b1.pdf' target='_blank'>B1</a> |
+| **German** | <a href='./assets/doc/20091123-goethe-german-b1-certificate.pdf' target='_blank'>B1</a> |
 
 ---
 

@@ -20,10 +20,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      # Checkout source form GitHub (full history for git-revision-date-localized)
+      # Checkout source form GitHub
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       # Install Python runtime and dependencies
       - uses: actions/setup-python@v4
@@ -58,6 +56,19 @@ jobs:
           git diff --staged --quiet || git commit -m "chore: update CV PDFs [skip ci]"
           git push
 
-      # Deploy to GitHub Pages
-      - run: |
-          mkdocs gh-deploy --force
+      # Build the site with Zensical.
+      # WORKAROUND (gambiarra): Zensical has no git-revision-date-localized yet, so the
+      # "Last update" date is the pushed commit's date, injected via SITE_LAST_UPDATE
+      # (read by mkdocs.yml -> extra.last_update -> overrides/partials/source-file.html).
+      # Drop this once Zensical supports the plugin natively.
+      - name: Build site
+        run: |
+          export SITE_LAST_UPDATE="$(git log -1 --format=%cd --date=format:'%B %-d, %Y' ${{ github.sha }})"
+          echo "Last update: $SITE_LAST_UPDATE"
+          zensical build --strict
+
+      # Deploy to GitHub Pages (force-push site/ to the gh-pages branch, as mkdocs gh-deploy did)
+      - name: Deploy
+        run: |
+          pip install ghp-import
+          ghp-import --no-jekyll --push --force site

@@ -1,0 +1,15 @@
+{#-
+  WORKAROUND (gambiarra): stands in for git-revision-date-localized, which Zensical does not
+  support yet. Renders config.extra.last_update (set from SITE_LAST_UPDATE in CI; see mkdocs.yml).
+  Delete this file once Zensical supports the plugin natively.
+-#}
+{% if config.extra.last_update %}
+  <aside class="md-source-file">
+    <span class="md-source-file__fact">
+      <span class="md-icon" title="{{ lang.t('source.file.date.updated') }}">
+        {% include ".icons/material/clock-edit-outline.svg" %}
+      </span>
+      {{ config.extra.last_update }}
+    </span>
+  </aside>
+{% endif %}

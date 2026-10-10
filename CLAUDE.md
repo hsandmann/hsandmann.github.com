@@ -6,7 +6,10 @@ A companion [AGENTS.md](AGENTS.md) exists with overlapping guidance; keep the tw
 
 ## What this is
 
-A personal MkDocs Material documentation site for Humberto Sandmann, published to https://hsandmann.github.io/. Despite the legacy `_config.yaml` (Jekyll) at the root, the site is built with **MkDocs**, not Jekyll — `_config.yaml` is vestigial and unused by the build.
+A personal documentation site for Humberto Sandmann, published to https://hsandmann.github.io/, built with
+**[Zensical](https://zensical.org/)** (the successor to MkDocs Material, from the same team). Zensical reads
+the MkDocs-style `mkdocs.yml`, so the config file keeps that name. Despite the legacy `_config.yaml` (Jekyll)
+at the root, the site is not Jekyll — `_config.yaml` is vestigial and unused by the build.
 
 ## Commands
 
@@ -16,23 +19,33 @@ Always use the repo-local virtualenv:
 source env/bin/activate
 pip install -r requirements.txt
 
-mkdocs serve            # local preview at http://127.0.0.1:8000
-mkdocs build --strict   # production build validation — run before finishing
-mkdocs gh-deploy --force  # deploy (CI does this; only run when explicitly asked)
+zensical serve            # local preview at http://127.0.0.1:8000
+zensical build --strict   # production build validation — run before finishing
 ```
 
-There are no tests or linters — `mkdocs build --strict` is the validation gate.
+There are no tests or linters — `zensical build --strict` is the validation gate. Deployment is done by CI
+only (see below). Local builds show no "Last update" date unless `SITE_LAST_UPDATE` is exported.
 
 ## Architecture
 
-- **Content** lives in `docs/`. Authored content is essentially one large file, `docs/index.md` (~1100 lines); assets are in `docs/assets/` (`img/`, `doc/`) and custom CSS in `docs/stylesheets/extra.css`.
+- **Content** lives in `docs/`. Authored content is essentially one large file, `docs/index.md` (~800 lines); assets are in `docs/assets/` (`img/`, `doc/`) and custom CSS in `docs/stylesheets/extra.css`.
 - **All site behavior is driven by `mkdocs.yml`** — theme, palette, markdown extensions, and plugins. Read it before changing docs, theme, or rendering behavior.
-- **Plugins must stay in sync with `requirements.txt`.** The site enables only `glightbox`, `git-revision-date-localized` (page-bottom "Last update" date; needs full git history, hence `fetch-depth: 0` in CI), and `minify`; each maps to a pip package. Adding/removing a plugin requires editing both files.
+- **Theme:** `variant: classic` keeps the Material for MkDocs look (`extra.css` is tuned for it). Template
+  overrides live in `overrides/partials/` (`header.html` adds the two CV buttons; it is a copy of Zensical's
+  header — keep it in sync on Zensical upgrades).
+- **Plugins:** only `minify` (native to Zensical). Search is explicitly disabled (single page). `glightbox`
+  and `git-revision-date-localized` were dropped in the Zensical migration. `requirements.txt` holds just
+  `zensical` plus the CV pipeline deps; if a plugin ever needs a pip package, add it there too.
+- **"Last update" date — WORKAROUND (gambiarra), to be removed when a viable alternative exists:** Zensical
+  does not support `git-revision-date-localized` yet ("Planned" at https://zensical.org/compatibility/plugins/).
+  CI exports `SITE_LAST_UPDATE` (the pushed commit's date) → `mkdocs.yml` `extra.last_update` (`!ENV`) →
+  rendered by `overrides/partials/source-file.html`. When Zensical supports the plugin, enable it and delete
+  the override, the `extra.last_update` entry, and the env export in CI.
 - Enabled markdown extensions are intentionally minimal (`admonition`, `attr_list`, `md_in_html`, `pymdownx.details`, `pymdownx.superfences`, `footnotes`, `tables`, `pymdownx.emoji`, `toc`).
 
 ## CV PDFs
 
-The two downloadable CVs are **not** built by MkDocs. They are generated from a single data
+The two downloadable CVs are **not** built by Zensical. They are generated from a single data
 source by a standalone script:
 
 - `cv/data/cv.yml` — the single source of truth for CV content. **Edit this**, never the PDFs.
@@ -44,16 +57,21 @@ source by a standalone script:
   writing `docs/assets/doc/sandmann-academic.pdf` and `sandmann-resume.pdf`.
 
 Rebuild locally with `python cv/build.py`. CI runs it on every push and commits the fresh PDFs.
+These two keep fixed, undated names because they are regenerated on every push and linked externally.
 The site links to both (header button → academic CV; contact block → both).
 
 ## Deployment
 
 CI is `.github/workflows/main.yaml`: on every push to `main` it installs `requirements.txt`,
-installs Chromium, runs `python cv/build.py`, commits the regenerated PDFs (`[skip ci]`), and runs
-`mkdocs gh-deploy --force` (Python 3.12). There is no PR build/check job — pushing to `main`
-deploys directly to GitHub Pages.
+installs Chromium, runs `python cv/build.py`, commits the regenerated PDFs (`[skip ci]`), runs
+`zensical build --strict` with `SITE_LAST_UPDATE` set, and force-pushes `site/` to the `gh-pages`
+branch with `ghp-import` (Python 3.12). GitHub Pages serves from `gh-pages`. There is no PR
+build/check job — pushing to `main` deploys directly to GitHub Pages.
 
 ## Conventions
 
 - Do not edit anything under `env/` (local virtualenv, gitignored along with `site/` and `.cache/`).
 - Keep styling in `docs/stylesheets/extra.css` rather than inline HTML/CSS where practical.
+- Documents in `docs/assets/doc/` (diplomas, transcripts, letters, certificates) are named
+  `YYYYMMDD-<issuer>-<subject>-<type>.pdf`, all lowercase, hyphen-separated, where the date is the
+  document's issue date. The generated CVs (`sandmann-academic.pdf`, `sandmann-resume.pdf`) are exempt.

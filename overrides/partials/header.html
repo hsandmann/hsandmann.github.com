@@ -1,6 +1,6 @@
 {#-
-  Overrides Material's header.html to add a "Download CV (PDF)" button to the top bar.
-  Based on mkdocs-material 9.7.3 partials/header.html; keep in sync on theme upgrades.
+  Overrides Zensical's header.html to add the two CV (PDF) download buttons to the top bar.
+  Based on zensical 0.0.69 templates/partials/header.html; keep in sync on upgrades.
 -#}
 {% set class = "md-header" %}
 {% if "navigation.tabs.sticky" in features %}
@@ -13,7 +13,7 @@
     <a href="{{ config.extra.homepage | d(nav.homepage.url, true) | url }}" title="{{ config.site_name | e }}" class="md-header__button md-logo" aria-label="{{ config.site_name }}" data-md-component="logo">
       {% include "partials/logo.html" %}
     </a>
-    <label class="md-header__button md-icon" for="__drawer">
+    <label class="md-header__button md-icon" for="__drawer" aria-label="{{ lang.t('nav') }}">
       {% set icon = config.theme.icon.menu or "material/menu" %}
       {% include ".icons/" ~ icon ~ ".svg" %}
     </label>
@@ -46,10 +46,10 @@
     {% if config.extra.alternate %}
       {% include "partials/alternate.html" %}
     {% endif %}
-    {% if "material/search" in config.plugins %}
-      {% set search = config.plugins["material/search"] | attr("config") %}
+    {% if "search" in config.plugins %}
+      {% set search = config.plugins["search"] | attr("config") %}
       {% if search.enabled %}
-        <label class="md-header__button md-icon" for="__search">
+        <label class="md-header__button md-icon" for="__search" aria-label="{{ lang.t('search') }}">
           {% set icon = config.theme.icon.search or "material/magnify" %}
           {% include ".icons/" ~ icon ~ ".svg" %}
         </label>
@@ -62,11 +62,11 @@
     <a href="{{ 'assets/doc/sandmann-resume.pdf' | url }}" download class="md-header__button md-icon" title="Résumé (PDF)">
       {% include ".icons/material/code-tags.svg" %}
     </a>
-    {% if config.repo_url %}
-      <div class="md-header__source">
+    <div class="md-header__source">
+      {% if config.repo_url %}
         {% include "partials/source.html" %}
-      </div>
-    {% endif %}
+      {% endif %}
+    </div>
   </nav>
   {% if "navigation.tabs.sticky" in features %}
     {% if "navigation.tabs" in features %}

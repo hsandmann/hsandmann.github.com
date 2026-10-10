@@ -4,6 +4,9 @@ repo_name: hsandmann.github.com
 
 theme:
   name: material
+  # Keep the Material for MkDocs look; Zensical's default "modern" variant changes fonts,
+  # header colors and link styling that docs/stylesheets/extra.css was tuned against.
+  variant: classic
   custom_dir: overrides
   palette:
     # primary: grey
@@ -22,9 +25,6 @@ theme:
         name: Switch to light mode    
   features:
     # - announce.dismiss
-    - content.code.copy
-    - content.code.select
-    - content.code.annotate
     - content.tooltips
     - header.autohide
     - navigation.instant
@@ -60,21 +60,28 @@ markdown_extensions:
   - footnotes
   - tables
   - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:zensical.extensions.emoji.twemoji
+      emoji_generator: !!python/name:zensical.extensions.emoji.to_svg
   - toc:
       title: Humberto Sandmann
 
 plugins:
-  - glightbox
-  - git-revision-date-localized:
-      type: date
-      enable_creation_date: false
+  # Zensical enables search by default; this is a single page, so it adds nothing.
+  - search:
+      enabled: false
   - minify:
       minify_html: true
 
+# WORKAROUND (gambiarra): Zensical does not support git-revision-date-localized yet
+# (listed as "Planned" at https://zensical.org/compatibility/plugins/). Until it does, CI
+# exports SITE_LAST_UPDATE (date of the pushed commit) and overrides/partials/source-file.html
+# renders it. Local builds leave it empty, so no date is shown. Replace this with the native
+# plugin (and delete the override) once a viable alternative exists.
+extra:
+  last_update: !ENV [SITE_LAST_UPDATE, ""]
+
 # The downloadable CVs (sandmann-academic.pdf / sandmann-resume.pdf) are generated from
-# cv/data/cv.yml by cv/build.py (run in CI), not by an MkDocs plugin.
+# cv/data/cv.yml by cv/build.py (run in CI), not by a Zensical plugin.
 
 extra_css:
   - stylesheets/extra.css

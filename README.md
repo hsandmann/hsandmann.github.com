@@ -14,7 +14,7 @@
 
 > Computer scientist and professor — D.Sc. (University of São Paulo) with a research stay at the Max Planck Institute for Dynamics and Self-Organization. Research at the intersection of **bio-inspired neural computing**, **nonlinear network dynamics**, and **pattern recognition**.
 
-This repository hosts my **online CV** (a MkDocs Material site published to GitHub Pages) plus two
+This repository hosts my **online CV** (a [Zensical](https://zensical.org/) site published to GitHub Pages) plus two
 purpose-built PDFs — a comprehensive **academic CV** and a concise **résumé** — generated
 from a single structured data source and rebuilt automatically on every push to `main`.
 
@@ -31,8 +31,6 @@ from a single structured data source and rebuilt automatically on every push to 
 
 [![Deploy](https://github.com/hsandmann/hsandmann.github.com/actions/workflows/main.yaml/badge.svg)](https://github.com/hsandmann/hsandmann.github.com/actions/workflows/main.yaml)
 
-- **[MkDocs](https://www.mkdocs.org/)** + **[Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)** — the online CV
+- **[Zensical](https://zensical.org/)** (successor to Material for MkDocs, classic look) — the online CV, with native HTML minification
 - **CV PDFs** — generated from `cv/data/cv.yml` by `cv/build.py`: Jinja2 templates (`cv/templates/`) rendered to PDF via headless Chromium (Playwright), with fonts bundled for reliable, universal rendering
-- **[glightbox](https://github.com/blueswen/mkdocs-glightbox)** — lightbox for diplomas & images
-- **[minify](https://github.com/byrnereese/mkdocs-minify-plugin)** — smaller HTML
 - **GitHub Actions → GitHub Pages** — continuous deploy on every push to `main`

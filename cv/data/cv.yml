@@ -247,6 +247,11 @@ teaching:
       - Foundations of Computing Engineering Laboratory
 
 publications:
+  - authors: "H. Sandmann, L. A. Silva, E. Del-Moral-Hernandez"
+    title: "A self-organizing architecture of recursive elements for continuous learning (poster abstract)"
+    venue: "Dynamics Days Europe, Göttingen, Germany"
+    year: 2009
+    pages: "246–248"
   - authors: "E. Del-Moral-Hernandez, H. Sandmann, G. Araujo"
     title: "Context dependent pattern recognition — A framework for hybrid architectures bridging chaotic neural networks based on Recursive Processing Elements and symbolic information"
     venue: "Proc. International Joint Conference on Neural Networks (IJCNN), Atlanta, GA, USA"
@@ -258,6 +263,10 @@ publications:
     venue: "Proc. IJCNN (IEEE World Congress on Computational Intelligence), Hong Kong, China"
     year: 2008
     doi: 10.1109/IJCNN.2008.4634190
+  - authors: "H. Sandmann, M. T. C. de Andrade"
+    title: "Análise da capacidade de uma rede neural de memória associativa com arquitetura de elementos processados recursivamente"
+    venue: "Proc. Brazilian Symposium on Neural Networks (SBRN), São Luís, MA, Brazil"
+    year: 2004
   - authors: "E. Del-Moral-Hernandez, H. Sandmann, L. A. da Silva"
     title: "Pattern recovery in networks of recursive processing elements with continuous learning"
     venue: "Proc. IJCNN, Budapest, Hungary"

@@ -700,6 +700,9 @@ Synchronization of coupled oscillators
 <small>Selected peer-reviewed publications. Full and up-to-date list:
 <a href='https://orcid.org/0000-0001-7758-695X' target='_blank'>ORCID 0000-0001-7758-695X</a>.</small>
 
+H. Sandmann; L.A. Silva; E. Del-Moral-Hernandez. **A self-organizing architecture of recursive elements for continuous learning** (poster abstract).
+In Dynamics Days Europe 2009, Göttingen, Germany, 2009, pp. 246–248.
+
 E. Del-Moral-Hernandez; H. Sandmann; G. Araujo. **Context dependent pattern recognition — A framework for hybrid architectures bridging chaotic neural networks based on Recursive Processing Elements and symbolic information**.
 In Proceedings of the International Joint Conference on Neural Networks (IJCNN), Atlanta, GA, USA, 2009, pp. 663–670. IEEE.
 doi: <a href='https://doi.org/10.1109/IJCNN.2009.5179061' target='_blank'>10.1109/IJCNN.2009.5179061</a>.
@@ -707,6 +710,10 @@ doi: <a href='https://doi.org/10.1109/IJCNN.2009.5179061' target='_blank'>10.110
 L.A. da Silva; H. Sandmann; E. Del-Moral-Hernandez. **A self-organizing architecture of recursive elements for continuous learning**.
 In Proceedings of the International Joint Conference on Neural Networks (IJCNN), Hong Kong, China, 2008 (IEEE World Congress on Computational Intelligence). IEEE.
 doi: <a href='https://doi.org/10.1109/IJCNN.2008.4634190' target='_blank'>10.1109/IJCNN.2008.4634190</a>.
+
+H. Sandmann; M.T.C. de Andrade. **Análise da capacidade de uma rede neural de memória associativa com arquitetura de elementos processados recursivamente**.
+In Brazilian Symposium on Neural Networks (SBRN), São Luís, MA, Brazil, 2004. IEEE.
+<a href='./assets/archive/sbrn2004-r1.pdf' target='_blank'>pdf</a>.
 
 E. Del-Moral-Hernandez; H. Sandmann; L.A. da Silva. **Pattern recovery in networks of recursive processing elements with continuous learning**.
 In Proceedings of the International Joint Conference on Neural Networks (IJCNN), Budapest, Hungary, 2004. IEEE.
@@ -767,12 +774,23 @@ Program Committee member and reviewer for the **International Joint Conference o
 |---|:--|:--|:--|
 | **Jornal da Band** — TV Bandeirantes | Interview on children's images published online | jul.2023 | <a href='https://www.youtube.com/watch?v=706vzDaaLcQ&t=2354s' target='_blank'>watch</a> |
 | **Jornal da Band** — TV Bandeirantes | Interview on security of cryptocurrency wallets | mar.2023 | <a href='https://www.youtube.com/watch?v=lfh9akgkmGE&t=2220s' target='_blank'>watch</a> |
+| **Trendings** | "Como algoritmos são utilizados para influenciar consumidores" — expert commentary | may.2022 | <a href='https://trendings.com.br/tecnologia/como-as-empresas-utilizam-algoritmos-para-influenciar-consumidores-e-aumentar-suas-vendas/' target='_blank'>read</a> |
+| **Trendings** | "Open banking: o que é e tudo o que você precisa saber" — expert commentary | may.2021 | <a href='https://trendings.com.br/tecnologia/tudo-o-que-voce-precisa-saber-sobre-open-banking/' target='_blank'>read</a> |
+| **Trendings** | "LGPD: o consumidor precisa fazer sua parte" — expert commentary | jan.2021 | <a href='https://trendings.com.br/tecnologia/lgpd-o-consumidor-precisa-fazer-sua-parte/' target='_blank'>read</a> |
+| **Trendings** | "LGPD: 10 desafios para as empresas se adequarem" — expert commentary | jan.2021 | <a href='https://trendings.com.br/negocios/lgpd-10-desafios-para-as-empresas-se-adequarem/' target='_blank'>read</a> |
+| **Trendings** | "5G: as vantagens dessa tecnologia que irá transformar o mundo" — expert commentary | nov.2020 | <a href='https://trendings.com.br/tecnologia/5g-as-vantagens-dessa-tecnologia-que-ira-transformar-o-mundo/' target='_blank'>read</a> |
+| **Trendings** | "GPT-3: especialista em IA diz o que esperar do robô que já escreve seus próprios artigos" — expert commentary | oct.2020 | <a href='https://trendings.com.br/tecnologia/gpt-3-especialista-em-ia-diz-o-que-esperar-do-robo-que-ja-escreve-seus-proprios-artigos/' target='_blank'>read</a> |
+| **GAZ** | "Perfis falsos: os fakes estão à solta" — expert commentary | oct.2020 | <a href='https://www.gaz.com.br/perfis-falsos-os-fakes-estao-a-solta/' target='_blank'>read</a> |
+| **Trendings** | "5G no Brasil: os impactos dessa tecnologia e a disputa pela infraestrutura da rede" — expert commentary | oct.2020 | <a href='https://trendings.com.br/tecnologia/5g-no-brasil-entenda-os-impactos-dessa-tecnologia-e-a-disputa-pela-infraestrutura-da-rede/' target='_blank'>read</a> |
+| **Trendings** | "6 habilidades que você pode desenvolver aprendendo programação" — expert commentary | jan.2020 | <a href='https://trendings.com.br/carreira/6-habilidades-que-voce-pode-desenvolver-aprendendo-programacao/' target='_blank'>read</a> |
+| **Trendings** | "O que é um algoritmo e como influencia nossas escolhas" — expert commentary | jan.2020 | <a href='https://trendings.com.br/tecnologia/o-que-e-um-algoritmo-e-como-influencia-nossas-escolhas/' target='_blank'>read</a> |
+| **Trendings** | "8 dicas para proteger seu celular contra roubo de dados" — expert commentary | dec.2019 | <a href='https://trendings.com.br/tecnologia/8-dicas-de-seguranca-para-proteger-seu-smartphone-e-seus-dados-pessoais/' target='_blank'>read</a> |
 | **GloboNews Em Ponto** — GloboNews | Live commentary on the 5G rollout in Brazil | nov.2019 | |
 | **Jornal da Globo** — TV Globo | Economic sectors prepare for the 5G network | oct.2019 | <a href='https://globoplay.globo.com/v/8051355/' target='_blank'>watch</a> |
 | **Brazil Journal** | "O squad da ciência contra o óleo no mar" — Brazilian team's NASA-awarded algorithm | oct.2019 | <a href='https://braziljournal.com/o-squad-da-ciencia-contra-o-oleo-no-mar' target='_blank'>read</a> |
 | **SP1** — TV Globo | Technology opening possibilities for kindness in traffic | aug.2019 | <a href='https://globoplay.globo.com/v/7810288/' target='_blank'>watch</a> |
 | **CBN** — radio | Personal assistants solving everyday problems automatically | aug.2019 | <a href='https://cbn.globoradio.globo.com/media/audio/270518/assistentes-pessoais-resolvem-problemas-do-cotidia.htm' target='_blank'>listen</a> |
-| **O Estado de S. Paulo** | "Google registra falha para indexar conteúdos" — expert commentary | aug.2019 | |
+| **O Estado de S. Paulo** | "Google tem falha que afeta indexação de notícias" — expert commentary | aug.2019 | <a href='https://www.estadao.com.br/link/google-tem-falha-que-afeta-indexacao-de-noticias/' target='_blank'>read</a> |
 | **TM Juntos** | "8 dicas para evitar a invasão de seu celular e a exposição dos seus dados" | aug.2019 | <a href='https://tmjuntos.com.br/tecnologia/8-dicas-para-evitar-a-invasao-de-seu-celular-e-a-exposicao-dos-seus-dados/' target='_blank'>read</a> |
 | **Supernova** — ESPM | Interview at the Supernova innovation summit | may.2019 | <a href='https://www.youtube.com/watch?v=m8JH8q6umbE' target='_blank'>watch</a> |
 | **Matéria de Capa** | "Mistérios da Ciência" — interview on bio-engineering perspectives | mar.2015 | <a href='https://www.youtube.com/watch?v=JX59lLxRwAc' target='_blank'>watch</a> |

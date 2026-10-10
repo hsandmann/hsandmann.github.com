@@ -68,8 +68,11 @@ plugin natively, enable it and delete the override, the `extra.last_update` entr
 - Keep plugin/theme changes in `mkdocs.yml` synchronized with `requirements.txt`.
 - Theme uses `variant: classic` (Material look). `overrides/partials/header.html` is a copy of Zensical's
   header plus the two CV buttons — keep it in sync on Zensical upgrades.
-- Documents in `docs/assets/doc/` are named `YYYYMMDD-<issuer>-<subject>-<type>.pdf` (lowercase, hyphens,
-  date = issue date). The generated CVs `sandmann-academic.pdf` / `sandmann-resume.pdf` are exempt.
+- Supporting files live in `docs/archive/` (`documents/`, `academic/`, `publications/`, `ijcnn/`, `media/`),
+  named `YYYYMMDD-<issuer/outlet>-<subject>[-<type>].<ext>` (lowercase, hyphens, date = issue date).
+  Only git-tracked files are published; `docs/archive/**` is gitignored, so new files stay private
+  (local + Cloudflare R2 bucket `hsandmann-github-com`) unless added with `git add -f`. Never deploy from a
+  local build (it contains the private files). The generated CVs stay in `docs/assets/doc/` (fixed names).
 
 ## Validation Checklist
 

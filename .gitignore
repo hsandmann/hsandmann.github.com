@@ -3,4 +3,7 @@
 env/
 site/
 .cache/
-/archive/
+# docs/archive/ mixes published and private files. Published ones are tracked in git (tracked files
+# ignore this rule); everything else is a private local archive backed up to Cloudflare R2
+# (bucket hsandmann-github-com). New files are private by default; publish one with `git add -f`.
+/docs/archive/**

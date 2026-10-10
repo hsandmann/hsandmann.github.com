@@ -39,8 +39,8 @@ Synchronization of coupled oscillators
 <table>
     <tr>
         <td align='center'>
-            <a href='./assets/doc/20120706-usp-doctorate-diploma.pdf' target='_blank'>mar.2012</a><br>
-            <a href='./assets/doc/20120612-usp-doctorate-transcript.pdf' target='_blank'>&#8593;</a><br>
+            <a href='./archive/documents/20120706-usp-doctorate-diploma.pdf' target='_blank'>mar.2012</a><br>
+            <a href='./archive/documents/20120612-usp-doctorate-transcript.pdf' target='_blank'>&#8593;</a><br>
             mar.2007
         </td>
         <td style='width: 100%;'>
@@ -62,9 +62,9 @@ Synchronization of coupled oscillators
     </tr>
     <tr>
         <td align='center'>
-            <a href='./assets/doc/20101111-mpi-research-stay-report.pdf' target='_blank'>sep.2010</a><br>
+            <a href='./archive/documents/20101111-mpi-research-stay-report.pdf' target='_blank'>sep.2010</a><br>
             &#8593;<br>
-            <a href='./assets/doc/20090623-mpi-research-stay-acceptance-letter.pdf' target='_blank'>aug.2009</a>
+            <a href='./archive/documents/20090623-mpi-research-stay-acceptance-letter.pdf' target='_blank'>aug.2009</a>
         </td>
         <td>
             <span class='details'>D.Sc. Internship</span><a href='https://www.ds.mpg.de/' target='_blank'>Max Planck Gesellschaft für Dynamik und Selbstorganisation</a><br>
@@ -72,7 +72,7 @@ Synchronization of coupled oscillators
             <span class='details'>supported by</span>
             <ul class='support-list'>
                 <li class='support-item'>
-                    <a href='http://www.capes.gov.br/' target='_blank'>CAPES</a> - grant <a href='./assets/doc/20101116-capes-research-stay-grant-declaration.pdf' target='_blank'>BEX 4076-09-5</a><br>
+                    <a href='http://www.capes.gov.br/' target='_blank'>CAPES</a> - grant <a href='./archive/documents/20101116-capes-research-stay-grant-declaration.pdf' target='_blank'>BEX 4076-09-5</a><br>
                     <small>jan.2010 → aug.2010</small>
                 </li>
                 <li class='support-item'>
@@ -93,8 +93,8 @@ Synchronization of coupled oscillators
     </tr>
     <tr>
         <td align='center'>
-            <a href='./assets/doc/20060721-usp-masters-diploma.pdf' target='_blank'>jun.2006</a><br>
-            <a href='./assets/doc/20060620-usp-masters-transcript.pdf' target='_blank'>&#8593;</a><br>
+            <a href='./archive/documents/20060721-usp-masters-diploma.pdf' target='_blank'>jun.2006</a><br>
+            <a href='./archive/documents/20060620-usp-masters-transcript.pdf' target='_blank'>&#8593;</a><br>
             feb.2003
         </td>
         <td>
@@ -108,8 +108,8 @@ Synchronization of coupled oscillators
     </tr>
     <tr>
         <td align='center'>
-            <a href='./assets/doc/20040609-fei-bachelor-diploma.pdf' target='_blank'>dec.2002</a><br>
-            <a href='./assets/doc/20130812-fei-bachelor-transcript.pdf' target='_blank'>&#8593;</a><br>
+            <a href='./archive/documents/20040609-fei-bachelor-diploma.pdf' target='_blank'>dec.2002</a><br>
+            <a href='./archive/documents/20130812-fei-bachelor-transcript.pdf' target='_blank'>&#8593;</a><br>
             feb.1999
         </td>
         <td>
@@ -120,7 +120,7 @@ Synchronization of coupled oscillators
     </tr>
     <tr>
         <td align='center'>
-            <a href='./assets/doc/19990104-ete-technician-transcript.pdf' target='_blank'>dec.1998</a><br>
+            <a href='./archive/documents/19990104-ete-technician-transcript.pdf' target='_blank'>dec.1998</a><br>
             &#8593;<br>
             feb.1996
         </td>
@@ -713,7 +713,7 @@ doi: <a href='https://doi.org/10.1109/IJCNN.2008.4634190' target='_blank'>10.110
 
 H. Sandmann; M.T.C. de Andrade. **Análise da capacidade de uma rede neural de memória associativa com arquitetura de elementos processados recursivamente**.
 In Brazilian Symposium on Neural Networks (SBRN), São Luís, MA, Brazil, 2004. IEEE.
-<a href='./assets/archive/sbrn2004-r1.pdf' target='_blank'>pdf</a>.
+<a href='./archive/publications/20040929-sbrn2004-paper.pdf' target='_blank'>pdf</a>.
 
 E. Del-Moral-Hernandez; H. Sandmann; L.A. da Silva. **Pattern recovery in networks of recursive processing elements with continuous learning**.
 In Proceedings of the International Joint Conference on Neural Networks (IJCNN), Budapest, Hungary, 2004. IEEE.
@@ -761,10 +761,10 @@ Program Committee member and reviewer for the **International Joint Conference o
 | | | | |
 |---|:--|:--|:--|
 | **IJCNN 2020** | Program Committee &amp; Reviewer | Glasgow, Scotland |  |
-| **IJCNN 2019** | Program Committee &amp; Reviewer | Budapest, Hungary | <a href='./assets/archive/ijcnn/2019-program.pdf' target='_blank'>program</a> |
+| **IJCNN 2019** | Program Committee &amp; Reviewer | Budapest, Hungary | <a href='./archive/ijcnn/20190714-ijcnn2019-program.pdf' target='_blank'>program</a> |
 | **IJCNN 2018** | Reviewer | Rio de Janeiro, Brazil |  |
-| **IJCNN 2017** | Program Committee &amp; Reviewer | Anchorage, AK, USA | <a href='./assets/archive/ijcnn/2017-program.pdf' target='_blank'>program</a> |
-| **IJCNN 2015** | Reviewer | Killarney, Ireland | <a href='./assets/archive/ijcnn/2015-program.pdf' target='_blank'>program</a> |
+| **IJCNN 2017** | Program Committee &amp; Reviewer | Anchorage, AK, USA | <a href='./archive/ijcnn/20170514-ijcnn2017-program.pdf' target='_blank'>program</a> |
+| **IJCNN 2015** | Reviewer | Killarney, Ireland | <a href='./archive/ijcnn/20150712-ijcnn2015-program.pdf' target='_blank'>program</a> |
 
 ## Media &amp; Press
 
@@ -817,7 +817,7 @@ Program Committee member and reviewer for the **International Joint Conference o
 |---|:--|
 | **Portuguese** | native |
 | **English** | advanced |
-| **German** | <a href='./assets/doc/20091123-goethe-german-b1-certificate.pdf' target='_blank'>B1</a> |
+| **German** | <a href='./archive/documents/20091123-goethe-german-b1-certificate.pdf' target='_blank'>B1</a> |
 
 ---
 

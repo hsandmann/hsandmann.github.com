@@ -28,7 +28,7 @@ only (see below). Local builds show no "Last update" date unless `SITE_LAST_UPDA
 
 ## Architecture
 
-- **Content** lives in `docs/`. Authored content is essentially one large file, `docs/index.md` (~800 lines); assets are in `docs/assets/` (`img/`, `doc/`) and custom CSS in `docs/stylesheets/extra.css`.
+- **Content** lives in `docs/`. Authored content is essentially one large file, `docs/index.md` (~800 lines); assets are in `docs/assets/` (`img/`, `doc/` for the CVs) and `docs/archive/` and custom CSS in `docs/stylesheets/extra.css`.
 - **All site behavior is driven by `mkdocs.yml`** — theme, palette, markdown extensions, and plugins. Read it before changing docs, theme, or rendering behavior.
 - **Theme:** `variant: classic` keeps the Material for MkDocs look (`extra.css` is tuned for it). Template
   overrides live in `overrides/partials/` (`header.html` adds the two CV buttons; it is a copy of Zensical's
@@ -72,6 +72,15 @@ build/check job — pushing to `main` deploys directly to GitHub Pages.
 
 - Do not edit anything under `env/` (local virtualenv, gitignored along with `site/` and `.cache/`).
 - Keep styling in `docs/stylesheets/extra.css` rather than inline HTML/CSS where practical.
-- Documents in `docs/assets/doc/` (diplomas, transcripts, letters, certificates) are named
-  `YYYYMMDD-<issuer>-<subject>-<type>.pdf`, all lowercase, hyphen-separated, where the date is the
-  document's issue date. The generated CVs (`sandmann-academic.pdf`, `sandmann-resume.pdf`) are exempt.
+- **Archive — `docs/archive/`** holds every supporting file, by category: `documents/` (diplomas,
+  transcripts, letters, certificates), `academic/` (thesis, dissertation, defense slides),
+  `publications/`, `ijcnn/` (conference programs), `media/` (press copies, videos, audio).
+  - Files are named `YYYYMMDD-<issuer/outlet>-<subject>[-<type>].<ext>`, all lowercase,
+    hyphen-separated; the date is the issue/publication/broadcast date.
+  - **Public vs private:** only files tracked in git are published. `.gitignore` ignores all of
+    `docs/archive/**`, so new files stay private (local + Cloudflare R2 bucket `hsandmann-github-com`)
+    unless explicitly published with `git add -f`. Never publish files over 100 MB (GitHub limit) or
+    copies of paywalled/third-party content without the owner's say-so.
+  - A local `zensical build` copies the private files into `site/` too (~2.3 GB); CI checks out only
+    tracked files, so the deployed site never contains them. Never deploy from a local build.
+  - The generated CVs stay in `docs/assets/doc/` with fixed, undated names (linked externally).

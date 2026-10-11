@@ -1,8 +1,8 @@
 ---
 title: Humberto Sandmann — Computer Scientist, Professor & Software Architect
 description: >-
-  Humberto Sandmann, D.Sc. (USP, Max Planck Institute): computer scientist, professor at Insper
-  and senior software architect in AI, machine learning and distributed systems.
+  Humberto Sandmann, D.Sc. (USP, Max Planck): computer scientist, professor at Insper
+  and software architect in AI, machine learning and distributed systems.
 hide:
   - navigation
 ---

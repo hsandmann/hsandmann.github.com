@@ -1,0 +1,78 @@
+{#-
+  schema.org ProfilePage + Person (JSON-LD): the machine-readable CV for search engines and
+  LLM-based tools. Invisible on the page. Factual only — keep in sync with docs/index.md and
+  docs/llms.txt (Google penalizes structured data that does not match the visible content).
+-#}
+{% set site_url = config.site_url | d("", true) %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "url": "{{ site_url }}",
+  "name": "{{ page.meta.title if page.meta and page.meta.title else config.site_name }}",
+  "inLanguage": "en",
+  "mainEntity": {
+    "@type": "Person",
+    "@id": "{{ site_url }}#person",
+    "name": "Humberto Sandmann",
+    "givenName": "Humberto",
+    "familyName": "Sandmann",
+    "honorificSuffix": "D.Sc.",
+    "url": "{{ site_url }}",
+    "image": "{{ site_url }}assets/img/hsandmann.jpg",
+    "email": "mailto:hsandmann@ieee.org",
+    "jobTitle": ["Associate Professor", "Senior Software Architect", "Machine Learning Engineer"],
+    "description": "Computer scientist, university professor and senior software architect. D.Sc. in Electrical Engineering (neural computing) from the Polytechnic School of the University of São Paulo, with a doctoral research stay at the Max Planck Institute for Dynamics and Self-Organization. Over 25 years of software engineering for banking, fintech and retail — core banking, cryptography (PKI/HSM), high-performance computing, computer vision and cloud-native microservices — and over 15 years teaching computer science, currently Associate Professor at Insper. Program Committee member of the International Joint Conference on Neural Networks (IJCNN), IEEE member and frequent technology expert in Brazilian national media. Brazilian and German citizen, open to relocation.",
+    "worksFor": {
+      "@type": "CollegeOrUniversity",
+      "name": "Insper",
+      "url": "https://www.insper.edu.br"
+    },
+    "affiliation": [
+      { "@type": "CollegeOrUniversity", "name": "Insper", "url": "https://www.insper.edu.br" },
+      { "@type": "Organization", "name": "IEEE", "url": "https://www.ieee.org" }
+    ],
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "Polytechnic School of the University of São Paulo", "url": "https://www.poli.usp.br" },
+      { "@type": "ResearchOrganization", "name": "Max Planck Institute for Dynamics and Self-Organization", "url": "https://www.ds.mpg.de" },
+      { "@type": "CollegeOrUniversity", "name": "Faculdade de Engenharia Industrial (FEI)", "url": "https://www.fei.edu.br" }
+    ],
+    "hasCredential": [
+      { "@type": "EducationalOccupationalCredential", "credentialCategory": "degree", "educationalLevel": "Doctorate", "name": "D.Sc. in Electrical Engineering", "recognizedBy": { "@type": "CollegeOrUniversity", "name": "University of São Paulo" } },
+      { "@type": "EducationalOccupationalCredential", "credentialCategory": "degree", "educationalLevel": "Master", "name": "M.Sc. in Electrical Engineering", "recognizedBy": { "@type": "CollegeOrUniversity", "name": "University of São Paulo" } },
+      { "@type": "EducationalOccupationalCredential", "credentialCategory": "degree", "educationalLevel": "Bachelor", "name": "B.Sc. in Computer Science", "recognizedBy": { "@type": "CollegeOrUniversity", "name": "Faculdade de Engenharia Industrial (FEI)" } }
+    ],
+    "memberOf": [
+      { "@type": "Organization", "name": "IEEE Computational Intelligence Society" },
+      { "@type": "Organization", "name": "International Neural Network Society (INNS)" }
+    ],
+    "knowsAbout": [
+      "Artificial Intelligence", "Machine Learning", "Deep Learning", "Neural Networks",
+      "Computer Vision", "Software Architecture", "Microservices", "Distributed Systems",
+      "Cloud Computing", "Kubernetes", "High-Performance Computing", "Cryptography",
+      "Public Key Infrastructure", "Core Banking Systems", "Nonlinear Dynamics",
+      "Complex Networks", "Synchronization of Coupled Oscillators", "Pattern Recognition",
+      "Java", "Python", "Go", "Spring Boot", "Kafka", "PostgreSQL"
+    ],
+    "knowsLanguage": [
+      { "@type": "Language", "name": "Portuguese", "alternateName": "pt" },
+      { "@type": "Language", "name": "English", "alternateName": "en" },
+      { "@type": "Language", "name": "German", "alternateName": "de" }
+    ],
+    "nationality": [
+      { "@type": "Country", "name": "Brazil" },
+      { "@type": "Country", "name": "Germany" }
+    ],
+    "homeLocation": {
+      "@type": "Place",
+      "address": { "@type": "PostalAddress", "addressLocality": "São Paulo", "addressCountry": "BR" }
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/hsandmann/",
+      "https://github.com/hsandmann",
+      "https://orcid.org/0000-0001-7758-695X",
+      "https://scholar.google.com/citations?user=EG3wtRIAAAAJ"
+    ]
+  }
+}
+</script>

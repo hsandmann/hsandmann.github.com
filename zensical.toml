@@ -3,6 +3,10 @@
 
 [project]
 site_name = "Humberto Sandmann"
+# site_url drives the canonical URL, sitemap.xml and the absolute URLs in the social/SEO tags.
+site_url = "https://hsandmann.github.io/"
+site_description = "Computer scientist (D.Sc. USP, Max Planck Institute), professor at Insper and senior software architect in AI, machine learning and distributed systems."
+site_author = "Humberto Sandmann"
 repo_url = "https://github.com/hsandmann/hsandmann.github.com"
 repo_name = "hsandmann.github.com"
 extra_css = ["stylesheets/extra.css"]
@@ -18,6 +22,7 @@ extra_css = ["stylesheets/extra.css"]
 # Zensical's modern look (Inter / JetBrains Mono, light header). "classic" restores the
 # Material for MkDocs look.
 variant = "modern"
+language = "en"
 custom_dir = "overrides"
 favicon = "assets/img/favicon.svg"
 features = [
@@ -84,6 +89,7 @@ emoji_generator = "zensical.extensions.emoji.to_svg"
 
 [project.markdown_extensions.toc]
 title = "Humberto Sandmann"
+toc_depth = 2
 
 # ----------------------------------------------------------------------------
 # Plugins
@@ -109,3 +115,13 @@ minify_html = true
 # step) once Zensical supports it.
 [project.extra]
 last_update = ""
+
+# ----------------------------------------------------------------------------
+# Search engines and analytics (each one is off while empty; see overrides/main.html)
+# ----------------------------------------------------------------------------
+# Google Search Console / Bing Webmaster Tools: the "HTML tag" verification code (content=...).
+google_site_verification = ""
+bing_site_verification = ""
+# GoatCounter site code (https://<code>.goatcounter.com): cookieless analytics, no consent
+# banner; also counts the clicks tagged with data-goatcounter-click in docs/index.md.
+goatcounter = ""

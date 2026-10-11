@@ -69,6 +69,13 @@ enable it and delete the override, the `last_update` entry and the CI `sed` step
 - Keep plugin/theme changes in `zensical.toml` synchronized with `requirements.txt`.
 - Theme uses `variant: modern`; the logo is the inline `material/school` icon (`theme.icon.logo`). `overrides/partials/header.html` is a copy of Zensical's
   header plus the two CV buttons — keep it in sync on Zensical upgrades.
+- `docs/index.md` uses the HTML components styled in `extra.css` (`cv-hero`, `cv-stats`, `cv-entry`,
+  `cv-rows`, `cv-pubs`, `<details class="cv-more">`); copy an existing entry when adding one.
+- SEO/sharing/analytics live in `overrides/main.html` and `overrides/partials/structured-data.html`
+  (JSON-LD), plus `docs/llms.txt` and `docs/robots.txt`. Keep them factual and in sync with `index.md`;
+  never add hidden text or instructions aimed at crawlers or AI screeners. Analytics (GoatCounter) and
+  search-console verification turn on by filling the empty keys in `zensical.toml` `[project.extra]`.
+  Regenerate the share image with `python cv/og_card.py` (from `cv/`).
 - Supporting files live in `docs/archive/` (`documents/`, `academic/`, `publications/`, `ijcnn/`, `media/`),
   named `YYYYMMDD-<issuer/outlet>-<subject>[-<type>].<ext>` (lowercase, hyphens, date = issue date).
   Only git-tracked files are published; `docs/archive/**` is gitignored, so new files stay private

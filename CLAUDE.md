@@ -8,8 +8,7 @@ A companion [AGENTS.md](AGENTS.md) exists with overlapping guidance; keep the tw
 
 A personal documentation site for Humberto Sandmann, published to https://hsandmann.github.io/, built with
 **[Zensical](https://zensical.org/)** (the successor to MkDocs Material, from the same team). It is configured with
-Zensical's native `zensical.toml` (migrated from `mkdocs.yml`; the generated HTML was byte-identical). Despite the legacy `_config.yaml` (Jekyll)
-at the root, the site is not Jekyll — `_config.yaml` is vestigial and unused by the build.
+Zensical's native `zensical.toml` (migrated from `mkdocs.yml`; the generated HTML was byte-identical).
 
 ## Commands
 
@@ -28,7 +27,7 @@ only (see below). Local builds show no "Last update" date (CI injects it; see be
 
 ## Architecture
 
-- **Content** lives in `docs/`. Authored content is essentially one large file, `docs/index.md` (~800 lines); assets are in `docs/assets/` (`img/`, `doc/` for the CVs) and `docs/archive/` and custom CSS in `docs/stylesheets/extra.css`.
+- **Content** lives in `docs/`. Authored content is essentially one large file, `docs/index.md` (~650 lines); assets are in `docs/assets/` (`img/`, `doc/` for the CVs) and `docs/archive/` and custom CSS in `docs/stylesheets/extra.css`.
 - **All site behavior is driven by `zensical.toml`** — theme, palette, markdown extensions, and plugins. Read it before changing docs, theme, or rendering behavior.
 - **Theme:** `variant: modern` (Zensical's default look: Inter / JetBrains Mono, light header). The logo is the
   inline `material/school` icon (`theme.icon.logo`), not an image, so it follows the header text color. Template
@@ -74,9 +73,20 @@ build/check job — pushing to `main` deploys directly to GitHub Pages.
 
 - Do not edit anything under `env/` (local virtualenv, gitignored along with `site/` and `.cache/`).
 - Keep styling in `docs/stylesheets/extra.css` rather than inline HTML/CSS where practical.
-- `docs/index.md` lays the CV out as wide HTML tables (period | details | logo/keywords). `extra.css` has a
-  mobile block (`max-width: 44.9375em`) that restacks them as blocks, so keep that column order when
-  adding entries, and check new sections at phone width in both light and dark schemes.
+- `docs/index.md` is built from a few HTML components styled in `extra.css` (see the comment at its top):
+  `cv-hero`, `cv-stats`, `cv-entry` (one role/degree: h3 + period, org line, summary, tags, optional
+  `<details class="cv-more">` for long lists), `cv-rows` (one-line records) and `cv-pubs`. Copy an
+  existing entry when adding one, keep roles reverse-chronological, and check new content at phone
+  width in both light and dark schemes. Colors come only from the `--cv-*` tokens at the top of `extra.css`.
+- **SEO / sharing / analytics** (all invisible on the page): `overrides/main.html` sets the `<title>`,
+  Open Graph/Twitter tags and optional verification + GoatCounter tags (enabled by filling
+  `google_site_verification`, `bing_site_verification`, `goatcounter` in `zensical.toml` `[project.extra]`);
+  `overrides/partials/structured-data.html` is the schema.org JSON-LD CV; `docs/llms.txt` is the
+  plain-text summary for LLM tools; `docs/robots.txt` keeps `archive/documents/` out of search.
+  Keep JSON-LD and `llms.txt` factual and in sync with `index.md` — never add hidden instructions or
+  text aimed at manipulating crawlers or AI screeners (it is penalized as spam and backfires).
+  `data-goatcounter-click` attributes on links name the conversion events (CV downloads, email, profiles).
+  The share image `docs/assets/img/og-card.png` is made by `python cv/og_card.py` (run from `cv/`).
 - **Archive — `docs/archive/`** holds every supporting file, by category: `documents/` (diplomas,
   transcripts, letters, certificates), `academic/` (thesis, dissertation, defense slides),
   `publications/`, `ijcnn/` (conference programs), `media/` (press copies, videos, audio).

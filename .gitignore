@@ -7,3 +7,6 @@ site/
 # ignore this rule); everything else is a private local archive backed up to Cloudflare R2
 # (bucket hsandmann-github-com). New files are private by default; publish one with `git add -f`.
 /docs/archive/**
+
+# Python bytecode
+__pycache__/

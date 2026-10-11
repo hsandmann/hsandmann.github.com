@@ -1,0 +1,66 @@
+{#-
+  Extends Zensical's base.html with search-engine, social-sharing, structured-data and
+  analytics tags. Everything here is invisible on the page.
+
+  - <title> uses the page's front-matter title as is (no " - site name" suffix).
+  - Open Graph / Twitter cards use docs/assets/img/og-card.png (regenerate with cv/og_card.py).
+  - JSON-LD (schema.org ProfilePage + Person) is the machine-readable CV that search engines
+    and LLM-based tools read. Keep it factual and in sync with docs/index.md.
+  - Optional integrations, all off until a value is set in zensical.toml [project.extra]:
+    google_site_verification, bing_site_verification, goatcounter.
+-#}
+{% extends "base.html" %}
+
+{% block htmltitle %}
+  {% if page.meta and page.meta.title %}
+    <title>{{ page.meta.title }}</title>
+  {% else %}
+    {{ super() }}
+  {% endif %}
+{% endblock %}
+
+{% block extrahead %}
+  {% set site_url = config.site_url | d("", true) %}
+  {% set title = page.meta.title if page.meta and page.meta.title else config.site_name %}
+  {% set description = page.meta.description if page.meta and page.meta.description else config.site_description %}
+  {% set image = site_url ~ "assets/img/og-card.png" %}
+
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#2f54d1">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="{{ config.site_name }}">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" content="{{ description }}">
+  {% if page.canonical_url %}<meta property="og:url" content="{{ page.canonical_url }}">{% endif %}
+  <meta property="og:image" content="{{ image }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Humberto Sandmann — Computer Scientist, Professor & Software Architect">
+  <meta property="profile:first_name" content="Humberto">
+  <meta property="profile:last_name" content="Sandmann">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ title }}">
+  <meta name="twitter:description" content="{{ description }}">
+  <meta name="twitter:image" content="{{ image }}">
+
+  {% if config.extra.google_site_verification %}
+    <meta name="google-site-verification" content="{{ config.extra.google_site_verification }}">
+  {% endif %}
+  {% if config.extra.bing_site_verification %}
+    <meta name="msvalidate.01" content="{{ config.extra.bing_site_verification }}">
+  {% endif %}
+
+  <link rel="alternate" type="text/plain" title="LLM-readable summary" href="{{ 'llms.txt' | url }}">
+
+  {% if page.canonical_url and page.canonical_url == site_url %}
+    {% include "partials/structured-data.html" %}
+  {% endif %}
+
+  {#- GoatCounter: free, cookieless, no consent banner needed. Counts page views and the
+      clicks on links carrying data-goatcounter-click (CV downloads, email, profiles). -#}
+  {% if config.extra.goatcounter %}
+    <script data-goatcounter="https://{{ config.extra.goatcounter }}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+  {% endif %}
+{% endblock %}

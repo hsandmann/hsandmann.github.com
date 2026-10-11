@@ -91,28 +91,28 @@ experience:
     location: São Paulo, Brazil
     start: 2006
     end: 2025
-    summary: Independent consultancy in machine learning and software architecture.
+    summary: Independent consultancy delivering short-term, specialized engagements in machine learning, optimization and security.
     stack: [Machine Learning, Software Architecture]
   - org: SelsanTech
     role: Co-Founder
     location: São Paulo, Brazil
     start: 2012
     end: 2023
-    summary: Co-founded a venture delivering machine-learning and software-architecture solutions.
+    summary: Co-founded a venture bringing computational-intelligence research to market; built ZigTrack, real-time indoor tracking of equipment with low-cost fixed sensors.
     stack: [Machine Learning, Software Architecture]
   - org: RockSpoon
     role: Senior Software Architect & Machine Learning Engineer
     location: São Paulo, Brazil · Palo Alto, USA
     start: 2018
     end: 2019
-    summary: Architected POS/ERP/payroll platforms and computer-vision/ML features for a restaurant-tech company.
+    summary: Team leader and product owner; architected POS/ERP/payroll platforms and computer-vision/ML features for a restaurant-tech company.
     stack: [POS, ERP, JavaEE, PostgreSQL, OpenCV, Computer Vision, Go, Android, Kotlin]
   - org: Banco Votorantim
     role: Senior Consultant, Computational Optimization
     location: São Paulo, Brazil
     start: 2015
     end: 2016
-    summary: Return-on-equity optimization on high-performance computing infrastructure for a major bank.
+    summary: Return-on-equity computation for 2M+ records within a 12-hour window on high-performance computing infrastructure for a major bank.
     stack: [RoE, High-Performance Computing, J2EE, Spring Boot, Jenkins, Test Automation]
   - org: TecBan
     role: Senior Consultant, Computational Optimization
@@ -195,6 +195,23 @@ teaching:
       - Statistics
       - Architecture and Operating Systems
       - Artificial Intelligence and Society
+  - org: Link School of Business
+    location: São Paulo, Brazil
+    start: 2024
+    end: 2024
+    roles:
+      - { title: Associate Professor (freelance), period: "2024" }
+    courses: []
+  - org: IBTA — Instituto Brasileiro de Tecnologia Avançada
+    location: São Paulo, Brazil
+    start: 2016
+    end: 2017
+    roles:
+      - { title: Professor, period: "2016 – 2017" }
+    courses:
+      - Basics of Robotics
+      - Object-Oriented Programming
+      - Data Structures and Algorithms
   - org: FIAP
     location: São Paulo, Brazil
     start: 2012

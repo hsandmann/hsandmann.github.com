@@ -103,7 +103,8 @@ build/check job — pushing to `main` deploys directly to GitHub Pages.
 - **Previous versions — `docs/previous/`** holds frozen static copies of earlier sites, linked discreetly
   from the CV footer (`cv-previous`) and marked `noindex` with a canonical pointing at the current CV:
   `2026/` is the pre-redesign Zensical build (its document links point at the live `../../archive/`),
-  `2017/` is the old sandmann.sdf.org (converted to UTF-8; third-party works, student grades/lists and
-  the live calendar embed are left out and linked to the original site instead). Zensical copies these
+  `2017/` is a full copy of the old sandmann.sdf.org (converted to UTF-8, dot-folders renamed); only the
+  two commercial books and the scanned student group lists (names + e-mails) are left out and linked to
+  the original site instead. Zensical copies these
   `.html` files verbatim but skips dot-files, so never use names starting with `.` there. Do not edit
   them except to fix broken links. The complete sdf.org mirror is private in `docs/archive/web/`.

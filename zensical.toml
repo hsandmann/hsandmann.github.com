@@ -120,7 +120,7 @@ last_update = ""
 # Search engines and analytics (each one is off while empty; see overrides/main.html)
 # ----------------------------------------------------------------------------
 # Google Search Console / Bing Webmaster Tools: the "HTML tag" verification code (content=...).
-google_site_verification = ""
+google_site_verification = "tQV2Mn7IwZcusTaqkIt5p5aDzAy87uznj6oyYQgqZtI"
 bing_site_verification = ""
 # GoatCounter site code (https://<code>.goatcounter.com): cookieless analytics, no consent
 # banner; also counts the clicks tagged with data-goatcounter-click in docs/index.md.

@@ -609,6 +609,23 @@
     color: var(--cv-muted);
 }
 
+/* Discreet links to the archived earlier versions of the site (docs/previous/) */
+.md-typeset p.cv-previous {
+    margin-top: 0.4em;
+    font-size: 0.6rem;
+    text-align: center;
+    color: var(--md-default-fg-color--lighter);
+}
+
+.md-typeset .cv-previous a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.md-typeset .cv-previous a:hover {
+    text-decoration: underline;
+}
+
 /* ----------------------------------------------------------------------------
    Phones and small tablets (below the theme's 45em breakpoint, ~720px)
    ---------------------------------------------------------------------------- */

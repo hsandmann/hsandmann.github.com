@@ -628,3 +628,5 @@ Interested in a faculty position, a research collaboration or a senior engineeri
 
 :material-robot-outline: This CV website was designed and built with the assistance of AI — Anthropic's Claude. All content is curated and verified by Humberto Sandmann.
 { .cv-disclaimer }
+
+<p class="cv-previous">Previous versions: <a href="./previous/2026/">2026</a> · <a href="./previous/2017/">2017</a></p>

@@ -76,7 +76,9 @@ enable it and delete the override, the `last_update` entry and the CI `sed` step
   never add hidden text or instructions aimed at crawlers or AI screeners. Analytics (GoatCounter) and
   search-console verification turn on by filling the empty keys in `zensical.toml` `[project.extra]`.
   Regenerate the share image with `python cv/og_card.py` (from `cv/`).
-- Supporting files live in `docs/archive/` (`documents/`, `academic/`, `publications/`, `ijcnn/`, `media/`),
+- `docs/previous/` holds frozen static copies of earlier sites (`2026/` pre-redesign, `2017/` sandmann.sdf.org),
+  linked from the CV footer and marked `noindex`; Zensical copies them verbatim but skips dot-files.
+- Supporting files live in `docs/archive/` (`documents/`, `academic/`, `publications/`, `ijcnn/`, `media/`, `web/`),
   named `YYYYMMDD-<issuer/outlet>-<subject>[-<type>].<ext>` (lowercase, hyphens, date = issue date).
   Only git-tracked files are published; `docs/archive/**` is gitignored, so new files stay private
   (local + Cloudflare R2 bucket `hsandmann-github-com`) unless added with `git add -f`. Never deploy from a

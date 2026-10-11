@@ -1,0 +1,182 @@
+<html>
+<head><meta name="robots" content="noindex, follow">
+	<meta charset="utf-8">  
+	<title>Big data</title>
+	<style>
+		body, p, div {
+			background-position: top;
+
+			font-family: 'Lato', sans-serif;
+			font-family: Verdana, 'Lucida Console';
+
+			border-color: #DEDEDE;
+			padding: 0px;
+			margin: 0px;
+		}
+
+		a {
+			color: #555555;
+			text-decoration: none; 
+			font-weight: bolder;
+		}
+			
+		a:hover {
+		}
+		
+		h2 {
+			color: #333;
+			margin: 0px 0px 0px 0px;
+			font-weight: bold;
+			font-size: 125%;
+			text-tra nsform: uppercase;
+		}
+
+		.top {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+ 			background: #fff;
+			padding: 5px;
+			border-color: #ccc;
+			border-style: solid;
+			border-width: 0px 0px 1px 0px;
+		}
+
+		.top IMG {
+			float: right;
+			height: 60px;
+		}
+
+		.left {
+			position: fixed;
+			top: 71;
+			left: 0;
+			width: 60;
+			bottom: 0;
+			background-color: #ccc;
+			box-shadow: -5px 0px 5px #888 inset;
+		}
+
+		.content {
+			position: fixed;
+			top: 71;
+			left: 60;
+			right: 0;
+			bottom: 0;
+			overflow: auto;
+			display: none;
+		}
+
+		.content h2 {
+			margin: 20px 0px 10px 0px;
+		}
+
+		iframe {
+			width: 100%;
+			height: 100%;
+		}
+
+		#info {
+			display: inherit;
+			padding: 10px;
+		}
+
+		.item {
+			padding: 18 0;
+			width: 60;
+			text-align: center;
+			cursor: pointer;
+			border-style: solid;
+			border-color: transparent;
+			border-width: 2px 0px;
+			color: #666;
+		}
+
+		.item:hover {
+			color: white;
+			border-color: white;
+			background-color: #ddd;
+		}
+
+		.selected {
+			color: blue;
+			border-color: white;
+			background-color: #ddd;
+		}
+
+	</style>
+	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		$('.item').click(function() {
+			var $name = $( this ).attr('data-target');
+			$('.content').fadeOut();
+			$('.item').removeClass('selected');
+			$( this ).addClass('selected');
+			$('#' + $name).fadeIn();
+		});
+	});
+	</script>
+</head>
+<body>
+	<div class='top'><img src='../../image/toledo.gif'>
+		<h2>Big data</h2>
+		<p><small>(mar/2015)</small></p>
+		<p>Humberto Sandmann</p>
+	</div>
+	<div class='left'>
+		<div class='item selected' data-target='info'>info</div>
+		<div class='item' data-target='s1'>1</div>
+		<div class='item' data-target='s2'>2</div>
+		<div class='item' data-target='s3'>3</div>
+		<div class='item' data-target='s4'>4</div>
+	</div>
+	<div class='content' id='info'>
+		<h2 style='margin-top: 0px;'>Informação</h2>
+		<p>Este é o material do curso de big data ministrado no Centro Universitário Toledo Prudente em Março de 2015</p>
+		<p></p>
+		<h2>Máquina Virtual</h2>
+		<p>A fim de ilustrar e auxiliar o aprendizado foi preparada uma máquina virtual, baseada no VirtualBox, com Ubuntu e as instalações dos seguintes programas:</p>
+		<ul>
+			<li>Hadoop</li>
+			<li>Hive</li>
+			<li>HBase</li>
+			<li>MongoDB</li>
+			<li>Neo4j</li>
+			<li>Solr</li>
+			<li>R</li>
+			<li>Octave</li>
+		</ul>
+		<p><strong>Download da imagem vdi compactada</strong></p>
+		<p><a href='https://www.dropbox.com/s/211dl2bog18f0z9/Bigdata.vdi.zip?dl=0' target='_blank'>https://www.dropbox.com/s/211dl2bog18f0z9/Bigdata.vdi.zip?dl=0</a></p>
+		<h2>Trabalho</h2>
+		<p>Os trabalhos devem ser entregues na secretaria de pós até o dia <strong style='color: red;'>10/04/2015</strong> (quanto antes melhor).</p>
+		<p>Enunciado: evidenciar o uso das ferramentas Hadoop, Hive e HBase. Executar os programas e executar instruções de comandos no terminal. "Fotografe" as telas, organize e coloque em um arquivo .pdf a ser entregue na secretaria. (Verifique se os arquivos não estão corrompidos)</p>
+		<h2>Slides</h2>
+		<p><a href='lib/slides.html'>./lib/slides</a></p>
+		<h2>Material de apoio</h2>
+		<ul>
+			<li>I.Robinson, J.Webber, E.Eifrem - Graph Databases, O'Reilly, 2013 <a href='http://sandmann.sdf.org/toledo/bigdata/2015/lib/GraphDatabases.pdf' target='_blank'><small>(pdf)</small></a></li>
+			<li>F.Chang, J.Dean, S.Ghemawat, W.C.Hsieh, D.A.Wallach, M.Burrows, T.Chandra, A.Fikes, R.E.Gruber - Bigtable: A Distributed Storage System for Structured Data, 2006 <a href='http://sandmann.sdf.org/toledo/bigdata/2015/lib/Bigtable%20-%20osdi06.pdf' target='_blank'><small>(pdf)</small></a></li>
+			<li>A.Khurana - Introduction to HBase Schema Design, 2012 <a href='http://sandmann.sdf.org/toledo/bigdata/2015/lib/HBase%20-%20Introduction%20to%20Schema%20Design.pdf' target='_blank'><small>(pdf)</small></a></li>
+			<li>Neural Networks with R – A Simple Example, <a href='http://gekkoquant.com/2012/05/26/neural-networks-with-r-simple-example/' target='_blank'>http://gekkoquant.com/2012/05/26/neural-networks-with-r-simple-example/</a></li>
+			<li>SOM {kohonen} with R, <a href='http://www.inside-r.org/packages/cran/kohonen/docs/som' target='_blank'>http://www.inside-r.org/packages/cran/kohonen/docs/som</a></li>
+			<li><a href='lib/index.html' target='_blank'>more...</a></li>
+		</ul>
+	</div>
+	<div class='content' id='s1'>
+		<iframe src="https://docs.google.com/presentation/embed?id=1MhqK7K7NmSEuXzcyzsnRn5N3FOlH11PrnAeD4V2b3Yk&amp;start=false&amp;loop=false&amp; frameborder="0" frameBorder="0"></iframe>
+	</div>
+	<div class='content' id='s2'>
+		<iframe src="https://docs.google.com/presentation/embed?id=1pXjMjSIe34VsWZTMksycv25I0dGs6ywK-FRs8k3tOw0&amp;start=false&amp;loop=false&amp; frameborder="0" frameBorder="0"></iframe>
+	</div>
+	<div class='content' id='s3'>
+		<iframe src="https://docs.google.com/presentation/embed?id=1H0dvKH3HTgRhjylXmCy9hc3HGOsunKdEKR4us0I6a30&amp;start=false&amp;loop=false&amp; frameborder="0" frameBorder="0"></iframe>
+	</div>
+	<div class='content' id='s4'>
+		<iframe src="https://docs.google.com/presentation/embed?id=14douspFbjyg5Yf1fDiKX6CgZ9GvWZX8txc0wEwhyAYQ&amp;start=false&amp;loop=false&amp; frameborder="0" frameBorder="0"></iframe>
+	</div>
+	wget
+</body>
+</html>

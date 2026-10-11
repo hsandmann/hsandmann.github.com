@@ -89,7 +89,8 @@ build/check job — pushing to `main` deploys directly to GitHub Pages.
   The share image `docs/assets/img/og-card.png` is made by `python cv/og_card.py` (run from `cv/`).
 - **Archive — `docs/archive/`** holds every supporting file, by category: `documents/` (diplomas,
   transcripts, letters, certificates), `academic/` (thesis, dissertation, defense slides),
-  `publications/`, `ijcnn/` (conference programs), `media/` (press copies, videos, audio).
+  `publications/`, `ijcnn/` (conference programs), `media/` (press copies, videos, audio),
+  `web/` (mirrors of old websites).
   - Files are named `YYYYMMDD-<issuer/outlet>-<subject>[-<type>].<ext>`, all lowercase,
     hyphen-separated; the date is the issue/publication/broadcast date.
   - **Public vs private:** only files tracked in git are published. `.gitignore` ignores all of
@@ -99,3 +100,10 @@ build/check job — pushing to `main` deploys directly to GitHub Pages.
   - A local `zensical build` copies the private files into `site/` too (~2.3 GB); CI checks out only
     tracked files, so the deployed site never contains them. Never deploy from a local build.
   - The generated CVs stay in `docs/assets/doc/` with fixed, undated names (linked externally).
+- **Previous versions — `docs/previous/`** holds frozen static copies of earlier sites, linked discreetly
+  from the CV footer (`cv-previous`) and marked `noindex` with a canonical pointing at the current CV:
+  `2026/` is the pre-redesign Zensical build (its document links point at the live `../../archive/`),
+  `2017/` is the old sandmann.sdf.org (converted to UTF-8; third-party works, student grades/lists and
+  the live calendar embed are left out and linked to the original site instead). Zensical copies these
+  `.html` files verbatim but skips dot-files, so never use names starting with `.` there. Do not edit
+  them except to fix broken links. The complete sdf.org mirror is private in `docs/archive/web/`.

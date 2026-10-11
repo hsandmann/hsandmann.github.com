@@ -1,0 +1,893 @@
+<html>
+	<head><meta charset="utf-8"><meta name="robots" content="noindex, follow">
+		<title>Algoritmo aplicado à engenharia I</title>
+		<meta content="">
+		<style>
+
+			a {
+				text-decoration: none;
+			}
+
+			.box {
+				width: 960px;
+				border-color: #CCCCCC;
+				border-width: 1px;
+				border-style: solid;
+				margin: 0px 0px 10px 0px;
+			}
+			
+			.box td {
+				vertical-align: top;
+				border-width: 0px 0px 1px 0px;
+				border-style: solid;
+				border-color: #EFEFEF;
+			}
+
+			.box h3 {
+				font-size: 90%;
+				text-align: center;
+				background-color: #EEEEEE;
+				padding: 5px;
+				margin: 0px 0px 10px 0px;
+			}
+
+			.box p {
+				margin: 10px 10px 0px 10px;
+				padding: 0px;
+			}
+
+			.title {
+				background-color: #EFEFEF;
+				font-size: 90%;
+			}
+			
+			.exexplicacao {
+				border-width: 1px 0px 0px 0px;
+				border-style: solid;
+				border-color: #EFEFEF;
+				font-size: 90%;
+			}
+			
+			.codigo {
+				position: relative;
+				float: left;
+				font-family: monospace;
+				margin: 5px 0px 5px 5px;
+				border: 1px solid #CCCCCC;
+			}
+
+			.codigo h3 {
+				text-align: left;
+				padding: 10px;
+			}
+			
+			.codigo pre {
+				padding: 5px 10px 5px 10px;
+				white-space: pre-wrap;
+				white-space: -moz-pre-wrap;
+				white-space: -pre-wrap;
+				white-space: -o-pre-wrap;
+				word-wrap: break-word;
+			}
+
+			.exobs {
+				clear: both;
+				font-size: 80%;
+				margin: 5px;
+			}
+			
+			.exobs ul {
+				margin: 0px;
+				padding: 0px 20px 2px 20px;
+			}
+
+			.subbox {
+				background-color: #F7F7F7;
+				width: 900px;
+				border-color: #CCCCCC;
+				border-width: 1px;
+				border-style: solid;
+				margin: 0px 30px 10px 30px;
+			}
+
+			.subbox p, th {
+				font-size: 80%;
+				text-align: left;
+			}
+
+			.subbox table {
+				width: 100%;
+			}
+
+			.subbox h3, h4 {
+				font-size: 90%;
+				text-align: left;
+				padding: 5px;
+				margin: 0px 0px 0px 0px;
+			}
+
+			.subbox h3 {
+				background-color: #EEEEEE;
+			}
+
+			.subbox h4 {
+				border-width: 0px 0px 1px 0px;
+				border-color: #CCCCCC;
+				border-style: dashed;
+			}
+
+			.type {
+				color: #FF228B;
+			}
+
+			.simbolo {
+				text-align: center;
+			}
+			
+			.excodigo {
+				padding: 5px;
+				background-color: #FFFFF0;
+				border-width: 1px;
+				border-color: #CCCCCC;
+				border-style: dashed;
+			}
+			
+			.prova {
+			}
+			
+			.udemy {
+				position: fixed;
+				right: 0px;
+				top: 10px;
+				text-size: 90%;
+				background-color: #FFFFFF;
+				padding: 5px;
+				cursor: pointer;
+				-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.45);
+				-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.45);
+				box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.45);
+				-webkit-border-top-left-radius: 6px;
+				-webkit-border-bottom-left-radius: 6px;
+				-moz-border-radius-topleft: 6px;
+				-moz-border-radius-bottomleft: 6px;
+				border-top-left-radius: 6px;
+				border-bottom-left-radius: 6px;
+				text-align: center;
+			}
+			
+			.udemy IMG {
+				width: 120px;
+			}
+
+			.udemy H3 {
+				margin: 0px;
+			}
+
+			.udemy P {
+				margin: 5px 0px;
+			}
+
+		</style>
+	</head>
+	<body>
+		<h3>Algoritmos aplicados à engenharia I <br><small>edição outono/2011</small></h3>
+		<div class='box'>
+			<h3>Exercícios</h3>
+			<table style='width: 100%;'>
+				<tr>
+					<td class='title'>AV.</td>
+					<td class='title'>Solicitado em</td>
+					<td class='title'>Data de Entrega</td>
+					<td class='title'>Nome</td>
+					<td class='title' style='width: 65%;'>Descrição</td>
+				</tr>
+				<tr>
+					<td class='title' rowspan='5' style='text-align: center; vertical-align: middle;'>2</td>
+					<td>20.04.2011</td>
+					<td>11.05.2011</td>
+					<td>E2.1:Primos</td>
+					<td>Fluxograma e pseudocódigo para validar números primos.
+						<div class="exexplicacao">
+							Número primo é aquele é o resultado da divisão é inteira apenas por ele mesmo ou 1. O usuário deve entrar com um número e o algoritmo deve dizer se é primo ou não.
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>20.04.2011</td>
+					<td>11.05.2011</td>
+					<td>E2.2:Baskara</td>
+					<td>Fluxograma e pseudocódigo para calcular a equação de Báskara.
+						<div class="exexplicacao">
+							Com a equação de Báskara é possível calcular a raiz de uma equação de 2o grau. O usuário deve entrar com os valores de A, B e C.
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>20.04.2011</td>
+					<td>11.05.2011</td>
+					<td>E2.3:Tabuada</td>
+					<td>Fluxograma, pseudocódigo e programa das tabuadas do 2 ao 9.
+						<div class="exexplicacao">
+							O usuário não precisa entrar com valor algum.
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>20.04.2011</td>
+					<td>11.05.2011</td>
+					<td>E2.4:Fibonacci</td>
+					<td>Fluxograma, pseudocódigo e programa para calcular uma série de Fibonacci.
+						<div class="exexplicacao">
+							A série de Fibonacci é amplamente encontrada na Natureza (<a href="http://pt.wikipedia.org/wiki/N%C3%BAmero_de_Fibonacci">Série de Fibonacci</a>). O usuário deve entrar com o número de iterações da série (n). O Código deve imprimir toda a seqüência.
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>20.04.2011</td>
+					<td>11.05.2011</td>
+					<td>E2.5:CPF</td>
+					<td>Fluxograma, pseudocódigo e programa para validar um CPF.
+						<div class="exexplicacao">
+							O CPF brasileiro contém verificação para checar se o número é válido. Verifique na internet.
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class='title' rowspan='2' style='text-align: center; vertical-align: middle;'>3</td>
+					<td>18.05.2011</td>
+					<td>15.06.2011</td>
+					<td>E3:Lancamento<br/>(2.0 pts)</td>
+					<td>
+						Fazer um programa para ajudar nos cálculos do projeto integrador. Este programa deve ser receber todos os parâmetros (não fixos, aceleração da gravidade é fixo, por exemplo) necessários para modelar a trajetória do projétil a ser lançado no projeto integrador, exceto um parâmetro, o qual deve ser calculado pelo programa. Os parâmetros são, por exemplo, ângulo de lançamento, velocidade inicial, distância de deslocamento e outros que são usados em sua modelagem matemática.
+						<br/>Este trabalho pode ser feito pelo mesmo grupo e número de componentes do projeto integrador.
+						<div class="exexplicacao">
+							<span  style='color: #FF0000;'>Exemplo:</span> projetar um programa que calcule a hipotenusa de um triângulo. Para isto, deve-se entrar com o tamanho dos catetos, dado que r<sup>2</sup>=a<sup>2</sup>+b<sup>2</sup>, logo, r = (a<sup>2</sup>+b<sup>2</sup>)<sup>1/2</sup>. Note que x<sup>1/2</sup> é igual a raiz quadrada de x. Segue abaixo o código exemplo e a saída:
+							<div style='clear: both;'></div>
+							<div class='codigo'>
+								<h3>Código em Linguagem C</h3>
+								<pre>#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+
+int main()
+{
+
+   // declara as variaveis
+   float a, b, r;
+
+   // recebe os valores do usuario
+   printf("Digite os valores dos catetos:\n");
+   printf("a: ");
+   scanf("%f", &a);
+   printf("b: ");
+   scanf("%f", &b);
+
+   // calcula a hipotenusa r = raiz(a^2 + b^2)
+   r = sqrt(pow(a, 2) + pow(b, 2));
+
+   // exibe o valor da hipotenusa
+   printf("Valor da hipotenusa:\n");
+   printf("r: %f\n", r);
+
+}</pre>
+							</div>
+							<div class='codigo'>
+								<h3>Saída</h3>
+								<pre>E:\>hipotenusa.exe
+Digite os valores dos catetos:
+a: 3
+b: 4
+Valor da hipotenusa:
+r: 5.000000
+E:\> 
+</pre>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>15.06.2011</td>
+					<td>18.06.2011<br/>12h00<br/>(GMT+03h00)</td>
+					<td>P3:Funcao<br/>(6.0 pts)</td>
+					<td>
+						O trabalho deve calcular os valores da função abaixo dado alguns parâmetros de entrada. Os parâmetros de entrada são: A, B, x0, x1 e passo. O valor de y é dado por x, o qual é incrementado de acordo com o valor de passo dado pelo usuário.
+						<br/><img src='equationsin.gif' style='height: 20px;'/>
+						<br/>Este trabalho pode ser feito pelo mesmo grupo e número de componentes do projeto integrador.
+						<div class="exexplicacao">
+							<div style='clear: both;'></div>
+							<div class='codigo'>
+								<h3>Exemplo da Saída Esperada</h3>
+								<pre>E:\>p3.exe
+Calcula os valores de y = A.sen(Bx) para uma faixa de x
+Entre com o valor de A: 2
+Entre com o valor de B: 6.28
+Entre com o valor de x0: 0
+Entre com o valor de x1: 10
+Entre com o passo: 0.01
+Dados de saida:
+    x         y
+0.000000, 0.000000
+0.010000, 0.125517
+0.020000, 0.250540
+0.030000, 0.374575
+0.040000, 0.497133
+0.050000, 0.617731
+0.060000, 0.735894
+0.070000, 0.851155
+0.080000, 0.963061
+.
+.
+.
+9.980133, -0.311948
+9.990133, -0.187349
+
+E:\> 
+</pre>
+							</div>
+							<div class='codigo'>
+								<h3>Se as colunas forem plotado em um editor de gráficos, podemos obter o seguinte gráfico</h3>
+								<img src='graph.png' style='width: 100%;'/>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<small><spam  style='color: #FF0000;'>Observação:</spam> entregar o material com capa do exercício corretamente identificada (grupo, datas, exercício, etc.), fluxograma, pseudocódigo e programa se solicitado.</small>
+			<br><small><spam  style='color: #FF0000;'>Grupos:</spam> no máximo 3 pessoas por grupo, sendo que, todos os exercícios devem ter os mesmos componentes.</small>
+		</div>
+
+		<div class='box'>
+			<h3>Notas</h3>
+			<iframe src='https://spreadsheets.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0An_b6JXagKRjdHBCWmd0bGdBaFhJVEJORWVPRFkzMVE&single=true&gid=1&output=html' frameborder=0 width='100%;' height='590px;'></iframe>
+		</div>
+		
+		<div class='box'>
+			<h3>Gabarito das Avaliações</h3>
+			<div class='prova'>
+				<h3>P2</h3>
+				<p>1) É desejado um algoritmo que imprima em tela o maior número de uma coleção de três números dados: A, B e C. Construa o pseudocódigo e o código fonte em linguagem C.</p>
+				<div class='codigo'>
+					<h3>Fluxograma</h3>
+					<img src='p2ex1.png' />
+				</div>
+				<div class='codigo'>
+					<h3>Pseudocódigo</h3>
+					<pre>Algoritmo: maior número de três
+INÍCIO
+   VAR a, b, c;
+   ESCREVER "a: "
+   LER a
+   ESCREVER "b: "
+   LER b
+   ESCREVER "c: "
+   LER c
+   SE ( E (a >= b, a >= c) ) ENTÃO
+      INÍCIO
+         ESCREVER "o maior e: " + a
+      FIM
+   SENÃO SE (b >= c)
+      INÍCIO
+         ESCREVER "o maior e: " + b
+      FIM
+   SENÃO
+      INÍCIO
+         ESCREVER "o maior e: " + c
+      FIM
+FIM</pre>
+				</div>
+				<div class='codigo'>
+					<h3>Código em Linguagem C</h3>
+					<pre>#include &lt;stdio.h&gt;
+int main() {
+   int a, b, c;
+   printf("a: "); scanf("%i", &a);
+   printf("b: "); scanf("%i", &b);
+   printf("c: "); scanf("%i", &c);
+   if (a >= b && a >= c)
+   {
+      printf("o maior e: %i", a);
+   }
+   else if (b >= c)
+   {
+      printf("o maior e: %i", b);
+   }
+   else
+   {
+      printf("o maior e: %i", c);
+   }
+}</pre>
+				</div>
+				<div style='clear: both;'></div>
+				<p>2) É desejado um algoritmo que imprima em tela todos os múltiplos de 4 e 7 em uma série numérica de 1 até 250. Construa o fluxograma e o código fonte em linguagem C.</p>
+				<div class='codigo'>
+					<h3>Fluxograma</h3>
+					<img src='p2ex2.png' />
+				</div>
+				<div class='codigo'>
+					<h3>Pseudocódigo</h3>
+					<pre>Algoritmo: múltiplos de 4 e 7 [1;250]
+INÍCIO
+   PARA X DE 1 ATÉ 250 PASSO 1 FAÇA
+   INÍCIO
+      SE (OU( x%4 = 0, x%7 = 0)) ENTÃO
+      INÍCIO
+         ESCREVER x
+      FIM
+   FIM
+FIM</pre>
+				</div>
+				<div class='codigo'>
+					<h3>Código em Linguagem C</h3>
+					<pre>#include &lt;stdio.h&gt;
+int main()
+{
+   for (int x = 1; x <= 250; x = x + 1)
+   {
+      if ((x % 4 == 0) || (x % 7 == 0))
+      {
+         printf("%i", x);
+      }
+   }
+}</pre>
+				</div>
+				<div style='clear: both;'></div>
+			</div>
+		</div>
+		<div class='box'>
+			<h3>Informações importantes em C<br/><small>(para este curso, sempre há mais a descobrir e inventar)</small></h3>
+			<div class='subbox'>
+				<h3>Tipos de dados</h3>
+				<table>
+					<tr>
+						<th class="simbolo">Símbolo</th>
+						<th>Finalidade</th>
+						<th>Capacidade</th>
+						<th>Exemplo</th>
+					</tr>
+					<tr>
+						<td class="simbolo">int</td>
+						<td>valores inteiros</td>
+						<td>
+							16 bits (2<sup>16</sup>)<br/>
+							32 bits (2<sup>32</sup>)<br/>
+							64 bits (2<sup>64</sup>)
+						</td>
+						<td><pre><span class="type">int</span> x = 10;</pre></td>
+					</tr>
+					<tr>
+						<td class="simbolo">float</td>
+						<td>valores com casas decimais</td>
+						<td>3,4<sup>-38</sup> a 3,4<sup>+38</sup></td>
+						<td><pre><span class="type">float</span> pi = 3.1416;</pre></td>
+					</tr>
+					<tr>
+						<td class="simbolo">char</td>
+						<td>caracteres</td>
+						<td>1 char = 1 byte</td>
+						<td>
+							<pre><span class="type">char</span> enter = 13; // apenas um char
+<span class="type">char</span> mensagem[] = "Ola mundo"; // uma sequência de characteres</pre>
+						</td>
+					</tr>
+				</table>
+				<p>Mais informações sobre tipos de dados estão disponíveis em: <a href='http://pt.wikipedia.org/wiki/C_(linguagem_de_programa%C3%A7%C3%A3o)#Tipos_de_dados'>http://pt.wikipedia.org/wiki/C_(linguagem_de_programa%C3%A7%C3%A3o)#Tipos_de_dados</a> e <a href='http://www.cplusplus.com/doc/tutorial/variables/'>http://www.cplusplus.com/doc/tutorial/variables/</a>.</p>
+			</div>
+			<div class='subbox'>
+				<h3>Operadores</h3>
+				<h4>Operadores Aritméticos</h4>
+				<table>
+					<tr>
+						<th class="simbolo">Símbolo</th>
+						<th>Finalidade</th>
+						<th>Exemplo</th>
+					</tr>
+					<tr>
+						<td class="simbolo">=</td>
+						<td>atribui um valor a uma variável</td>
+						<td>
+							<pre><span class="type">float</span> x = 2.3;
+<span class="type">char</span> msg[] = "Ola mundo";</pre>
+						</td>
+					</tr>
+					<tr>
+						<td class="simbolo">+</td>
+						<td>soma dois valores ou variáveis</td>
+						<td>
+							<pre><span class="type">float</span> x = 10 + 2.3;
+<span class="type">float</span> z = x + y;</pre>
+						</td>
+					</tr>
+					<tr>
+						<td class="simbolo">-</td>
+						<td>subtrai dois valores ou variáveis</td>
+						<td>
+							<pre><span class="type">float</span> x = 10 - 2.3;
+<span class="type">float</span> z = x - y;</pre>
+						</td>
+					</tr>
+					<tr>
+						<td class="simbolo">/</td>
+						<td>divide dois valores ou variáveis</td>
+						<td>
+							<pre><span class="type">float</span> x = 10 / 2.3;
+<span class="type">float</span> z = x / y;</pre>
+						</td>
+					</tr>
+					<tr>
+						<td class="simbolo">*</td>
+						<td>multiplica dois valores ou variáveis</td>
+						<td>
+							<pre><span class="type">float</span> x = 10 * 2.3;
+<span class="type">float</span> z = x * y * 2.5;</pre>
+						</td>
+					</tr>
+					<tr>
+						<td class="simbolo">%</td>
+						<td>módulo de uma divisão</td>
+						<td>
+							<pre><span class="type">int</span> x = 10 % 3; // resultado é 1
+<span class="type">float</span> z = x % y;</pre>
+						</td>
+					</tr>
+				</table>
+				<h4>Operadores Relacionais</h4>
+				<table>
+					<tr>
+						<th class="simbolo">Símbolo</th>
+						<th>Finalidade</th>
+						<th>Exemplo</th>
+					</tr>
+					<tr>
+						<td class="simbolo">= =</td>
+						<td>compara dois valores e retorna verdadeiro se iguais</td>
+						<td>
+							<pre>7 <span class="type">==</span> 5 // retorna falso
+5 <span class="type">==</span> 5 // retorna verdadeiro
+a <span class="type">==</span> b // compara duas variáveis</pre>
+						</td>
+					</tr>
+					<tr>
+						<td class="simbolo">! =</td>
+						<td>compara dois valores e retorna verdadeiro se diferentes</td>
+						<td>
+							<pre>7 <span class="type">!=</span> 5 // retorna verdadeiro
+5 <span class="type">!=</span> 5 // retorna falso
+a <span class="type">!=</span> b // compara duas variáveis</pre>
+						</td>
+					</tr>
+					<tr>
+						<td class="simbolo">></td>
+						<td>retorna verdadeiro se o primeiro for maior que o segundo</td>
+						<td>
+							<pre>7 <span class="type">></span> 5 // retorna verdadeiro
+5 <span class="type">></span> 5 // retorna falso
+5 <span class="type">></span> 7 // retorna falso
+a <span class="type">></span> b // compara duas variáveis</pre>
+						</td>
+					</tr>
+					<tr>
+						<td class="simbolo"><</td>
+						<td>retorna verdadeiro se o primeiro for menor que o segundo</td>
+						<td>
+							<pre>7 <span class="type"><</span> 5 // retorna falso
+3 <span class="type"><</span> 5 // retorna verdadeiro
+5 <span class="type"><</span> 5 // retorna falso
+a <span class="type"><</span> b // compara duas variáveis</pre>
+						</td>
+					</tr>
+					<tr>
+						<td class="simbolo">>=</td>
+						<td>retorna verdadeiro se o primeiro for maior ou igual ao segundo</td>
+						<td>
+							<pre>7 <span class="type">>=</span> 5 // retorna verdadeiro
+5 <span class="type">>=</span> 5 // retorna verdadeiro
+5 <span class="type">>=</span> 7 // retorna falso
+a <span class="type">>=</span> b // compara duas variáveis</pre>
+						</td>
+					</tr>
+					<tr>
+						<td class="simbolo"><=</td>
+						<td>retorna verdadeiro se o primeiro for menor ou igual ao segundo</td>
+						<td>
+							<pre>7 <span class="type"><</span> 5 // retorna falso
+3 <span class="type"><=</span> 5 // retorna verdadeiro
+5 <span class="type"><=</span> 5 // retorna verdadeiro
+a <span class="type"><=</span> b // compara duas variáveis</pre>
+						</td>
+					</tr>
+				</table>
+				<h4>Operadores Lógicos</h4>
+				<table>
+					<tr>
+						<th class="simbolo">Símbolo</th>
+						<th>Finalidade</th>
+						<th>Exemplo</th>
+					</tr>
+					<tr>
+						<td class="simbolo">!</td>
+						<td>NOT: inverte o valor de uma variável ou expressão lógica</td>
+						<td>
+							<pre><span class="type">!</span>(7 == 5) // retorna verdadeiro
+<span class="type">!</span>(5 == 5) // retorna falso
+<span class="type">!</span>true // retorna falso
+<span class="type">!</span>false // retorna verdadeiro
+<span class="type">!</span>a // inverte uma variável lógica</pre>
+						</td>
+					</tr>
+					<tr>
+						<td class="simbolo">&&</td>
+						<td>AND: retorna verdadeiro apenas quando duas variáveis forem verdadeiras</td>
+						<td>
+							<pre>(5 == 5) <span class="type">&&</span> (6 == 6) // retorna verdadeiro, pois (verdadeiro && verdadeiro)
+(7 == 5) <span class="type">&&</span> (6 == 6) // retorna falso, pois (falso && verdadeiro)
+(5 == 5) <span class="type">&&</span> (7 == 6) // retorna falso, pois (verdadeiro && falso)
+(7 == 5) <span class="type">&&</span> (7 == 6) // retorna falso, pois (falso && falso)
+(a == b) <span class="type">&&</span> !b // aplicado a variáveis</pre>
+						</td>
+					</tr>
+					<tr>
+						<td class="simbolo">||</td>
+						<td>OR: retorna verdadeiro se ao menos um das duas variáveis forem verdadeiras</td>
+						<td>
+							<pre>(5 == 5) <span class="type">||</span> (6 == 6) // retorna verdadeiro, pois (verdadeiro && verdadeiro)
+(7 == 5) <span class="type">||</span> (6 == 6) // retorna verdadeiro, pois (falso && verdadeiro)
+(5 == 5) <span class="type">||</span> (7 == 6) // retorna verdadeiro, pois (verdadeiro && falso)
+(7 == 5) <span class="type">||</span> (7 == 6) // retorna falso, pois (falso && falso)
+(a == b) <span class="type">||</span> !b // aplicado a variáveis</pre>
+						</td>
+					</tr>
+				</table>
+				<p>Mais informações sobre operadores estão disponíveis em: <a href='http://www.cplusplus.com/doc/tutorial/operators/'>http://www.cplusplus.com/doc/tutorial/operators/</a>.</p>
+			</div>
+			<div class='subbox'>
+				<h3>Estruturas de Controle (Estruturas de Fluxos de Execução)</h3>
+				<h4>Condicional</h4>
+				<table>
+					<tr>
+						<th>Síntaxe</th>
+						<th>Finalidade</th>
+						<th>Exemplo</th>
+					</tr>
+					<tr>
+						<td>
+<pre>if ( condição )
+{
+   bloco: se verdadeira
+}
+else
+{
+   bloco: senão
+}</pre>
+						</td>
+						<td>realização um desvio condicional</td>
+						<td>
+							<pre class='excodigo'>// Verifica a magnitude de um numero
+#include &lt;stdio.h&gt;
+
+int main ()
+{
+   int n = 0;
+   printf("Numero a ser verificado > ");
+   scanf("%i", &n);
+   <span class="type">if ( n < 0 )
+   {</span>
+      printf("o numero %i e negativo\n", n);
+   <span class="type">}
+   else if ( n > 0 )
+   { </span>
+      printf("o numero %i e positivo\n", n);
+   <span class="type">}
+   else
+   { </span>
+      printf("o numero e zero\n");
+   <span class="type">}</span>
+}</pre>
+						</td>
+					</tr>
+					</tr>
+				</table>
+				<h4>Repetição</h4>
+				<table>
+					<tr>
+						<th>Síntaxe</th>
+						<th>Finalidade</th>
+						<th>Exemplo</th>
+					</tr>
+					<tr>
+						<td>
+<pre>while ( condição )
+{
+   bloco
+}</pre>
+						</td>
+						<td>repete um bloco enquanto uma condição for verdadeira</td>
+						<td>
+							<pre class='excodigo'>// faz uma contagem regressiva
+#include &lt;stdio.h&gt;
+
+int main ()
+{
+   int n = 0;
+   printf("Comecar no numero > ");
+   scanf("%i", &n);
+
+   <span class="type">while ( n > 0 ) {</span>
+      printf("%i, ", n);
+      n = n - 1;
+   <span class="type">}</span>
+
+   printf("Lancado!\n");
+}</pre>
+						</td>
+					</tr>
+					<tr>
+						<td>
+<pre>do {
+   bloco
+} while ( condição );</pre>
+						</td>
+						<td>repete um bloco enquanto uma condição for verdadeira</td>
+						<td>
+							<pre class='excodigo'>// Exemplo de um terminal
+#include &lt;stdio.h&gt;
+
+int main ()
+{
+   int n = 0;
+   <span class="type">do {</span>
+      printf("Digite um numero [0 termina]: ");
+      scanf("%i", &n);
+      printf("Voce digitou: %i\n", n);
+   <span class="type">} while (n != 0);</span>
+   printf("Fim!\n");
+}</pre>
+						</td>
+					</tr>
+					<tr>
+						<td>
+<pre>for ( inicial; condição; incremento )
+{
+   bloco
+}</pre>
+						</td>
+						<td>repete um bloco enquanto uma condição for verdadeira</td>
+						<td>
+							<pre class='excodigo'>// Programa de contagem regressiva
+#include &lt;stdio.h&gt;
+
+int main()
+{
+   <span class="type">for (int n = 10; n > 0; n = n - 1)
+   {</span>
+      printf("%i, ", n);
+   <span class="type">}</span>
+   printf("Lancado!\n");
+}</pre>
+						</td>
+					</tr>
+				</table>
+				<p>Mais informações sobre controle de estrutura estão disponíveis em: <a href='http://www.cplusplus.com/doc/tutorial/control/'>http://www.cplusplus.com/doc/tutorial/control/</a>, os exemplos foram retirados deste link também.</p>
+			</div>
+		</div>
+		<div class='box'>
+			<h3>Exemplos</h3>
+
+			<div class='codigo' id='ex1'>
+				<h3>exemplo1.c</h3>
+<pre>#include &lt;stdio.h&gt;
+
+int main()
+{
+   printf("Olá mundo");
+}
+</pre>
+			</div>
+
+			<div class='codigo' id='ex1'>
+				<h3>exemplo2.c</h3>
+<pre>#include &lt;stdio.h&gt;
+
+int main()
+{
+   int numero = 0;
+
+   printf("Define se e impar ou par\n");
+   printf("Entre com um numero: ");
+   
+   // espera um numero ser digitado
+   scanf("%d", &numero);
+   
+   if ((numero % 2) == 0)
+   {
+      printf("Par!");
+   } else {
+      printf("Impar!");
+   }
+
+}
+</pre>
+			</div>
+
+			<div class='codigo' id='ex1'>
+				<h3>exemplo3.c</h3>
+<pre>#include &lt;stdio.h&gt;
+// Calcula a tabuada de um numero dado
+
+int main()
+{
+
+   int numero = 0;
+
+   printf("Fazer a tabuada do: ");
+
+   // espera um numero ser digitado
+   scanf("%d", &numero);
+
+   // repete o bloco ate que x seja menor
+   // ou igual a 10   
+   int x;
+   for (x = 0; x <= 10; x = x + 1)
+   {
+      // calcula x * o numero de entrada
+      int y = x * numero;
+      printf("%i x %i = %i \n", numero, x, y);
+   }
+
+}
+</pre>
+			</div>
+
+			<div class="exobs">
+				OBS:
+				<ul>- Em linguagem C o comentário do código é notado por // ou /* */ no caso de uma seção;</ul>
+				<ul>- Para visualizar os resultados é aconselhável executar no terminal do windows, dê uma estudada em <a href="http://pt.wikipedia.org/wiki/DOS">http://pt.wikipedia.org/wiki/DOS</a>. Em resumo rápido:
+					<ul>e: - muda para o diretório E</ul>
+					<ul>cd - acessa uma pasta</ul>
+					<ul>dir - lista o conteúdo de uma pasta</ul>
+				</ul>
+				<ul>- Tipos de dados em C: <a href="http://pt.wikipedia.org/wiki/C_(linguagem_de_programa%C3%A7%C3%A3o)#Tipos_de_dados">http://pt.wikipedia.org/wiki/C_(linguagem_de_programa%C3%A7%C3%A3o)#Tipos_de_dados</a>
+				</ul>
+			</div>
+		</div>
+		<div class='box'>
+			<h3>Links e materiais de apoio</h3>
+			<ul>
+				<li>Apostila de C básica disponível em algum sítio da Unicamp: <a href='ftp://ftp.unicamp.br/pub/apoio/treinamentos/linguagens/c.pdf'>ftp://ftp.unicamp.br/pub/apoio/treinamentos/linguagens/c.pdf</a></li>
+				<li>Um bom sítio de referências em C/C++: <a href='http://www.cplusplus.com/reference/'>http://www.cplusplus.com/reference/</a>
+				<li>Uma página do IME-USP: <a href='http://www.ime.usp.br/~pf/algoritmos/'>http://www.ime.usp.br/~pf/algoritmos/</a></li>
+				<li>Framework para trabalhar com C/C++ DevCPP: <a href='http://www.bloodshed.net/dev/devcpp.html'>http://www.bloodshed.net/dev/devcpp.html</a></li>
+				<li>Para trabalhar sem framework - GNU Compiler Collection (GCC): <a href='http://pt.wikipedia.org/wiki/GNU_Compiler_Collection'>http://pt.wikipedia.org/wiki/GNU_Compiler_Collection</a>
+				    <br>Windows:
+					<ul>para compilar: <b>gcc arquivo.c -std=c99 -lm -o arquivo.exe</b></ul>
+					<ul>para executar: <b>arquivo.exe</b></ul>
+				    Linux/Mac:
+					<ul>para compilar: <b>gcc arquivo.c -std=c99 -lm -o arquivo</b></ul>
+					<ul>para executar: <b>./arquivo</b></ul>
+				</li>
+			</ul>
+		</div>
+		<div class='box'>
+			<h3>Bibliografia</h3>
+			<p>Sugeridas pelo programa:</p>
+			<ul>
+				<li>MIZRAHI,V.V. Treinamento em linguagem C. SP: Makron Books, 1990</li>
+				<li>SCHILDT,H.C. C Completo e total. SP: Makron Books, 2006</li>
+				<li>MANZANO,J.A. Estudo dirigido de linguagem C. SP: Ed. Érica, 2007</li>
+				<li>DASGUPTA,S.; PAPADIMITRIOU,C.; VAZIRANI,U. Algoritmos. SP: McGraw Hill, 2009</li>
+			</ul>
+			<p>Minhas sugestões:</p>
+			<ul>
+				<li>DEITEL,H.M.; DEITEL,P.J. C++ Como Programar. SP: Prentice Hall Brasil, 2006</li>
+				<li>TENEMBAUM,A.M.; LANGSAM,Y.; AUGENSTEIN,M.J. Estruturas de dados usando C, SP: Makron Books, 1995</li>
+				<li>COLLINGBOURNE,H. C Tutorial: Learn C in 20 Minutes. available on <a href='https://blog.udemy.com/c-tutorial-learn-c-in-20-minutes/'>https://blog.udemy.com/c-tutorial-learn-c-in-20-minutes/</a></li>
+			</ul>
+		</div>
+		<a href='https://blog.udemy.com/c-tutorial-learn-c-in-20-minutes/'>
+		<div class='udemy'>
+			<h3>C Tutorial: Learn C in 20 Minutes</h3>
+			<p><img src='udemy.jpg'></p>
+			<p><small><a href='https://blog.udemy.com/c-tutorial-learn-c-in-20-minutes/'>https://blog.udemy.com/c-tutorial-learn-c-in-20-minutes/</a></small></p>
+			<small>thanks for Molly's recommendation</small>
+		</div>
+		</a>
+	</body>
+</html>

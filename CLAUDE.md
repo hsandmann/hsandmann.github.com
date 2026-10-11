@@ -100,8 +100,10 @@ build/check job — pushing to `main` deploys directly to GitHub Pages.
   - A local `zensical build` copies the private files into `site/` too (~2.3 GB); CI checks out only
     tracked files, so the deployed site never contains them. Never deploy from a local build.
   - The generated CVs stay in `docs/assets/doc/` with fixed, undated names (linked externally).
-- **Previous versions — `docs/previous/`** holds frozen static copies of earlier sites, linked discreetly
-  from the CV footer (`cv-previous`) and marked `noindex` with a canonical pointing at the current CV:
+- **Previous versions — `docs/previous/`** holds frozen static copies of earlier sites, marked `noindex`
+  with a canonical pointing at the current CV. The CV footer (`cv-previous`) links each version where it is
+  live: `2026` -> `previous/2026/` (only published here), `2017` -> the original http://sandmann.sdf.org/
+  (its copy here is an unlinked backup, reachable only by URL):
   `2026/` is the pre-redesign Zensical build (its document links point at the live `../../archive/`),
   `2017/` is a full copy of the old sandmann.sdf.org (converted to UTF-8, dot-folders renamed); only the
   two commercial books and the scanned student group lists (names + e-mails) are left out and linked to

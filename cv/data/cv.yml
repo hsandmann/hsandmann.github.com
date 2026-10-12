@@ -23,7 +23,7 @@ personal:
     architecture, artificial intelligence, and high-performance computing.
   # Industry / short summary (developer résumé)
   summary_dev: >-
-    Senior software architect and artificial intelligence engineer with 20+ years
+    Senior software architect and artificial intelligence engineer with 25+ years
     building high-stakes systems across banking, fintech, and retail — core
     banking, cryptography (PKI/HSM), high-performance computing, computer vision,
     and cloud-native microservices. D.Sc. in neural computing; also a university
@@ -89,14 +89,14 @@ education:
 # Reverse-chronological professional experience (industry)
 experience:
   - org: H-Sandmann
-    role: Founder
+    role: Founder & Consulting IT Specialist
     location: São Paulo, Brazil
     start: 2006
     end: 2025
     summary: Independent consultancy delivering short-term, specialized engagements in machine learning, optimization and security.
     stack: [Machine Learning, Software Architecture]
   - org: SelsanTech
-    role: Co-Founder
+    role: Co-Founder & Research Scientist
     location: São Paulo, Brazil
     start: 2012
     end: 2023
@@ -145,7 +145,7 @@ experience:
     summary: Core-banking and stock-market platforms (BankBoston, CitiBank, Eli Lilly) with cryptography and replication.
     stack: [PKI, BouncyCastle, Cryptography, HSM, Core Banking, Java, Replication]
   - org: Central Online
-    role: Senior System Analyst
+    role: IT Project Manager
     location: São Paulo, Brazil
     start: 2002
     end: 2003

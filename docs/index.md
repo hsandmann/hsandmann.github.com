@@ -156,7 +156,7 @@ Alongside more than a decade of university teaching, I have worked as a senior s
 <article class="cv-entry">
     <div class="cv-entry__head">
         <h3>Associate Professor II</h3>
-        <span class="cv-when">Jun 2014 – Jun 2026</span>
+        <span class="cv-when">Aug 2014 – Jun 2026</span>
     </div>
     <p class="cv-org"><a href="https://www.espm.br" target="_blank">ESPM</a> · São Paulo, Brazil</p>
     <p>Machine learning, artificial intelligence, applied mathematics, object-oriented programming, software quality and computer architecture.</p>
@@ -426,7 +426,7 @@ Alongside more than a decade of university teaching, I have worked as a senior s
     <ul class="cv-rows">
         <li><span><strong>Senior System Analyst</strong> · <a href="https://en.wikipedia.org/wiki/Politec" target="_blank">Politec</a> — J2EE, software quality and architecture for banking</span><span class="cv-when">Aug 2005 – Jan 2006</span></li>
         <li><span><strong>Senior Software Engineer / Architect</strong> · <a href="https://www.linkedin.com/company/eversystems/" target="_blank">EverSystems</a> — core banking and stock-market platforms for BankBoston, Citibank and Eli Lilly: PKI, cryptography, HSM, replication</span><span class="cv-when">Jul 2004 – Jul 2005</span></li>
-        <li><span><strong>Senior System Analyst</strong> · Central Online — object-oriented development of a <a href="https://en.wikipedia.org/wiki/Learning_management_system" target="_blank">learning management system</a></span><span class="cv-when">Sep 2002 – Mar 2003</span></li>
+        <li><span><strong>IT Project Manager</strong> · Central Online — object-oriented development of a <a href="https://en.wikipedia.org/wiki/Learning_management_system" target="_blank">learning management system</a></span><span class="cv-when">Sep 2002 – Mar 2003</span></li>
         <li><span><strong>Senior System Analyst</strong> · <a href="http://www.datamace.com.br/" target="_blank">Datamace</a> — payroll and ERP software architecture</span><span class="cv-when">Oct 1999 – Sep 2002</span></li>
         <li><span><strong>Computer Programmer</strong> · <a href="https://www.heraeus-electro-nite.com/" target="_blank">Heraeus Electro-Nite</a> — compliance, ERP and production planning</span><span class="cv-when">Mar 1998 – Oct 1999</span></li>
     </ul>

@@ -71,6 +71,12 @@ build/check job — pushing to `main` deploys directly to GitHub Pages.
 
 ## Conventions
 
+- **Rule — a CV change updates every derived copy.** Whenever any CV content changes (a role, date,
+  title, degree, publication, contact…), update all of them in the same change: `cv/data/cv.yml` (→ both
+  PDFs), `docs/index.md`, `overrides/partials/structured-data.html` (JSON-LD), `docs/llms.txt`, the
+  `description`/`site_description` and `cv/og_card.py` (headline, photo) when affected — and list the
+  matching edits for the external profiles (ORCID 0000-0001-7758-695X, LinkedIn), which are only changed
+  with the user's go-ahead.
 - Do not edit anything under `env/` (local virtualenv, gitignored along with `site/` and `.cache/`).
 - Keep styling in `docs/stylesheets/extra.css` rather than inline HTML/CSS where practical.
 - `docs/index.md` is built from a few HTML components styled in `extra.css` (see the comment at its top):

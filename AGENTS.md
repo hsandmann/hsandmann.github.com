@@ -63,6 +63,12 @@ enable it and delete the override, the `last_update` entry and the CI `sed` step
 
 ## Editing Conventions
 
+- **Rule — a CV change updates every derived copy.** Whenever any CV content changes (a role, date,
+  title, degree, publication, contact…), update all of them in the same change: `cv/data/cv.yml` (→ both
+  PDFs), `docs/index.md`, `overrides/partials/structured-data.html` (JSON-LD), `docs/llms.txt`, the
+  `description`/`site_description` and `cv/og_card.py` (headline, photo) when affected — and list the
+  matching edits for the external profiles (ORCID 0000-0001-7758-695X, LinkedIn), which are only changed
+  with the user's go-ahead.
 - Prefer editing source docs in `docs/` and configuration in `zensical.toml`.
 - Keep custom styling in `stylesheets/extra.css` instead of inline styles when practical.
 - Do not edit files under `env/` (local virtual environment artifacts).

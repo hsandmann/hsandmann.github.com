@@ -20,8 +20,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      # Checkout source form GitHub
+      # Checkout source form GitHub (full history: cv/build.py dates the PDFs with the last
+      # commit that touched the CV sources, so an unchanged CV rebuilds byte-identical PDFs)
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       # Install Python runtime and dependencies
       - uses: actions/setup-python@v4
@@ -32,9 +35,13 @@ jobs:
       - run: |
           pip install -r requirements.txt
 
-      # Chromium for the CV PDF renderer (cv/build.py)
-      - run: |
-          playwright install --with-deps chromium
+      # XeLaTeX for the CV PDF renderer (cv/build.py)
+      - name: Install TeX Live (XeTeX)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq --no-install-recommends \
+            texlive-xetex texlive-latex-recommended texlive-latex-extra \
+            texlive-pictures texlive-fonts-recommended lmodern
 
       # Render the two CV PDFs from cv/data/cv.yml into docs/assets/doc/
       - name: Build CV PDFs

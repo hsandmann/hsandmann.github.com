@@ -3,15 +3,36 @@
 
 Output: docs/assets/img/og-card.png (1200x630), referenced by overrides/main.html.
 Not run in CI: regenerate by hand (python cv/og_card.py) when the name, headline or
-photo change, and commit the PNG.
+photo change, and commit the PNG. Needs Playwright, which is not in requirements.txt
+(the CV PDFs are built with XeLaTeX): pip install playwright && playwright install chromium
 """
 from __future__ import annotations
 
 import asyncio
+import base64
+import mimetypes
+from pathlib import Path
 
 from playwright.async_api import async_playwright
 
-from build import font_uri, img_uri, IMGDIR
+CVDIR = Path(__file__).resolve().parent
+FONTS = CVDIR / "assets" / "fonts"
+IMGDIR = CVDIR.parent / "docs" / "assets" / "img"
+
+
+def _data_uri(path: Path) -> str:
+    mime = mimetypes.guess_type(str(path))[0] or "application/octet-stream"
+    return f"data:{mime};base64,{base64.b64encode(path.read_bytes()).decode()}"
+
+
+def font_uri(name: str) -> str:
+    """Base64 data: URI for a bundled font (cv/assets/fonts)."""
+    return _data_uri(FONTS / name)
+
+
+def img_uri(name: str) -> str:
+    """Base64 data: URI for a site image (docs/assets/img)."""
+    return _data_uri(IMGDIR / name)
 
 OUT = IMGDIR / "og-card.png"
 

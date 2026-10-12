@@ -46,25 +46,33 @@ only (see below). Local builds show no "Last update" date (CI injects it; see be
 
 ## CV PDFs
 
-The two downloadable CVs are **not** built by Zensical. They are generated from a single data
-source by a standalone script:
+The two downloadable CVs (US Letter) are **not** built by Zensical. They are generated from a single data
+source by a standalone script, with Jinja2 + **XeLaTeX**:
 
 - `cv/data/cv.yml` — the single source of truth for CV content. **Edit this**, never the PDFs.
-- `cv/templates/professor.html.j2` (academic CV, Spectral serif) and `developer.html.j2`
-  (senior résumé, IBM Plex) — self-contained HTML/CSS, each with **all** font weights
-  bundled via `@font-face` (in `cv/assets/fonts/`). Bundling every weight is essential: synthesized
-  bold/italic exports as Type3 and renders blank in many PDF viewers; real faces export as Type0.
-- `cv/build.py` — renders each template with Jinja2 and prints to PDF via Playwright/Chromium,
-  writing `docs/assets/doc/sandmann-academic.pdf` and `sandmann-resume.pdf`.
+- `cv/templates/academic.tex.j2` (multi-page academic CV, Spectral serif) and `resume.tex.j2`
+  (one-page senior résumé, IBM Plex, dark sidebar). Jinja2 uses LaTeX-safe delimiters — `((( value )))`,
+  `((* block *))`, `((# comment #))` — and escapes every value for LaTeX automatically; filters `period`,
+  `url` (for `\href`) and `me` (bolds "H. Sandmann" in author lists). After a control word, write `{}`
+  before a value (`\noindent{}((( x )))`); never start a `[t]` parbox with `\color` (put `\strut` first).
+  Fonts are the TrueType files in `cv/assets/fonts/`, loaded by path through fontspec (every weight is a
+  real face; nothing is synthesized).
+- `cv/build.py` — renders each template and compiles it twice with XeLaTeX in a temp dir, writing
+  `docs/assets/doc/sandmann-academic.pdf` and `sandmann-resume.pdf`. It fails if the résumé exceeds one
+  page or a column overflows (`CV-OVERFLOW`; `CV_ALLOW_OVERFLOW=1` writes the PDF anyway to inspect it);
+  `CV_XELATEX` overrides the engine path. Builds are reproducible (dates from the last commit touching
+  `cv/`), and the photo's EXIF/GPS metadata is stripped before embedding.
 
-Rebuild locally with `python cv/build.py`. CI runs it on every push and commits the fresh PDFs.
-These two keep fixed, undated names because they are regenerated on every push and linked externally.
-The site links to both (header button → academic CV; contact block → both).
+Rebuild locally with `python cv/build.py` (needs TeX Live with XeTeX; check the result as images, e.g.
+`gs -sDEVICE=png16m -r100 -o p%d.png <pdf>`). CI runs it on every push and commits the PDFs when they
+change. They keep fixed, undated names because they are linked externally. The site links to both (header
+button → academic CV; contact block → both). `cv/og_card.py` (share image) still uses Playwright, installed
+by hand.
 
 ## Deployment
 
 CI is `.github/workflows/main.yaml`: on every push to `main` it installs `requirements.txt`,
-installs Chromium, runs `python cv/build.py`, commits the regenerated PDFs (`[skip ci]`), runs
+installs TeX Live (XeTeX), runs `python cv/build.py`, commits the regenerated PDFs (`[skip ci]`), runs
 `zensical build --strict` with the commit date written into `zensical.toml`, and force-pushes `site/` to the `gh-pages`
 branch with `ghp-import` (Python 3.12). GitHub Pages serves from `gh-pages`. There is no PR
 build/check job — pushing to `main` deploys directly to GitHub Pages.

@@ -1,5 +1,4 @@
 zensical
-# CV PDF pipeline (cv/build.py)
+# CV PDF pipeline (cv/build.py; also needs XeLaTeX from TeX Live)
 jinja2
 pyyaml
-playwright

@@ -1,0 +1,215 @@
+((# Academic CV (Spectral serif), US Letter. Rendered by cv/build.py from cv/data/cv.yml.
+   Jinja2 delimiters (set in build.py): triple parentheses for values, ((* *)) for blocks; values are LaTeX-escaped. #))
+\documentclass[10pt,letterpaper]{article}
+\usepackage[letterpaper,top=0.78in,bottom=0.9in,left=0.92in,right=0.92in,footskip=0.42in]{geometry}
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage[protrusion=true]{microtype}
+\usepackage[hidelinks,pdfusetitle,pdfdisplaydoctitle,pdflang=en,
+  pdftitle={((( personal.name ))) -- Curriculum Vitae},
+  pdfauthor={((( personal.name )))},
+  pdfsubject={Academic curriculum vitae},
+  pdfkeywords={((( research_interests | join(', ') )))}]{hyperref}
+
+% ---- Fonts: Spectral, every weight a real face (no synthesized bold/italic) ----
+\defaultfontfeatures{Path=((( fontdir ))), Extension=.ttf, Ligatures=TeX}
+\setmainfont{Spectral}[
+  UprightFont=*-Regular, ItalicFont=*-Italic,
+  BoldFont=*-SemiBold, BoldItalicFont=*-MediumItalic,
+  Numbers=OldStyle]
+\newfontfamily\medium{Spectral}[UprightFont=*-Medium, ItalicFont=*-MediumItalic, Numbers=OldStyle]
+\newfontfamily\heavy{Spectral}[UprightFont=*-SemiBold, Numbers=Lining]
+\newfontfamily\lining{Spectral}[UprightFont=*-Regular, ItalicFont=*-Italic, Numbers={Lining,Monospaced}]
+
+% ---- Palette ----
+\definecolor{ink}{HTML}{1C1C1A}
+\definecolor{body}{HTML}{2B2B28}
+\definecolor{muted}{HTML}{5C5C58}
+\definecolor{faint}{HTML}{8A8A85}
+\definecolor{accent}{HTML}{0F4C4F}
+\definecolor{hair}{HTML}{D9D7CF}
+
+% ---- Page ----
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\fontsize{10}{13.4}\selectfont
+\raggedbottom
+\frenchspacing
+\color{ink}
+\clubpenalty=10000 \widowpenalty=10000
+
+\makeatletter
+\def\ps@cv{%
+  \def\@oddhead{}\let\@evenhead\@oddhead
+  \def\@oddfoot{\fontsize{7.8}{9}\selectfont\color{faint}%
+    ((( personal.name )))\enspace\textperiodcentered\enspace Curriculum Vitae\enspace\textperiodcentered\enspace Updated ((( updated )))%
+    \hfill{\lining\thepage\,/\,\pageref*{cv:last}}}%
+  \let\@evenfoot\@oddfoot}
+\makeatother
+\pagestyle{cv}
+\AtEndDocument{\label{cv:last}}
+
+% ---- Building blocks ----
+% Every block is one unbreakable box; \nointerlineskip + struts give an exact,
+% uniform rhythm whether a block has one line or several.
+\newlength{\datew}\setlength{\datew}{0.95in}
+\newlength{\keyw}\setlength{\keyw}{0.66in}
+\newcommand{\gap}[1]{\par\vspace{#1}\nointerlineskip}
+\newcommand{\when}[1]{{\lining\fontsize{9}{11}\selectfont\color{faint}#1}}
+\newcommand{\sep}{\enspace{\color{hair}|}\enspace}
+
+% \cvsection{Title}: spaced capitals over a hairline, kept with the next block
+\newcommand{\cvsection}[1]{%
+  \par\addvspace{15pt}\nointerlineskip
+  \noindent\parbox[t]{\linewidth}{\strut{\heavy\fontsize{8.6}{10}\selectfont\addfontfeatures{LetterSpace=16}%
+    \color{accent}\MakeUppercase{#1}}\par\vspace{2.5pt}{\color{hair}\hrule height 0.5pt}}%
+  \par\nobreak\vspace{7pt}\nobreak\nointerlineskip}
+
+% \block{content}: one unbreakable paragraph box
+\newcommand{\block}[1]{\noindent\parbox[t]{\linewidth}{\strut#1\ifhmode\strut\fi}\par}
+
+% \head{left}{right}: title line with the period flush right
+\newcommand{\head}[2]{%
+  \parbox[t]{\dimexpr\linewidth-\datew}{\raggedright\strut#1\strut}%
+  \makebox[\datew][r]{\when{#2}}\par}
+
+% \detail{key}{value}: labelled line with a hanging indent
+\newcommand{\detail}[2]{%
+  {\fontsize{9.3}{12.4}\selectfont\color{muted}\hangindent=\keyw\hangafter=1\noindent
+   \makebox[\keyw][l]{\color{faint}\itshape #1}#2\strut\par}}
+
+% \row{lead}{body}{tail}: one-line record in three columns
+\newlength{\leadw}
+\newcommand{\row}[3]{\fontsize{9.6}{12.9}\selectfont
+  \noindent\parbox[t]{\leadw}{\raggedright\strut#1\strut}%
+  \parbox[t]{\dimexpr\linewidth-\leadw-\datew}{\raggedright\strut\color{muted}#2\strut}%
+  \parbox[t]{\datew}{\raggedleft\strut\when{#3}\strut}\par}
+
+\begin{document}
+
+% ================================ Header ================================
+\noindent{\fontsize{30}{32}\selectfont\heavy ((( personal.name )))}\par
+\vspace{6pt}
+\noindent{\medium\itshape\fontsize{12.5}{15}\selectfont\color{accent}((( personal.headline )))}\par
+\vspace{10pt}
+{\color{accent}\hrule height 1.2pt}
+\vspace{7pt}
+{\fontsize{9}{13}\selectfont\color{muted}\noindent
+\href{mailto:((( contact.email | url )))}{\textcolor{ink}{\bfseries ((( contact.email )))}}%
+\sep\href{((( contact.website.url | url )))}{((( contact.website.label )))}%
+\sep\href{((( contact.orcid.url | url )))}{ORCID {\lining ((( contact.orcid.label )))}}%
+\sep\href{((( contact.scholar.url | url )))}{Google Scholar}%
+\sep\href{((( contact.linkedin.url | url )))}{LinkedIn}%
+\sep\href{((( contact.github.url | url )))}{GitHub}\par
+\noindent{}((( personal.location )))\sep{}((( personal.availability )))\par}
+
+% ================================ Profile ===============================
+\cvsection{Profile}
+\block{{\fontsize{10.3}{14.2}\selectfont\color{body}((( personal.summary )))}}
+
+\cvsection{Research Interests}
+((* for pair in research_interests | batch(2) *))
+((* if not loop.first *))\gap{1.5pt}((* endif *))
+\noindent((* for r in pair *))\parbox[t]{0.5\linewidth}{\raggedright\hangindent=1.1em\hangafter=1\strut\makebox[1.1em][l]{\color{accent}--}\color{body}((( r )))\strut}((* endfor *))\par
+((* endfor *))
+
+% =============================== Education ==============================
+\cvsection{Education}
+((* for e in education *))
+((* if not loop.first *))\gap{8pt}((* endif *))
+\block{%
+  \head{{\bfseries ((( e.degree )))((* if e.field *)), ((( e.field )))((* endif *))}}{((( e.start | period(e.end) )))}%
+  {\itshape\color{muted}((( e.institution )))((* if e.location *)) \textperiodcentered{} ((( e.location )))((* endif *))\strut}\par
+((* if e.thesis *))  \detail{Thesis}{((( e.thesis )))}
+((* endif *))
+((* if e.advisor *))  \detail{Advisor}{((( e.advisor )))}
+((* endif *))
+((* if e.doi *))  \detail{DOI}{\href{https://doi.org/((( e.doi | url )))}{\textcolor{accent}{\lining ((( e.doi )))}}}
+((* endif *))
+((* if e.note *))  \detail{Note}{((( e.note )))}
+((* endif *))
+}
+((* endfor *))
+
+% ====================== Academic appointments ===========================
+\cvsection{Academic Appointments \& Teaching}
+((* for t in teaching *))
+((* if not loop.first *))\gap{7.5pt}((* endif *))
+\block{%
+  \head{{\bfseries ((( t.org )))}\enspace{\color{muted}\itshape
+((* for r in t.roles *))
+((( r.title )))((* if t.roles | length > 1 *)) ({\lining ((( r.period | replace(' – ', '–') )))})((* endif *))((* if not loop.last *)), ((* endif *))
+((* endfor *))
+  }}{((( t.start | period(t.end) )))}%
+((* if t.courses *))
+  {\fontsize{9.1}{12.2}\selectfont\itshape\color{muted}\raggedright
+((* for c in t.courses *))
+((( c )))((* if not loop.last *))\enspace\textperiodcentered\enspace ((* endif *))
+((* endfor *))
+  \strut\par}%
+((* endif *))
+}
+((* endfor *))
+
+% ============================= Publications =============================
+\cvsection{Publications}
+((* for p in publications *))
+((* if not loop.first *))\gap{6.5pt}((* endif *))
+\block{\fontsize{9.6}{12.9}\selectfont\hangindent=0.3in\hangafter=1
+  \makebox[0.3in][l]{\lining\color{faint}[((( loop.revindex )))]}%
+  ((( p.authors | me ))). {\medium ((( p.title ))).}
+  {\itshape\color{muted}((( p.venue )))}, {\lining ((( p.year )))}((* if p.pages *)), pp.~{\lining ((( p.pages | replace('–', '--') )))}((* endif *)).%
+((* if p.doi *))
+  \enspace{\fontsize{8.8}{12.9}\selectfont\color{faint}doi:\,\href{https://doi.org/((( p.doi | url )))}{\textcolor{accent}{\lining ((( p.doi )))}}}%
+((* endif *))
+}
+((* endfor *))
+
+% =========================== Grants & funding ===========================
+\cvsection{Grants \& Funding}
+\setlength{\leadw}{1.05in}
+((* for g in grants *))
+((* if not loop.first *))\gap{2.5pt}((* endif *))
+\row{\bfseries ((( g.agency )))}{((( g.description )))}{((( g.period | replace(' – ', '--') )))}
+((* endfor *))
+
+% ========================== Conference service ==========================
+\cvsection{Conference Service}
+\setlength{\leadw}{1.05in}
+((* for c in conference_service *))
+((* if not loop.first *))\gap{2.5pt}((* endif *))
+\row{\bfseries ((* if c.url *))\href{((( c.url | url )))}{((( c.event )))}((* else *))((( c.event )))((* endif *))}%
+    {((( c.role )))\enspace{\color{faint}\textperiodcentered}\enspace ((( c.location )))}{}
+((* endfor *))
+
+% ========================= Industry experience ==========================
+\cvsection{Industry Experience}
+\setlength{\leadw}{1.5in}
+((* for x in experience *))
+((* if not loop.first *))\gap{2.5pt}((* endif *))
+\row{\bfseries ((( x.org )))}{((( x.role )))}{((( x.start | period(x.end) )))}
+((* endfor *))
+
+% ============================== Memberships =============================
+\cvsection{Professional Memberships}
+((* for m in memberships *))
+((* if not loop.first *))\gap{6pt}((* endif *))
+\block{{\bfseries ((( m.org )))}\enspace{\color{muted}((( m.detail )))}%
+((* if m.points *))
+((* for i in m.points *))
+  \par{\fontsize{9.3}{12.4}\selectfont\color{muted}\hangindent=0.22in\hangafter=1\noindent
+  \makebox[0.22in][l]{\hspace{0.06in}\color{accent}\textperiodcentered}((( i )))\strut\par}%
+((* endfor *))
+((* endif *))
+}
+((* endfor *))
+
+% =============================== Languages ==============================
+\cvsection{Languages}
+\block{%
+((* for l in languages *))
+{\bfseries ((( l.name )))}\enspace{\lining\color{muted}((( l.level )))}((* if not loop.last *))\hspace{2.2em}((* endif *))
+((* endfor *))
+}
+
+\end{document}

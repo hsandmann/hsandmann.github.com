@@ -1,0 +1,213 @@
+((# One-page senior résumé (IBM Plex), US Letter. Rendered by cv/build.py from cv/data/cv.yml.
+   Jinja2 delimiters (set in build.py): triple parentheses for values, ((* *)) for blocks; values are LaTeX-escaped.
+   Layout: a dark sidebar band painted behind every page, and two fixed columns (sidebar +
+   main) measured before they are placed — build.py fails on CV-OVERFLOW instead of
+   letting a column silently run off the page. #))
+\documentclass[10pt,letterpaper]{article}
+\usepackage[letterpaper,margin=0pt]{geometry}
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage[protrusion=true]{microtype}
+\usepackage[hidelinks,pdfusetitle,pdfdisplaydoctitle,pdflang=en,
+  pdftitle={((( personal.name ))) -- Résumé},
+  pdfauthor={((( personal.name )))},
+  pdfsubject={((( personal.headline_dev )))},
+  pdfkeywords={((* for s in skills *))((( s.tags | join(', ') )))((* if not loop.last *)), ((* endif *))((* endfor *))}]{hyperref}
+
+% ---- Fonts: IBM Plex, every weight a real face ----
+\defaultfontfeatures{Path=((( fontdir ))), Extension=.ttf, Ligatures=TeX}
+\setmainfont{IBMPlexSans}[UprightFont=*-Regular, BoldFont=*-SemiBold]
+\newfontfamily\plexmedium{IBMPlexSans}[UprightFont=*-Medium]
+\newfontfamily\plexbold{IBMPlexSans}[UprightFont=*-Bold]
+\newfontfamily\mono{IBMPlexMono}[UprightFont=*-Regular, BoldFont=*-Medium]
+
+% ---- Palette ----
+\definecolor{side}{HTML}{0F1F2E}
+\definecolor{sideink}{HTML}{EAF0F4}
+\definecolor{sidemuted}{HTML}{93A7B6}
+\definecolor{siderule}{HTML}{2A3947}
+\definecolor{accent}{HTML}{25D3B8}
+\definecolor{accentdk}{HTML}{0F766E}
+\definecolor{ink}{HTML}{181B20}
+\definecolor{body}{HTML}{33383F}
+\definecolor{muted}{HTML}{5A616B}
+\definecolor{faint}{HTML}{8B929C}
+\definecolor{hair}{HTML}{E6E8EC}
+% tags: accent tints flattened over their background
+\definecolor{stagbg}{HTML}{12353F}\definecolor{stagrule}{HTML}{175E5E}\definecolor{stagink}{HTML}{D6F5EE}
+\definecolor{mtagbg}{HTML}{EEF5F5}\definecolor{mtagrule}{HTML}{C3DDDB}
+
+% ---- Geometry of the two columns ----
+\newlength{\sidew}\setlength{\sidew}{2.4in}
+\newlength{\padtop}\setlength{\padtop}{0.42in}
+\newlength{\padbot}\setlength{\padbot}{0.36in}
+\newlength{\sidepad}\setlength{\sidepad}{0.27in}
+\newlength{\mainl}\setlength{\mainl}{0.4in}
+\newlength{\mainr}\setlength{\mainr}{0.48in}
+\newlength{\colh}\setlength{\colh}{\dimexpr\paperheight-\padtop-\padbot}
+\newlength{\datew}\setlength{\datew}{0.78in}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\topskip}{0pt}
+\pagestyle{empty}
+\frenchspacing
+\clubpenalty=10000 \widowpenalty=10000
+
+% sidebar band behind every page
+\AddToHook{shipout/background}{\put(0pt,-\paperheight){\textcolor{side}{\rule{\sidew}{\paperheight}}}}
+
+% ---- Building blocks ----
+\newcommand{\gap}[1]{\par\vspace{#1}\nointerlineskip}
+\newcommand{\when}[1]{{\mono\fontsize{7.9}{10}\selectfont\color{faint}#1}}
+
+% tags
+\tikzset{tag/.style={inner xsep=2.5pt, inner ysep=1.5pt, rounded corners=1.5pt, line width=0.4pt,
+  text depth=0.2ex, text height=1.45ex, font=\mono\fontsize{6.6}{7}\selectfont}}
+\newcommand{\stag}[1]{\tikz[baseline=(t.base)]\node[tag, fill=stagbg, draw=stagrule, text=stagink] (t) {#1};}
+\newcommand{\mtag}[1]{\tikz[baseline=(t.base)]\node[tag, fill=mtagbg, draw=mtagrule, text=accentdk] (t) {#1};}
+\newcommand{\tagsep}{\hspace{2.6pt plus 1pt}\allowbreak}
+
+% sidebar heading: mono capitals over a faint rule
+\newcommand{\sidehead}[1]{%
+  \par\addvspace{9pt}\nointerlineskip
+  \noindent\parbox[t]{\linewidth}{\strut{\mono\fontsize{7.4}{9}\selectfont\addfontfeatures{LetterSpace=14}\color{accent}\MakeUppercase{#1}}%
+    \par\vspace{2.5pt}{\color{siderule}\hrule height 0.5pt}}\par\vspace{5pt}\nointerlineskip}
+% sidebar labelled value
+\newcommand{\sidelabel}[1]{{\mono\fontsize{6.4}{8}\selectfont\addfontfeatures{LetterSpace=6}\color{sidemuted}\MakeUppercase{#1}}}
+\newlength{\labelw}\setlength{\labelw}{0.6in}
+\newcommand{\contact}[2]{\noindent\parbox[t]{\labelw}{\fontsize{8.4}{10.6}\selectfont\strut\sidelabel{#1}}%
+  \parbox[t]{\dimexpr\linewidth-\labelw}{\fontsize{8.4}{10.6}\selectfont\raggedright\strut\color{sideink}#2\strut}\par}
+
+% main heading: bold capitals underlined by a short accent bar
+\newcommand{\mainhead}[1]{%
+  \par\addvspace{11pt}\nointerlineskip
+  \noindent\parbox[t]{\linewidth}{\strut\setbox0\hbox{\plexbold\fontsize{8.8}{10}\selectfont\addfontfeatures{LetterSpace=12}\MakeUppercase{#1}}%
+    \copy0\par\vspace{3pt}{\color{accent}\rule{\wd0}{1.6pt}}}\par\vspace{7pt}\nointerlineskip}
+
+% \job{role}{org}{period}{summary}{tags}
+\newcommand{\job}[5]{%
+  \noindent\parbox[t]{\linewidth}{%
+    \parbox[t]{\dimexpr\linewidth-\datew}{\raggedright\strut{\bfseries\fontsize{10}{12.6}\selectfont #1}\enspace
+      {\plexmedium\fontsize{9.6}{12.6}\selectfont\color{accentdk}\textperiodcentered\enspace #2}\strut}%
+    \makebox[\datew][r]{\when{#3}}\par\vspace{1.5pt}
+    {\fontsize{9.1}{12.2}\selectfont\raggedright\color{muted}#4\strut\par}\vspace{3pt}
+    {\raggedright\baselineskip=12pt #5\par}}\par}
+
+% \line{bold}{text}{period}: one-line record with a hairline below
+\newcommand{\record}[3]{%
+  \noindent\parbox[t]{\linewidth}{%
+    \parbox[t]{\dimexpr\linewidth-\datew}{\raggedright\fontsize{9}{11.2}\selectfont\strut{\bfseries #1}\enspace
+      {\color{muted}\textperiodcentered\enspace #2}\strut}%
+    \makebox[\datew][r]{\when{#3}}\par\vspace{1.8pt}{\color{hair}\hrule height 0.4pt}}\par}
+
+% columns, measured before they are placed
+\newsavebox{\sidebox}
+\newsavebox{\mainbox}
+\newcommand{\checkfit}[2]{%
+  \ifdim\dimexpr\ht#2+\dp#2\relax>\colh
+    \typeout{CV-OVERFLOW: #1 column is \the\dimexpr\ht#2+\dp#2-\colh\relax\space too tall}%
+  \fi}
+
+\begin{document}
+
+% ================================ Sidebar ===============================
+\begin{lrbox}{\sidebox}
+\begin{minipage}[t]{\dimexpr\sidew-2\sidepad}
+\color{sideink}
+\centering
+\begin{tikzpicture}
+  \begin{scope}
+    \clip (0,0) circle (0.46in);
+    \node at (0,0.03in) {\includegraphics[width=0.92in]{((( photo )))}};
+  \end{scope}
+  \draw[accent, line width=1.6pt] (0,0) circle (0.46in);
+\end{tikzpicture}\par
+\raggedright
+
+\sidehead{Contact}
+\contact{Email}{\href{mailto:((( contact.email | url )))}{((( contact.email )))}}\gap{2.6pt}
+\contact{Web}{\href{((( contact.website.url | url )))}{((( contact.website.label )))}}\gap{2.6pt}
+\contact{GitHub}{\href{((( contact.github.url | url )))}{((( contact.github.label )))}}\gap{2.6pt}
+\contact{LinkedIn}{\href{((( contact.linkedin.url | url )))}{((( contact.linkedin.label )))}}\gap{2.6pt}
+\contact{ORCID}{\href{((( contact.orcid.url | url )))}{((( contact.orcid.label )))}}\gap{2.6pt}
+\contact{Project}{\href{((( contact.project.url | url )))}{((( contact.project.label )))}}\gap{2.6pt}
+\contact{Location}{((( personal.location )))}\gap{2.6pt}
+\contact{Relocation}{((( personal.availability )))}
+
+\sidehead{Skills}
+((* for s in skills *))
+((* if not loop.first *))\gap{4.5pt}((* endif *))
+\noindent\parbox[t]{\linewidth}{\strut{\bfseries\fontsize{8}{10}\selectfont\color{sideink}((( s.category )))}\par\vspace{2.5pt}
+  {\raggedright\baselineskip=11.5pt
+((* for i in s.tags *))
+  \stag{((( i )))}((* if not loop.last *))\tagsep((* endif *))
+((* endfor *))
+  \par}}\par
+((* endfor *))
+
+\sidehead{Education}
+((* for e in education if e.degree in ['D.Sc.', 'M.Sc.', 'B.Sc.'] *))
+((* if not loop.first *))\gap{3.5pt}((* endif *))
+\noindent\parbox[t]{\linewidth}{\fontsize{8.4}{10.8}\selectfont\strut{\bfseries\color{sideink}((( e.degree ))), ((( e.field )))}\par
+  {\color{sidemuted}((( e.short or e.institution )))}\enspace{\mono\fontsize{7.4}{10.8}\selectfont\color{accent}((( e.start | period(e.end) )))}\strut}\par
+((* endfor *))
+
+\sidehead{Languages}
+((* for l in languages *))
+((* if not loop.first *))\gap{1.5pt}((* endif *))
+\noindent\parbox[t]{\linewidth}{\fontsize{8.4}{10.8}\selectfont\strut{\bfseries ((( l.name )))}\hfill{\color{sidemuted}((( l.level )))}\strut}\par
+((* endfor *))
+\end{minipage}
+\end{lrbox}
+
+% ================================= Main =================================
+\newcommand{\maincolumn}[1]{%
+\color{ink}
+\noindent{\plexbold\fontsize{25}{28}\selectfont\addfontfeatures{LetterSpace=-1.5}((( personal.name )))}\par
+\vspace{4pt}
+\noindent{\plexmedium\fontsize{11}{13.5}\selectfont\color{accentdk}((( personal.headline_dev )))}\par
+
+\mainhead{Profile}
+\noindent\parbox[t]{\linewidth}{\fontsize{9.5}{13.4}\selectfont\raggedright\strut\color{body}((( personal.summary_dev )))\strut}\par
+
+\mainhead{Experience}
+((* for x in experience[:4] *))
+((* if not loop.first *))\gap{7pt}((* endif *))
+\job{((( x.role )))}{((( x.org )))}{((( x.start | period(x.end) )))}{((( x.summary )))}{%
+((* for i in x.stack *))
+  \mtag{((( i )))}((* if not loop.last *))\tagsep((* endif *))
+((* endfor *))
+}
+((* endfor *))
+((* if experience[4:] *))
+\gap{9pt}
+((* for x in experience[4:] *))
+((* if not loop.first *))\gap{1.6pt}((* endif *))
+\record{((( x.role )))}{((( x.org )))}{((( x.start | period(x.end) )))}
+((* endfor *))
+((* endif *))
+
+\mainhead{Academic Positions}
+((* for t in teaching *))
+((* if not loop.first *))\gap{1.6pt}((* endif *))
+\record{((( t.roles[0].title )))}{((( t.org )))}{((( t.start | period(t.end) )))}
+((* endfor *))
+
+#1% \vfill in the placed column, a fixed gap when measuring
+\noindent{\fontsize{8.3}{10}\selectfont\color{faint}Full academic CV, publications and teaching record at
+  \href{((( contact.website.url | url )))}{\textcolor{accentdk}{((( contact.website.label )))}}\hfill Updated ((( updated )))}\par
+}
+\newlength{\mainw}\setlength{\mainw}{\dimexpr\paperwidth-\sidew-\mainl-\mainr}
+% natural height (for the overflow check), then the placed column with the footer at the bottom
+\begin{lrbox}{\mainbox}\begin{minipage}[t]{\mainw}\maincolumn{\vspace{10pt}}\end{minipage}\end{lrbox}
+\checkfit{sidebar}{\sidebox}
+\checkfit{main}{\mainbox}
+\begin{lrbox}{\mainbox}\begin{minipage}[t][\colh][t]{\mainw}\maincolumn{\vfill}\end{minipage}\end{lrbox}
+\vbox to \paperheight{%
+  \vspace*{\padtop}\nointerlineskip
+  \hbox{\hspace{\sidepad}\usebox{\sidebox}\hspace{\dimexpr\sidepad+\mainl}\usebox{\mainbox}}%
+  \vss}
+\end{document}

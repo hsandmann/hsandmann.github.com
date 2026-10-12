@@ -1,0 +1,269 @@
+<html>
+<head><meta name="robots" content="noindex, follow"><meta charset="utf-8">
+	<meta charset="UTF-8">
+	<title>Ambiente de Produção I - Simulador Assembly ESPM16bits</title>
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="code.js"></script>
+	<style>
+	#top {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		right: 0px;
+		height: 46px;
+		background: #a80532 url('../image/espm_logo.jpg') no-repeat bottom right;
+		color: white;
+		font-size: 110%;
+		padding: 7px;
+		box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+	}
+	#author {
+		position: absolute;
+		bottom: 0px;
+		left: 0px;
+		right: 0px;
+		height: 40px;
+		background-color: blue;
+		display: none;
+	}
+	#code {
+		position: absolute;
+		top: 60px;
+		bottom: 0px;
+		left: 0px;
+		width: 320px;
+	}
+	#codeHeader {
+		position: absolute;
+		left: 0;
+		right: 0;
+		height: 17px;
+		top: 0;
+		border-width: 0 0 1 0;
+		border-style: solid;
+		border-color: #ccc;
+		color: #ccc;
+		background-color: black;
+	}
+	#program {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 41;
+		top: 18;
+		overflow: auto;
+	}
+	#file {
+		position: absolute;
+		text-align: right;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		height: 40;
+		overflow: auto;
+		border-width: 1 0 0 0;
+		border-style: solid;
+		border-color: #ccc;
+		background-color: #efefef;
+	}
+	#file BUTTON {
+		margin: 2px;
+		cursor: pointer;
+	}
+	#file BUTTON IMG {
+		width: 18px;
+	}
+	#execution {
+		position: absolute;
+		top: 60px;
+		bottom: 0px;
+		left: 320px;
+		right: 0px;
+		background-color: #ddf;
+	}
+	#help {
+		position: absolute;
+		top: 70;
+		width: 440;
+		right: 0;
+		min-height: 50;
+		background-color: orange;	
+		border-radius: 10px 0px 0px 10px;
+		border-color: orange;
+		border-width: 1px 0px 1px 1px;
+		border-style: solid;
+		font-size: 85%;
+		overflow: auto;
+		cursor: pointer;
+	}
+	#help P {
+		margin: 0;
+		padding: 0;
+	}
+	#registers {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 420;
+		padding: 20px;
+		text-align: center;
+	}
+	#registers FIELDSET {
+		margin: 20px;
+		padding: 20px;
+		border-radius: 6px;
+	}
+	#executionControl {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 40px;
+		padding: 20px;
+		background-color: #efefef;
+		box-shadow: 5px 0px 5px 0px rgba(0,0,0,0.75);
+	}
+	#executionControl BUTTON {
+		padding: 10px;
+		height: 40px;
+		cursor: pointer;
+	}
+	.codeLine {
+		padding: 2px 0px;
+		vertical-align: middle;
+		text-align: center;
+		border-width: 1px 0px;
+		border-style: solid;
+		border-color: transparent;
+	}
+	.codeHeader {
+		box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.75);
+	}
+	.codeAddress {
+		width: 50px;
+		text-align: right;
+		border: 0px none transparent;
+	}
+	.codeMnemonic {
+		width: 150px;
+		font-size: 105%;
+		padding: 5px;
+		border-style: solid;
+		border-width: 0px 0px 1px 0px;
+		border-color: #ccf;
+		margin-left: 5px;
+	}
+	.codeAssembly {
+		width: 70px;
+		font-size: 105%;
+		padding: 5px;
+		border-style: solid;
+		border-width: 0px 0px 1px 0px;
+		border-color: #ccc;
+		margin-left: 5px;
+		text-align: center;
+	}
+	.fieldError {
+		border-color: red;
+	}
+	.register, .register:focus {
+		width: 70px;
+		font-size: 110%;
+		padding: 5px;
+		border: solid 1px #ccc;
+		margin-left: 5px;
+		text-align: center;
+		border-radius: 6px;
+		outline:none;
+	}
+	.registerReadOnly {
+		background-color: #efefef;
+	}
+	label {
+		font-size: 80%;
+		vertical-align: top;
+		text-align: right;
+		width: 40px;
+    		display: inline-block;
+	}
+	</style>
+</head>
+<body>
+	<div id="top">
+		<div><strong>Máquina virtual - ESPM 16Bits</strong></div>
+		<div><strong>Ambiente de Produção I</strong> :: Humberto Sandmann</div>
+	</div>
+	<div id="code">
+		<div id="codeHeader">
+			<label style="width: 65; text-align: center;">endereço</label>
+			<label style="width: 150; text-align: center;">mnemônico</label>
+			<label style="width: 70; text-align: center;">assembly</label>
+		</div>
+		<div id="program"></div>
+		<div id="file">
+			<button title="Código" id="btnCode"><img src="code-download.png"></button>
+			<div><small><small><small><span id="version"></span></small></small></small></div>
+		</div>
+	</div>
+	<div id="execution">
+		<div id="registers">
+			<div><label>Cycle #</label><input id="cycle" class="register registerReadOnly" value="0" readonly tabindex="-1"></div>
+			<fieldset>
+			<legend>registradores</legend>
+			<div>
+				<label>IC</label><input id="reg_ic" class="register" value="0000" style="border-width: 2px;">
+				<label>RA</label><input id="reg_ra" class="register registerReadOnly" value="0000" readonly tabindex="-1">
+			</div>
+			<div>
+				<label>MAR</label><input id="reg_mar" class="register registerReadOnly" value="0000" readonly tabindex="-1">
+				<label>MDR</label><input id="reg_mdr" class="register registerReadOnly" value="0000" readonly tabindex="-1">
+			</div>
+			<div><label>IR</label><input id="reg_ir" class="register registerReadOnly" value="0000" readonly tabindex="-1"></div>
+			<div>
+				<label>OP</label><input id="reg_op" class="register registerReadOnly" value="0" style="width: 30px;" readonly tabindex="-1">
+				<label>OI</label><input id="reg_oi" class="register registerReadOnly" value="000" style="width: 50px;" readonly tabindex="-1">
+			</div>
+			
+			<div><label>AC</label><input id="reg_ac" class="register" value="0000" style="border-width: 2px; border-color: blue;"></div>
+			</fieldset>
+		</div>
+		<div id="executionControl">
+			<button id="btnReset">Reinicia</button>
+			<button id="btnExecute" style="display: none;">Executa</button>
+			<button id="btnNextStep">Próximo passo</button>
+		</div>
+	</div>
+	<div id="help">
+		<div id="help-text" style="margin: 0px 0px 0px 18px; background-color: #ff8; padding: 10px;">
+			<table>
+				<tr>
+					<td>Instrução</td>
+					<td>Mnemônico</td>
+					<td>Descrição</td>
+					<td></td>
+				</tr>
+				<tr><td>0</td><td>JMP</td><td>Desvio incondicional</td></tr>
+				<tr><td>1</td><td>JZ</td><td>Desvio se acumulador for zero</td></tr>
+				<tr><td>2</td><td>JNZ</td><td>Desvio se acumulador não for zero</td></tr>
+				<tr><td>3</td><td>LV</td><td>Deposita uma constante no acumulador</td></tr>
+				<tr><td>4</td><td>ADD</td><td>Soma</td></tr>
+				<tr><td>5</td><td>SUB</td><td>Subtração</td></tr>
+				<tr><td>6</td><td>MUL</td><td>Multiplicação</td></tr>
+				<tr><td>7</td><td>DIV</td><td>Divisão</td></tr>
+				<tr><td>8</td><td>LOAD</td><td>Carrega da memória no acumulador</td></tr>
+				<tr><td>9</td><td>STOR</td><td>Grava do acumulador na memória</td></tr>
+				<tr><td>A</td><td>SC</td><td>Desvio de subprograma (função)</td></tr>
+				<tr><td>B</td><td>RS</td><td>Retorno de subprograma (função)</td></tr>
+				<tr><td>C</td><td>END</td><td>Fim de programa</td></tr>
+				<tr><td>D</td><td>IN</td><td>Entrada</td></tr>
+				<tr><td>E</td><td>OUT</td><td>Saída</td></tr>
+				<tr><td>F</td><td>NOP</td><td>Ciclo de processamento nulo</td></tr>
+			</table>
+		</div>
+	</div>
+	<div id="author">Humberto Sandmann - 2015</div>
+	<div id="dialog-code-download"></div>
+</body>
+</html>

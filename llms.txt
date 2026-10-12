@@ -1,0 +1,35 @@
+# Humberto Sandmann
+
+> Computer scientist, university professor and senior software architect. D.Sc. in Electrical Engineering (neural computing) from the Polytechnic School of the University of São Paulo, with a doctoral research stay at the Max Planck Institute for Dynamics and Self-Organization (Göttingen, Germany). Over 25 years of software engineering for banking, fintech and retail, and over 15 years teaching computer science at university level. Brazilian and German citizen, based in São Paulo, open to relocation.
+
+## Profile highlights
+
+- Associate Professor at Insper (São Paulo) since 2020 (Assistant Professor 2018–2020): platform engineering and microservices, machine learning, neural networks and deep learning, cloud computing, software design.
+- Associate Professor at ESPM (2014–2026): machine learning, artificial intelligence, applied mathematics, object-oriented programming, software quality, computer architecture. Earlier faculty roles at FIAP, IBTA, Universidade Cruzeiro do Sul, Universidade Nove de Julho, Toledo Prudente and Link School of Business.
+- Senior Software Architect & Machine Learning Engineer at RockSpoon (São Paulo / Palo Alto, 2018–2019): team leader and product owner; POS, ERP and payroll platforms; computer vision and machine learning.
+- Senior consultant in computational optimization for Banco Votorantim (return-on-equity computation for 2M+ records within a 12-hour window) and TecBan (ATM network, in-memory databases, HPC).
+- Senior software engineer / architect for ABN Amro Bank, BankBoston and Citibank (via EverSystems): core banking, trading, cryptography, HSM and PKI.
+- Founder of H-Sandmann (ML, optimization and security consulting, 2006–2025) and co-founder of SelsanTech (applied computational-intelligence research, 2012–2023).
+- Program Committee member and reviewer for the International Joint Conference on Neural Networks (IJCNN 2015–2020); IEEE member since 2004 (Computational Intelligence Society); INNS member.
+- Peer-reviewed publications at IJCNN (2004, 2008, 2009), SBRN 2004 and Dynamics Days Europe 2009.
+- Technology expert in Brazilian national media: TV Globo, GloboNews, TV Bandeirantes, CBN radio, O Estado de S. Paulo, Brazil Journal.
+- Languages: Portuguese (native), English (advanced), German (B1, Goethe certificate).
+
+## Core expertise
+
+- AI & machine learning: deep learning, neural networks, computer vision, NLP, generative models, classical ML.
+- Software architecture: microservices, Spring Boot / Spring Cloud, Java, Python, Go, design patterns.
+- Data & infrastructure: Kubernetes, Docker, Kafka, RabbitMQ, PostgreSQL, Redis, high-performance computing.
+- Domains: banking and fintech, cryptography (PKI/HSM), POS/ERP.
+- Research: nonlinear and network dynamics, synchronization of coupled oscillators, small-world networks, bio-inspired neural computing.
+
+## Links
+
+- [Full CV (web)](https://hsandmann.github.io/): education, teaching record, experience, publications, service and press.
+- [Résumé (PDF)](https://hsandmann.github.io/assets/doc/sandmann-resume.pdf): concise senior engineering résumé.
+- [Academic CV (PDF)](https://hsandmann.github.io/assets/doc/sandmann-academic.pdf): complete academic record.
+- [LinkedIn](https://www.linkedin.com/in/hsandmann/)
+- [GitHub](https://github.com/hsandmann)
+- [ORCID](https://orcid.org/0000-0001-7758-695X)
+- [Google Scholar](https://scholar.google.com/citations?user=EG3wtRIAAAAJ)
+- Contact: hsandmann@ieee.org

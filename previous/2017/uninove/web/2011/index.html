@@ -1,0 +1,773 @@
+<html>
+	<head><meta name="robots" content="noindex, follow"><meta charset="utf-8">
+		<title>Tecnologia Web</title>
+		<style>
+
+			.box {
+				width: 644px;
+			}
+
+			.criterio table {
+				width: 100%;
+				vertical-align: top;
+				border-collapse: collapse;
+				border-width: 1px;
+				border-style: solid;
+				border-color: #EEEEEE;
+			}
+
+			.criterio td {
+				vertical-align: top;
+				border-width: 0px 0px 1px 0px;
+				border-style: solid;
+				border-color: #EEEEEE;
+			}
+
+			.criterio th {
+				text-align: center;
+				background-color: #EEEEEE;
+				color: #888888;
+			}
+
+			.resumo {
+				width: 644px;
+				text-align: justify;
+			}
+
+			.resumo span {
+				font-weight: bold;
+			}
+			
+			.parte {
+				margin: 0px 0px 10px 0px;
+				padding: 5px;
+				width: 640px;
+				border-width: 1px;
+				border-style: double;
+				border-color: #CCCCCC;
+			}
+
+			.partenome {
+				text-align: center;
+				background-color: #FFE7BA;
+				padding: 7px;
+				font-size: 120%;
+			}
+
+			.secao {
+			}
+		
+			.secaonome {
+				background-color: #EEEEEE;
+				text-align: right;
+				padding: 5px;
+				color: #999999;
+			}
+			
+			.exemplo {
+				margin: 10px;
+				width: 600px;
+				padding: 10px;
+				border: 1px dashed #2222DD;
+			}
+
+			.exemplo input[type=button] {
+			}
+
+			.codigo textarea {
+				left: 0px;
+				padding: 5px;
+				font-family: monospace;
+				width: 600px;
+				height: 255px;
+				border: 1px solid #DDDDDD;
+			}
+			
+			.codigo pre {
+				margin: 5px;
+				height: auto;
+				white-space: pre-wrap;
+				white-space: -moz-pre-wrap;
+				white-space: -pre-wrap;
+				white-space: -o-pre-wrap;
+				word-wrap: break-word;
+ 			}
+
+			.resultado {
+				padding: 5px;
+				width: 588px;
+				border: 1px solid #DDDDDD;
+			}
+
+		</style>
+		<script>
+		
+			var exemplo_codigo    = "codigo";
+			var exemplo_resultado = "resultado";
+		
+			function atualizaExemplo( key ) {
+			
+				var e = document.getElementById(key + exemplo_codigo);
+				var content = e.value;
+
+				var e = document.getElementById(key + exemplo_resultado);
+				e.innerHTML = content;
+				
+			}
+		
+		</script>
+	</head>
+	<body>
+		<h3>Tecnologia Web<br/><small>Edição Outono/2011</small></h3>
+		<div class='box'>
+			<div class='criterio'>
+				<table>
+					<tr>
+						<th colspan='4'>Avaliações e Critérios</th>
+					</tr>
+					<tr>
+						<td rowspan='2' style='background-color: #EEEEEE; vertical-align: middle;'>AV1</td>
+						<td>Trabalho indivivual: página pessoal</td>
+						<td>
+							<ul>
+								<li>Estrutura HTML</li>
+								<li>Uso de CSS</li>
+								<li>Uso de imagem</li>
+								<li>Uso de cores por CSS</li>
+							</ul>
+						</td>
+						<td>2.0</td>
+					</tr>
+					<tr>
+						<td>Trabalho em grupo: sítio de e-commerce</td>
+						<td>
+							<ul>
+								<li>Estrutura HTML</li>
+								<li>Uso de CSS interno, externo e inline</li>
+								<li>Uso de SPAN</li>
+								<li>Uso de imagem</li>
+								<li>Uso de cores por CSS</li>
+								<li>Uso de tamanhos relativos por CSS</li>
+								<li>Posicionamento por CSS</li>
+							</ul>
+						</td>
+						<td>8.0</td>
+					</tr>
+					<tr>
+						<td style='background-color: #EEEEEE; vertical-align: middle;'>AV2</td>
+						<td colspan='2'>Avaliação integrada</td>
+						<td>10.0</td>
+					</tr>
+					<tr>
+						<td style='background-color: #EEEEEE; vertical-align: middle;'>AV3</td>
+						<td>Trabalho em grupo: sítio de e-commerce e confirmação de pedido</td>
+						<td>
+							<ul>
+								<li>JS: Validação de formulários</li>
+								<li>JS: Caixas de detalhes de produtos que aparecem e desaparecem</li>
+								<li>JS: Caixas suspensas móveis</li>
+							</ul>
+						</td>
+						<td>10.0</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class='box'>
+			<h3>Resumo</h3>
+			<div class='resumo'>
+
+				<div class='parte' id='parteTecweb'>
+					<div class='secaonome'>TECNOLOGIA WEB</div>
+					<p>Tecnologia web é definida por todo o código e recurso fornecido por um servidor web que tenha como resultado a execução em um navegador web. Devido ao grande número de navegadores existentes no mercado, foi necessário uma padronização dos recursos a serem interpretados pelos navegadores. Na busca desta padronização, foram definidos três linguagens padrõe: HTML, CSS e JavaScript.</p>
+					<p>O HTML tem a função de exibir e estruturar o conteúdo para o usuário, já o CSS fornece informações de formato e estilos de exibição, por fim, o JavaScript permite uma maior interatividade com o usuário. As especificações e validações dessas linguagem foi assumida por um consórcio de empresas, o W3C - <a href="http://www.w3.org">www.w3.org</a>.</p>
+					<p>Na página do W3C é possível encontrar toda a especifição HTML, CSS e JavaScript a qual serve de sugestão para ser implementado pelos fabricantes de navegadores para internet. Também, através do sítio <a href=' http://validator.w3.org'>http://validator.w3.org</a>, é possível validar e diagnosticar prováveis erros em uma página web.</p>					
+				</div>
+			
+			
+			
+				<div class='parte' id='parteHTML'>
+					<div class='partenome'>HTML</div>
+					<div class='secao' id='HTMLIntroducao'>
+						<div class='secaonome'>INTRODUÇÃO</div>
+						<h3>HTML - HyperText Markup Language<br>Linguagem de Marcação de Hipertexto</h3>
+						<p><span>Definição:</span> é uma liguagem baseada em tags, que é interpretada pelos navegadores de internet, por exemplo, Internet Explorer, Firefox, Chrome, Opera e outros. As tags são referências de blocos de conteúdo para o navegador, por isto, toda tag tem que ser aberta e fechada, tornando todo o conteúdo entre essa marcação parte de um bloco.
+						<div class='exemplo' id='ex11'>
+							<caption>Exemplo 1.1: um código HTML.</caption>
+							<div class='codigo'>
+								<textarea id='ex11codigo'><html>
+   <body>
+      <h3>Exemplo de um código HTML</h3>
+      <p>Neste caso, existem tags entre os blocos de texto, definindo assim um paragráfo ou uma lista, por exemplo. Exemplos de tags são:</p>
+      <ul>
+         <li>&lt;p&gt;  - defini um paragrafo;</li>
+         <li>&lt;br /&gt; - nova linha;</li>
+         <li>&lt;b&gt;  - coloca em negrito;</li>
+         <li>&lt;i&gt;  - coloca em itálico;</li>
+      </ul>
+   </body>
+</html></textarea>
+							</div>
+							<input type='button' value='exibir' onclick='javascript:atualizaExemplo("ex11");'/>
+							<div class='resultado' id='ex11resultado'></div>
+						</div>
+						Cada tag do HTML pode conter uma série de atributos, os quais podem ser comuns dentre um conjunto de tags ou exclusivo para apenas uma. Os atributos são responsáveis por personalizações de uma tag e podem ser acessados através da tag de abertura, por exemplo:
+						<div class='exemplo'>
+							<caption>Exemplo 1.2: acessando os atributos de um tag.</caption>
+							<div class='codigo'>
+								<textarea id='ex12codigo'><p align="right">Texto alinhado a direita</p>
+<img src="https://www.w3.org/2008/site/images/logo-w3c-mobile-lg" alt="exemplo de tabela" width="150" />
+<br>
+<marquee>imagem</marquee>
+</textarea>
+							</div>
+							<input type='button' value='exibir' onclick='javascript:atualizaExemplo("ex12");'/>
+							<div class='resultado' id='ex12resultado'></div>
+						</div>
+						<p>Atributos comuns a quase todas as tags são atributos de controle de tamanho, por exemplo: WIDTH e HEIGHT. Outra tag de destaque é a de comentário, esta permite colocar anotações no meio do código HTML sem que o navegador exiba ao usuário, tudo que for comentado deve estar entre &lt;!- e --&gt;.</p>
+					</div>
+					<div class='secao' id='HTMLEstrutura'>
+						<div class='secaonome'>ESTRUTURA</div>
+						<p>Como descrito na seção anterior, o HTML é uma linguagem basea em TAGs, ou rótulos. Como a grande maioria das linguagens baseada em tags, ao iniciar um arquivo .HTML é necessário definir o seu conteúdo, para isto é usado a tag &lt;HTML&gt;. Dentro desta taga existe uma organização básica que divide o código em dois grandes blocos: cabeçalho e corpo. Respectivamente, estes blocos são definidos pelas tags: &lt;HEAD&gt; e &lt;BODY&gt;.</p>
+						<div class='exemplo' id='ex13'>
+							<caption>Exemplo 1.3: um arquivo HTML e sua estrutura básica.</caption>
+							<div class='codigo'>
+								<pre>&lt;HTML&gt;
+   &lt;HEAD&gt;
+
+      &lt;!- Área de cabeçalho --&gt;
+	  
+   &lt;/HEAD&gt;
+   &lt;BODY&gt;
+
+      &lt;!- Corpo da página --&gt;
+	  
+   &lt;/BODY&gt;
+&lt;/HTML&gt;</pre>
+							</div>
+						</div>
+						<p>O cabeçalho e o corpo do HTML possuem funções distintas, sendo que:</p>
+						<ul>
+							<li><span>HEAD</span>: configura o navegador de maneira a gerar uma boa interpretação do conteúdo da página, também define meta-tags, as quais são bastante utéis para programas de buscas na internet;</li>
+							<li><span>BODY</span>: área de conteúdo da página. Neste trecho é que deve ser colocado o conteúdo que deve ser visto pelo usuário quem acessa a página.</li>
+						</ul>
+						<p>O uso adequado do cabeçalho é para definição de título da página, assim como, suas configurações de localidade, expiração, conjunto de caracteres, autoria e outros. Para realizar esta tarefa, existem um conjunto de tags especiais para o cabeçalho, chamadas de tag metas.</p>
+						<div class='exemplo' id='ex14'>
+							<caption>Exemplo 1.4: exemplo de um cabeçalho com título e tag meta NAME.</caption>
+							<div class='codigo'>
+								<pre>&lt;HTML&gt;
+   &lt;HEAD&gt;
+      &lt;TITLE&gt;Título do arquivo de Exemplo&lt;/TITLE&gt;
+      &lt;META NAME="description" CONTENT="A simple tutorial" /&gt;
+      &lt;META NAME="keywords" CONTENT="Basic Tutorial" /&gt;
+      &lt;META NAME="author" CONTENT="Humberto Sandmann" /&gt;	  
+   &lt;/HEAD&gt;
+   &lt;BODY&gt;
+
+      &lt;!- Corpo da página --&gt;
+	  
+   &lt;/BODY&gt;
+&lt;/HTML&gt;</pre>
+							</div>
+						</div>
+						<p>Um tipo mais especializado de tag meta é a HTTP-EQUIV, que configura o navegador com certas especificações, por exemplo, o conjunto de caracteres utilizado na construção da página. Existe uma extensa lista de configurações que podem ou não funcionar de acordo com o navegador eleito pelo usuário. É sugerido seguinte link que maiores especificações: <a href='http://www.w3schools.com/tags/att_meta_http_equiv.asp'>http://www.w3schools.com</a>.
+					</div>
+					<div class='secao' id='HTMLFormatacao'>
+						<div class='secaonome'>FORMATAÇÃO</div>
+						<p>A formatação de fontes, cores e estilos em geral de uma página HTML pode ser feita atráves da configuração dos atributos de uma tag.</p>
+						<p>Porém, com a intenção de manter uma maior independência e organização no código, a definição de estilo e formatos é feita usualmente por folhas de estilos. Estas folhas de estilos são definidas em uma outra linguagem de tag, chamada CSS (abordada mais adiante neste tutorial).<p>
+						Com o CSS é possível definir de estilo e formato para uma determinada tag em todo HTML, assim, é possível por exemplo especializar uma tag de de parágrafo para todo o texto. Em contra-partida, algumas vezes é necessário uma formatação de parágrafo (&lt;p&gt;) específica apenas para uma região da página, na forma de gerar um destaque, por exemplo. Para que permitir múltiplas definições de estilos e formatações de tags em uma mesma página HTML existem algumas tags especiais. São elas: &lt;SPAN&gt; e &lt;DIV&gt;.</p>
+						<ul>
+							<li><span>SPAN</span>: é uma tag utilizada para destacar trechos de parágrafos. A sua principal função é dar foco a um pedaço de texto que esteja dentro de um parágrafo. Claro, também pode ser utilizada para formatação de outros objetos, porém seu uso não é adequado;</li>
+							<li><span>DIV</span>: cria uma região com estilo e formatação própria dentro de uma página HTML. Quando definida sem atributos, apenas herda as configurações da página.</li>
+						</ul>
+						<div class='exemplo' id='ex15'>
+							<caption>Exemplo 1.5: exemplos das tags span e div.</caption>
+							<div class='codigo'>
+								<pre>&lt;HTML&gt;
+   &lt;HEAD&gt;
+      &lt;TITLE&gt;Título do arquivo de Exemplo&lt;/TITLE&gt;
+   &lt;/HEAD&gt;
+   &lt;BODY&gt;
+      &lt;P&gt;Este é um parágrafo comum, com as configurações padrões da página.&lt;/P&gt;
+
+      &lt;DIV&gt;
+         &lt;P&gt;Este é um parágrafo que obedece as regras de estilo e formatação da DIV no qual esta inserido, isto é, quando definida uma configuração diferente (mais adiante). &lt;span&gt;Este trecho está destacado&lt;/span&gt;, pode ser usado por exemplo para destaques em buscas pelo texto.&lt;/P&gt;
+      &lt;/DIV&gt;
+
+   &lt;/BODY&gt;
+&lt;/HTML&gt;</pre>
+							</div>
+						</div>
+					</div>
+					<div class='secao' id='HTMLLinks'>
+						<div class='secaonome'>LINKS</div>
+						<p>O grande sucesso da internet é a possibilidade de acessar rapidamente qualquer informações através de uma menção de um assunto em uma página. Esta rápida conexão de um termo com outras páginas na internet que possuem um detalhamento mais aprofundado deste é o "link".</p>
+						<p>A tag responsável por links no HTML é a tag &lt;A&gt;. Quase que obrigatoriamente, esta tag usa o atributo HREF, que serve para definir o destino do links, ou seja, o local aonde o leitor irá parar.</p>
+						<div class='exemplo'>
+							<caption>Exemplo 1.6: criando um link em uma página.</caption>
+							<div class='codigo'>
+								<textarea id='ex16codigo'><html>
+   <body>
+      <p>Este texto aborda o uso de HTML em páginas web. O consórcio responsável para especificação do código HTML é o <a href="http://w3.org">W3</a> e serve de referência para a implementação de navegadores web.</p>
+   </body>
+</html></textarea>
+							</div>
+							<input type='button' value='exibir' onclick='javascript:atualizaExemplo("ex16");'/>
+							<div class='resultado' id='ex16resultado'></div>
+						</div>
+						<p>Um outro link especial que permite uma iteratividade "Hyper" são os links para imagens. Com eles é possível inserir uma imagem dentro de um arquivo HTML. A tag responsável por esta revolução é a &lt;IMG&gt; e também vem acompanhada por um atributo quase obrigatório SRC, o qual define o caminho onde o navegador pode encontrar a imagem.</p>
+						<div class='exemplo'>
+							<caption>Exemplo 1.7: inserindo uma imagem em uma página.</caption>
+							<div class='codigo'>
+								<textarea id='ex17codigo'><html>
+   <body>
+      <p>Este texto aborda o uso de HTML em páginas web. O consórcio responsável para especificação do código HTML é o <a href="http://w3.org">W3</a> e seu logo é <img src="https://www.w3.org/2008/site/images/logo-w3c-mobile-lg" />.</p>
+   </body>
+</html></textarea>
+							</div>
+							<input type='button' value='exibir' onclick='javascript:atualizaExemplo("ex17");'/>
+							<div class='resultado' id='ex17resultado'></div>
+						</div>
+					</div>
+					<div class='secao' id='HTMLTabela'>
+						<div class='secaonome'>TABELAS</div>
+						<p>Tabelas são bastante úteis na apresentação de dados. Para HTML existem tags específicas para trabalhar com tabelas. Toda table no HTML é definida dentre as tags &lt;TABLE&gt; e &lt;/TABLE&gt;.</p>
+						<p>As linhas e colunas de uma tabela são definidas respectivamente por &lt;TR&gt; e &lt;TR&gt;. Sendo que o número de colunas de uma tabela é sempre dado pelo número de colunas da linha com mais colunas.</p>
+						<div class='exemplo'>
+							<caption>Exemplo 1.8: inserindo uma tabela em uma página.</caption>
+							<div class='codigo'>
+								<textarea id='ex18codigo'><html>
+   <style>
+      td {
+         border: 1px #CCCCCC solid;
+      }
+   </style>
+   <body>
+      <p>Exemplo de uma tabela:</p>
+      <table>
+         <tr>
+            <td>Local</td>
+            <td>Temperatura Min.</td>
+            <td>Temperatura Max.</td>
+         </tr>
+         <tr>
+            <td>São Paulo</td>
+            <td>16C</td>
+            <td>25C</td>
+         </tr>
+         <tr>
+            <td>Rio de Janeiro</td>
+            <td>21C</td>
+            <td>27C</td>
+         </tr>
+         <tr>
+            <td>Belo Horizonte</td>
+            <td>20C</td>
+            <td>25C</td>
+         </tr>
+      </table>
+   </body>
+</html></textarea>
+							</div>
+							<input type='button' value='exibir' onclick='javascript:atualizaExemplo("ex18");'/>
+							<div class='resultado' id='ex18resultado'></div>
+						</div>
+						<p>No exemplo 1.8 é importante notar que a tabela possui uma linha de título, caracteristica comum em tabelas. Para destacar no HTML esses título é usada a tag &lt;TH&gt;. Logo:</p>
+						<div class='exemplo'>
+							<caption>Exemplo 1.9: destacando títulos de uma tabela.</caption>
+							<div class='codigo'>
+								<textarea id='ex19codigo'><html>
+   <style>
+      td {
+         border: 1px #CCCCCC solid;
+      }
+   </style>
+   <body>
+      <p>Exemplo de uma tabela:</p>
+      <table>
+         <tr>
+            <th>Local</th>
+            <th>Temperatura Min.</th>
+            <th>Temperatura Max.</th>
+         </tr>
+         <tr>
+            <td>São Paulo</td>
+            <td>16C</td>
+            <td>25C</td>
+         </tr>
+         <tr>
+            <td>Rio de Janeiro</td>
+            <td>21C</td>
+            <td>27C</td>
+         </tr>
+         <tr>
+            <td>Belo Horizonte</td>
+            <td>20C</td>
+            <td>25C</td>
+         </tr>
+      </table>
+   </body>
+</html></textarea>
+							</div>
+							<input type='button' value='exibir' onclick='javascript:atualizaExemplo("ex19");'/>
+							<div class='resultado' id='ex19resultado'></div>
+						</div>
+						<p>Outro recurso adicional, mesclar células dentro de uma tabela pode ajudar em muito em seu layout. Para mesclar colunas deve-se usar o atributo COLSPAN, já para linhas o ROWSPAN.</p>
+						<div class='exemplo'>
+							<caption>Exemplo 1.10: destacando títulos de uma tabela.</caption>
+							<div class='codigo'>
+								<textarea id='ex110codigo'><html>
+   <style>
+      td {
+         border: 1px #CCCCCC solid;
+      }
+   </style>
+   <body>
+      <p>Exemplo de uma tabela:</p>
+      <table>
+         <tr>
+            <th rowspan="2">Local</th>
+            <th colspan="2">Temperatura (C)</th>
+         </tr>
+         <tr>
+            <th>Min.</th>
+            <th>Max.</th>
+         </tr>
+         <tr>
+            <td>São Paulo</td>
+            <td>16</td>
+            <td>25</td>
+         </tr>
+         <tr>
+            <td>Rio de Janeiro</td>
+            <td>21</td>
+            <td>27</td>
+         </tr>
+         <tr>
+            <td>Belo Horizonte</td>
+            <td>20</td>
+            <td>25</td>
+         </tr>
+      </table>
+   </body>
+</html></textarea>
+							</div>
+							<input type='button' value='exibir' onclick='javascript:atualizaExemplo("ex110");'/>
+							<div class='resultado' id='ex110resultado'></div>
+						</div>
+						<p>Adicionalmente, existem tags para separar as linhas da tabela em grupos. Sendo possível dividir entre cabeçalho, corpo e rodapé. Para tanto são usadas as tags: &lt;THEAD&gt;, &lt;TBODY&gt; e &lt;TFOOT&gt;.</p>
+					</div>
+					<div class='secao' id='HTMLFrame'>
+						<div class='secaonome'>IFRAME</div>
+						<p>A intenção do HTML é tornar as páginas dinâmicas e atrativas para serem consultadas. Um funcionalidade permitida no HTML é a inserção de um frame, como um quadro, onde o conteúdo deste é proveniente totalmente de uma outra página. Esta funcionalidade é bem interessante para criação de menus e sub-menus. A tag é a &lt;IFRAME&gt; e seus atributos mais significativos são: SRC, que define a página a ser exibida no frame; HEIGHT, define a altura do frame, e; WIDTH, responsável pela largura do frame.</p>
+						<div class='exemplo'>
+							<caption>Exemplo 1.11: uma página com iframe.</caption>
+							<div class='codigo'>
+								<textarea id='ex111codigo'><html>
+   <body>
+      <p>Este texto aborda o uso de HTML em páginas web. A página do consórcio pode ser vista no iframe abaixo.</p>
+      <iframe src="https://www.w3.org" height="100px;" width="99%" />
+   </body>
+</html></textarea>
+							</div>
+							<input type='button' value='exibir' onclick='javascript:atualizaExemplo("ex111");'/>
+							<div class='resultado' id='ex111resultado'></div>
+						</div>
+					</div>
+				</div>
+				
+				
+				
+				
+				
+				
+				<div class='parte' id='parteCSS'>
+					<div class='partenome'>CSS</div>
+					<div class='secao' id='CSSIntroducao'>
+						<div class='secaonome'>INTRODUÇÃO</div>
+						<h3>CSS - Cascading Style Sheets</h3>
+						<p><span>Definição:</span> uma liguagem de definição de estilo (formatação de fontes, layouts, cores e outros) que pode ser aplicada a diversas mídias, dentre elas ao HTML ou XML. Na maioria das vezes o CSS é usado para definir padrões de formatação para páginas na Web.</p>
+						<div class='exemplo' id='ex21'>
+							<caption>Exemplo 2.1: um HTML formatado usado folha de estilo CSS.</caption>
+							<div class='codigo'>
+								<textarea wrap="logical" id='ex21codigo'><html>
+   <head>
+      <style>
+         #ex21resultado p {
+            color: #FF0000;
+            text-align: center;
+         }
+      </style>
+   </head>
+   <body>
+      <p>Exemplo de CSS</p>
+   </body>
+</html></textarea>
+							</div>
+							<input type='button' value='exibir' onclick='javascript:atualizaExemplo("ex21");'/>
+							<div class='resultado' id='ex21resultado'></div>
+						</div>
+						<p>A folha de estilo pode ser incorporada ao HTML de três formas basicamente:</p>
+						<ul>
+							<li>inline: quando definido dentro do atributo style de uma tag, ou seja, dentro da linha do HTML. Bom para personalizações locializadas.</li>
+							<li>interno: quando declarado dentro de uma região do arquivo HTML. Preferencialmente, dentro da seção HEAD.</li>
+							<li>externo: quando em um arquivo separado e referenciado dentro do HTML. Boa solução para compartilhamento de estilos dentre diversos HTMLs.</li>
+						</ul>
+						<div class='exemplo' id='ex22'>
+							<caption>Exemplo 2.2: declaração de CSS inline dentro do HTML.</caption>
+							<div class='codigo'>
+								<pre>&lt;P&gt;&lt;SPAN style='color: #FF0000; font-size: 120%;'&gt;Parte em destaque&lt;/SPAN&gt;: este é um exemplo de declaração de CSS inline.&lt;/P&gt;
+</pre></div>
+						</div>
+						<div class='exemplo' id='ex23'>
+							<caption>Exemplo 2.3: declaração de CSS interno dentro do HTML.</caption>
+							<div class='codigo'>
+								<pre>&lt;HTML&gt;
+   &lt;HEAD&gt;
+      &lt;STYLE type="text/css"&gt;
+	     P {
+		    text-align: center;
+			color: #8888FF;
+	     }
+      &lt;/STYLE&gt;
+   &lt;/HEAD&gt;
+   &lt;BODY&gt;
+      &lt;P&gt;Parágrafo formatado com CSS interno.&lt;/P&gt;
+   &lt;/BODY&gt;
+&lt;/HTML&gt;</pre></div>
+						</div>
+						<div class='exemplo' id='ex24'>
+							<caption>Exemplo 2.4: declaração de CSS externo e link dentro do HTML.</caption>
+							<div class='codigo'>
+								<p style='width=90%; margin: 0px; padding: 2px; background-color: #FFEFD5;'>estilo.css</p>
+								<pre>P {
+   text-align: center;
+   color: #8888FF;
+}</pre></div>
+							<div class='codigo'>
+								<p style='width=90%; margin: 0px; padding: 2px; background-color: #FFEFD5;'>exemplo.html</p>
+								<pre>&lt;HTML&gt;
+   &lt;HEAD&gt;
+      &lt;LINK href="estilo.css" rel="stylesheet" type="text/css" /&gt;
+   &lt;/HEAD&gt;
+   &lt;BODY&gt;
+      &lt;P&gt;Parágrafo formatado com CSS externo.&lt;/P&gt;
+   &lt;/BODY&gt;
+&lt;/HTML&gt;</pre></div>
+						</div>
+					</div>
+					<div class='secao' id='CSSMargem'>
+						<div class='secaonome'>MARGEM E ESPAÇAMENTO</div>
+						<p>Cada elemento, no HTML, possui uma área de exibição. Através do CSS é possível configurar essa área de exibição, como: controle de margem e espaçamento.</i></p>
+						<p>Margem é o espaço entre o elemento e os demais elementos do contexto. Na figura 2.1 é a área amarelada. Para configurar a margem é usado o atributo: <i>margin</i>.</p>
+						<p>Espaçamento é o espaço entre as bordas do elemento e seus conteúdo. Na figura 2.1 é a área acinzentada. Para configurar o espaçamento é usado o atributo: <i>padding</i>.</p>
+						<center>
+							<div style="display: table-row">
+								<div></div>
+								<div style="width: 300px; border: 0px #BBBBBB solid; border-width: 0px 1px 1px 1px; display: table-cell; padding: 5px; text-align: center; color: #BBBBBB; vertical-align: middle;">elemento superior</div>
+								<div></div>
+							</div>
+							<div style="display: table-row">
+								<div style="width: 100px; border: 0px #BBBBBB solid; border-width: 1px 1px 1px 0px; display: table-cell; padding: 5px; text-align: center; color: #BBBBBB; vertical-align: middle; height: 120px;">elemento a esquerda</div>
+								<div style="display: table-cell; width: 300px; border: 0px #FFFFFF none; height: 120px; vertical-align: middle; background-color: #FFE7BA;">
+									<div style="border: 1px #999999 dashed; margin: 20px; height: 100px; vertical-align: middle; background-color: #DDDDDD;">
+										<div style="background-color: #FFFFFF; height: 70px; width: 270px; margin: 15px; text-align: left;">
+										elemento referência - a parte amarelada é a margem, já a cinza é o espaçamento. O elemento está destacado em tracejado.
+										</div>
+									</div>
+								</div>
+								<div style="width: 100px; border: 0px #BBBBBB solid; border-width: 1px 0px 1px 1px; display: table-cell; padding: 5px; text-align: center; color: #BBBBBB; vertical-align: middle; height: 120px;">elemento a direita</div>
+							</div>
+							<div style="display: table-row">
+								<div></div>
+								<div style="width: 300px; border: 0px #BBBBBB solid; border-width: 1px 1px 0px 1px; display: table-cell; padding: 5px; text-align: center; color: #BBBBBB; vertical-align: middle;">elemento inferior</div>
+								<div></div>
+							</div>
+							<caption>Fig 2.1: esquema de montagem de um elemento. A área amarelada é a margem e área cinza é o espaço entre a margem e conteúdo do elemento.</caption>
+						</center>
+						<br/>
+						<div class='exemplo' id='ex25'>
+							<caption>Exemplo 2.5: elemento com configuração de margem e espaçamento usado CSS.</caption>
+							<div class='codigo'>
+								<textarea wrap="logical" id='ex25codigo'><html>
+   <head>
+      <style>
+         .ex25resultado {
+            color: #FF0000;
+            text-align: center;
+            margin: 20px;
+            padding: 15px;
+            background-color: #CCCCFF;
+            width: 100px;
+         }
+      </style>
+   </head>
+   <body>
+      Exemplo de um elemento com margem e espaçamento definido.
+      <div class="ex25resultado">Elemento referência</div>
+      Exemplo de um elemento com margem e espaçamento definido.
+   </body>
+</html></textarea>
+							</div>
+							<input type='button' value='exibir' onclick='javascript:atualizaExemplo("ex25");'/>
+							<div class='resultado' id='ex25resultado'></div>
+						</div>
+						<p>É possível estabelecer a cada lado do elemento uma configuração específica. Para tanto, deve-se configurar uma a uma, por exemplo: <i>margin: 10px 0px 20px; 0px</i>, sendo a ordem: superior, direita, inferior e esquerda. Isto é também válido para a maioria dos atributos CSS, como cores de borda, estilo de borda, entre outros.</p>
+					</div>
+					<div class='secao' id='CSSCores'>
+						<div class='secaonome'>CORES</div>
+						<p>As cores são facilmente definidas no CSS através de uma codificação em hexadecimal. Como a maioria do uso do CSS é feito para monitores, o padrão mais utilizado é o RBG. O padrão RGB, Red-Green-Blue, controla a quantidade da intensidade de três cores básicas: vermelho, verde e azul.</p>
+						<p>A configuração pode ser feita setando 24 bits em hexadecimal, isto para monitores com capacidade de 24 bits de cores, ou 2<sup>24</sup> = 16777216 cores. A cada 8 bits é configurada uma cor. Logo na ordem:</p>
+						<center>
+							<div style="display: table-row;">
+								<div style="display: table-cell; padding: 10px; text-align: center; border: 1px #CCCCCC solid; background-color: #FFCCCC;">
+									F A
+									<br/><span style="letter-spacing: 2px;">1111 1010</span>
+									<br/>Vermelho
+								</div>
+								<div style="display: table-cell; padding: 10px; text-align: center; border: 1px #CCCCCC solid; background-color: #CCFFCC;">
+									3 7
+									<br/><span style="letter-spacing: 2px;">0011 0111</span>
+									<br/>Verde
+								</div>
+								<div style="display: table-cell; padding: 10px; text-align: center; border: 1px #CCCCCC solid; background-color: #CCCCFF;">
+									8 3
+									<br/><span style="letter-spacing: 2px;">1000 0011</span>
+									<br/>Azul
+								</div>
+							</div>
+						</center>
+						<p>A cada bit acesso é dada uma intesidade maior à cor. Logo, no exemplo acima, a cor é a combinação de todas as intensidades: FA3783. Resultado:</p>
+						<center>
+							<div style="display: table-cell; padding: 10px; text-align: center; border: 1px #CCCCCC solid; background-color: #FA3783;">
+								<span style="letter-spacing: 2px;">FA3783</span>
+							</div>
+						</center>
+						<p>Outra forma de cálculo é usado os valores de base decimal, então para o exemplo acima, o código em hexadecimal pode ser trocador por: <i>rgb(250, 55, 131)</i>.</p>
+						<p>As cores podem ser aplicadas a grande maioria das tags do HTML via CSS. Para fonte por exemplo é usado o atributo: <i>color: #FA3783;</i> ou <i>color: rgb(250, 55, 131);</i>. Já para cor de fundo, a tag é: <i>background-color</i>; ou um cor de borda para cada lado, <i>border-color: #FF0000 #CC0000 #00FF00 #0000FF;</i></p>
+						<div class='exemplo' id='ex26'>
+							<caption>Exemplo 2.6: aplicação de cores configurada por CSS.</caption>
+							<div class='codigo'>
+								<textarea wrap="logical" id='ex26codigo'><html>
+   <head>
+      <style>
+         .ex26q1 {
+            color: #FF0000;
+            text-align: center;
+            margin: 20px;
+            padding: 15px;
+            background-color: #CCCCFF;
+            width: 100px;
+            border-width: 2px;
+            border-color: #CC0000 #00CC00 #0000CC #000000;
+            border-style: dashed dotted dashed dotted;
+         }
+      </style>
+   </head>
+   <body>
+      <div class="ex26q1">Elemento referência</div>
+      Exemplo de uso de <span style="color: #0000FF;">cores</span>.
+   </body>
+</html></textarea>
+							</div>
+							<input type='button' value='exibir' onclick='javascript:atualizaExemplo("ex26");'/>
+							<div class='resultado' id='ex26resultado'></div>
+						</div>
+					</div>
+					<div class='secao' id='CSSTamanho'>
+						<div class='secaonome'>FONTES E ALINHAMENTOS</div>
+						<p>Para definir fontes no CSS é utilizado o atributo <i>font-family</i>. E para alinhamentos pode ser ajustado pelo atributo <i>text-align</i>.</p>
+						<div class='exemplo' id='ex27'>
+							<caption>Exemplo 2.7: configuração de fonte e alinhamento.</caption>
+							<div class='codigo'>
+								<textarea wrap="logical" id='ex27codigo'><html>
+   <head>
+      <style>
+         .ex27q1 {
+            text-align: center;
+            font-family: "Lucida Console";
+            font-style: italic;
+         }
+         .ex27q2 {
+            text-align: right;
+            font-family: "Verdana";
+            font-style: oblique;
+         }
+         .ex27q3 {
+            text-align: left;
+            font-family: "Georgia";
+         }
+      </style>
+   </head>
+   <body>
+      <div class="ex27q1">Texto alinhado ao centro.</div>
+      <div class="ex27q2">Texto alinhado à direita.</div>
+      <div class="ex27q3">Texto alinhado à esquerda.</div>
+   </body>
+</html></textarea>
+							</div>
+							<input type='button' value='exibir' onclick='javascript:atualizaExemplo("ex27");'/>
+							<div class='resultado' id='ex27resultado'></div>
+						</div>
+					</div>
+					<p>O alinhamento também é aplicado para a grande maioria dos elementos HTML, como DIV, SPAN, IFRAME, IMG e outros.</p>
+					<div class='secao' id='CSSTamanho'>
+						<div class='secaonome'>TAMANHOS</div>
+						<p>Ajuste de tamanho é de grande importância para o layout de uma página web. Ele opde ser configurado para fontes e elementos, como tamanho de DIV, por exemplo.</p>
+						<p>Os atributos CSS responsáveis pelo ajuste do tamanho são: WIDTH e HEIGHT. Os seus valores podem ser absolutos, relativos ou percentuais. Valores absolutos são definidos em pixels (px); já relativos possuem como referência o tamanho padrão definido na configuração do navegador (em) e; para valores percentuais, a referência é o elemento no qual a tag está inserida, no caso de não estar dentro de elemento algum, então é usado o tamanho do BODY.</p>
+					</div>
+						<div class='exemplo' id='ex28'>
+							<caption>Exemplo 2.8: tamanhos diferentes para fontes e divs.</caption>
+							<div class='codigo'>
+								<textarea wrap="logical" id='ex28codigo'><html>
+   <head>
+      <style>
+         .ex28q1 {
+            width: 150px;
+            height: 70px;
+            font-size: 18px;
+            border: 1px #CCCCCC solid;
+            background-color: #CCCCFF;
+         }
+         .ex28q11 {
+            width: 90%;
+            font-size: 120%;
+            background-color: #FFFFFF;
+         }
+         .ex28q2 {
+            font-size: 1em;
+         }
+         .ex28q3 {
+            font-size: 1.6em;
+         }
+      </style>
+   </head>
+   <body>
+      <div class="ex28q1">18px
+         <div class="ex28q11">120% de 18px</div>
+	  </div>
+      <div class="ex28q2">1em (tamanho padrão definido no navegador)</div>
+      <div class="ex28q3">1.6em</div>
+   </body>
+</html></textarea>
+							</div>
+							<input type='button' value='exibir' onclick='javascript:atualizaExemplo("ex28");'/>
+							<div class='resultado' id='ex28resultado'></div>
+						</div>
+					</div>
+				</div>
+				
+				
+				
+				
+				<div class='parte' id='parteJS'>
+					<div class='partenome'>JavaScript</div>
+					<div class='secao' id='JSIntroducao'>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</body>
+</html>

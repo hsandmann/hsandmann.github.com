@@ -1,0 +1,677 @@
+<html><head><meta name="robots" content="noindex, follow">
+    <meta charset="utf-8">
+    <title>PSI2672 - Práticas em Reconhecimento de Padrões, Modelagem e Neurocomputação</title>
+	<style>
+	
+		#importante {
+			color: #DD3333;
+		}
+
+		#observacao {
+			color: #3333DD;
+		}
+		
+		body {
+			font-family: Tahoma;
+			color: #454545;
+			background-color: #FFFFFF;
+		}
+		
+		a {
+			color: #0066BB;
+			text-decoration: none; 
+		}
+
+		a:hover {
+			color: #0033FF;
+		}
+
+		.desktop {
+			position: absolute;
+			width: 1100px;
+		}
+
+		.titulo {
+			widht: 100%;
+			border-style: none;
+			margin: 10px 0px 10px 0px;
+			background-color: #FFFFFF;
+			text-align: center;
+		}
+
+		.esquerda {
+			width: 800px;
+			border-width: 0px;
+			border-color: #000000;
+			border-style: solid;
+		}
+
+		.direita {
+			float: right;
+			width: 285px;
+			border-width: 0px;
+			border-color: #000000;
+			border-style: solid;
+		}
+
+		.aviso, .horario, .info, .files, .warning {
+			margin: 0px 0px 10px 0px;
+			padding: 3px;
+
+			text-align: justify;
+			font-size: 12px;
+
+			border-width: 1px;
+			border-style: solid;
+		}
+
+		.files {
+			border-color: #BBBBBB;
+			background-color: #FFFFFF;
+		}
+		
+		.horario {
+			border-color: #BBBBFF;
+			background-color: #EEEEFF;
+		}
+		
+		.info {
+			border-color: #BBCCBB;
+			border-width: 1px;
+			background-color: #FFFFFF;
+		}
+
+		.aviso {
+			border-color: #FFBBBB;
+			background-color: #FFEEEE;
+		}
+		
+		.aviso h3, .horario h3, .info h3 , .files h3{
+			text-align: center;
+			font-size: 100%;
+
+			margin: 4px;
+			padding: 0px 0px 5px 0px;
+			
+			border-width: 1px;
+			border-style: none none solid none;
+		}
+
+		.aviso td, .horario td, .info td, .files td {
+			font-size: 80%;
+		}
+		
+		.horario h3 {
+			color: #6666FF;
+			border-color: #BBBBFF;
+		}
+
+		.files h3 {
+			color: #666666;
+			border-color: #BBBBBB;
+		}
+
+		.info h3 {
+			color: #668866;
+			border-color: #BBCCBB;
+		}
+		
+		.aviso h3 {
+			color: #886666;
+			border-color: #CCBBBB;
+		}
+	
+		.titulo h4 {
+			font-size: 100%;
+			color: #AA0000;
+			padding: 4px;
+			margin: 0px;
+		}
+		
+		.titulo h5 {
+			font-size: 80%;
+			color: #333333;
+			padding: 0px;
+			margin: 0px;
+		}
+
+		.files table {
+			width: 100%;
+		}
+
+		.files td {
+
+			vertical-align: top;
+
+			border-width: 1px;
+			border-color: #EEEEEE;
+			border-style: none none solid none;
+		}
+
+		.filetitle {
+			color: #666666;
+			background-color: #EEEEEE;
+		}
+
+		.grupo {
+			position: relative;
+			float: left;
+			text-align: center;
+
+			margin: 1px;
+
+			border-width: 1px;
+			border-color: #EEEEEE;
+			border-style: solid;
+		}
+
+		.grupo p {
+			margin: 2px;
+			background-color: #EEEEEE;
+		}
+
+		.grupo img {
+			height: 56px;
+			border-width: 0px;
+			border-color: #FFFFFF;
+			border-style: none;
+		}
+
+		.warning {
+
+			text-align: justify;
+
+			border-color: #FFBBBB;
+			border-width: 1px;
+			border-style: solid;
+
+			background-color: #FFFFFF;
+		}
+
+		.warning h3 {
+			margin: 0px 0px 10px 0px;
+			padding: 0px;
+			color: #666666;
+			background-color: #FFBBBB;
+
+			text-align: center;
+		}
+		
+		.exercicio {
+			background-color: #FFFFE0;
+		}
+	
+	</style>
+  </head>
+
+  <body>
+  <div class="desktop">
+
+  
+	<div class="titulo">
+		<h4>PSI2672 - Práticas em Reconhecimento de Padrões, Modelagem e Neurocomputação</h4>
+		<h5>edição 2011</h5>
+	</div>
+
+	<div class="direita">
+		
+	<div class="horario">
+		<h3>Esclarecimento de dúvidas</h3>
+		<table>
+			<tbody><tr><td width="60px">Monitor</td><td><a href="http://www.lsi.usp.br/%7Esandmann/">Humberto Sandmann</a></td>
+			</tr><tr><td>E-mail</td><td><a href="mailto:hsandmann@ieee.org">hsandmann@ieee.org</a></td></tr>
+		</tbody></table>
+		<h3></h3>
+		<table>
+			<tbody><tr><td valign="top" width="60px">Local</td>
+				<td>sala <b>A2-49</b>, ao chegar na porta de vidro ligue para o ramal <b>9740</b></td></tr>
+				<tr><td valign="top">Horário</td><td>quartas das 10:00 às 11:30<br>caso queiram outro horário, o representante de sala deve entrar em contato com o monitor</td></tr>
+		</tbody></table>
+		<h3></h3>
+		<span id="importante">Obs.:</span> é gentileza enviar e-mail agendando, obrigado!
+	</div>	
+
+	<div class="info">
+		<h3>Implementação das Redes Neurais</h3>
+		Como suporte para o ensaio de redes neurais simples e testes de conceitos vistos em classe, considere utilizar algum simulador de redes neurais já disponível publicamente. Em particular recomenda-se o uso do: <a href="http://dit.ipg.pt/MBP/">Multiple Back Propagation</a>. No ano anterior o Monitor Julio Saldaña deixou uma versão espelho em seu sítio, caso ocorram falhas no principal, <a href="http://www.lsi.usp.br/%7Ejsaldana/psi2533.html">acesse aqui</a>.
+		<br>
+		<br>
+		<h3>Simuladores</h3>
+		Outros simuladores interessantes foram pesquisados, pelo aluno Guilherme Augusto Zimeo Morais, e estão disponíveis em seu sítio: <a href="http://www.lsi.usp.br/%7Egazm/leaf.html">clique aqui</a>.
+		<br>
+		<br>
+		<h3>Requisitos e dicas<br><small>(a lista cresce ao longo do semestre)</small></h3>
+		Essa disciplina tem como requisito alguns conhecimentos já vistos durante o curso de graduação, logo, vale a pena relembrar os seguintes tópicos para não ter problemas nos exercícios (e nem na prova):
+		<ul>
+			<li>Cybenko e Komolgorov
+			<br>(<a href="http://www.lsi.usp.br/icone/psi2533/">mais</a> - clique em bibliografia)
+			</li><li>Conceito de gradiente (<a href="http://pt.wikipedia.org/wiki/Gradiente">mais</a>)</li>
+			<li>Derivada parcial (<a href="http://en.wikipedia.org/wiki/Partial_derivative">mais</a>)</li>
+			<li>Regra da cadeia (<a href="http://pt.wikipedia.org/wiki/Regra_da_cadeia">mais</a>)</li>
+		</ul>
+		<span id="importante">Obs.:</span> os <i>links</i> para os sítios citados são referências rápidas para relembrar conceitos e pontos básicos, porém não se predispõem a abordar todo o assunto. Estes também são de conteúdo livre, logo, é bom verificar em outros materiais, como em livros clássicos da área.
+	</div>
+
+	<div class="aviso">
+		<span id="importante">Importante:</span> a disciplina PSI2672 é oferecido pelo Prof. Dr. Emilio Del Moral Hernandez (<a href="http://www.lsi.usp.br/%7Eemilio/">http://www.lsi.usp.br/~emilio/</a>). Esta página é mantida pelo monitor da disciplina, Humberto Sandmann (<a href="http://www.lsi.usp.br/%7Esandmann/">http://www.lsi.usp.br/~sandmann/</a>). Aqui é possível encontrar material de apoio para a disciplina, porém para maiores informações consulte sempre a página do professor, assim como o material disponível no sítio do grupo de pesquisa ICONE (<a href="http://www.lsi.usp.br/icone/">http://www.lsi.usp.br/icone/</a>).
+	</div>
+
+	</div>
+	
+	<div class="esquerda">
+
+	<div class="files">
+		<h3>Arquivos<br><small>(a lista cresce ao longo do semestre)</small></h3>
+		<table>
+			<tbody><tr>
+				<td class="filetitle"><small>Diponibilizado em</small></td>
+				<td class="filetitle"><small>Entrega para</small></td>
+				<td class="filetitle"><small>Nome</small></td>
+				<td class="filetitle"><small>Finalidade</small></td>
+			</tr>
+			<tr>
+				<td colspan="2">21.02.2011</td>
+				<td><a href="Programa_PSI2672_2011.pdf">Programa_PSI2672_2011.pdf</a></td>
+				<td>Programa do curso e critérios de aprovação</td>
+			</tr>
+			<tr>
+				<td class='exercicio'>24.02.2011</td>
+				<td class='exercicio'>-</td>
+				<td class='exercicio'><a href="Exercicio_1_PSI2672_Disciplinas%20da%20Enfase.pdf">Exercicio_1_PSI2672_Disciplinas da Enfase.pdf</a></td>
+				<td class='exercicio'>Ex1: Atividade extra para os alunos que já cursaram a disciplina PSI 2533</td>
+			</tr>
+			<tr>
+				<td class='exercicio'>23.03.2011</td>
+				<td class='exercicio'>-</td>
+				<td class='exercicio'><a href="Exercicio_2_PortasLogicas.pdf">Exercicio_2_PortasLogicas.pdf</a></td>
+				<td class='exercicio'>Ex2: Portas Lógicas e Regressor Linear</td>
+			</tr>
+			<tr>
+				<td>12.04.2011</td>
+				<td>-</td>
+				<td><span id='importante'>Aviso Importante</span></td>
+				<td>Leia o quadro de aviso importante abaixo</td>
+			</tr>
+			<tr>
+				<td>12.04.2011</td>
+				<td>-</td>
+				<td><a href="Exercicio_1x_Gradiente.pdf">Exercicio_1x_Gradiente.pdf</a></td>
+				<td>Método do Gradiente Descendente, apenas para os que estão no 4o ano (e portanto não cursaram PSI 2533).</td>
+			</tr>
+			<tr>
+				<td class='exercicio'>13.04.2011</td>
+				<td class='exercicio'>27.04.2011</td>
+				<td class='exercicio'><a href="Exercicio_3_Classificacao.pdf">Exercicio_3_Classificacao.pdf</a></td>
+				<td class='exercicio'>
+					Ex3: Classificação de Padrões
+					<br />Veja tabela de sinais e rótulos dos grupos logo abaixo.
+				</td>
+			</tr>
+			<tr>
+				<td>13.04.2011</td>
+				<td>-</td>
+				<td><a href="http://www.leb.usp.br/andfkohn/Livro_Rec_Pad_AFK.pdf">Livro_Rec_Pad_AFK.pdf</a></td>
+				<td>Apostila de Reconhecimento de Padrões do <a href="http://www.leb.usp.br/andfkohn/">Prof. Dr. André Fabio Kohn</a>.</td>
+			</tr>
+			<tr>
+				<td>13.04.2011</td>
+				<td>-</td>
+				<td><a href="7_Rec_VOZ_2004_EPUSP_IC_e_paper.pdf">7_Rec_VOZ_2004_EPUSP_IC_e_paper.pdf</a></td>
+				<td>Trabalho de IC - Recohecimento de Voz. Feitos pelos alunos: Daniel Richetti Lemos e Gabriel Junqueira Rodrigues.</td>
+			</tr>
+			<tr>
+				<td>04.05.2011</td>
+				<td>-</td>
+				<td><a href="Inventario_Estrutura_ProjFinal_V1.pdf">Inventario_Estrutura_ProjFinal_V1.pdf</a></td>
+				<td>Inventário Projeto Final</td>
+			</tr>
+			<tr>
+				<td>04.05.2011</td>
+				<td>-</td>
+				<td><a href="http://archive.ics.uci.edu/ml/">UC Irvine Machine Learning Repository</a></td>
+				<td>Repositório de dados para aprendizado de máquina e benchmark da UC Irvine.</td>
+			</tr>
+			<tr>
+				<td>04.05.2011</td>
+				<td>-</td>
+				<td><a href="http://srdata.nist.gov/gateway/gateway">NIST Data Gateway</a></td>
+				<td>Portal de dados do NIST.</td>
+			</tr>
+			<tr>
+				<td>04.05.2011</td>
+				<td>-</td>
+				<td><a href="Relatorio_IC_Ivan.pdf">Relatorio_IC_Ivan.pdf</a></td>
+				<td>Relatório Iniciação Científica do aluno Ivan Diego de Sousa: Ambientes Para Ensaios Computacionais no Ensino de Neurocomputação e Reconhecimento de Padrões.</td>
+			</tr>
+			<tr>
+				<td>09.05.2011</td>
+				<td>-</td>
+				<td><a href="Apresentacao_Massaki_e_Grupo.pdf">Apresentacao_Massaki_e_Grupo.pdf</a></td>
+				<td>Apresentação do projeto de um grupo de PSI5880, tema: Implementação de um pHmetro através de Redes Neurais Artificiais e Algoritmos Genéticos. Alunos: Alexandre Kimiyaki Ligo, César Augusto Mayor Herrera, Massaki de Oliveira Igarashi e Tiago Oliveira Weber</td>
+			</tr>
+			<tr>
+				<td>09.05.2011</td>
+				<td>-</td>
+				<td><a href="../../reconhecedor.html">Reconhecedor de idiomas</a></td>
+				<td>Um reconhecedor de idiomas baseado em MLP feito para a disciplina PSI5886.</td>
+			</tr>
+			<tr>
+				<td rowspan='2'>17.05.2011</td>
+				<td rowspan='2'>-</td>
+				<td style='border-width: 0px;'>
+					BCI - Competition
+					<br/><a href="http://www.bbci.de/competition/">http://www.bbci.de/competition/</a>
+				</td>
+				<td style='border-width: 0px;'>Banco de dados de EEG. Contribuição feita pelo aluno Gabriel Figueiredo.</td>
+			</tr>
+			<tr>
+				<td colspan='2' style='border-width: 0px 0px 1px 0px;'>
+					Brain Computer Interface e Sinais Sinais Cerebrais:
+					<br/><a href='https://epilepsy.uni-freiburg.de/freiburg-seizure-prediction-project/eeg-database'>https://epilepsy.uni-freiburg.de/freiburg-seizure-prediction-project/eeg-database</a>
+					<br/><a href='http://sccn.ucsd.edu/~arno/fam2data/publicly_available_EEG_data.html'>http://sccn.ucsd.edu/~arno/fam2data/publicly_available_EEG_data.html</a>
+					<br/><a href='http://kdd.ics.uci.edu/databases/eeg/eeg.data.html'>http://kdd.ics.uci.edu/databases/eeg/eeg.data.html</a>
+					<br/><a href='http://epileptologie-bonn.de/cms/front_content.php?idcat=193&lang=3&changelang=3'>http://epileptologie-bonn.de/cms/front_content.php?idcat=193&lang=3&changelang=3</a>
+					<br/><a href='http://engineuring.wordpress.com/2009/07/08/downloadable-eeg-data/'>http://engineuring.wordpress.com/2009/07/08/downloadable-eeg-data/</a>
+				</td>
+			</tr>
+			<tr>
+				<td class='exercicio'>18.05.2011</td>
+				<td class='exercicio'>18.05.2011</td>
+				<td class='exercicio'><a href="Exercicio_4_PSI2672_16demaio.pdf">Exercicio_4_PSI2672_16demaio.pdf</a></td>
+				<td class='exercicio'>Ex4: PDF do enunciado.</td>
+			</tr>
+			<tr>
+				<td>18.05.2011</td>
+				<td>-</td>
+				<td><a href="http://sandmann.sdf.org/psi2672/2011/DandoDire%E7%E3oeDepurandoaProposta_ProjFinal_PSI2672_V2_16demaio.pdf">DandoDireçãoe...16demaio.pdf</a></td>
+				<td>Versão atual (16 de maio) do Roteiro para depuração de pré-propostas de projetos finais de PSI 2672.</td>
+			</tr>
+			<tr>
+				<td>18.05.2011</td>
+				<td>-</td>
+				<td><a href="Inventariode%20Propostas_16demaio.pdf">Inventariode Propostas_16demaio.pdf</a></td>
+				<td>Versão atual (16 de maio) da lista de títulos de projetos citados em brainstorms em aulas anteriores.</td>
+			</tr>
+			<tr>
+				<td class='exercicio'>19.05.2011</td>
+				<td class='exercicio'>23.05.2011</td>
+				<td class='exercicio'><a href="Exercicio_5_PSI2672.pdf">Exercicio_5_PSI2672.pdf</a></td>
+				<td class='exercicio'>Ex5: entregar até dia 23/05 às 12h00.</td>
+			</tr>
+			<tr>
+				<td>27.05.2011</td>
+				<td>-</td>
+				<td><a href="Inventario_de_AulasAnteriores_V2.pdf">Inventario_de_AulasAnteriores_V2.pdf</a></td>
+				<td>Inventário de Aulas Anteriores V2</td>
+			</tr>
+			<tr>
+				<td>27.05.2011</td>
+				<td>-</td>
+				<td><a href="Conteudos_Final_de_PSI2672_V1.pdf">Conteudos_Final_de_PSI2672_V1.pdf</a></td>
+				<td>Conteúdos do Relatorio Final de PSI2672 V1.</td>
+			</tr>
+			<tr>
+				<td class='exercicio'>27.05.2011</td>
+				<td class='exercicio'>30.05.2011</td>
+				<td class='exercicio'><a href="entrega_conjunto_treino_teste.pdf">entrega_conjunto_treino_teste.pdf</a></td>
+				<td class='exercicio'>Ex6: Formato de entrega de conjunto de treino e teste.</td>
+			</tr>
+			<tr>
+				<td>30.05.2011</td>
+				<td>-</td>
+				<td>Lista de Entrega de Exercícios</td>
+				<td>Lista de entrega de exercícios encontra-se abaixo, favor verificar.</td>
+			</tr>
+			<tr>
+				<td>30.05.2011</td>
+				<td>31.05.2011</td>
+				<td><a href="Atividades_Classe_30Junho.pdf">Atividades_Classe_30Junho.pdf</a></td>
+				<td>Atividade realizada em classe.</td>
+			</tr>
+			<tr>
+				<td class='exercicio'>30.05.2011</td>
+				<td class='exercicio'>06.06.2011</td>
+				<td class='exercicio'><a href="Rede_treinada.pdf">Rede_treinada.pdf</a></td>
+				<td class='exercicio'>Ex7: Formato de entrega da primeira rede treinada.</td>
+			</tr>
+			<tr>
+				<td>31.05.2011</td>
+				<td>-</td>
+				<td><a href="http://www.teses.usp.br/index.php?option=com_jumi&fileid=14&Itemid=161&lang=pt&id=87A0AE74AF68">Lista de teses</a></td>
+				<td>Algumas teses em redes neurais realizadas na EPUSP que incluem diversos exemplos de aplicação de neurocomputação.</td>
+			</tr>
+			<tr>
+				<td>31.05.2011</td>
+				<td>-</td>
+				<td>
+					<a href="Poster_PSI2222_grupo_57_2010.pdf">Poster_PSI2222_grupo_57_2010.pdf</a>
+					<br/><a href="Poster_PSI2222_grupo_57B_2010.pdf">Poster_PSI2222_grupo_57B_2010.pdf</a>
+				</td>
+				<td>Exemplos de posters descritivos de projeto que podemos adotar / usar como inspiração para o item extra de relatório "Poster para a web galeria de PSI2672"</td>
+			</tr>
+			<tr>
+				<td>02.06.2011</td>
+				<td>-</td>
+				<td>
+					<a href="Jon_Shlens_PCA.pdf">Jon_Shlens_PCA.pdf</a>
+					<br/><a href="Matlab_code_PCA.zip">Matlab_code_PCA.zip</a>
+					<br/><a href="Tutorial_ReconhecimentoFaces.pdf">Tutorial_ReconhecimentoFaces.pdf</a>
+				</td>
+				<td>Material selecionado em PCA, gentilmente preparado pelo doutorando <a href="http://www.lsi.usp.br/~ekitani/">Edson Kitani</a>. Edson realiza sua pós-graduação com o grupo ICONE e conversará conosco sobre o tema PCA na nossa aula de PSI2672 desta segunda feira dia 6 de junho.</td>
+			</tr>
+			<tr>
+				<td>03.06.2011</td>
+				<td>-</td>
+				<td>
+					<a href="Orientacoes_ApresFinal_PSI2672.pdf">Orientacoes_ApresFinal_PSI2672.pdf</a>
+				</td>
+				<td>Orientações sobre a apresentação final de PSI2672</td>
+			</tr>
+			<tr>
+				<td>03.06.2011</td>
+				<td>-</td>
+				<td>
+					<a href="Extras_ProjFinal_em_classe.pdf">Extras_ProjFinal_em_classe.pdf</a>
+				</td>
+				<td>Extras do Proj Final comentados em classe, sobre acréscimos interessantes no relatório final que contam "pontinhos" adicionais</td>
+			</tr>
+			<tr>
+				<td>03.06.2011</td>
+				<td>-</td>
+				<td>
+					<a href="http://en.wikipedia.org/wiki/Arduino">Sobre o Arduino</a>
+					<br/><a href="http://www.amazon.com/Arduino-Duemilanove/dp/B001VK18HC/ref=sr_1_2?s=electronics&ie=UTF8&qid=1307124734&sr=1-2">Amazon - onde adquirir</a>
+				</td>
+				<td>Sugestão do <a href='http://www.lsi.usp.br/~kogler/'>Prof. Kögler</a> de HW para possível embarque de projetos PSI2672 - "Arduino"</td>
+			</tr>
+			<tr>
+				<td>03.06.2011</td>
+				<td>-</td>
+				<td>
+					<a href="http://www.lsi.usp.br/~leandro/projetos.html">http://www.lsi.usp.br/~leandro/projetos.html</a>
+				</td>
+				<td>Exemplos de Aplicação de RNAs em imagens médicas: Recuperação de Imagens por Conteúdo usando RNAs tipo SOM, e Classificação de Massas Suspeitas Mamografias usando RNAs tipo MLP.</td>
+			</tr>
+			<tr>
+				<td>06.06.2011</td>
+				<td>-</td>
+				<td>Palestra sobre PCA</td>
+				<td>Palestra de convidado: <a href="http://www.lsi.usp.br/~ekitani/">Prof. Edson Caoru Kitani</a>, Doutorando no grupo ICONE, falando-nos sobre PCA, na sla C1-10, na aula de 06 de junho. Edson Kitani realiza sua pós-graduação com o grupo ICONE e conversará conosco sobre o tema PCA, na nossa aula de PSI2672 desta segunda feira dia 6 de junho.</td>
+			</tr>
+			<tr>
+				<td>08.06.2011</td>
+				<td>-</td>
+				<td>
+					<a href="psi2672_2011_cro_apr.pdf">psi2672_2011_cro_apr.pdf</a>
+				</td>
+				<td>Cronograma das apresentações dos trabalhos finais</td>
+			</tr>
+			<tr>
+				<td>10.06.2011</td>
+				<td>-</td>
+				<td>
+					<a href="Sobre_algge_tecprocsinais_sistsensores.pdf">Sobre_algge_tecprocsinais_sistsensores.pdf</a>
+				</td>
+				<td>Sobre algoritmos genéticos + Técnicas de Proc. de Sinais para Sistemas Sensores (SVMs, Wavelets, etc)</td>
+			</tr>
+			<tr>
+				<td>10.06.2011</td>
+				<td>-</td>
+				<td>
+					<a href="TeseRevisaoFinal_Liselene_Borges.pdf">TeseRevisaoFinal_Liselene_Borges.pdf</a>
+				</td>
+				<td>Tese de doutorado de Liselene de Abreu Borges. Tema: Extração de parâmetros característicos para detecção acústica de vazamento de água</td>
+			</tr>
+			<tr>
+				<td>10.06.2011</td>
+				<td>-</td>
+				<td>
+					<a href="Mais_dicas_RelFinalProj.pdf">Mais_dicas_RelFinalProj.pdf</a>
+				</td>
+				<td>Mais dicas para o Relatório Final do Projeto de PSI2672</td>
+			</tr>
+			<tr>
+				<td>10.06.2011</td>
+				<td>-</td>
+				<td>
+					<a href="PCA_Junho_2011_ECK__EdsonKitani_PSI2672.pdf">PCA_Junho_2011_ECK__EdsonKitani_PSI2672.pdf</a>
+					<br/><a href="PCA_Demonstracao_EdsonKitani_PSI2672_2011.zip">PCA_Demonstracao_EdsonKitani_PSI2672_2011.zip</a>
+				</td>
+				<td>Material adicional disponibilizado pelo Prof. Edson Kitani, nosso palestrante PCA desta segunda feira em PSI2672</td>
+			</tr>
+			<tr>
+				<td>14.06.2011</td>
+				<td>-</td>
+				<td>
+					<a href="Conteudos_contorno_apresentacao_final.pdf">Conteudos_contorno_apresentacao_final.pdf</a>
+				</td>
+				<td>Conteúdos e contornos das Apresentações finais de PSI2672; Entregável por e-mail às 12hs da data da Apresentação (terça feira dia 14); Relatório final até 24 de junho 12 hs.</td>
+			</tr>
+			<tr>
+				<td>15.06.2011</td>
+				<td>-</td>
+				<td>
+					<a href="PSI2672_Apresentacao_PesquisasICONE_EmilioDelMoralHernandez_v2.pdf">PSI2672_Apresentacao_PesquisasICONE.pdf</a>
+				</td>
+				<td>Para aqueles que têm interesse em pesquisa em pós-graduação, I.C., TCC ou algum tipo de colaboração com nosso grupo, por favor mantenham contato. Ao lado, algum material sobre o grupo ICONE e sobre as nossas áreas, complementando exposição rápida (com pouco tempo no fim da aula) que fiz na quarta feira passada.</td>
+			</tr>
+			<tr>
+				<td>20.06.2011</td>
+				<td>-</td>
+				<td>
+					<a href="PSI2672_ProvaSub.pdf">PSI2672_ProvaSub.pdf</a>
+				</td>
+				<td>Prova Substitutiva de PSI2672 - para quem perdeu a nossa Prova (P2) - dia 21 de junho, 15:50, Sem Consulta.</td>
+			</tr>
+			<tr>
+				<td>22.06.2011</td>
+				<td>-</td>
+				<td>
+					<a href="Relatorio_Proj_Mudanca_Data.pdf">Relatorio_Proj_Mudanca_Data.pdf</a>
+				</td>
+				<td>Relatório de Projeto de PSI2672 - Data limite nesta sexta feira dia 24, 12 hs >> segunda feira dia 27, 12 hs.</td>
+			</tr>
+			<tr>
+				<td>04.07.2011</td>
+				<td>-</td>
+				<td>
+					<a href="NotasP2_PSI2672_2011.pdf">NotasP2_PSI2672_2011.pdf</a>
+				</td>
+				<td>Notas da P2 de PSI 2672 - Se precisar de revisão, e-escreva ao Prof. Emilio até 13 hs de 06/julho</td>
+			</tr>
+			<tr>
+				<td>11.07.2011</td>
+				<td>-</td>
+				<td>
+					<a href="PSI2672_2011_NotaFinal_DeSemestre.pdf">PSI2672_2011_NotaFinal_DeSemestre.pdf</a>
+				</td>
+				<td>Notas Finais de PSI 2672</td>
+			</tr>
+
+		</tbody></table>
+	</div>
+ 
+	<div class="files">
+		<h3>Séries e Rótulos</h3>
+		<p><span id="importante">Importante: </span> QUER SABER QUAL É SEU GRUPO? ... Os grupos são definidos de acordo com a seguinte regra: soma-se todos os números USP dos componentes do grupo, o digito menos significativo DO RESULTADO (o DÍGITO mais a direita) será o número do grupo.</p>
+		<div class="grupo">
+			<p>Grupo 1</p>
+			<a href="serie1.txt"><img src="serie1.jpg" text="Sinal"></a>
+			<a href="label1.txt"><img src="label1.jpg"></a>
+		</div>
+		<div class="grupo">
+			<p>Grupo 2</p>
+			<a href="serie2.txt"><img src="serie2.jpg"></a>
+			<a href="label2.txt"><img src="label2.jpg"></a>
+		</div>
+		<div class="grupo">
+			<p>Grupo 3</p>
+			<a href="serie3.txt"><img src="serie3.jpg"></a>
+			<a href="label3.txt"><img src="label3.jpg"></a>
+		</div>
+		<div class="grupo">
+			<p>Grupo 4</p>
+			<a href="serie4.txt"><img src="serie4.jpg"></a>
+			<a href="label4.txt"><img src="label4.jpg"></a>
+		</div>
+		<div class="grupo">
+			<p>Grupo 5</p>
+			<a href="serie5.txt"><img src="serie5.jpg"></a>
+			<a href="label5.txt"><img src="label5.jpg"></a>
+		</div>
+		<div class="grupo">
+			<p>Grupo 6</p>
+			<a href="serie6.txt"><img src="serie6.jpg"></a>
+			<a href="label6.txt"><img src="label6.jpg"></a>
+		</div>
+		<div class="grupo">
+			<p>Grupo 7</p>
+			<a href="serie7.txt"><img src="serie7.jpg"></a>
+			<a href="label7.txt"><img src="label7.jpg"></a>
+		</div>
+		<div class="grupo">
+			<p>Grupo 8</p>
+			<a href="serie8.txt"><img src="serie8.jpg"></a>
+			<a href="label8.txt"><img src="label8.jpg"></a>
+		</div>
+		<div class="grupo">
+			<p>Grupo 9</p>
+			<a href="serie9.txt"><img src="serie9.jpg"></a>
+			<a href="label9.txt"><img src="label9.jpg"></a>
+		</div>
+		<div class="grupo">
+			<p>Grupo 10</p>
+			<a href="serie10.txt"><img src="serie10.jpg"></a>
+			<a href="label10.txt"><img src="label10.jpg"></a>
+		</div>
+		<div style="clear: both;"></div>
+	</div>
+
+	<div class="files">
+		<h3>Notas</h3>
+		<iframe src='https://spreadsheets.google.com/spreadsheet/pub?hl=pt_br&key=0An_b6JXagKRjdDZvSmFqQ1BvdE5FczAyMG55WDAtMVE&output=html' frameborder=0 width='100%;' height='590px;'></iframe>
+	</div>
+
+	<div class="warning">
+		<h3>12.04 - Aviso Importante</h3>
+		Conforme combinado em classe, teremos nesta 3a feira, dia 12 de abril às 7:30, uma aula extra para os alunos de PSI-2672 de 4o ano e também para aqueles de 5o que não tenham cursado PSI-2533 (ou que estejam com saudades :-) da disciplina):
+		<ul>
+			<li>A aula ocorrerá na sala B2-09 (no mesmo corredor da sala de aula normal);</li>
+			<li>Se iniciará às 7:30 da terça-feira;</li>
+			<li>Versará sobre aprendizado em redes do tipo MLP;</li>
+			<li>É muito importante que antes da aula relembrem os seguintes conceitos de disciplinas de cálculo:
+			<ul>
+				<li>Gradiente e seu significado "geométrico" em funções escalares de múltiplas variáveis (inclusive mais de 3);</li>
+				<li>Derivada parcial;</li>
+				<li>Regra da derivada da cadeia, em cadeias de funções com vários estágios e também em contextos de derivadas parciais.</li>
+			</ul>
+			</li><li>O site do monitor (Humberto) indica alguns links para estudo inicial desses ítens; recomenda-se no entanto que faça tal estudo também com base nas suas notas e materiais das disciplinas de cálculo já cursadas.</li>
+		</ul>
+	</div>
+	</div>
+
+  </div>
+  
+  
+ 
+</body></html>

@@ -1,0 +1,6 @@
+# Crawl the CV; keep personal documents (diplomas, transcripts, letters) out of search results.
+User-agent: *
+Allow: /
+Disallow: /archive/documents/
+
+Sitemap: https://hsandmann.github.io/sitemap.xml

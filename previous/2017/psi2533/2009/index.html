@@ -1,0 +1,601 @@
+<html>
+  <head><meta name="robots" content="noindex, follow"><meta charset="utf-8">
+    <title>PSI2533 - Modelagem em Processamento de Sinais - edição 2009</title>
+	<style>
+	
+		#importante {
+			color: #DD3333;
+		}
+
+		#observacao {
+			color: #3333DD;
+		}
+		
+		body {
+			text-align: center;
+			font-family: Tahoma;
+			color: #454545;
+			background-color: #FFFFFF;
+		}
+		
+		a {
+			color: #0066BB;
+			text-decoration: none; 
+		}
+
+		a:hover {
+			color: #0033FF;
+		}
+		
+		.direita {
+			position: relative;
+			float: left;
+			width: 320px;
+			
+			margin: 0px;
+			padding: 0px;
+	
+			background-color: #FFFFFF;
+		}
+		
+		.aviso, .horario, .info {
+			margin: 5px 5px 10px 5px;
+			padding: 10px;
+
+			text-align: justify;
+			font-size: 12px;
+
+			border-width: 1px;
+			border-style: solid;
+		}
+		
+		.aviso {
+			border-color: #FFBBBB;
+			background-color: #FFEEEE;
+		}
+		
+		.horario {
+			border-color: #BBBBFF;
+			background-color: #EEEEFF;
+		}
+		
+		.info {
+			border-color: #BBCCBB;
+			background-color: #FFFFFF;
+		}
+
+		.aviso h3, .horario h3, .info h3 {
+			text-align: center;
+			font-size: 100%;
+
+			margin: 4px;
+			padding: 0px 0px 5px 0px;
+			
+			border-width: 1px;
+			border-style: none none solid none;
+		}
+
+		.aviso td, .horario td, .info td {
+			font-size: 78%;
+		}
+		
+		.horario h3 {
+			color: #6666FF;
+			border-color: #BBBBFF;
+		}
+
+		.info h3 {
+			color: #668866;
+			border-color: #BBCCBB;
+		}
+		
+		.aviso h3 {
+			color: #886666;
+			border-color: #CCBBBB;
+		}
+	
+		.esquerda {
+			position: relative;
+			float: left;
+			
+			width: 660px;
+			margin: 0px;
+			padding: 0px;
+			background-color: #FFFFFF;
+		}
+		
+		.conteudo {
+
+			margin: 5px 5px 10px 5px;
+			padding: 15px;
+
+			text-align: justify;
+			font-size: 12px;
+			
+			background-color: #FFFFFF;
+
+			border-width: 1px;
+			border-style: solid;
+			border-color: #CCCCCC;
+		}
+		
+		.conteudo h3 {
+			text-align: center;
+			font-size: 130%;
+			color: #AA0000;
+
+			margin: 5px;
+			padding: 0px 0px 5px 0px;
+			
+			border-style: none;
+		}
+
+		.conteudo td {
+			text-align: center;
+			font-size: 75%;
+		}
+
+		.conteudo table {
+			width: 605px;
+			padding: 0px 0px 40px 0px;
+		}
+		
+		.cronograma td {
+			border-width: 1px;
+			border-color: #BBBBBB;
+			border-style: none none solid none;
+		}
+		
+		.page {
+			width: 985px;
+			margin: 0px;
+			padding: 0px;
+			background-color: #FFFFFF;
+		}
+		
+		.serieimg {
+			width: 100px;
+			border-style: none;
+		}
+		
+		.titulo {
+			width: 100%;
+			border-style: none;
+			margin: 10px 0px 10px 0px;
+			background-color: #FFFFFF;
+		}
+
+		.titulo h4 {
+			font-size: 100%;
+			color: #AA0000;
+			padding: 4px;
+			margin: 0px;
+		}
+		
+		.titulo h5 {
+			font-size: 80%;
+			color: #333333;
+			padding: 0px;
+			margin: 0px;
+		}
+		
+		.notas td{
+			text-align: right;
+		}
+		
+		.tabelaatraso {
+			text-align: center;
+			width: 85%;
+		
+			border-style: solid;
+			border-width: 1px;
+			border-color: #DDDDDD;
+		}
+		
+	</style>
+  </head>
+
+  <body>
+  
+	<center>
+
+	<div class="page">
+
+	<div class="titulo">
+		<h4>PSI2533 - Modelagem em Processamento de Sinais</h4>
+		<h5>(2o módulo - redes neurais e aprendizado)</h5>
+		<h5>edição 2009</h5>
+	</div>
+		
+	<div class="esquerda">
+	
+		<div class="conteudo">
+			<h3>Cronograma</h3>
+			<div class="cronograma">
+			<table>
+				<tr><td style="border-style: none;"></td>
+					<td>Solicitado</td>
+					<td>Entrega</td>
+					<td>Referência</td>
+				</tr>
+				<tr>
+					<td>Início do Módulo</td>
+					<td colspan="2">01/04/2009</td>
+					<td>Professor Emílio</td>
+				</tr>
+				<tr>
+					<td>Exercício treino de derivadas</td>
+					<td>15/04/2009</td>
+					<td>sem prazo</td>
+					<td><a href="http://sandmann.sdf.org/psi2533/2009/Exerc%EDcioTreino_RNAs_2009.pdf">ExercícioTreino_RNAs_2009.pdf</a>
+				</tr>
+				<tr>
+					<td>Exercício de predição<br>(vale nota)</td>
+					<td>24/04/2009</td>
+					<td>14/05/2009<br> às 12h00</td>
+					<td><a href='http://sandmann.sdf.org/psi2533/2009/Exerc%EDcioEstima%E7%E3o_RNAs_2009.pdf'>ExercícioEstimação_RNAs_2009.pdf</a></td>
+				</tr>
+				<tr>
+					<td>PROVA 2</td>
+					<td colspan="2">13/05/2009</td>
+					<td><!--<a href="#notas">-->-<!--</a>--></td>
+				</tr>
+				<tr>
+					<td colspan="3">NOTAS</td>
+					<td><a href="psi2533_2009_3modulos.pdf">psi2533_2009_3modulos</a></td>
+				</tr>
+			</table>
+			</div>
+		</div>
+
+		<div class="conteudo">
+			<h3><a name="ex5"></a>Lista de Sinais para o Trabalho</h3>
+			<br>
+			Os sinais abaixo estão dividos por grupos de trabalho, a LISTA DE GRUPOS pode ser visualizada <a href="http://sandmann.sdf.org/psi2533/2009/listadegrupos.jpg">clicando aqui</a>.
+			<br>
+			<br>
+			<table>
+				<tr>
+					<td><a href="serie01.txt"><img src="serie01.jpg" class="serieimg"><br/>sinal 1 para o<br>grupo 1</a></td>
+					<td><a href="serie02.txt"><img src="serie02.jpg" class="serieimg"><br/>sinal 2 para o<br>grupo 2</a></td>
+					<td><a href="serie03.txt"><img src="serie03.jpg" class="serieimg"><br/>sinal 3 para o<br>grupo 3</a></td>
+					<td><a href="serie04.txt"><img src="serie04.jpg" class="serieimg"><br/>sinal 4 para o<br>grupo 4</a></td>
+					<td><a href="serie05.txt"><img src="serie05.jpg" class="serieimg"><br/>sinal 5 para o<br>grupo 5</a></td>
+				</tr>
+				<tr>
+					<td><a href="serie06.txt"><img src="serie06.jpg" class="serieimg"><br/>sinal 6 para o<br>grupo 6</a></td>
+					<td><a href="serie07.txt"><img src="serie07.jpg" class="serieimg"><br/>sinal 7 para o<br>grupo 7</a></td>
+					<td><a href="serie08.txt"><img src="serie08.jpg" class="serieimg"><br/>sinal 8 para o<br>grupo 8</a></td>
+					<td><a href="serie09.txt"><img src="serie09.jpg" class="serieimg"><br/>sinal 9 para o<br>grupo 9</a></td>
+					<td><a href="serie10.txt"><img src="serie10.jpg" class="serieimg"><br/>sinal 10 para o<br>grupo 10</a></td>
+				</tr>
+			</table>
+		</div>
+
+<!--
+		<div class="conteudo">
+			<h3><a name="ex5"></a>Exercício 5 - predição de séries temporais</h3>
+			<center><a href="./TerceiroExercício_RNAs_2008.pdf">TerceiroExercício_RNAs_2008.pdf</a></center>
+			
+			<br/>
+			<br/>
+			<b>
+			<span id="importante">ERRATA:</span> na solução foi utilizado como um dos critérios de parada a raiz quadrada do erro quadrático médio de 0,05 (equação 5.1) sobre o conjunto de treinamento, ou seja, o erro quadrático médio (Eqm) de 0,0025 (equação 5.2). Se o exercício já foi feito com Eqm=0,05 de erro quadrático médio, é importante notar que a série estimada, usando Eqm=0,0025 (conforme esta errata) ficará muito mais próxima da série original.
+			</b>
+			<br/>
+			<br/><center><img src="./RMS.gif">(5.1)</center>
+			<br/><center><img src="./Eqm.gif">(5.2)</center>
+			<br/>
+			<br/>
+			Sinais foram adquiridos de uma fonte geradora desconhecida. É desejado construir um estimador neural capaz de predizer os valores do sinal no instante posterior, isto é, dado o valor do sinal nos instantes <b>n</b> e anteriores (ex.: n-1, n-2, ...</b>), o estimador deve dizer o valor para o instante <b>n+1</b>. <span style="text-decoration: line-through; color: #AA0000;">O erro quadrático médio tolerável para o preditor é de <b>5%</b> sobre o conjunto de treinamento.</span> <span style="color: #008800;"><b>ERRATA:</b> A raiz quadrada do erro quadrático médio (equação 5.1) tolerável para o preditor é de <b>0,05</b> sobre o conjunto de treinamento.</span> Para resolver esse problema, é proposto o uso de uma rede neural capaz de estimar funções.
+			<br>
+			<br>
+			Dica, o exercício já foi resolvido pelo monitor, com sucesso, utilizando a seguinte configuração:
+			<ul>
+				<li>uma rede neural do tipo MLP com 2 camadas;
+				<li>1 camada oculta com 25 neurônios;
+				<li>15 dimensões de entrada (não implica que a ordem do gerador seja 15, pois é desconhecida);
+				<li>uma função sigmóide do tipo tangente hiperbólica;
+				<li><span style="text-decoration: line-through; color: #AA0000;">erro quadrático médio foi inferior a 5% sobre o conjunto de treinamento;</span>
+				<br/><span style="color: #008800;"><i>novo texto (vide comentários da errata):</span> na solução foi utilizado como um dos critérios de parada a raiz quadrada do erro quadrático médio de 0,05 (equação 5.1) sobre o conjunto de treinamento, ou seja, o erro quadrático médio (Eqm) de 0,0025 (equação 5.2). Se o exercício já foi feito com Eqm=0,05 de erro quadrático médio, é importante notar que a série estimada, usando Eqm=0,0025 (conforme esta errata) ficará muito mais próxima da série original.</i>
+				<li>número máximo de 100.000 iterações para aprendizado (apenas sugestão, para não gastar muito tempo);
+				<li>taxa de aprendizagem (eta) de 0,9;
+				<li>atualização dos pesos em batelada (em <i>batch</i>);
+				<li><span id="importante">normalização</span> dos valores de entrada e saída. Para isso foi observado que todos os sinais adquiridos estão no domínio [5; 115], logo, foi utilizado o conjunto de [0; 120] como domínio da função para normalização no conjunto [-0,5; +0,5]. Note que esta normalização sugerida é adequada a todos os sinais adquiridos, e esta levando em conta que todos os sinais são provenientes de uma mesma fonte geradora;
+				<li>inicialização dos pesos de forma aleatória, no conjunto [-0,5; 0,5];
+				<li>conjunto de treinamento com 7.000 exemplares, sendo cada exemplar uma janela formada por 15 amostras de entrada e 1 de saída. Por exemplo, entrada: <b>n, n-1, n-2, ..., n-14</b>; saída: <b>n+1</b>;
+				<li>conjunto de testes com os 3.000 exemplares restantes, sendo organizados da mesma forma que o conjunto de treinamento.
+			</ul>
+			É pedido um relatório de ensaios com os seguintes conteúdo:
+			<ul>
+				<li>um gráfico com a evolução do erro quadrático médio (Eqm) e do erro quadrático máximo, com o decorrer da adaptação (erros avaliados sobre o conjunto de treinamento);
+				<li>o erro quadrático médio (Eqm) e o erro quadrático máximo do conjunto de testes (após encerramento do aprendizado) ESTES INDICAM A QUALIDADE DO SEU PREDITOR!!!;
+				<li>um gráfico com um trecho da série original contrastada com o trecho correspondente da série prevista (por volta de 100 amostras, para inspeção visual, indicando a qualidade do preditor);
+				<li>um arquivo no formato matlab (.m) com as duas variáveis <b>V</b> e <b>W</b> das matrizes de pesos da rede. Não se esqueça que as matrizes devem conter os pesos dos <i>bias</i>/polarização também;
+				<li>referências bibliográficas e fontes de código, caso se aplique;
+				<li>código do programa em anexo.
+			</ul>
+			<br>
+			REFLETIR E RESPONDER A PERGUNTA: <span style="text-decoration: line-through; color: #AA0000;">o que você acha que deveria ser modificado na rede neural para atingir erros de aproximação menores que 1% em lugar dos 5% sugeridos neste exercício?</span> <span style="color: #008800;"><b>ERRATA:</b> o que você acha que deveria ser modificado na rede neural para atingir raíz de erro quadrático médio sobre a aproximação menor que 0,01 em lugar dos 0,05 sugeridos neste exercício?</span>
+			<br>
+			<br>
+			<span id="importante">DICA QUE VALE TEMPO/DICAS DE METODOLOGIA:</span> utilize números de neurônios e amostras baixos, assim como um número de erro grande no início de seus ensaios com a rede. Desse modo, irá garantir que o algoritmo funciona sem grandes esforços computacionais antes de fazer testes com a configuração mais complexa sugerida acima.
+			<br>
+			<br>
+			<span id="observacao">Observação:</span> a definição destes parâmetros sugeridos não implica que o aluno tenha que utilizá-los, estes foram obtidos por experimentação e forneceram bons resultados. Quando forem obtidos resultados considerados satisfatórios, o aluno pode alterar a configuração para obter uma otimização em seu sistema, por exemplo, aumentando ou diminuindo os graus de liberdade da rede neural.
+			<br>
+			<br><b>O Exercício deve ser resolvido em grupos de 3 (três) participantes.</b> Consulte o monitor em caso de dúvidas ou problemas na solução do exercício, <b>não deixe para última hora</b>. Sala A2-49 (ramal 9740), terças das 10h00 às 11h00 e quintas das 14h30 às 15h30.
+			<br>
+			<br>
+			Os sinais abaixo estão dividos por grupos de trabalho, a LISTA DE GRUPOS pode ser visualizada <a href="http://sandmann.sdf.org/psi2533/2009/listadegrupos.jpg">clicando aqui</a>.
+			<br>
+			<br>
+			<table>
+				<tr>
+					<td><a href="./serie1.txt"><img src="./serie1.jpg" class="serieimg"><br/>sinal para o<br>grupo 1</a></td>
+					<td><a href="./serie2.txt"><img src="./serie2.jpg" class="serieimg"><br/>sinal para o<br>grupo 2</a></td>
+					<td><a href="./serie3.txt"><img src="./serie3.jpg" class="serieimg"><br/>sinal para o<br>grupo 3</a></td>
+					<td><a href="./serie4.txt"><img src="./serie4.jpg" class="serieimg"><br/>sinal para o<br>grupo 4</a></td>
+					<td><a href="./serie5.txt"><img src="./serie5.jpg" class="serieimg"><br/>sinal para o<br>grupo 5</a></td>
+				</tr>
+				<tr>
+					<td><a href="./serie6.txt"><img src="./serie6.jpg" class="serieimg"><br/>sinal para o<br>grupo 6</a></td>
+					<td><a href="./serie7.txt"><img src="./serie7.jpg" class="serieimg"><br/>sinal para o<br>grupo 7</a></td>
+					<td><a href="./serie8.txt"><img src="./serie8.jpg" class="serieimg"><br/>sinal para o<br>grupo 8</a></td>
+					<td><a href="./serie9.txt"><img src="./serie9.jpg" class="serieimg"><br/>sinal para o<br>grupo 9</a></td>
+					<td><a href="./serie10.txt"><img src="./serie10.jpg" class="serieimg"><br/>sinal para o<br>grupo 10</a></td>
+				</tr>
+			</table>
+		</div>
+-->
+<!--
+		<div class="conteudo">
+			<h3><a name="ex6"></a>Exercício 6 - classificação de padrões</h3>
+			<center><a href="./QuartoExercício_RNAs_2008.pdf">QuartoExercício_RNAs_2008.pdf</a></center>
+			<br/>
+			<br/>
+			Descrição do Contexto:
+			<br/>
+			<br/>
+			Imagine que a mesma série usada no exercício 5 corresponda a amostras de um sinal cerebral, de uma região de controle motor, e que ela é captada por um sensor não invasivo, exterior ao crânio. Nessas condições, o sinal captado apenas reflete muito confusamente os sinais elétricos que representam os movimentos desejados pelo paciente (imagine uma pessoa que necessita de um braço protético, por exemplo). Digamos que, para alguns movimentos, como fechar a mão e dobrar o braço, outros engenheiros / pesquisadores já conseguiram modelar o sistema cerebral e de sensoriamento adequadamente, após extensa observação das séries temporais, e fórmulas empíricas do tipo abaixo foram obtidas (“sacadas”) com sucesso, para esses dois movimentos específicos, envolvendo as amostras do sinal captado pelo sensor não invasivo, e permitindo separar (reconhecer) os cenários / padrões que indicam o desejo desses dois movimentos:
+			<br/>
+			<br/>
+			Padrão de sinais que indicam desejo de fechar a mão (movimento 1):
+			<ul>
+				<li>se {[A(n-3)/A(n-7) - sin(A(n-1))]>2 E a média de valores da últimas 12 amostras for positiva}, a série temporal indica que o individuo quer fechar a mão;
+				<li>se {[ln(A(n-3)/A(n-7)) - A(n-1)]<=2*A(n-8) OU Média de valores da últimas 12 amostras for negativa}, a série temporal indica que o individuo não tem intenção de fechar a mão.
+			</ul>
+			Padrão de sinais que indicam desejo de dobrar o braço (movimento 2):
+			<ul>
+				<li>se {[A(n-2)*A(n+7) + A(n-1)]>21 OU a série for monotonicamente crescente por cinco amostras OU há queda maior de 10% em entre duas amostras consecutivas na janela [n-4 a n-1]}, a série temporal indica que o individuo quer dobrar o braço;
+				<li>se {[A(n-2)*A(n+7) + A(n-1)<=21] E a série não for monotonicamente crescente por cinco amostras NEM houver queda maior de 10% em entre duas amostras consecutivas na janela [n-4 a n-1]}, a série temporal indica que o individuo não tem intenção de dobrar o braço. 
+			</ul>
+			Podemos dizer que as fórmulas acima (hipotéticas, e elaboradas para efeito de exemplificação apenas) viabilizam classificações binárias automáticas (feitas pelo computador) permitindo detectar aqueles padrões cerebrais que indicam intenções de interesse, e que tal procedimento se enquadra no que se conhece como de reconhecimento automático de padrões.
+			<br/>
+			<br/>
+			O Desafio para um projeto com RNAs como reconhecedor de padrões: “movimento 3”
+			<br/>
+			<br/>
+			É feita uma encomenda onde é desejado expandir a lista de intenções de movimentos detectáveis pelo sistema de monitoração dos sinais cerebrais e correspondente manipulação da prótese de braço. A idéia é utilizar uma rede neural para realizar uma terceira tarefa de reconhecimento de padrões (movimento 3), similar as duas acima listadas, mas ainda não equacionada adequadamente.
+			<br/>
+			<br/>
+			Deseja-se utilizar a rede neural como um reconhecedor daqueles padrões na série temporal, a mesma do exercício 5, que indicam o desejo de mover o polegar (movimento 3). Para tal, uma série de experimentos envolvendo seções com o paciente, em que vários movimentos são imaginados por esse individuo, inclusive movimentos de polegar, mas não exclusivamente, e em que há a verbalização por ele/ela, relatando quais movimentos correspondem a movimentos de polegar e quais movimentos não correspondem a movimentos do polegar. Dessa forma, podemos ter uma base de dados (conjunto de treinamento) com vários trechos de séries temporais acompanhados das diferenciações entre movimentação do polegar e não movimentação polegar, devidamente registradas, com base nas verbalizações feitas pelo individuo.
+			<br/>
+			<br/>
+			As verbalizações foram rotuladas na forma de uma série temporal binária:  ao se mover o polegar, temos um rótulo +1; caso seja outro movimento qualquer ou ausência de movimento, -1. Tal série de rótulos  acompanha a série temporal do sinal do sensor. 
+			<br/>
+			<br/>
+			Assumindo uma janela de tempo envolvendo as últimas 15 amostras de tempo como sendo as mais importantes para a classificação / detecção do movimento desejado pelo indivíduo, construa pares de treinamento do tipo (15 amostras consecutivas; controle do polegar mecânico do tipo mova / não mova) e treine uma rede neural para realizar tal controle a partir do sinal cerebral.
+			<br/>
+			<br/>
+			Dica: o exercício já foi resolvido pelo monitor, com sucesso, utilizando a seguinte configuração: 
+			<ul>
+				<li>uma rede neural do tipo MLP com 2 camadas;
+				<li>1 camada oculta com 20 neurônios;
+				<li>15 dimensões de entrada, pois 15 foi citado como o número de amostras mais importantes para classificação; 
+				<li>uma função sigmóide do tipo tangente hiperbólica;
+				<li>raiz quadrada do erro quadrático médio foi inferior a 0,03 sobre o conjunto de treinamento;
+				<li>número máximo de 25.000 iterações para aprendizado (apenas sugestão, para não gastar muito tempo);
+				<li>taxa de aprendizagem (eta) de 0,7;
+				<li>atualização dos pesos em batelada (em <i>batch</i>, ou lote);
+				<li><span id="importante">normalização</span> dos valores de entrada e saída. Para isso foi observado que todos os sinais adquiridos estão no domínio [5; 115], logo, foi utilizado o conjunto de [0; 120] como domínio da função para normalização no conjunto [-0,5; +0,5]. Note que esta normalização sugerida é adequada a todos os sinais adquiridos, e esta levando em conta que todos os sinais são provenientes de uma mesma fonte geradora;
+				<li>inicialização dos pesos de forma aleatória, no conjunto [-0,5; 0,5];
+				<li>conjunto de treinamento com 444 exemplares, sendo cada exemplar uma janela formada por 15 amostras de entrada. Por exemplo, entrada: <b>n, n-1, n-2, ..., n-14</b>. Já o valor de saída, é um valor de classificação binária e está no arquivo de rótulo correspondente à série temporal do grupo. Para facilitar o processo de classificação, os sinais adquiridos e respostas dos estímulos do experimento, já foram retirados problemas de atrasos e de defasagens entre sinal e verbalização de rótulo.Logo, o conjunto de amostras de n=1 até n=15, corresponde, no arquivo de rótulos, à saída da faixa n=1 até n=15, sendo +1 ou -1, por exemplo. Assim, ao se escolher uma faixa de exemplo como entrada,  deve-se assumir apenas um valor da saída na série de rótulos, +1 ou -1, dependendo do que foi rotulado naquele intervalo;
+				<li>conjunto de testes com os 222 exemplares restantes, sendo organizados da mesma forma que o conjunto de treinamento. Note que existem rótulos com o valor 0 ao final da série, isso ocorre porque a aquisição do sinal foi interrompida sem que fosse terminado o ciclo do sinal, logo, foram descartados os trechos finais do sinal adquirido;
+			</ul>
+			Com esta configuração foi obtido, pelo monitor, o seguinte resumo de resultados:
+			<ul>
+				<li>Erro de treinamento com a raiz do erro quadrático médio menor que 0,03;
+				<li>Acerto de classificação sobre o conjunto de treinamento em <span id="importante">100%</span>; uauuuu!!!
+				<li>Acerto de classificação sobre o conjunto de teste em valor superior a <span id="importante">98%</span>.
+			</ul>
+			É pedido um relatório de ensaios com os seguintes conteúdos:
+			<ul>
+				<li>um gráfico com a evolução do erro quadrático médio (Eqm) e do erro quadrático máximo, com o decorrer da adaptação (erros avaliados sobre o conjunto de treinamento);
+				<li>uma matriz de confusão sobre a classificação do conjunto de treinamento;
+				<li>uma matriz de confusão sobre a classificação do conjunto de testes; ESTE INDICA A QUALIDADE DO SEU CLASSIFICADOR!!!; 
+				<li>um arquivo no formato matlab (.m) com as duas variáveis <b>V</b> e <b>W</b> das matrizes de pesos da rede. Não se esqueça que as matrizes devem conter os pesos dos <i>bias</i>/polarização também;
+				<li>referências bibliográficas e fontes de código, caso se aplique;
+				<li>código do programa em anexo;
+				<li>espera-se que os resultados obtidos sejam compatíveis com os resultados já obtidos experimentalmente pelo monitor.
+			</ul>
+			<br>
+			REFLETIR E RESPONDER A PERGUNTA: como é possível obter valores de taxas de acerto de 100%, quando a raiz do erro quadrático médio usado durante o treinamento como critério de parada foi de 0,03? (isto não levaria a expectativas de 97% de taxa de erro?)
+			<br>
+			<br>
+			<span id="importante">DICA QUE VALE TEMPO/DICAS DE METODOLOGIA:</span> utilize números de neurônios e amostras baixos, assim como um número de erro grande no início de seus ensaios com a rede. Desse modo, irá garantir que o algoritmo funciona sem grandes esforços computacionais antes de fazer testes com a configuração mais complexa sugerida acima.
+			<br>
+			<br>
+			<span id="observacao">Observação:</span> a definição destes parâmetros sugeridos não implica que o aluno tenha que utilizá-los, estes foram obtidos por experimentação e forneceram bons resultados. Quando forem obtidos resultados considerados satisfatórios, o aluno pode alterar a configuração para obter uma otimização em seu sistema, por exemplo, aumentando ou diminuindo os graus de liberdade da rede neural.
+			<br>
+			<br><b>O Exercício deve ser resolvido em grupos de 3 (três) participantes.</b> Consulte o monitor em caso de dúvidas ou problemas na solução do exercício, <b>não deixe para última hora</b>. Sala A2-49 (ramal 9740), terças das 10h00 às 11h00 e quintas das 14h30 às 15h30.
+			<br>
+			<br>
+			Os rótulos abaixo estão divididos pelos grupos de trabalho e estão associados aos sinais do exercício 5, a LISTA DE GRUPOS pode ser visualizada <a href="http://sandmann.sdf.org/psi2533/2009/listadegrupos.jpg">clicando aqui</a>.
+			<br>
+			<br>
+			<table>
+				<tr>
+					<td><a href="./label1.txt"><img src="./label1.jpg" class="serieimg"><br/>rótulos para o<br>grupo 1</a></td>
+					<td><a href="./label2.txt"><img src="./label2.jpg" class="serieimg"><br/>rótulos para o<br>grupo 2</a></td>
+					<td><a href="./label3.txt"><img src="./label3.jpg" class="serieimg"><br/>rótulos para o<br>grupo 3</a></td>
+					<td><a href="./label4.txt"><img src="./label4.jpg" class="serieimg"><br/>rótulos para o<br>grupo 4</a></td>
+					<td><a href="./label5.txt"><img src="./label5.jpg" class="serieimg"><br/>rótulos para o<br>grupo 5</a></td>
+				</tr>
+				<tr>
+					<td><a href="./label6.txt"><img src="./label6.jpg" class="serieimg"><br/>rótulos para o<br>grupo 6</a></td>
+					<td><a href="./label7.txt"><img src="./label7.jpg" class="serieimg"><br/>rótulos para o<br>grupo 7</a></td>
+					<td><a href="./label8.txt"><img src="./label8.jpg" class="serieimg"><br/>rótulos para o<br>grupo 8</a></td>
+					<td><a href="./label9.txt"><img src="./label9.jpg" class="serieimg"><br/>rótulos para o<br>grupo 9</a></td>
+					<td><a href="./label10.txt"><img src="./label10.jpg" class="serieimg"><br/>rótulos para o<br>grupo 10</a></td>
+				</tr>
+			</table>
+
+		</div>
+-->
+
+		<div class="conteudo">
+			<a name="notas"></a><h3>Notas</h3>
+			<div class="notas">
+			<table>
+				<tr><td colspan="2"></td>
+					<td colspan="3" style="text-align: center; border-width: 0px 1px 1px 0px; border-style: solid; border-color: #9A9A9A;">Exercício</td>
+					<td></td>
+				</tr>
+				<tr><td style="text-align: center;">Grupo</td>
+					<td style="text-align: left;">Nomes</td>
+					<td style="text-align: center;">Recebido</td>
+					<td style="text-align: center;">Ponto máximo</td>
+					<td style="text-align: center;">Nota</td>
+				</tr>
+				<tr style="line-height: 1px;"><td colspan="5" style="border-width: 1px 0px 0px 0px; border-style: solid; border-color: #9A9A9A;">&nbsp;</td></tr>
+
+				<tr><td style="text-align: center;">1</td>
+					<td style="text-align: left;">Marcelo, Robson e Ricardo</td>
+					<td style="text-align: center;">14/05/2009 até as 12h00</td>
+					<td style="text-align: center;">10</td>
+					<td style="text-align: center;">-</td>
+				</tr>
+				<tr><td style="text-align: center;">2</td>
+					<td style="text-align: left;">Rhemzo, Sheyan e Thiago</td>
+					<td style="text-align: center;">14/05/2009 até as 12h00</td>
+					<td style="text-align: center;">10</td>
+					<td style="text-align: center;">-</td>
+				</tr>
+				<tr><td style="text-align: center;">3</td>
+					<td style="text-align: left;">Adevair, André e Paulo</td>
+					<td style="text-align: center;">14/05/2009 até as 12h00</td>
+					<td style="text-align: center;">10</td>
+					<td style="text-align: center;">-</td>
+				</tr>
+				<tr><td style="text-align: center;">4</td>
+					<td style="text-align: left;">Leonardo, Ricardo e Vinicius</td>
+					<td style="text-align: center;">14/05/2009 até as 12h00</td>
+					<td style="text-align: center;">10</td>
+					<td style="text-align: center;">-</td>
+				</tr>
+				<tr><td style="text-align: center;">5</td>
+					<td style="text-align: left;">Bruno, Marcelo e Márcio</td>
+					<td style="text-align: center;">14/05/2009 até as 12h00</td>
+					<td style="text-align: center;">10</td>
+					<td style="text-align: center;">-</td>
+				</tr>
+				<tr><td style="text-align: center;">6</td>
+					<td style="text-align: left;">Cesar e Daniel</td>
+					<td style="text-align: center;">15/05/2009 até as 12h00</td>
+					<td style="text-align: center;">9</td>
+					<td style="text-align: center;">-</td>
+				</tr>
+				<tr><td style="text-align: center;">7</td>
+					<td style="text-align: left;">Fábio, Thiago e Tiago</td>
+					<td style="text-align: center;">15/05/2009 até as 12h00</td>
+					<td style="text-align: center;">9</td>
+					<td style="text-align: center;">-</td>
+				</tr>
+				<tr><td style="text-align: center;">8</td>
+					<td style="text-align: left;">Christian, Murilo e Ralph</td>
+					<td style="text-align: center;">14/05/2009 até as 12h00</td>
+					<td style="text-align: center;">10</td>
+					<td style="text-align: center;">-</td>
+				</tr>
+				<tr><td style="text-align: center;">9</td>
+					<td style="text-align: left;">André, Fábio e Fernando</td>
+					<td style="text-align: center;">14/05/2009 até as 12h00</td>
+					<td style="text-align: center;">10</td>
+					<td style="text-align: center;">-</td>
+				</tr>
+			</table>
+			</div>
+		</div>
+		
+	</div>
+	<div class="direita">
+	
+	<div class="horario">
+			<h3>Esclarecimento de dúvidas</h3>
+			<table>
+				<tr><td width="60px">Monitor</td><td><a href="http://www.lsi.usp.br/~sandmann/">Humberto Sandmann</a></td>
+				<tr><td>E-mail</td><td><a href="mailto:hsandmann@ieee.org">hsandmann@ieee.org</a></td></tr>
+			</table>
+			<h3></h3>
+			<table>
+				<tr><td width="60px" valign="top">Local</td>
+					<td>sala <b>A2-49</b>, ao chegar na porta de vidro ligue para o ramal <b>9740</b></td></tr>
+				<tr><td>Horário</td><td>Quinta-feira, das 9h30 às 10h30</td></tr>
+			</table>
+			<h3></h3>
+			<span id="importante">Obs.:</span> é gentileza enviar e-mail agendando, obrigado!
+		</div>	
+
+		<div class="info">
+			<h3>Sobre a entrega do exercício</h3>
+			O exercício deverá ser entregue até as 12h00 do dia 14 de Maio de 2009 na SECRETARIA do PSI, para Sr. Nelson Bernardo. Não serão aceitos exercícios entregues “no corredor”, na sala do professor, ou através do monitor da disciplina. A implicação de um ou mais dias de atraso está registrada na tabela abaixo, que apresenta a nota máxima do exercício de acordo com a data de entrega.
+			<br>
+			<br>
+			<table class='tabelaatraso' align='center'>
+				<tr><td><h3>Dia de Maio / 2009</h3></td><td><h3>Pontos</h3></td></tr>
+				<tr><td><span id="importante"><b>14, até as 12h00</b></span></td><td>10 pontos</td></tr>
+				<tr><td>14, após as 12h00</td><td>9 pontos</td></tr>
+				<tr><td>15, após as 12h00</td><td>8 pontos</td></tr>
+				<tr><td>18, após as 12h00</td><td>6 pontos</td></tr>
+				<tr><td>19, após as 12h00</td><td>4 pontos</td></tr>
+				<tr><td>20, após as 12h00</td><td>2 pontos</td></tr>
+				<tr><td>21, após as 12h00</td><td>sem nota</td></tr>
+			</table>
+			<br>
+			Na capa do relatório técnico, identificar claramente o professor, a disciplina, a data do enunciado e a data e hora que está sendo feita a entrega.
+		</div>
+
+		<div class="info">
+			<h3>Lista de grupos</h3>
+			Os alunos deveram montar grupos de 2 ou 3 pessoas, abaixo está disponível a lista de grupos já montada, procure o Sr. Nelson Bernardo na SECRETARIA do PSI para colocar seu nome na lista.
+			<a href="http://sandmann.sdf.org/psi2533/2009/listadegrupos.jpg">[lista de grupos no site original]
+			clique na imagem para ampliar</a>
+		</div>
+
+		<div class="info">
+			<h3>Requisitos e dicas<br>
+				<small>(a lista cresce ao longo do semestre)</small>
+			</h3>
+			Esse módulo da disciplina tem como requisito alguns conhecimentos já vistos durante o curso de graduação, logo, vale a pena relembrar os seguintes tópicos para não ter problemas nos exercícios (e nem na prova):
+			<ul>
+				<li>Cybenko e Komolgorov
+				<br>(<a href="http://www.lsi.usp.br/icone/psi2533/">mais</a> - clique em bibliografia)
+				<li>Conceito de gradiente (<a href="http://pt.wikipedia.org/wiki/Gradiente">mais</a>)</li>
+				<li>Derivada parcial (<a href="http://en.wikipedia.org/wiki/Partial_derivative">mais</a>)</li>
+				<li>Regra da cadeia (<a href="http://pt.wikipedia.org/wiki/Regra_da_cadeia">mais</a>)</li>
+			</ul>
+			<span id="importante">Obs.:</span> os <i>links</i> para os sítios citados são referências rápidas para relembrar conceitos e pontos básicos, porém não se predispõem a abordar todo o assunto. Estes também são de conteúdo livre, logo, é bom verificar em outros materiais, como em livros clássicos da área.
+		</div>
+
+		<div class="aviso">
+			<span id="importante">Importante:</span> esse módulo da disciplina PSI2533 é oferecido pelo Prof. Dr. Emilio Del Moral Hernandez (<a href='http://www.lsi.usp.br/~emilio/'>http://www.lsi.usp.br/~emilio/</a>). Esta página é mantida pelo monitor da disciplina, Humberto Sandmann (<a href='http://www.lsi.usp.br/~sandmann/'>http://www.lsi.usp.br/~sandmann/</a>). Aqui é possível encontrar material de apoio para a disciplina, porém para maiores informações consulte sempre a página do professor, assim como o material disponível no sítio do grupo de pesquisa ICONE (<a href='http://www.lsi.usp.br/icone/'>http://www.lsi.usp.br/icone/</a>).
+		</div>
+
+	</div>
+
+	</div>
+	
+  </body>
+  
+ </html>

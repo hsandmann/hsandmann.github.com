@@ -1,0 +1,748 @@
+/* ----------------------------------------------------------------------------
+   CV page design tokens. One accent color, everything else from the theme's
+   foreground shades, so light and dark schemes stay consistent. Declared on the
+   element carrying the scheme (not only :root) so the theme variables they reference
+   resolve to the active scheme's values.
+   ---------------------------------------------------------------------------- */
+:root,
+[data-md-color-scheme] {
+    --cv-accent: #2f54d1;
+    --cv-accent-fg: #ffffff;
+    --cv-accent-soft: rgba(47, 84, 209, 0.08);
+    --cv-muted: var(--md-default-fg-color--light);
+    --cv-line: var(--md-default-fg-color--lightest);
+    --cv-chip: rgba(0, 0, 0, 0.045);
+    --cv-radius: 14px;
+}
+
+[data-md-color-scheme="slate"] {
+    --cv-accent: #8fa6ff;
+    --cv-accent-fg: #0d1330;
+    --cv-accent-soft: rgba(143, 166, 255, 0.12);
+    --cv-chip: rgba(255, 255, 255, 0.07);
+}
+
+/* Larger, more readable base text than the theme default */
+.md-typeset {
+    font-size: 0.9rem;
+}
+
+/* Section headings: quiet rule, generous space above */
+.md-typeset h2 {
+    margin-top: 2.6em;
+    padding-bottom: 0.35em;
+    border-bottom: 1px solid var(--cv-line);
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.md-typeset h2,
+.md-typeset h3 {
+    break-after: avoid;
+}
+
+/* The CV page carries no edit/view buttons */
+.md-content__button {
+    display: none;
+}
+
+/* Keep the header download buttons the same color as the other header icons */
+.md-header__button.md-icon {
+    color: inherit;
+}
+
+/* Quiet links inside the CV components: no underline until hovered */
+.md-typeset .cv-entry a,
+.md-typeset .cv-rows a,
+.md-typeset .cv-pubs a,
+.md-typeset .cv-note a,
+.md-typeset .cv-social a,
+.md-typeset .cv-links a {
+    text-decoration: none;
+}
+
+.md-typeset .cv-entry a:hover,
+.md-typeset .cv-rows a:hover,
+.md-typeset .cv-pubs a:hover,
+.md-typeset .cv-note a:hover {
+    text-decoration: underline;
+}
+
+.md-typeset a.cv-course,
+.md-typeset .cv-org a,
+.md-typeset .cv-org strong {
+    color: var(--md-default-fg-color);
+    font-weight: 600;
+}
+
+.md-typeset .cv-course__topics a,
+.md-typeset .cv-course__terms a {
+    color: inherit;
+    text-decoration: underline dotted;
+}
+
+/* Inline site favicon used as a link icon (graphole.com), rendered as a
+   currentColor mask so it matches the other profile icons in light and dark. */
+.md-typeset .favicon-inline {
+    display: inline-flex;
+    height: 1.125em;
+    width: 1.125em;
+    vertical-align: text-top;
+    background-color: currentColor;
+    -webkit-mask: url(../assets/img/graphole.png) center / contain no-repeat;
+    mask: url(../assets/img/graphole.png) center / contain no-repeat;
+}
+
+/* ----------------------------------------------------------------------------
+   Hero: photo, name, headline, pitch, facts, calls to action, profiles
+   ---------------------------------------------------------------------------- */
+.cv-hero {
+    display: grid;
+    grid-template-columns: 9.5rem 1fr;
+    gap: 2.2rem;
+    align-items: center;
+    margin: 0.8rem 0 2.2rem;
+}
+
+.md-typeset .cv-hero > p {
+    margin: 0;
+}
+
+.md-typeset .cv-hero__photo {
+    display: block;
+    width: 9.5rem;
+    height: 9.5rem;
+    object-fit: cover;
+    object-position: 50% 22%;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px var(--md-default-bg-color), 0 0 0 5px var(--cv-line);
+}
+
+.md-typeset .cv-hero h1 {
+    margin: 0 0 0.15em;
+    font-size: 2.3rem;
+    font-weight: 750;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    color: var(--md-default-fg-color);
+}
+
+.md-typeset .cv-hero__headline {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--cv-accent);
+}
+
+.md-typeset .cv-hero__pitch {
+    max-width: 36em;
+    margin: 0.7em 0 0;
+    color: var(--cv-muted);
+}
+
+.md-typeset .cv-meta p {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem 1.3rem;
+    margin: 0.9em 0 0;
+    font-size: 0.72rem;
+    color: var(--cv-muted);
+}
+
+.md-typeset .cv-meta .twemoji {
+    color: var(--cv-muted);
+}
+
+.md-typeset .cv-cta p {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 1.3em 0 0;
+}
+
+.md-typeset a.cv-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45em;
+    padding: 0.6em 1.15em;
+    border: 1px solid var(--cv-line);
+    border-radius: 999px;
+    font-size: 0.74rem;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--md-default-fg-color);
+    text-decoration: none;
+    background: transparent;
+    transition: border-color 125ms, background-color 125ms, color 125ms, transform 125ms;
+}
+
+.md-typeset a.cv-btn:hover,
+.md-typeset a.cv-btn:focus-visible {
+    border-color: var(--cv-accent);
+    color: var(--cv-accent);
+    background: var(--cv-accent-soft);
+}
+
+.md-typeset a.cv-btn--primary,
+.md-typeset a.cv-btn--primary:hover,
+.md-typeset a.cv-btn--primary:focus-visible {
+    border-color: var(--cv-accent);
+    background: var(--cv-accent);
+    color: var(--cv-accent-fg);
+}
+
+.md-typeset a.cv-btn--primary:hover {
+    transform: translateY(-1px);
+}
+
+.md-typeset .cv-social p {
+    display: flex;
+    gap: 0.9rem;
+    margin: 1.1em 0 0;
+    font-size: 1.05rem;
+}
+
+.md-typeset .cv-social a {
+    color: var(--cv-muted);
+}
+
+.md-typeset .cv-social a:hover {
+    color: var(--cv-accent);
+}
+
+/* ----------------------------------------------------------------------------
+   Key figures
+   ---------------------------------------------------------------------------- */
+.cv-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.8rem;
+}
+
+.cv-stats > div {
+    padding: 0.95rem 1rem;
+    border: 1px solid var(--cv-line);
+    border-radius: var(--cv-radius);
+}
+
+.cv-stats strong {
+    display: block;
+    margin-bottom: 0.2em;
+    font-size: 1.45rem;
+    font-weight: 750;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--cv-accent);
+}
+
+.cv-stats span {
+    display: block;
+    font-size: 0.68rem;
+    line-height: 1.4;
+    color: var(--cv-muted);
+}
+
+/* ----------------------------------------------------------------------------
+   Skills
+   ---------------------------------------------------------------------------- */
+.cv-skills {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem 2rem;
+    margin-top: 1.6em;
+}
+
+.md-typeset .cv-skills h3 {
+    margin: 0 0 0.5em;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--cv-muted);
+}
+
+.md-typeset ul.cv-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin: 0.7em 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.md-typeset .cv-skills ul.cv-tags {
+    margin: 0;
+}
+
+.md-typeset ul.cv-tags > li {
+    margin: 0;
+    padding: 0.2em 0.65em;
+    border-radius: 999px;
+    background: var(--cv-chip);
+    font-size: 0.66rem;
+    line-height: 1.5;
+}
+
+/* ----------------------------------------------------------------------------
+   Timeline entries (roles, degrees)
+   ---------------------------------------------------------------------------- */
+.md-typeset .cv-entry {
+    padding: 1.15rem 0;
+    border-top: 1px solid var(--cv-line);
+}
+
+.md-typeset .cv-timeline > .cv-entry:first-child {
+    border-top: 0;
+    padding-top: 0.4rem;
+}
+
+.cv-entry__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.15rem 1rem;
+}
+
+.md-typeset .cv-entry h3 {
+    margin: 0;
+    font-size: 0.92rem;
+    font-weight: 700;
+    letter-spacing: -0.005em;
+}
+
+.md-typeset .cv-when {
+    font-size: 0.7rem;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    color: var(--cv-muted);
+}
+
+.md-typeset .cv-entry p {
+    margin: 0.45em 0 0;
+    font-size: 0.8rem;
+}
+
+.md-typeset .cv-entry p.cv-org {
+    margin-top: 0.1em;
+    font-size: 0.76rem;
+    color: var(--cv-muted);
+}
+
+.md-typeset .cv-org a {
+    font-weight: 600;
+}
+
+/* Institution logo, top right of the entry */
+.cv-entry--logo {
+    position: relative;
+    padding-right: 4.6rem !important;
+}
+
+.md-typeset .cv-entry__logo {
+    position: absolute;
+    top: 1.2rem;
+    right: 0;
+}
+
+.md-typeset .cv-entry__logo img {
+    display: block;
+    width: 3.4rem;
+    height: auto;
+}
+
+/* The institution logos are dark artwork on a transparent background, so they
+   vanish on the dark (slate) scheme. Render them there as white line art
+   (every opaque pixel turns white), keeping the transparent background. */
+[data-md-color-scheme="slate"] .details-img {
+    filter: brightness(0) invert(1);
+}
+
+/* Small document / DOI links */
+.md-typeset p.cv-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 0.65em;
+}
+
+.md-typeset .cv-links a {
+    padding: 0.15em 0.65em;
+    border: 1px solid var(--cv-line);
+    border-radius: 999px;
+    font-size: 0.66rem;
+    font-weight: 600;
+    color: var(--cv-muted);
+}
+
+.md-typeset .cv-links a:hover {
+    border-color: var(--cv-accent);
+    color: var(--cv-accent);
+}
+
+/* ----------------------------------------------------------------------------
+   Collapsible lists (courses, funding, earlier roles, more press)
+   ---------------------------------------------------------------------------- */
+.md-typeset details.cv-more {
+    margin: 0.7em 0 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+    font-size: inherit;
+    overflow: visible;
+}
+
+.md-typeset details.cv-more > summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3em;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--cv-accent);
+    cursor: pointer;
+    list-style: none;
+}
+
+.md-typeset details.cv-more > summary::-webkit-details-marker {
+    display: none;
+}
+
+.md-typeset details.cv-more > summary::before {
+    display: none;
+}
+
+.md-typeset details.cv-more > summary::after {
+    position: static;
+    width: 0.95em;
+    height: 0.95em;
+    margin: 0;
+    transform: rotate(90deg);
+    background-color: currentColor;
+}
+
+.md-typeset details.cv-more[open] > summary::after {
+    transform: rotate(-90deg);
+}
+
+.md-typeset details.cv-more > summary:hover {
+    text-decoration: underline;
+}
+
+.md-typeset details.cv-more--earlier {
+    padding-top: 1rem;
+    border-top: 1px solid var(--cv-line);
+}
+
+.md-typeset ul.cv-courses {
+    margin: 0.6em 0 0;
+    padding: 0 0 0 0.9rem;
+    border-left: 2px solid var(--cv-line);
+    list-style: none;
+}
+
+.md-typeset ul.cv-courses > li {
+    margin: 0;
+    padding: 0.45em 0;
+}
+
+.md-typeset .cv-course {
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.md-typeset .cv-course__topics,
+.md-typeset .cv-course__terms {
+    display: block;
+    font-size: 0.7rem;
+    line-height: 1.5;
+    color: var(--cv-muted);
+}
+
+.md-typeset .cv-course__terms {
+    font-variant-numeric: tabular-nums;
+}
+
+/* ----------------------------------------------------------------------------
+   Compact one-line records (grants, service, press, languages)
+   ---------------------------------------------------------------------------- */
+.md-typeset ul.cv-rows {
+    margin: 0.5em 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.md-typeset ul.cv-rows > li {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.2rem 1.2rem;
+    margin: 0;
+    padding: 0.6em 0;
+    border-bottom: 1px solid var(--cv-line);
+    font-size: 0.78rem;
+}
+
+.md-typeset ul.cv-rows > li:last-child {
+    border-bottom: 0;
+}
+
+.md-typeset ul.cv-rows .cv-when {
+    flex-shrink: 0;
+    text-align: right;
+}
+
+.md-typeset details.cv-more > ul.cv-rows {
+    margin-top: 0.4em;
+}
+
+.md-typeset .cv-languages {
+    max-width: 24rem;
+}
+
+.md-typeset p.cv-note {
+    font-size: 0.74rem;
+    color: var(--cv-muted);
+}
+
+/* ----------------------------------------------------------------------------
+   Publications
+   ---------------------------------------------------------------------------- */
+.md-typeset ol.cv-pubs {
+    margin: 0.6em 0 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: pub;
+}
+
+.md-typeset ol.cv-pubs > li {
+    position: relative;
+    margin: 0;
+    padding: 0.85em 0 0.85em 2.2rem;
+    border-bottom: 1px solid var(--cv-line);
+    counter-increment: pub;
+}
+
+.md-typeset ol.cv-pubs > li:last-child {
+    border-bottom: 0;
+}
+
+.md-typeset ol.cv-pubs > li::before {
+    content: counter(pub, decimal-leading-zero);
+    position: absolute;
+    top: 1.05em;
+    left: 0;
+    font-size: 0.7rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    color: var(--cv-accent);
+}
+
+.md-typeset .cv-pubs p {
+    margin: 0;
+}
+
+.md-typeset .cv-pub__title {
+    font-size: 0.82rem;
+    font-weight: 650;
+    line-height: 1.45;
+}
+
+.md-typeset .cv-pub__kind {
+    margin-left: 0.3em;
+    padding: 0.05em 0.5em;
+    border-radius: 999px;
+    background: var(--cv-chip);
+    font-size: 0.62rem;
+    font-weight: 600;
+    color: var(--cv-muted);
+    white-space: nowrap;
+}
+
+.md-typeset .cv-pub__authors,
+.md-typeset .cv-pub__venue {
+    font-size: 0.74rem;
+    color: var(--cv-muted);
+}
+
+.md-typeset .cv-pub__authors strong {
+    color: var(--md-default-fg-color);
+}
+
+.md-typeset .cv-pubs p.cv-links {
+    margin-top: 0.45em;
+}
+
+/* ----------------------------------------------------------------------------
+   Contact card and footer note
+   ---------------------------------------------------------------------------- */
+.md-typeset .cv-contact {
+    padding: 1.4rem 1.6rem;
+    border-radius: var(--cv-radius);
+    background: var(--cv-accent-soft);
+}
+
+.md-typeset .cv-contact > p:first-child {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.md-typeset .cv-contact .cv-cta p {
+    margin-top: 1em;
+}
+
+.md-typeset .cv-contact a.cv-btn:not(.cv-btn--primary) {
+    background: var(--md-default-bg-color);
+}
+
+.md-typeset .cv-disclaimer {
+    margin-top: 2.5em;
+    font-size: 0.68rem;
+    text-align: center;
+    color: var(--cv-muted);
+}
+
+/* Discreet links to the archived earlier versions of the site (docs/previous/) */
+.md-typeset p.cv-previous {
+    margin-top: 0.4em;
+    font-size: 0.6rem;
+    text-align: center;
+    color: var(--md-default-fg-color--lighter);
+}
+
+.md-typeset .cv-previous a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.md-typeset .cv-previous a:hover {
+    text-decoration: underline;
+}
+
+/* ----------------------------------------------------------------------------
+   Phones and small tablets (below the theme's 45em breakpoint, ~720px)
+   ---------------------------------------------------------------------------- */
+@media screen and (max-width: 44.9375em) {
+
+    .cv-hero {
+        grid-template-columns: 1fr;
+        gap: 1.1rem;
+        margin-top: 0.2rem;
+    }
+
+    .md-typeset .cv-hero__photo {
+        width: 6.5rem;
+        height: 6.5rem;
+    }
+
+    .md-typeset .cv-hero h1 {
+        font-size: 1.85rem;
+    }
+
+    .md-typeset .cv-cta p {
+        gap: 0.5rem;
+    }
+
+    .md-typeset .cv-hero .cv-cta a.cv-btn--primary {
+        flex: 1 1 100%;
+        justify-content: center;
+    }
+
+    .cv-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.6rem;
+    }
+
+    .cv-skills {
+        grid-template-columns: 1fr;
+    }
+
+    .cv-entry--logo {
+        padding-right: 3.8rem !important;
+    }
+
+    .md-typeset .cv-entry__logo img {
+        width: 3rem;
+    }
+
+    .md-typeset .cv-hero__headline {
+        font-size: 0.85rem;
+    }
+
+    .md-typeset ul.cv-rows > li {
+        flex-direction: column;
+    }
+
+    .md-typeset ul.cv-rows .cv-when {
+        text-align: left;
+    }
+
+    .md-typeset ul.cv-languages > li {
+        flex-direction: row;
+    }
+
+    .md-typeset .cv-contact {
+        padding: 1.1rem 1.1rem;
+    }
+}
+
+/* ----------------------------------------------------------------------------
+   Print (browser "Print to PDF"; the downloadable CVs are built by cv/build.py)
+   ---------------------------------------------------------------------------- */
+@media print {
+
+    :root {
+        color-scheme: light;
+    }
+
+    body,
+    .md-typeset {
+        color: #000 !important;
+    }
+
+    html, body,
+    .md-typeset, .md-typeset *,
+    h1, h2, h3, h4, h5, h6 {
+        font-family: Helvetica, Arial, "Liberation Sans", "DejaVu Sans", sans-serif !important;
+    }
+
+    .md-typeset a {
+        color: #1f3a5f !important;
+    }
+
+    .md-header,
+    .md-sidebar,
+    .md-footer,
+    .md-content__button,
+    .md-source,
+    .cv-cta,
+    .cv-social,
+    .cv-contact {
+        display: none !important;
+    }
+
+    .md-main__inner {
+        margin-top: 0 !important;
+    }
+
+    .md-content {
+        max-width: none !important;
+    }
+
+    html {
+        font-size: 90% !important;
+    }
+
+    .cv-entry,
+    .cv-rows > li,
+    .cv-pubs > li {
+        break-inside: avoid;
+    }
+}

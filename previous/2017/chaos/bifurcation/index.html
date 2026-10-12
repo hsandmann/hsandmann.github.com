@@ -1,0 +1,41 @@
+<html>
+<head><meta name="robots" content="noindex, follow"><meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="chaos.js"></script>
+	<style>
+
+		#box-mu, #box-mu INPUT {
+			width: 100%;
+		}
+
+		#box-x0 {
+			display: inline-block;
+		}
+
+		input[type=range][orientation=vertical]
+		{
+		    writing-mode: bt-lr; /* IE */
+		    -webkit-appearance: slider-vertical; /* WebKit */
+		    width: 8px;
+		    height: 175px;
+		    padding: 0 5px;
+		}
+
+	</style>
+</head>
+<body>
+	<select id="listFunctions"></select><br>
+
+	<div id='box-x0'>
+		<input id='x0' type='range' orientation='vertical' min='0' max='100'><br>
+	</div>
+
+	<canvas id="canvasSinal" width=480 height=200></canvas>
+	<canvas id="canvasWebDiagram" width=200 height=200></canvas>
+	<div id='box-mu'>
+		<input id='mu' type='range' min='0' max='100' style="width: 700px;">
+	</div>
+	<canvas id="canvasBifurcationMap" width=700 height=400></canvas><br>
+	<canvas id="canvasLyapunovMap" width=700 height=100></canvas>
+</body>
+</html>

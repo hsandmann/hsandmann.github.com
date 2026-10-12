@@ -5,7 +5,7 @@
 ## Profile highlights
 
 - Associate Professor at Insper (São Paulo) since 2020 (Assistant Professor 2018–2020): platform engineering and microservices, machine learning, neural networks and deep learning, cloud computing, software design.
-- Associate Professor at ESPM (2014–2026): machine learning, artificial intelligence, applied mathematics, object-oriented programming, software quality, computer architecture. Earlier faculty roles at FIAP, IBTA, Universidade Cruzeiro do Sul, Universidade Nove de Julho, Toledo Prudente and Link School of Business.
+- Associate Professor II at ESPM (2014–2026): machine learning, artificial intelligence, applied mathematics, object-oriented programming, software quality, computer architecture. Earlier faculty roles at FIAP, IBTA, Universidade Cruzeiro do Sul, Universidade Nove de Julho, Toledo Prudente and Link School of Business.
 - Senior Software Architect & Machine Learning Engineer at RockSpoon (São Paulo / Palo Alto, 2018–2019): team leader and product owner; POS, ERP and payroll platforms; computer vision and machine learning.
 - Senior consultant in computational optimization for Banco Votorantim (return-on-equity computation for 2M+ records within a 12-hour window) and TecBan (ATM network, in-memory databases, HPC).
 - Senior software engineer / architect for ABN Amro Bank, BankBoston and Citibank (via EverSystems): core banking, trading, cryptography, HSM and PKI.

@@ -186,9 +186,9 @@ teaching:
   - org: ESPM
     location: São Paulo, Brazil
     start: 2014
-    end: 2025
+    end: 2026
     roles:
-      - { title: Associate Professor, period: "2014 – 2025" }
+      - { title: Associate Professor II, period: "2014 – 2026" }
     courses:
       - Machine Learning
       - Applied Mathematics

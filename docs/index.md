@@ -155,7 +155,7 @@ Alongside more than a decade of university teaching, I have worked as a senior s
 
 <article class="cv-entry">
     <div class="cv-entry__head">
-        <h3>Associate Professor</h3>
+        <h3>Associate Professor II</h3>
         <span class="cv-when">Jun 2014 – Jun 2026</span>
     </div>
     <p class="cv-org"><a href="https://www.espm.br" target="_blank">ESPM</a> · São Paulo, Brazil</p>

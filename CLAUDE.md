@@ -75,7 +75,7 @@ build/check job — pushing to `main` deploys directly to GitHub Pages.
   title, degree, publication, contact…), update all of them in the same change: `cv/data/cv.yml` (→ both
   PDFs), `docs/index.md`, `overrides/partials/structured-data.html` (JSON-LD), `docs/llms.txt`, the
   `description`/`site_description` and `cv/og_card.py` (headline, photo) when affected — and list the
-  matching edits for the external profiles (ORCID 0000-0001-7758-695X, LinkedIn, Glassdoor/Indeed — the
+  matching edits for the external profiles (ORCID 0000-0001-7758-695X, LinkedIn, Glassdoor/Indeed on the .com sites, all in English, professional e-mail hsandmann@ieee.org — the
   Glassdoor profile holds the résumé PDF, so re-upload it), which are only changed
   with the user's go-ahead.
 - Do not edit anything under `env/` (local virtualenv, gitignored along with `site/` and `.cache/`).

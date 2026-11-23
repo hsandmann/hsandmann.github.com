@@ -1,0 +1,767 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kuramoto Oscillators</title>
+<meta name="description" content="Interactive simulator of the Kuramoto model of coupled phase oscillators: synchronization transition, frequency locking, phase lag, noise, ring coupling, twisted and chimera states.">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="../tools.css">
+<script src="../tools.js"></script>
+<style>
+    .main {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+        gap: 12px;
+        margin: 12px 0;
+        align-items: start;
+    }
+    .plots { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; }
+    .plots .wide { grid-column: span 2; }
+    @media (max-width: 900px) {
+        .main, .plots { grid-template-columns: minmax(0, 1fr); }
+        .plots .wide { grid-column: auto; }
+    }
+    .bottom { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 12px; }
+    @media (max-width: 900px) { .bottom { grid-template-columns: minmax(0, 1fr); } }
+    .ctl[hidden] { display: none; }
+    .viewbar { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; justify-content: space-between; margin-top: 10px; }
+    body.embedded .wrap { padding-top: 12px; }
+    body.embedded header.top { display: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+    <div>
+        <h1>Kuramoto oscillators</h1>
+        <div class="sub">N phase oscillators with different natural frequencies, pulling on each other: when does a crowd fall into step?</div>
+    </div>
+    <nav>
+        <a href="../">All tools</a>
+        <a href="../bifurcation/">Bifurcation</a>
+        <a href="../illustration/">Attractors</a>
+        <button id="theme" type="button">Theme</button>
+    </nav>
+</header>
+
+<section class="panel" aria-label="Model">
+    <div class="controls">
+        <div class="ctl">
+            <label for="top">Coupling topology</label>
+            <select id="top">
+                <option value="all">All-to-all (mean field)</option>
+                <option value="ring">Ring, k nearest neighbours</option>
+                <option value="nonlocal">Ring, nonlocal (chimera)</option>
+            </select>
+        </div>
+        <div class="ctl" style="grid-column: span 2;">
+            <label>Equation</label>
+            <div><span class="eq" id="eq"></span></div>
+        </div>
+        <div class="ctl">
+            <label for="K"><span>Coupling <i>K</i></span><span class="num" id="Kc"></span></label>
+            <div class="row"><input type="range" id="K" min="0" max="6" step="0.01"><input type="number" id="Knum" step="any" aria-label="Coupling value"></div>
+        </div>
+        <div class="ctl">
+            <label for="N">Oscillators N</label>
+            <div class="row"><input type="range" id="N" min="2" max="2000" step="1"><input type="number" id="Nnum" step="1" aria-label="Number of oscillators"></div>
+        </div>
+        <div class="ctl">
+            <label for="dist">Natural frequencies g(ω)</label>
+            <select id="dist">
+                <option value="lorentz">Lorentzian (Cauchy)</option>
+                <option value="gauss">Gaussian</option>
+                <option value="uniform">Uniform</option>
+                <option value="identical">Identical (ω = 0)</option>
+            </select>
+        </div>
+        <div class="ctl" id="gBox">
+            <label for="g"><span>Width <i id="gname">γ</i></span><label class="check"><input type="checkbox" id="rnd"> random draw</label></label>
+            <div class="row"><input type="range" id="g" min="0" max="2" step="0.01"><input type="number" id="gnum" step="any" aria-label="Width value"></div>
+        </div>
+        <div class="ctl">
+            <label for="alpha">Phase lag α (Sakaguchi)</label>
+            <div class="row"><input type="range" id="alpha" min="-1.5708" max="1.5708" step="0.001"><input type="number" id="alphanum" step="any" aria-label="Phase lag value"></div>
+        </div>
+        <div class="ctl">
+            <label for="D">Noise strength D</label>
+            <div class="row"><input type="range" id="D" min="0" max="1" step="0.005"><input type="number" id="Dnum" step="any" aria-label="Noise value"></div>
+        </div>
+        <div class="ctl" id="kBox" hidden>
+            <label for="k">Neighbours on each side k</label>
+            <div class="row"><input type="range" id="k" min="1" max="100" step="1"><input type="number" id="knum" step="1" aria-label="Neighbours"></div>
+        </div>
+        <div class="ctl" id="ABox" hidden>
+            <label for="A">Kernel A in G(x) = (1 + A cos x) / 2π</label>
+            <div class="row"><input type="range" id="A" min="0" max="1" step="0.001"><input type="number" id="Anum" step="any" aria-label="Kernel amplitude"></div>
+        </div>
+        <div class="ctl">
+            <label for="ic">Initial phases</label>
+            <select id="ic">
+                <option value="random">Random</option>
+                <option value="sync">In phase</option>
+                <option value="twist1">Twisted, q = 1</option>
+                <option value="twist2">Twisted, q = 2</option>
+                <option value="twist3">Twisted, q = 3</option>
+                <option value="chimera">Localized bump (chimera seed)</option>
+            </select>
+        </div>
+        <div class="ctl">
+            <label for="dt">Step dt · steps per frame</label>
+            <div class="row"><input type="number" id="dt" step="any" min="0.001" max="0.5" aria-label="Time step"><input type="range" id="speed" min="1" max="40" step="1" aria-label="Steps per frame"></div>
+        </div>
+    </div>
+    <div class="gap"></div>
+    <div class="btns">
+        <button type="button" class="primary" id="play">Pause</button>
+        <button type="button" id="restart">Restart phases</button>
+        <button type="button" id="resample">New frequencies</button>
+        <button type="button" id="kick">Kick (scramble half)</button>
+        <button type="button" id="link">Copy link</button>
+    </div>
+</section>
+
+<div class="main">
+    <section class="panel">
+        <h2>Phases on the circle <span class="hint"><label class="check"><input type="checkbox" id="rot" checked> rotate with ψ</label></span></h2>
+        <canvas id="circle" aria-label="Oscillators on the unit circle"></canvas>
+        <dl class="readout" id="readout" style="margin-top: 10px;"></dl>
+    </section>
+    <div class="plots">
+        <section class="panel wide">
+            <h2>Order parameter r(t) <span class="hint">r = |⟨e<sup>iθ</sup>⟩|: 0 incoherent, 1 in step</span></h2>
+            <canvas id="rt" aria-label="Order parameter over time"></canvas>
+        </section>
+        <section class="panel">
+            <h2><span id="phTitle">Phase vs natural frequency</span></h2>
+            <canvas id="ph" aria-label="Phases"></canvas>
+        </section>
+        <section class="panel">
+            <h2><span id="frTitle">Effective vs natural frequency</span></h2>
+            <canvas id="fr" aria-label="Effective frequencies"></canvas>
+        </section>
+    </div>
+</div>
+
+<div class="bottom">
+    <section class="panel">
+        <h2>Synchronization transition r(K) <span class="hint" id="swHint">sweep K up (●) and back down (○)</span></h2>
+        <canvas id="sw" aria-label="Order parameter versus coupling"></canvas>
+        <div class="viewbar">
+            <div class="btns"><button type="button" id="sweep">Sweep K</button><button type="button" id="clearSweep">Clear</button></div>
+            <div class="status mono" id="swStatus"></div>
+        </div>
+    </section>
+    <section class="panel note">
+        <h2>About this setting</h2>
+        <div id="notes"></div>
+    </section>
+</div>
+
+<details class="help">
+    <summary>How it works</summary>
+    <div class="note">
+        <p><b>Model:</b> each oscillator i has a phase θ<sub>i</sub> and a natural frequency ω<sub>i</sub> drawn from g(ω). It speeds up or slows down according to the sine of its phase difference to the others. The equations are integrated with fourth-order Runge–Kutta; noise, when on, is added after each step as √(2D dt) times a standard normal.</p>
+        <p><b>Order parameter:</b> r e<sup>iψ</sup> = (1/N) Σ e<sup>iθ<sub>j</sub></sup>, the centroid of the dots on the circle (the arrow). In the mean-field model each oscillator only feels the centroid: θ̇<sub>i</sub> = ω<sub>i</sub> + K r sin(ψ − θ<sub>i</sub> − α), so all-to-all coupling costs O(N) per step.</p>
+        <p><b>Plots:</b> on the circle, colour encodes the natural frequency (all-to-all) or the position on the ring. The phase plot shows θ<sub>i</sub> − ψ; locked oscillators sit on the curve arcsin(ω/Kr) (α = 0). The frequency plot shows the time-averaged frequency of each oscillator: the locked ones form a flat plateau, the drifting ones follow the diagonal Ω = ω at a distance.</p>
+        <p><b>Sweep:</b> K is raised in 32 steps from 0 and then lowered again, keeping the state between steps (adiabatic continuation); r is averaged after a transient. Lorentzian g(ω) has the exact solution r = √(1 − 2γ/(K cos α)) (Ott–Antonsen); a uniform g(ω) jumps discontinuously at K<sub>c</sub> = 4γ/π (Pazó).</p>
+    </div>
+</details>
+
+<footer class="foot">
+    H. Sandmann · 2026, completing the oscillator page planned for the <a href="http://sandmann.sdf.org/chaos/" target="_blank" rel="noopener">2017 tools</a> ·
+    <a href="https://hsandmann.github.io/">hsandmann.github.io</a>
+</footer>
+</div>
+
+<script>
+"use strict";
+(() => {
+    if (window.self !== window.top) document.body.classList.add("embedded");
+
+    const $ = (id) => document.getElementById(id);
+    const TAU = 2 * Math.PI;
+
+    /* Original papers (DOIs checked against Crossref). */
+    const R = {
+        kuramoto75: ["Kuramoto, Y. (1975). Self-entrainment of a population of coupled non-linear oscillators. In <i>International Symposium on Mathematical Problems in Theoretical Physics</i>, Lecture Notes in Physics 39, 420–422. Springer.", "10.1007/BFb0013365"],
+        kuramoto84: ["Kuramoto, Y. (1984). <i>Chemical Oscillations, Waves, and Turbulence</i>. Springer.", "10.1007/978-3-642-69689-3"],
+        strogatz: ["Strogatz, S. H. (2000). From Kuramoto to Crawford: exploring the onset of synchronization in populations of coupled oscillators. <i>Physica D</i>, 143, 1–20.", "10.1016/S0167-2789(00)00094-4"],
+        acebron: ["Acebrón, J. A., Bonilla, L. L., Pérez Vicente, C. J., Ritort, F., &amp; Spigler, R. (2005). The Kuramoto model: a simple paradigm for synchronization phenomena. <i>Reviews of Modern Physics</i>, 77, 137–185.", "10.1103/RevModPhys.77.137"],
+        sakaguchi: ["Sakaguchi, H., &amp; Kuramoto, Y. (1986). A soluble active rotator model showing phase transitions via mutual entrainment. <i>Progress of Theoretical Physics</i>, 76(3), 576–581.", "10.1143/PTP.76.576"],
+        ott: ["Ott, E., &amp; Antonsen, T. M. (2008). Low dimensional behavior of large systems of globally coupled oscillators. <i>Chaos</i>, 18, 037113.", "10.1063/1.2930766"],
+        pazo: ["Pazó, D. (2005). Thermodynamic limit of the first-order phase transition in the Kuramoto model. <i>Physical Review E</i>, 72, 046211.", "10.1103/PhysRevE.72.046211"],
+        abrams: ["Abrams, D. M., &amp; Strogatz, S. H. (2004). Chimera states for coupled oscillators. <i>Physical Review Letters</i>, 93, 174102.", "10.1103/PhysRevLett.93.174102"],
+        kb: ["Kuramoto, Y., &amp; Battogtokh, D. (2002). Coexistence of coherence and incoherence in nonlocally coupled phase oscillators. <i>Nonlinear Phenomena in Complex Systems</i>, 5(4), 380–385.", null],
+        wiley: ["Wiley, D. A., Strogatz, S. H., &amp; Girvan, M. (2006). The size of the sync basin. <i>Chaos</i>, 16, 015103.", "10.1063/1.2165594"],
+    };
+
+    const TOPS = {
+        all: {
+            eq: "θ̇<sub>i</sub> = ω<sub>i</sub> + (K/N) Σ<sub>j</sub> sin(θ<sub>j</sub> − θ<sub>i</sub> − α)",
+            note: "Kuramoto’s (1975) model: below a critical coupling K<sub>c</sub> = 2/(π g(0)) every oscillator runs at its own pace and r stays at the 1/√N noise floor; above it a cluster of locked oscillators forms and r grows like √(K − K<sub>c</sub>) — a continuous phase transition, like a magnet below its Curie temperature. For the Lorentzian K<sub>c</sub> = 2γ and the curve r(K) is exact; for the uniform distribution the transition becomes abrupt. A phase lag α (Sakaguchi–Kuramoto) makes the locked cluster rotate at a shifted frequency and raises K<sub>c</sub> to 2γ / cos α. Noise D smears the transition and shifts K<sub>c</sub> to 2(γ + D) for the Lorentzian.",
+            refs: ["kuramoto75", "strogatz", "acebron", "sakaguchi", "ott", "pazo"],
+        },
+        ring: {
+            eq: "θ̇<sub>i</sub> = ω<sub>i</sub> + (K/2k) Σ<sub>0&lt;|j−i|≤k</sub> sin(θ<sub>j</sub> − θ<sub>i</sub> − α)",
+            note: "Each oscillator only feels its k nearest neighbours on each side of a ring. With identical frequencies the in-phase state is not the only stable one: twisted states, where the phase winds q times around the ring, are stable too as long as the twist is gentle compared with the coupling range (the phase step across k neighbours, 2πqk/N, stays small), and random initial phases often land on one of them — the “sync basin” is smaller than you would think. Start from “Twisted, q = 2” and watch it persist; raise k and it unwinds. Frequencies are shuffled along the ring.",
+            refs: ["wiley", "kuramoto84"],
+        },
+        nonlocal: {
+            eq: "θ̇<sub>i</sub> = ω<sub>i</sub> − (2πK/N) Σ<sub>j</sub> G(x<sub>i</sub> − x<sub>j</sub>) sin(θ<sub>i</sub> − θ<sub>j</sub> + α)",
+            note: "Identical oscillators on a ring with a smooth, nonlocal coupling kernel G and a phase lag α close to π/2 can split into a synchronized group and an incoherent group at the same time — a chimera state, found by Kuramoto and Battogtokh (2002) and named by Abrams and Strogatz (2004). Defaults follow Abrams–Strogatz: N = 256, A = 0.995, α = π/2 − 0.18, seeded with a localized bump. In the frequency plot the coherent part sits on a flat plateau while the incoherent part forms an arch. The kernel sum is computed with three Fourier moments, so each step is O(N).",
+            refs: ["kb", "abrams"],
+        },
+    };
+
+    const S = { top: "all", N: 400, K: 1.5, dist: "lorentz", g: 0.5, rnd: false, alpha: 0, D: 0, k: 10, A: 0.995, ic: "random", dt: 0.05, speed: 4, rot: true };
+    let th, om, Om, N = 0, t = 0;
+    let k1, k2, k3, k4, tmp, prev, cs, sn, pc, ps;
+    const HIST = 3000;
+    let hr = new Float32Array(HIST), ht = new Float32Array(HIST), hn = 0, hpos = 0;
+    let rAvg = 0, psi = 0, rNow = 0;
+    let playing = true;
+    let sweep = null; // { up: [[K, r]], down: [[K, r]] }
+
+    const el = {
+        top: $("top"), eq: $("eq"), K: $("K"), Knum: $("Knum"), Kc: $("Kc"), N: $("N"), Nnum: $("Nnum"), dist: $("dist"),
+        gBox: $("gBox"), g: $("g"), gnum: $("gnum"), gname: $("gname"), rnd: $("rnd"),
+        alpha: $("alpha"), alphanum: $("alphanum"), D: $("D"), Dnum: $("Dnum"),
+        kBox: $("kBox"), k: $("k"), knum: $("knum"), ABox: $("ABox"), A: $("A"), Anum: $("Anum"),
+        ic: $("ic"), dt: $("dt"), speed: $("speed"), play: $("play"), rot: $("rot"),
+        circle: $("circle"), rt: $("rt"), ph: $("ph"), fr: $("fr"), sw: $("sw"),
+        readout: $("readout"), notes: $("notes"), phTitle: $("phTitle"), frTitle: $("frTitle"), swStatus: $("swStatus"),
+    };
+
+    /* ---------- random numbers and frequency distributions ---------- */
+
+    function gauss() {
+        let u = 0, v = 0;
+        while (u === 0) u = Math.random();
+        while (v === 0) v = Math.random();
+        return Math.sqrt(-2 * Math.log(u)) * Math.cos(TAU * v);
+    }
+
+    // Acklam's rational approximation of the inverse normal CDF (relative error < 1.2e-9)
+    function invNorm(p) {
+        const a = [-3.969683028665376e1, 2.209460984245205e2, -2.759285104469687e2, 1.38357751867269e2, -3.066479806614716e1, 2.506628277459239];
+        const b = [-5.447609879822406e1, 1.615858368580409e2, -1.556989798598866e2, 6.680131188771972e1, -1.328068155288572e1];
+        const c = [-7.784894002430293e-3, -3.223964580411365e-1, -2.400758277161838, -2.549732539343734, 4.374664141464968, 2.938163982698783];
+        const d = [7.784695709041462e-3, 3.224671290700398e-1, 2.445134137142996, 3.754408661907416];
+        const pl = 0.02425;
+        let q, r;
+        if (p < pl) { q = Math.sqrt(-2 * Math.log(p)); return (((((c[0] * q + c[1]) * q + c[2]) * q + c[3]) * q + c[4]) * q + c[5]) / ((((d[0] * q + d[1]) * q + d[2]) * q + d[3]) * q + 1); }
+        if (p <= 1 - pl) { q = p - 0.5; r = q * q; return (((((a[0] * r + a[1]) * r + a[2]) * r + a[3]) * r + a[4]) * r + a[5]) * q / (((((b[0] * r + b[1]) * r + b[2]) * r + b[3]) * r + b[4]) * r + 1); }
+        q = Math.sqrt(-2 * Math.log(1 - p));
+        return -(((((c[0] * q + c[1]) * q + c[2]) * q + c[3]) * q + c[4]) * q + c[5]) / ((((d[0] * q + d[1]) * q + d[2]) * q + d[3]) * q + 1);
+    }
+
+    function drawFrequencies() {
+        const g = S.g;
+        for (let i = 0; i < N; i++) {
+            const u = S.rnd ? Math.random() : (i + 0.5) / N;
+            let w = 0;
+            if (S.dist === "lorentz") w = g * Math.tan(Math.PI * (u - 0.5));
+            else if (S.dist === "gauss") w = g * (S.rnd ? gauss() : invNorm(u));
+            else if (S.dist === "uniform") w = g * (2 * u - 1);
+            om[i] = w;
+        }
+        if (S.rnd || S.top === "all") {
+            // keep sorted for all-to-all so that index (and colour) follows ω; random draws sorted too
+            Array.prototype.sort.call(om, (p, q) => p - q);
+        }
+        if (S.top !== "all") {
+            for (let i = N - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); const x = om[i]; om[i] = om[j]; om[j] = x; }
+        }
+        // centre the sample so that the mean frequency is exactly 0 (rotating frame)
+        if (S.dist !== "lorentz") { let m = 0; for (let i = 0; i < N; i++) m += om[i]; m /= N; for (let i = 0; i < N; i++) om[i] -= m; }
+        for (let i = 0; i < N; i++) Om[i] = om[i];
+    }
+
+    function initPhases() {
+        for (let i = 0; i < N; i++) {
+            const x = -Math.PI + TAU * i / N;
+            let v;
+            switch (S.ic) {
+                case "sync": v = 0.01 * gauss(); break;
+                case "twist1": v = TAU * i / N; break;
+                case "twist2": v = 2 * TAU * i / N; break;
+                case "twist3": v = 3 * TAU * i / N; break;
+                case "chimera": v = 6 * (Math.random() - 0.5) * Math.exp(-0.76 * x * x); break;
+                default: v = TAU * Math.random();
+            }
+            th[i] = v;
+        }
+        t = 0; hn = 0; hpos = 0;
+        for (let i = 0; i < N; i++) Om[i] = om[i];
+    }
+
+    function alloc(n) {
+        N = n;
+        th = new Float64Array(N); om = new Float64Array(N); Om = new Float64Array(N);
+        k1 = new Float64Array(N); k2 = new Float64Array(N); k3 = new Float64Array(N); k4 = new Float64Array(N);
+        tmp = new Float64Array(N); prev = new Float64Array(N); cs = new Float64Array(N); sn = new Float64Array(N);
+        pc = new Float64Array(3 * N + 1); ps = new Float64Array(3 * N + 1);
+    }
+
+    /* ---------- dynamics ---------- */
+
+    function kEff() { return Math.max(1, Math.min(S.k, Math.floor((N - 1) / 2))); }
+
+    // out = dθ/dt at phases p (frequencies w, parameters from S)
+    function deriv(p, w, out, n, K) {
+        const a = S.alpha;
+        for (let j = 0; j < n; j++) { cs[j] = Math.cos(p[j]); sn[j] = Math.sin(p[j]); }
+        if (S.top === "all") {
+            let zr = 0, zi = 0;
+            for (let j = 0; j < n; j++) { zr += cs[j]; zi += sn[j]; }
+            zr /= n; zi /= n;
+            for (let i = 0; i < n; i++) {
+                const f = p[i] + a;
+                out[i] = w[i] + K * (zi * Math.cos(f) - zr * Math.sin(f));
+            }
+        } else if (S.top === "ring") {
+            const k = kEff();
+            pc[0] = 0; ps[0] = 0;
+            for (let m = 0; m < 3 * n; m++) { const j = m % n; pc[m + 1] = pc[m] + cs[j]; ps[m + 1] = ps[m] + sn[j]; }
+            const c = K / (2 * k);
+            for (let i = 0; i < n; i++) {
+                const lo = i - k + n, hi = i + k + n;
+                const C = pc[hi + 1] - pc[lo] - cs[i], Sx = ps[hi + 1] - ps[lo] - sn[i];
+                const f = p[i] + a;
+                out[i] = w[i] + c * (Sx * Math.cos(f) - C * Math.sin(f));
+            }
+        } else {
+            // G(x) = (1 + A cos x)/2π expanded in Fourier moments: O(N)
+            let z0r = 0, z0i = 0, zpr = 0, zpi = 0, zmr = 0, zmi = 0;
+            for (let j = 0; j < n; j++) {
+                const x = -Math.PI + TAU * j / n, cx = Math.cos(x), sx = Math.sin(x);
+                z0r += cs[j]; z0i += sn[j];
+                zpr += cs[j] * cx - sn[j] * sx; zpi += sn[j] * cx + cs[j] * sx;   // e^{i(θ+x)}
+                zmr += cs[j] * cx + sn[j] * sx; zmi += sn[j] * cx - cs[j] * sx;   // e^{i(θ−x)}
+            }
+            const h = S.A / 2;
+            for (let i = 0; i < n; i++) {
+                const x = -Math.PI + TAU * i / n, cx = Math.cos(x), sx = Math.sin(x);
+                // S_i = Z0 + (A/2)(e^{ix} Zm + e^{−ix} Zp)
+                const Sr = z0r + h * ((cx * zmr - sx * zmi) + (cx * zpr + sx * zpi));
+                const Si = z0i + h * ((cx * zmi + sx * zmr) + (cx * zpi - sx * zpr));
+                const f = p[i] + a;
+                out[i] = w[i] - (K / n) * (Math.sin(f) * Sr - Math.cos(f) * Si);
+            }
+        }
+    }
+
+    function rk4(p, w, n, K, h, bufs) {
+        const [b1, b2, b3, b4, bt] = bufs;
+        deriv(p, w, b1, n, K);
+        for (let i = 0; i < n; i++) bt[i] = p[i] + h / 2 * b1[i];
+        deriv(bt, w, b2, n, K);
+        for (let i = 0; i < n; i++) bt[i] = p[i] + h / 2 * b2[i];
+        deriv(bt, w, b3, n, K);
+        for (let i = 0; i < n; i++) bt[i] = p[i] + h * b3[i];
+        deriv(bt, w, b4, n, K);
+        for (let i = 0; i < n; i++) p[i] += h / 6 * (b1[i] + 2 * b2[i] + 2 * b3[i] + b4[i]);
+        if (S.D > 0) { const s = Math.sqrt(2 * S.D * h); for (let i = 0; i < n; i++) p[i] += s * gauss(); }
+    }
+
+    function order(p, n) {
+        let zr = 0, zi = 0;
+        for (let j = 0; j < n; j++) { zr += Math.cos(p[j]); zi += Math.sin(p[j]); }
+        return [Math.hypot(zr, zi) / n, Math.atan2(zi, zr)];
+    }
+
+    function step() {
+        prev.set(th);
+        rk4(th, om, N, S.K, S.dt, [k1, k2, k3, k4, tmp]);
+        t += S.dt;
+        const tau = 15, e = Math.min(1, S.dt / tau);
+        for (let i = 0; i < N; i++) Om[i] += ((th[i] - prev[i]) / S.dt - Om[i]) * e;
+        const [r, ps0] = order(th, N);
+        rNow = r; psi = ps0;
+        rAvg += (r - rAvg) * Math.min(1, S.dt / 10);
+        hr[hpos] = r; ht[hpos] = t; hpos = (hpos + 1) % HIST; if (hn < HIST) hn++;
+    }
+
+    /* ---------- theory ---------- */
+
+    function theoryKc() {
+        if (S.top !== "all") return null;
+        const g = S.g, ca = Math.cos(S.alpha);
+        if (S.dist === "identical" || g === 0) return S.D > 0 ? 2 * S.D / ca : 0;
+        if (S.dist === "lorentz") return 2 * (g + S.D) / ca;
+        if (S.alpha !== 0 || S.D > 0) return null;
+        if (S.dist === "gauss") return g * Math.sqrt(8 / Math.PI);
+        if (S.dist === "uniform") return 4 * g / Math.PI;
+        return null;
+    }
+
+    function theoryR(K) {
+        if (S.top !== "all" || S.dist !== "lorentz") return null;
+        const Kc = theoryKc();
+        return K <= Kc ? 0 : Math.sqrt(1 - Kc / K);
+    }
+
+    /* ---------- drawing ---------- */
+
+    function ramp(u) {
+        const dark = (matchMedia("(prefers-color-scheme: dark)").matches && document.documentElement.getAttribute("data-theme") !== "light") || document.documentElement.getAttribute("data-theme") === "dark";
+        return `hsl(${(225 + u * 165) % 360}, ${dark ? 85 : 72}%, ${dark ? 66 : 48}%)`;
+    }
+
+    const wrap = (x) => { x = (x + Math.PI) % TAU; if (x < 0) x += TAU; return x - Math.PI; };
+
+    function colorOf(i) {
+        return ramp(N > 1 ? i / (N - 1) : 0.5);
+    }
+
+    function drawCircle() {
+        const c = el.circle, ctx = c.getContext("2d"), W = c.width, H = c.height, d = Tools.dpr();
+        ctx.clearRect(0, 0, W, H);
+        const R0 = Math.min(W, H) / 2 - 16 * d, cx = W / 2, cy = H / 2;
+        ctx.strokeStyle = Tools.css("--line");
+        ctx.lineWidth = d;
+        ctx.beginPath(); ctx.arc(cx, cy, R0, 0, TAU); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(cx - R0, cy); ctx.lineTo(cx + R0, cy); ctx.moveTo(cx, cy - R0); ctx.lineTo(cx, cy + R0); ctx.stroke();
+        const off = S.rot ? psi : 0;
+        const rad = Math.max(1.6, Math.min(4.5, 120 / Math.sqrt(N))) * d;
+        ctx.globalAlpha = N > 600 ? 0.75 : 0.9;
+        for (let i = 0; i < N; i++) {
+            const a = th[i] - off;
+            ctx.fillStyle = colorOf(i);
+            ctx.beginPath(); ctx.arc(cx + R0 * Math.cos(a), cy - R0 * Math.sin(a), rad, 0, TAU); ctx.fill();
+        }
+        ctx.globalAlpha = 1;
+        // order parameter arrow
+        const ax = cx + R0 * rNow * Math.cos(psi - off), ay = cy - R0 * rNow * Math.sin(psi - off);
+        ctx.strokeStyle = Tools.css("--fg");
+        ctx.fillStyle = Tools.css("--fg");
+        ctx.lineWidth = 2.2 * d;
+        ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(ax, ay); ctx.stroke();
+        ctx.beginPath(); ctx.arc(ax, ay, 4 * d, 0, TAU); ctx.fill();
+        ctx.font = `${12 * d}px ui-monospace, Menlo, monospace`;
+        ctx.fillStyle = Tools.css("--muted");
+        ctx.fillText(`r = ${rNow.toFixed(3)}`, 10 * d, 18 * d);
+        ctx.fillText(`t = ${t.toFixed(1)}`, 10 * d, 34 * d);
+    }
+
+    function drawRt() {
+        const c = el.rt, ctx = c.getContext("2d"), W = c.width, H = c.height, d = Tools.dpr();
+        ctx.clearRect(0, 0, W, H);
+        if (!hn) return;
+        const first = hn < HIST ? 0 : hpos;
+        const t0 = ht[first], t1 = ht[(hpos - 1 + HIST) % HIST];
+        const xr = [t0, Math.max(t1, t0 + 1e-9)], yr = [0, 1.05];
+        Tools.axes(ctx, xr, yr, "grid");
+        const rt = theoryR(S.K);
+        if (rt != null) {
+            ctx.strokeStyle = Tools.css("--good"); ctx.setLineDash([5 * d, 4 * d]); ctx.lineWidth = d;
+            const y = H - rt / 1.05 * H;
+            ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke(); ctx.setLineDash([]);
+        }
+        ctx.strokeStyle = Tools.css("--accent");
+        ctx.lineWidth = 1.4 * d;
+        ctx.beginPath();
+        for (let m = 0; m < hn; m++) {
+            const idx = (first + m) % HIST;
+            const X = (ht[idx] - xr[0]) / (xr[1] - xr[0]) * W, Y = H - hr[idx] / 1.05 * H;
+            m ? ctx.lineTo(X, Y) : ctx.moveTo(X, Y);
+        }
+        ctx.stroke();
+        Tools.axes(ctx, xr, yr, "labels");
+    }
+
+    function xAxis() {
+        // horizontal axis of the phase/frequency plots: ω for all-to-all with spread, position on the ring otherwise
+        if (S.top === "all" && S.dist !== "identical" && S.g > 0) {
+            const f = S.dist === "lorentz" ? 5 : S.dist === "gauss" ? 3.2 : 1.1;
+            return { range: [-f * S.g, f * S.g], x: (i) => om[i], label: "ω" };
+        }
+        return { range: [0, N], x: (i) => i + 0.5, label: "i" };
+    }
+
+    function drawPh() {
+        const c = el.ph, ctx = c.getContext("2d"), W = c.width, H = c.height, d = Tools.dpr();
+        ctx.clearRect(0, 0, W, H);
+        const ax = xAxis(), yr = [-Math.PI, Math.PI];
+        el.phTitle.textContent = ax.label === "ω" ? "Phase θ − ψ vs natural frequency ω" : (S.rot ? "Phase θ − ψ vs position i" : "Phase θ vs position i");
+        Tools.axes(ctx, ax.range, yr, "grid");
+        const X = (v) => (v - ax.range[0]) / (ax.range[1] - ax.range[0]) * W, Y = (v) => H - (v - yr[0]) / (yr[1] - yr[0]) * H;
+        // locked branch θ − ψ = arcsin(ω / K r)
+        if (ax.label === "ω" && S.alpha === 0 && S.K * rAvg > 0) {
+            const Kr = S.K * rAvg;
+            ctx.strokeStyle = Tools.css("--good"); ctx.lineWidth = 1.4 * d; ctx.globalAlpha = 0.7;
+            ctx.beginPath();
+            for (let m = 0; m <= 200; m++) { const w = -Kr + 2 * Kr * m / 200; const y = Math.asin(Math.max(-1, Math.min(1, w / Kr))); m ? ctx.lineTo(X(w), Y(y)) : ctx.moveTo(X(w), Y(y)); }
+            ctx.stroke(); ctx.globalAlpha = 1;
+        }
+        const off = (ax.label === "ω" || S.rot) ? psi : 0;
+        const sz = Math.max(1.5, Math.min(3.5, 90 / Math.sqrt(N))) * d;
+        for (let i = 0; i < N; i++) {
+            ctx.fillStyle = colorOf(i);
+            ctx.fillRect(X(ax.x(i)) - sz / 2, Y(wrap(th[i] - off)) - sz / 2, sz, sz);
+        }
+        Tools.axes(ctx, ax.range, yr, "labels");
+    }
+
+    function drawFr() {
+        const c = el.fr, ctx = c.getContext("2d"), W = c.width, H = c.height, d = Tools.dpr();
+        ctx.clearRect(0, 0, W, H);
+        const ax = xAxis();
+        let yr;
+        if (ax.label === "ω") yr = ax.range.slice();
+        else {
+            let lo = Infinity, hi = -Infinity;
+            for (let i = 0; i < N; i++) { if (Om[i] < lo) lo = Om[i]; if (Om[i] > hi) hi = Om[i]; }
+            if (!(hi - lo > 1e-3)) { const m = (hi + lo) / 2 || 0; lo = m - 0.5; hi = m + 0.5; }
+            const pad = (hi - lo) * 0.12; yr = [lo - pad, hi + pad];
+        }
+        el.frTitle.textContent = ax.label === "ω" ? "Effective Ω vs natural frequency ω" : "Effective frequency Ω vs position i";
+        Tools.axes(ctx, ax.range, yr, "grid");
+        const X = (v) => (v - ax.range[0]) / (ax.range[1] - ax.range[0]) * W, Y = (v) => H - (v - yr[0]) / (yr[1] - yr[0]) * H;
+        if (ax.label === "ω") {
+            ctx.strokeStyle = Tools.css("--muted"); ctx.setLineDash([4 * d, 4 * d]); ctx.lineWidth = d;
+            ctx.beginPath(); ctx.moveTo(X(ax.range[0]), Y(ax.range[0])); ctx.lineTo(X(ax.range[1]), Y(ax.range[1])); ctx.stroke(); ctx.setLineDash([]);
+        }
+        const sz = Math.max(1.5, Math.min(3.5, 90 / Math.sqrt(N))) * d;
+        for (let i = 0; i < N; i++) {
+            ctx.fillStyle = colorOf(i);
+            const y = Math.max(yr[0], Math.min(yr[1], Om[i]));
+            ctx.fillRect(X(ax.x(i)) - sz / 2, Y(y) - sz / 2, sz, sz);
+        }
+        Tools.axes(ctx, ax.range, yr, "labels");
+    }
+
+    function sweepRange() {
+        const Kc = theoryKc();
+        let top = Kc ? Math.max(3 * Kc, 1) : 4;
+        if (S.top === "nonlocal") top = 2;
+        return [0, Math.min(12, top)];
+    }
+
+    function drawSw() {
+        const c = el.sw, ctx = c.getContext("2d"), W = c.width, H = c.height, d = Tools.dpr();
+        ctx.clearRect(0, 0, W, H);
+        const xr = sweepRange(), yr = [0, 1.05];
+        Tools.axes(ctx, xr, yr, "grid");
+        const X = (v) => (v - xr[0]) / (xr[1] - xr[0]) * W, Y = (v) => H - (v - yr[0]) / (yr[1] - yr[0]) * H;
+        const Kc = theoryKc();
+        if (Kc != null) {
+            ctx.strokeStyle = Tools.css("--muted"); ctx.setLineDash([4 * d, 4 * d]); ctx.lineWidth = d;
+            ctx.beginPath(); ctx.moveTo(X(Kc), 0); ctx.lineTo(X(Kc), H); ctx.stroke(); ctx.setLineDash([]);
+            ctx.fillStyle = Tools.css("--muted"); ctx.font = `${10.5 * d}px ui-monospace, Menlo, monospace`;
+            ctx.fillText("Kc", X(Kc) + 4 * d, 14 * d);
+        }
+        if (S.top === "all" && S.dist === "lorentz") {
+            ctx.strokeStyle = Tools.css("--good"); ctx.lineWidth = 1.6 * d;
+            ctx.beginPath();
+            for (let m = 0; m <= 300; m++) { const K = xr[0] + (xr[1] - xr[0]) * m / 300; const r = theoryR(K); m ? ctx.lineTo(X(K), Y(r)) : ctx.moveTo(X(K), Y(r)); }
+            ctx.stroke();
+        }
+        // finite-size floor 1/√N
+        ctx.strokeStyle = Tools.css("--line"); ctx.setLineDash([2 * d, 3 * d]);
+        ctx.beginPath(); ctx.moveTo(0, Y(1 / Math.sqrt(N))); ctx.lineTo(W, Y(1 / Math.sqrt(N))); ctx.stroke(); ctx.setLineDash([]);
+        if (sweep) {
+            const acc = Tools.css("--accent"), warm = Tools.css("--warm");
+            ctx.lineWidth = 1.5 * d;
+            sweep.up.forEach(([K, r]) => { ctx.fillStyle = acc; ctx.beginPath(); ctx.arc(X(K), Y(r), 3.4 * d, 0, TAU); ctx.fill(); });
+            sweep.down.forEach(([K, r]) => { ctx.strokeStyle = warm; ctx.beginPath(); ctx.arc(X(K), Y(r), 4 * d, 0, TAU); ctx.stroke(); });
+        }
+        // current K
+        ctx.strokeStyle = Tools.css("--accent"); ctx.globalAlpha = 0.6; ctx.lineWidth = d;
+        ctx.beginPath(); ctx.moveTo(X(S.K), 0); ctx.lineTo(X(S.K), H); ctx.stroke(); ctx.globalAlpha = 1;
+        ctx.fillStyle = Tools.css("--accent");
+        ctx.beginPath(); ctx.arc(X(S.K), Y(rAvg), 4 * d, 0, TAU); ctx.fill();
+        Tools.axes(ctx, xr, yr, "labels");
+    }
+
+    function updateReadout() {
+        const rows = [];
+        const add = (k, v) => rows.push(`<dt>${k}</dt><dd>${v}</dd>`);
+        add("r (smoothed)", rAvg.toFixed(4));
+        add("ψ", (wrap(psi)).toFixed(3) + " rad");
+        const Kc = theoryKc();
+        add("K<sub>c</sub> (theory)", Kc == null ? (S.top === "all" ? "no closed form here" : "—") : `${Tools.fmt(Kc, 4)} · K/K<sub>c</sub> = ${Kc > 0 ? Tools.fmt(S.K / Kc, 3) : "∞"}`);
+        const rt = theoryR(S.K);
+        if (rt != null) add("r (theory, N → ∞)", rt.toFixed(4));
+        // locked: effective frequency within a small tolerance of the median effective frequency
+        const sorted = Array.from(Om).sort((p, q) => p - q), med = sorted[Math.floor(N / 2)];
+        const tol = 0.02 + 0.02 * S.g;
+        let lock = 0; for (let i = 0; i < N; i++) if (Math.abs(Om[i] - med) < tol) lock++;
+        add("Locked", `${lock} of ${N} (${Math.round(100 * lock / N)}%) · Ω = ${Tools.fmt(med, 3)}`);
+        add("1/√N floor", (1 / Math.sqrt(N)).toFixed(3));
+        el.readout.innerHTML = rows.join("");
+        el.Kc.textContent = Kc != null ? `Kc ≈ ${Tools.fmt(Kc, 3)}` : "";
+    }
+
+    function drawAll() { drawCircle(); drawRt(); drawPh(); drawFr(); drawSw(); updateReadout(); }
+
+    /* ---------- K sweep (adiabatic up and down), computed in the background ---------- */
+
+    let sweepJob = 0;
+    function runSweep() {
+        const my = ++sweepJob;
+        const n = N, w = Float64Array.from(om), p = Float64Array.from(th);
+        const bufs = [new Float64Array(n), new Float64Array(n), new Float64Array(n), new Float64Array(n), new Float64Array(n)];
+        const [K0, K1] = sweepRange(), M = 32;
+        const Ks = [];
+        for (let m = 0; m <= M; m++) Ks.push(K0 + (K1 - K0) * m / M);
+        const plan = Ks.map((K) => ["up", K]).concat(Ks.slice(0, -1).reverse().map((K) => ["down", K]));
+        const h = Math.min(0.1, S.dt * 2), Ttr = S.top === "nonlocal" ? 150 : 80, Tav = 80;
+        const nTr = Math.round(Ttr / h), nAv = Math.round(Tav / h);
+        sweep = { up: [], down: [] };
+        let idx = 0, stepI = 0, acc = 0;
+        // start the up-sweep from incoherence
+        for (let i = 0; i < n; i++) p[i] = S.top === "nonlocal" ? p[i] : TAU * Math.random();
+        el.swStatus.textContent = "sweeping…";
+        function chunk() {
+            if (my !== sweepJob) return;
+            const t0 = performance.now();
+            while (idx < plan.length && performance.now() - t0 < 12) {
+                const [dir, K] = plan[idx];
+                rk4(p, w, n, K, h, bufs);
+                if (stepI >= nTr) acc += order(p, n)[0];
+                stepI++;
+                if (stepI >= nTr + nAv) {
+                    sweep[dir].push([K, acc / nAv]);
+                    idx++; stepI = 0; acc = 0;
+                }
+            }
+            el.swStatus.textContent = idx < plan.length ? `sweeping… ${Math.round(100 * idx / plan.length)}%` : `${M + 1} values of K, up and down · ${n} oscillators`;
+            drawSw();
+            if (idx < plan.length) requestAnimationFrame(chunk);
+        }
+        requestAnimationFrame(chunk);
+    }
+
+    /* ---------- controls and state ---------- */
+
+    function applyTopDefaults(top) {
+        if (top === "nonlocal") Object.assign(S, { N: 256, K: 1, dist: "identical", alpha: Math.PI / 2 - 0.18, A: 0.995, ic: "chimera", D: 0, rot: true, speed: 10 });
+        else if (top === "ring") Object.assign(S, { N: 200, K: 1, dist: "identical", alpha: 0, k: 5, ic: "twist2", D: 0, speed: 8 });
+        else Object.assign(S, { N: 400, K: 1.5, dist: "lorentz", g: 0.5, alpha: 0, ic: "random", D: 0, speed: 4 });
+    }
+
+    function syncControls() {
+        el.top.value = S.top;
+        el.eq.innerHTML = TOPS[S.top].eq;
+        el.notes.innerHTML = `<p>${TOPS[S.top].note}</p>` + Tools.refs(TOPS[S.top].refs.map((k) => R[k]));
+        Tools.setPair(el.K, el.Knum, S.K, 0, S.top === "nonlocal" ? 3 : 6, 0.01);
+        Tools.setPair(el.N, el.Nnum, S.N, 2, 2000, 1);
+        el.dist.value = S.dist;
+        el.gBox.hidden = S.dist === "identical";
+        el.gname.textContent = S.dist === "gauss" ? "σ" : S.dist === "uniform" ? "γ (ω ∈ [−γ, γ])" : "γ";
+        Tools.setPair(el.g, el.gnum, S.g, 0, 2, 0.01);
+        el.rnd.checked = S.rnd;
+        Tools.setPair(el.alpha, el.alphanum, +S.alpha.toFixed(4), -1.5708, 1.5708, 0.001);
+        Tools.setPair(el.D, el.Dnum, S.D, 0, 1, 0.005);
+        el.kBox.hidden = S.top !== "ring";
+        Tools.setPair(el.k, el.knum, S.k, 1, Math.max(1, Math.floor((S.N - 1) / 2)), 1);
+        el.ABox.hidden = S.top !== "nonlocal";
+        Tools.setPair(el.A, el.Anum, S.A, 0, 1, 0.001);
+        el.ic.value = S.ic;
+        el.dt.value = S.dt;
+        el.speed.value = S.speed;
+        el.rot.checked = S.rot;
+    }
+
+    function saveHash() {
+        Tools.writeHash({
+            top: S.top, N: S.N, K: S.K, d: S.dist, g: S.g, a: +S.alpha.toFixed(4), D: S.D,
+            ...(S.top === "ring" ? { k: S.k } : {}), ...(S.top === "nonlocal" ? { A: S.A } : {}),
+            ic: S.ic, dt: S.dt, sp: S.speed, ...(S.rnd ? { rnd: 1 } : {}),
+        });
+    }
+
+    function loadHash() {
+        const h = Tools.readHash();
+        const top = ["all", "ring", "nonlocal"].includes(h.top) ? h.top : "all";
+        S.top = top;
+        applyTopDefaults(top);
+        S.N = Tools.num(h.N, S.N, 2, 2000) | 0;
+        S.K = Tools.num(h.K, S.K, 0, 50);
+        S.dist = ["lorentz", "gauss", "uniform", "identical"].includes(h.d) ? h.d : S.dist;
+        S.g = Tools.num(h.g, S.g, 0, 10);
+        S.alpha = Tools.num(h.a, S.alpha, -Math.PI, Math.PI);
+        S.D = Tools.num(h.D, S.D, 0, 10);
+        S.k = Tools.num(h.k, S.k, 1, 1000) | 0;
+        S.A = Tools.num(h.A, S.A, 0, 1);
+        S.ic = ["random", "sync", "twist1", "twist2", "twist3", "chimera"].includes(h.ic) ? h.ic : S.ic;
+        S.dt = Tools.num(h.dt, S.dt, 0.001, 0.5);
+        S.speed = Tools.num(h.sp, S.speed, 1, 40) | 0;
+        S.rnd = h.rnd === "1";
+    }
+
+    function rebuild(keepPhases) {
+        const old = th;
+        if (N !== S.N) { alloc(S.N); keepPhases = false; }
+        drawFrequencies();
+        if (keepPhases && old) th.set(old); else initPhases();
+        sweep = null; sweepJob++;
+        el.swStatus.textContent = "";
+        syncControls();
+        saveHash();
+    }
+
+    Tools.pair(el.K, el.Knum, (v) => { S.K = v; saveHash(); });
+    Tools.pair(el.N, el.Nnum, (v) => { S.N = Math.max(2, Math.min(2000, Math.round(v))); rebuild(false); });
+    Tools.pair(el.g, el.gnum, (v) => { S.g = Math.max(0, v); rebuild(true); });
+    Tools.pair(el.alpha, el.alphanum, (v) => { S.alpha = v; sweep = null; saveHash(); });
+    Tools.pair(el.D, el.Dnum, (v) => { S.D = Math.max(0, v); sweep = null; saveHash(); });
+    Tools.pair(el.k, el.knum, (v) => { S.k = Math.max(1, Math.round(v)); sweep = null; saveHash(); });
+    Tools.pair(el.A, el.Anum, (v) => { S.A = v; sweep = null; saveHash(); });
+    el.top.addEventListener("change", () => { S.top = el.top.value; applyTopDefaults(S.top); rebuild(false); });
+    el.dist.addEventListener("change", () => { S.dist = el.dist.value; rebuild(true); });
+    el.rnd.addEventListener("change", () => { S.rnd = el.rnd.checked; rebuild(true); });
+    el.ic.addEventListener("change", () => { S.ic = el.ic.value; initPhases(); saveHash(); });
+    el.dt.addEventListener("change", () => { S.dt = Tools.num(el.dt.value, 0.05, 0.001, 0.5); el.dt.value = S.dt; saveHash(); });
+    el.speed.addEventListener("input", () => { S.speed = +el.speed.value; saveHash(); });
+    el.rot.addEventListener("change", () => { S.rot = el.rot.checked; });
+    el.play.addEventListener("click", () => { playing = !playing; el.play.textContent = playing ? "Pause" : "Play"; });
+    $("restart").addEventListener("click", () => initPhases());
+    $("resample").addEventListener("click", () => { drawFrequencies(); sweep = null; });
+    $("kick").addEventListener("click", () => { for (let i = 0; i < N; i++) if (Math.random() < 0.5) th[i] = TAU * Math.random(); });
+    $("link").addEventListener("click", (e) => Tools.copyLink(e.currentTarget));
+    $("sweep").addEventListener("click", runSweep);
+    $("clearSweep").addEventListener("click", () => { sweepJob++; sweep = null; el.swStatus.textContent = ""; });
+    el.sw.addEventListener("click", (e) => {
+        const rect = el.sw.getBoundingClientRect(), [a, b] = sweepRange();
+        S.K = +(a + (e.clientX - rect.left) / rect.width * (b - a)).toFixed(3);
+        Tools.setPair(el.K, el.Knum, S.K);
+        saveHash();
+    });
+
+    /* ---------- loop and layout ---------- */
+
+    function frame() {
+        if (playing) for (let s = 0; s < S.speed; s++) step();
+        drawAll();
+        requestAnimationFrame(frame);
+    }
+
+    function layout() {
+        const narrow = window.innerWidth <= 900;
+        const cw = el.circle.clientWidth;
+        Tools.fit(el.circle, Math.round(narrow ? Math.min(cw, 420) : Math.min(cw, 560)));
+        Tools.fit(el.rt, 150);
+        Tools.fit(el.ph, 210);
+        Tools.fit(el.fr, 210);
+        Tools.fit(el.sw, 230);
+    }
+
+    let rt = null;
+    new ResizeObserver(() => { clearTimeout(rt); rt = setTimeout(layout, 100); }).observe(document.querySelector(".wrap"));
+    Tools.initThemeButton($("theme"));
+    window.addEventListener("hashchange", () => { loadHash(); rebuild(false); });
+
+    loadHash();
+    alloc(S.N);
+    rebuild(false);
+    layout();
+    requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

@@ -3,14 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Chaos Tools</title>
-<meta name="description" content="Interactive tools for nonlinear dynamics and chaos, side by side: a bifurcation explorer for one-dimensional maps and a 3D viewer of strange attractors.">
+<title>Dynamics Tools</title>
+<meta name="description" content="Interactive tools for nonlinear dynamics, side by side: a bifurcation explorer for one-dimensional maps, a 3D viewer of strange attractors and a Kuramoto oscillator simulator.">
 <meta name="robots" content="noindex">
-<link rel="stylesheet" href="chaos.css">
-<script src="chaos.js"></script>
+<link rel="stylesheet" href="tools.css">
+<script src="tools.js"></script>
 <style>
-    .wrap { max-width: 1680px; }
-    .frames { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; }
+    .wrap { max-width: 2200px; }
+    /* three across on wide screens, then two, then one */
+    .frames { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; align-items: start; }
+    @media (max-width: 1700px) { .frames { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
     @media (max-width: 1100px) { .frames { grid-template-columns: minmax(0, 1fr); } }
     .frame { padding: 0; overflow: hidden; }
     .frame .bar {
@@ -26,7 +28,7 @@
 
 <header class="top">
     <div>
-        <h1>Chaos</h1>
+        <h1>Dynamics tools</h1>
         <div class="sub">Interactive tools for nonlinear dynamics: deterministic rules, unpredictable behavior</div>
     </div>
     <nav>
@@ -44,17 +46,21 @@
         <div class="bar"><b>Strange attractors</b><a class="open" href="illustration/" target="_blank" rel="noopener">open in a new tab ↗</a></div>
         <iframe src="illustration/" title="Strange attractors"></iframe>
     </section>
+    <section class="panel frame">
+        <div class="bar"><b>Kuramoto oscillators</b><a class="open" href="kuramoto/" target="_blank" rel="noopener">open in a new tab ↗</a></div>
+        <iframe src="kuramoto/" title="Kuramoto oscillators"></iframe>
+    </section>
 </div>
 
 <footer class="foot">
-    H. Sandmann · tools first written in 2017 for <a href="http://sandmann.sdf.org/chaos/" target="_blank" rel="noopener">sandmann.sdf.org</a>, rewritten in 2026.
+    H. Sandmann · bifurcation and attractor tools first written in 2017 for <a href="http://sandmann.sdf.org/chaos/" target="_blank" rel="noopener">sandmann.sdf.org</a>, rewritten in 2026.
 </footer>
 </div>
 
 <script>
 "use strict";
 (() => {
-    Chaos.initThemeButton(document.getElementById("theme"));
+    Tools.initThemeButton(document.getElementById("theme"));
 
     /* Same-origin frames: grow each iframe to its content so the page scrolls as one document,
        and keep the "open in a new tab" link pointing at the frame's current state (its URL hash). */

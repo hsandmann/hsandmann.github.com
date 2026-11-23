@@ -1,12 +1,12 @@
-/* Shared helpers for the chaos tools: theme toggle, canvas sizing, axes, URL-hash state, export. */
+/* Shared helpers for the tools: theme toggle, canvas sizing, axes, URL-hash state, export. */
 "use strict";
 
-const Chaos = (() => {
+const Tools = (() => {
     const root = document.documentElement;
     const themeListeners = [];
 
     function storedTheme() {
-        try { return localStorage.getItem("chaos-theme") || "auto"; } catch (e) { return "auto"; }
+        try { return localStorage.getItem("tools-theme") || "auto"; } catch (e) { return "auto"; }
     }
 
     function applyTheme(t) {
@@ -23,7 +23,7 @@ const Chaos = (() => {
         label();
         btn.addEventListener("click", () => {
             t = t === "auto" ? "light" : t === "light" ? "dark" : "auto";
-            try { localStorage.setItem("chaos-theme", t); } catch (e) { /* private mode */ }
+            try { localStorage.setItem("tools-theme", t); } catch (e) { /* private mode */ }
             applyTheme(t);
             label();
             themeListeners.forEach((f) => f());
@@ -33,7 +33,7 @@ const Chaos = (() => {
         } catch (e) { /* old browsers */ }
         // keep embedded pages (and other tabs) in step when the theme changes elsewhere
         window.addEventListener("storage", (e) => {
-            if (e.key !== "chaos-theme") return;
+            if (e.key !== "tools-theme") return;
             t = e.newValue || "auto";
             applyTheme(t);
             label();

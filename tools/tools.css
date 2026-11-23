@@ -1,4 +1,4 @@
-/* Shared styles for the chaos tools (bifurcation explorer, attractor illustration).
+/* Shared styles for the tools (bifurcation explorer, attractor illustration).
    Standalone pages: no theme, no external dependencies. Colors come only from these tokens. */
 :root {
     --bg: #fbfbfc;

@@ -569,6 +569,7 @@ Alongside more than a decade of university teaching, I have worked as a senior s
 <p class="cv-note">Interviews and expert commentary in Brazilian broadcast and print media.</p>
 
 <ul class="cv-rows cv-press">
+    <li><span><strong>Folha de S.Paulo</strong> — "Busca por vestígios e suspeitos ganha reforço da IA e chega a casos de homicídio", expert commentary on AI in policing and algorithmic bias</span><span class="cv-when">Nov 2026 · <a href="https://www1.folha.uol.com.br/cotidiano/2026/11/busca-por-vestigios-e-suspeitos-ganha-reforco-da-ia-e-chega-a-casos-de-homicidio.shtml" target="_blank">read</a></span></li>
     <li><span><strong>Jornal da Band</strong> · TV Bandeirantes — Interview on children's images published online</span><span class="cv-when">Jul 2023 · <a href="https://www.youtube.com/watch?v=706vzDaaLcQ&t=2354s" target="_blank">watch</a></span></li>
     <li><span><strong>Jornal da Band</strong> · TV Bandeirantes — Interview on security of cryptocurrency wallets</span><span class="cv-when">Mar 2023 · <a href="https://www.youtube.com/watch?v=lfh9akgkmGE&t=2220s" target="_blank">watch</a></span></li>
     <li><span><strong>GloboNews Em Ponto</strong> · GloboNews — Live commentary on the 5G rollout in Brazil</span><span class="cv-when">Nov 2019</span></li>

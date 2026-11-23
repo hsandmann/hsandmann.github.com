@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chaos Tools</title>
+<meta name="description" content="Interactive tools for nonlinear dynamics and chaos, side by side: a bifurcation explorer for one-dimensional maps and a 3D viewer of strange attractors.">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="chaos.css">
+<script src="chaos.js"></script>
+<style>
+    .wrap { max-width: 1680px; }
+    .frames { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; }
+    @media (max-width: 1100px) { .frames { grid-template-columns: minmax(0, 1fr); } }
+    .frame { padding: 0; overflow: hidden; }
+    .frame .bar {
+        display: flex; justify-content: space-between; align-items: center; gap: 8px;
+        padding: 8px 12px; border-bottom: 1px solid var(--line); font-size: 0.85rem;
+    }
+    .frame .bar b { font-weight: 600; }
+    .frame iframe { display: block; width: 100%; height: 1600px; border: 0; background: var(--bg); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+    <div>
+        <h1>Chaos</h1>
+        <div class="sub">Interactive tools for nonlinear dynamics: deterministic rules, unpredictable behavior</div>
+    </div>
+    <nav>
+        <a href="https://hsandmann.github.io/">hsandmann.github.io</a>
+        <button id="theme" type="button">Theme</button>
+    </nav>
+</header>
+
+<div class="frames">
+    <section class="panel frame">
+        <div class="bar"><b>Bifurcation explorer</b><a class="open" href="bifurcation/" target="_blank" rel="noopener">open in a new tab ↗</a></div>
+        <iframe src="bifurcation/" title="Bifurcation explorer"></iframe>
+    </section>
+    <section class="panel frame">
+        <div class="bar"><b>Strange attractors</b><a class="open" href="illustration/" target="_blank" rel="noopener">open in a new tab ↗</a></div>
+        <iframe src="illustration/" title="Strange attractors"></iframe>
+    </section>
+</div>
+
+<footer class="foot">
+    H. Sandmann · tools first written in 2017 for <a href="http://sandmann.sdf.org/chaos/" target="_blank" rel="noopener">sandmann.sdf.org</a>, rewritten in 2026.
+</footer>
+</div>
+
+<script>
+"use strict";
+(() => {
+    Chaos.initThemeButton(document.getElementById("theme"));
+
+    /* Same-origin frames: grow each iframe to its content so the page scrolls as one document,
+       and keep the "open in a new tab" link pointing at the frame's current state (its URL hash). */
+    function fitFrame(f) {
+        try {
+            const doc = f.contentDocument;
+            if (!doc || !doc.body) return;
+            f.style.height = Math.max(600, Math.ceil(doc.body.getBoundingClientRect().height)) + "px";
+        } catch (e) { /* cross-origin preview: keep the fixed height */ }
+    }
+
+    document.querySelectorAll(".frame iframe").forEach((f) => {
+        f.addEventListener("load", () => {
+            fitFrame(f);
+            try {
+                const win = f.contentWindow, link = f.closest(".frame").querySelector(".open");
+                new win.ResizeObserver(() => fitFrame(f)).observe(win.document.body);
+                const sync = () => { link.href = win.location.href; };
+                win.addEventListener("hashchange", sync);
+                setInterval(sync, 1500);
+            } catch (e) { /* cross-origin */ }
+        });
+    });
+})();
+</script>
+</body>
+</html>

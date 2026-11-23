@@ -1,0 +1,895 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Strange Attractors</title>
+<meta name="description" content="Interactive 3D illustration of strange attractors (Lorenz, Rössler, Chen, Chua, Thomas, Aizawa…) and chaotic maps, with sensitivity to initial conditions and the largest Lyapunov exponent.">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="../chaos.css">
+<script src="../chaos.js"></script>
+<style>
+    .main {
+        display: grid;
+        grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr);
+        gap: 12px;
+        margin: 12px 0;
+    }
+    @media (max-width: 900px) {
+        .main { grid-template-columns: minmax(0, 1fr); }
+    }
+    .side { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+    #view { cursor: grab; background: transparent; }
+    #view.dragging { cursor: grabbing; }
+    .viewbar { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; justify-content: space-between; margin-top: 10px; }
+    .params { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 10px 18px; }
+    .ics { display: flex; gap: 6px; align-items: center; }
+    .ics input { width: 0; flex: 1 1 0; }
+    .eqs { line-height: 1.7; }
+    .legend { display: flex; gap: 12px; font-size: 0.8rem; color: var(--muted); }
+    .legend i { display: inline-block; width: 14px; height: 3px; border-radius: 2px; vertical-align: middle; margin-right: 4px; }
+    body.embedded .wrap { padding-top: 12px; }
+    body.embedded header.top { display: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+    <div>
+        <h1>Strange attractors</h1>
+        <div class="sub">Chaotic flows d<b>x</b>/dt = F(<b>x</b>) and two-dimensional maps, in 3D, with the butterfly effect measured</div>
+    </div>
+    <nav>
+        <a href="../">All tools</a>
+        <a href="../bifurcation/">← Bifurcation</a>
+        <button id="theme" type="button">Theme</button>
+    </nav>
+</header>
+
+<section class="panel" aria-label="System">
+    <div class="controls">
+        <div class="ctl">
+            <label for="sys">System</label>
+            <select id="sys"></select>
+        </div>
+        <div class="ctl" style="grid-column: span 2;">
+            <label>Equations</label>
+            <div><span class="eq eqs" id="eq"></span></div>
+        </div>
+    </div>
+    <div class="gap"></div>
+    <div class="params" id="params"></div>
+    <div class="gap"></div>
+    <div class="controls">
+        <div class="ctl">
+            <label>Initial condition</label>
+            <div class="ics" id="ics"></div>
+        </div>
+        <div class="ctl" id="intBox">
+            <label for="int">Integrator · step dt</label>
+            <div class="row">
+                <select id="int" style="width: auto;"><option value="rk4">Runge–Kutta 4</option><option value="euler">Euler</option></select>
+                <input type="number" id="dt" step="any" min="0.0001" aria-label="Time step">
+            </div>
+        </div>
+        <div class="ctl">
+            <label for="T"><span id="Tlabel">Duration T</span></label>
+            <div class="row"><input type="number" id="T" step="any" min="1" aria-label="Duration"><label class="check"><input type="checkbox" id="skip"> hide transient</label></div>
+        </div>
+        <div class="ctl">
+            <label for="twin">Twin trajectory (butterfly effect)</label>
+            <div class="row"><label class="check"><input type="checkbox" id="twin"> offset δ</label><input type="number" id="delta" step="any" aria-label="Offset of the twin initial condition"></div>
+        </div>
+    </div>
+    <div class="gap"></div>
+    <div class="btns">
+        <button type="button" id="defaults">Default parameters</button>
+        <button type="button" id="random">Random initial condition</button>
+        <button type="button" id="link">Copy link</button>
+    </div>
+</section>
+
+<div class="main">
+    <section class="panel">
+        <h2>Phase space <span class="hint" id="viewHint">drag: rotate · shift-drag: pan · wheel/pinch: zoom · double-click: reset</span></h2>
+        <canvas id="view" aria-label="Attractor"></canvas>
+        <div class="viewbar">
+            <div class="btns">
+                <button type="button" class="primary" id="play">Play</button>
+                <button type="button" data-view="3d">3D</button>
+                <button type="button" data-view="xy">x–y</button>
+                <button type="button" data-view="xz">x–z</button>
+                <button type="button" data-view="yz">y–z</button>
+                <button type="button" id="png">PNG</button>
+            </div>
+            <div class="btns" style="align-items: center;">
+                <label class="check"><input type="checkbox" id="spin"> spin</label>
+                <label class="check"><input type="checkbox" id="persp" checked> perspective</label>
+                <select id="color" style="width: auto;" aria-label="Color by">
+                    <option value="time">color: time</option>
+                    <option value="speed">color: speed</option>
+                    <option value="height">color: depth z</option>
+                    <option value="mono">color: single</option>
+                </select>
+                <input type="range" id="speed" min="1" max="60" value="12" style="width: 90px;" aria-label="Animation speed" title="Animation speed">
+            </div>
+        </div>
+    </section>
+    <div class="side">
+        <section class="panel">
+            <h2>Measurements</h2>
+            <dl class="readout" id="readout"></dl>
+        </section>
+        <section class="panel">
+            <h2>Time series <span class="legend"><span><i style="background: var(--accent)"></i>x</span><span><i style="background: var(--warm)"></i>y</span><span><i style="background: var(--good)"></i>z</span></span></h2>
+            <canvas id="ts" aria-label="Time series"></canvas>
+        </section>
+        <section class="panel">
+            <h2>Separation of the twins <span class="hint">log₁₀ |Δ|</span></h2>
+            <canvas id="sep" aria-label="Separation between twin trajectories"></canvas>
+            <div class="note" id="sepNote"></div>
+        </section>
+    </div>
+</div>
+
+<section class="panel note">
+    <h2>About this system</h2>
+    <div id="notes"></div>
+</section>
+
+<details class="help">
+    <summary>How it works</summary>
+    <div class="note">
+        <p><b>Integration:</b> flows are integrated with classical fourth-order Runge–Kutta (or Euler, to see how a crude integrator distorts the attractor) at fixed step dt; maps are simply iterated. “Hide transient” drops the first 5% of the orbit, before it settles on the attractor.</p>
+        <p><b>Butterfly effect:</b> the twin starts at x₀ + δ. While the twins are close, |Δ| grows like e<sup>λt</sup>, a straight line of slope λ / ln 10 in the log plot (dashed); it saturates at the size of the attractor, when the twins are effectively unrelated.</p>
+        <p><b>Largest Lyapunov exponent:</b> estimated with Benettin’s method (Benettin, Galgani, Giorgilli &amp; Strelcyn, 1980, <i>Meccanica</i> 15, 9–20, <a href="https://doi.org/10.1007/BF02128236" target="_blank" rel="noopener">doi:10.1007/BF02128236</a>): a third, hidden orbit is kept at distance 10⁻⁸ from the reference and renormalized after every step; λ is the average of ln(d/d₀) per unit time (per iteration for maps). λ &gt; 0 is the signature of chaos; a stable cycle gives λ &lt; 0, a quasi-periodic torus λ ≈ 0.</p>
+        <p><b>Sharing:</b> the address bar keeps the system, parameters and initial condition.</p>
+    </div>
+</details>
+
+<footer class="foot">
+    H. Sandmann · rewritten in 2026 from the <a href="http://sandmann.sdf.org/chaos/illustration/" target="_blank" rel="noopener">2017 version</a> ·
+    <a href="https://hsandmann.github.io/">hsandmann.github.io</a>
+</footer>
+</div>
+
+<script>
+"use strict";
+(() => {
+    if (window.self !== window.top) document.body.classList.add("embedded");
+
+    const $ = (id) => document.getElementById(id);
+    const TAU = 2 * Math.PI;
+
+    /* kind: "flow" (3D ODE) or "map" (2D iterated map, drawn in the x–y plane). */
+    /* Original papers (DOIs checked against Crossref). */
+    const R = {
+        lorenz: ["Lorenz, E. N. (1963). Deterministic nonperiodic flow. <i>Journal of the Atmospheric Sciences</i>, 20(2), 130–141.", "10.1175/1520-0469(1963)020<0130:DNF>2.0.CO;2"],
+        rossler: ["Rössler, O. E. (1976). An equation for continuous chaos. <i>Physics Letters A</i>, 57(5), 397–398.", "10.1016/0375-9601(76)90101-8"],
+        chen: ["Chen, G., &amp; Ueta, T. (1999). Yet another chaotic attractor. <i>International Journal of Bifurcation and Chaos</i>, 9(7), 1465–1466.", "10.1142/S0218127499001024"],
+        matsumoto: ["Matsumoto, T. (1984). A chaotic attractor from Chua’s circuit. <i>IEEE Transactions on Circuits and Systems</i>, 31(12), 1055–1058.", "10.1109/TCS.1984.1085459"],
+        chua: ["Chua, L. O., Komuro, M., &amp; Matsumoto, T. (1986). The double scroll family. <i>IEEE Transactions on Circuits and Systems</i>, 33(11), 1072–1118.", "10.1109/TCS.1986.1085869"],
+        thomas: ["Thomas, R. (1999). Deterministic chaos seen in terms of feedback circuits: analysis, synthesis, “labyrinth chaos”. <i>International Journal of Bifurcation and Chaos</i>, 9(10), 1889–1905.", "10.1142/S0218127499001383"],
+        elegant: ["Sprott, J. C. (2010). <i>Elegant Chaos: Algebraically Simple Chaotic Flows</i>. World Scientific.", "10.1142/7183"],
+        dadras: ["Dadras, S., &amp; Momeni, H. R. (2009). A novel three-dimensional autonomous chaotic system generating two, three and four-scroll attractors. <i>Physics Letters A</i>, 373(40), 3637–3642.", "10.1016/j.physleta.2009.07.088"],
+        sprott: ["Sprott, J. C. (1994). Some simple chaotic flows. <i>Physical Review E</i>, 50(2), R647–R650.", "10.1103/PhysRevE.50.R647"],
+        henon: ["Hénon, M. (1976). A two-dimensional mapping with a strange attractor. <i>Communications in Mathematical Physics</i>, 50, 69–77.", "10.1007/BF01608556"],
+        nusse: ["Nusse, H. E., &amp; Yorke, J. A. (1994). <i>Dynamics: Numerical Explorations</i>. Springer — the book where the Tinkerbell map appears.", "10.1007/978-1-4684-0231-5"],
+        ikeda79: ["Ikeda, K. (1979). Multiple-valued stationary state and its instability of the transmitted light by a ring cavity system. <i>Optics Communications</i>, 30(2), 257–261.", "10.1016/0030-4018(79)90090-7"],
+        ikeda80: ["Ikeda, K., Daido, H., &amp; Akimoto, O. (1980). Optical turbulence: chaotic behavior of transmitted light from a ring cavity. <i>Physical Review Letters</i>, 45(9), 709–712.", "10.1103/PhysRevLett.45.709"],
+        pickover: ["Pickover, C. A. (1994). <i>Chaos in Wonderland: Visual Adventures in a Fractal World</i>. St. Martin’s Press.", null],
+        aizawa: ["No primary source could be traced for this exact system; it is usually credited to Yoji Aizawa and circulates through attractor galleries.", null],
+    };
+    const REFS = {
+        lorenz: [R.lorenz], rossler: [R.rossler], chen: [R.chen], chua: [R.matsumoto, R.chua], thomas: [R.thomas],
+        aizawa: [R.aizawa], halvorsen: [R.elegant], dadras: [R.dadras], sprott: [R.sprott, R.elegant],
+        henon: [R.henon], tinkerbell: [R.nusse], ikeda: [R.ikeda79, R.ikeda80], clifford: [R.pickover],
+    };
+
+    const SYSTEMS = [
+        {
+            id: "lorenz", name: "Lorenz", kind: "flow",
+            params: [["σ", "s", 10, 0, 30], ["ρ", "r", 28, 0.5, 100], ["β", "b", 8 / 3, 0.1, 6]],
+            eq: "ẋ = σ(y − x)<br>ẏ = x(ρ − z) − y<br>ż = xy − βz",
+            F: (x, y, z, p) => [p.s * (y - x), x * (p.r - z) - y, x * y - p.b * z],
+            ic: [1, 1, 1], dt: 0.005, T: 60,
+            note: "Lorenz (1963) reduced a model of atmospheric convection to three equations and found that rounding a restart value to three decimals produced a completely different forecast — the “butterfly effect”. The two wings surround the unstable fixed points (±√(β(ρ−1)), ±√(β(ρ−1)), ρ−1). Try ρ &lt; 24.74 (the orbit eventually settles on a fixed point), ρ = 99.96 (a periodic knot) or ρ = 160 (a stable periodic orbit).",
+        },
+        {
+            id: "rossler", name: "Rössler", kind: "flow",
+            params: [["a", "a", 0.2, 0, 0.5], ["b", "b", 0.2, 0, 2], ["c", "c", 5.7, 1, 20]],
+            eq: "ẋ = −y − z<br>ẏ = x + ay<br>ż = b + z(x − c)",
+            F: (x, y, z, p) => [-y - z, x + p.a * y, p.b + z * (x - p.c)],
+            ic: [1, 1, 1], dt: 0.01, T: 300,
+            note: "Rössler (1976) designed the simplest flow he could with one nonlinear term: a spiral that is stretched outwards and then folded back by the z-spike. Lower c to 2.5, 3.5, 4 to watch period doubling of the cycle (1, 2, 4 loops) before chaos at c ≈ 4.2.",
+        },
+        {
+            id: "chen", name: "Chen", kind: "flow",
+            params: [["a", "a", 35, 20, 50], ["b", "b", 3, 1, 6], ["c", "c", 28, 15, 35]],
+            eq: "ẋ = a(y − x)<br>ẏ = (c − a)x − xz + cy<br>ż = xy − bz",
+            F: (x, y, z, p) => [p.a * (y - x), (p.c - p.a) * x - x * z + p.c * y, x * y - p.b * z],
+            ic: [-10, 0, 37], dt: 0.002, T: 40,
+            note: "Chen and Ueta (1999) found it while trying to control the Lorenz system: same symmetry and same kind of equations, yet not topologically equivalent to Lorenz; its wings are more tightly wound.",
+        },
+        {
+            id: "chua", name: "Chua circuit", kind: "flow",
+            params: [["α", "al", 15.6, 5, 20], ["β", "be", 28, 10, 40], ["m₀", "m0", -1.143, -2, 0], ["m₁", "m1", -0.714, -1.5, 0]],
+            eq: "ẋ = α(y − x − h(x))<br>ẏ = x − y + z<br>ż = −βy<br><span class=\"up\">h(x) = m₁x + ½(m₀ − m₁)(|x + 1| − |x − 1|)</span>",
+            F: (x, y, z, p) => { const h = p.m1 * x + 0.5 * (p.m0 - p.m1) * (Math.abs(x + 1) - Math.abs(x - 1)); return [p.al * (y - x - h), x - y + z, -p.be * y]; },
+            ic: [0.7, 0, 0], dt: 0.01, T: 150,
+            note: "An electronic circuit you can build on a breadboard, invented by Leon Chua in 1983; Matsumoto (1984) found its chaotic attractor by simulation: two capacitors, an inductor, a resistor and one piecewise-linear negative resistor h(x). It was the first physical system proven to be chaotic. Lower α to about 8.8 to see a single scroll.",
+        },
+        {
+            id: "thomas", name: "Thomas (cyclically symmetric)", kind: "flow",
+            params: [["b", "b", 0.18, 0.01, 0.35]],
+            eq: "ẋ = sin y − bx<br>ẏ = sin z − by<br>ż = sin x − bz",
+            F: (x, y, z, p) => [Math.sin(y) - p.b * x, Math.sin(z) - p.b * y, Math.sin(x) - p.b * z],
+            ic: [0.1, 0, 0], dt: 0.05, T: 1500,
+            note: "Thomas (1999): a particle in a 3D lattice of forces with friction b. Symmetric under the cyclic swap x → y → z → x. Chaos appears as b drops below ≈ 0.208 (there λ is still tiny, ≈ 0.007); at the default b = 0.18, λ ≈ 0.035, so errors grow slowly — the Lyapunov time is about 30 time units. As b → 0 friction disappears and the orbit becomes a chaotic random walk through the lattice.",
+        },
+        {
+            id: "aizawa", name: "Aizawa", kind: "flow",
+            params: [["a", "a", 0.95, 0.5, 1.2], ["b", "b", 0.7, 0.4, 1], ["c", "c", 0.6, 0.3, 0.9], ["d", "d", 3.5, 2, 5], ["e", "e", 0.25, 0, 0.5], ["f", "f", 0.1, 0, 0.3]],
+            eq: "ẋ = (z − b)x − dy<br>ẏ = dx + (z − b)y<br>ż = c + az − z³/3 − (x² + y²)(1 + ez) + fzx³",
+            F: (x, y, z, p) => [(z - p.b) * x - p.d * y, p.d * x + (z - p.b) * y, p.c + p.a * z - z * z * z / 3 - (x * x + y * y) * (1 + p.e * z) + p.f * z * x * x * x],
+            ic: [0.1, 0, 0], dt: 0.01, T: 200,
+            note: "A sphere-like attractor with a tube along its axis: orbits spiral on the surface and are sucked through the central channel. Use the x–y view to look down the tube.",
+        },
+        {
+            id: "halvorsen", name: "Halvorsen", kind: "flow",
+            params: [["a", "a", 1.27, 1, 3]],
+            eq: "ẋ = −ax − 4y − 4z − y²<br>ẏ = −ay − 4z − 4x − z²<br>ż = −az − 4x − 4y − x²",
+            F: (x, y, z, p) => [-p.a * x - 4 * y - 4 * z - y * y, -p.a * y - 4 * z - 4 * x - z * z, -p.a * z - 4 * x - 4 * y - x * x],
+            ic: [-1.48, -1.51, 2.04], dt: 0.005, T: 100,
+            note: "Another cyclically symmetric flow: three linked lobes, one per coordinate, visited in turn. At a = 1.27, λ ≈ 0.79 (Sprott); raise a and the chaos thins out — at a = 1.89, a value common in online galleries, the orbit is actually periodic (λ ≈ 0).",
+        },
+        {
+            id: "dadras", name: "Dadras", kind: "flow",
+            params: [["a", "a", 3, 1, 5], ["b", "b", 2.7, 1, 4], ["c", "c", 1.7, 0.5, 3], ["d", "d", 2, 1, 3], ["e", "e", 9, 5, 12]],
+            eq: "ẋ = y − ax + byz<br>ẏ = cy − xz + z<br>ż = dxy − ez",
+            F: (x, y, z, p) => [y - p.a * x + p.b * y * z, p.c * y - x * z + z, p.d * x * y - p.e * z],
+            ic: [1, 1, 0], dt: 0.005, T: 100,
+            note: "Dadras and Momeni (2009): a four-wing attractor, the kind used in chaos-based secure communication circuits.",
+        },
+        {
+            id: "sprott", name: "Sprott B", kind: "flow",
+            params: [],
+            eq: "ẋ = yz<br>ẏ = x − y<br>ż = 1 − xy",
+            F: (x, y, z) => [y * z, x - y, 1 - x * y],
+            ic: [0.05, 0.05, 0.05], dt: 0.01, T: 300,
+            note: "Sprott (1994) searched by computer for the algebraically simplest chaotic flows; case B has five terms, two quadratic nonlinearities and no parameters at all, yet it is chaotic with λ ≈ 0.21. It is symmetric under (x, y, z) → (−x, −y, z), hence the two lobes.",
+        },
+        {
+            id: "henon", name: "Hénon map", kind: "map",
+            params: [["a", "a", 1.4, 0.5, 1.5], ["b", "b", 0.3, -0.5, 0.5]],
+            eq: "x<sub>n+1</sub> = 1 − ax<sub>n</sub>² + y<sub>n</sub><br>y<sub>n+1</sub> = bx<sub>n</sub>",
+            M: (x, y, p) => [1 - p.a * x * x + y, p.b * x],
+            ic: [0, 0], N: 30000,
+            note: "Hénon (1976) built it as a stroboscopic slice of the Lorenz flow. Zoom in on a strand and it splits into more strands, forever: a fractal of dimension ≈ 1.26. With b = 0 it reduces to the quadratic map of the bifurcation explorer.",
+        },
+        {
+            id: "tinkerbell", name: "Tinkerbell map", kind: "map",
+            params: [["a", "a", 0.9, 0.5, 1.1], ["b", "b", -0.6013, -0.8, -0.4], ["c", "c", 2, 1.5, 2.5], ["d", "d", 0.5, 0.2, 0.6]],
+            eq: "x<sub>n+1</sub> = x<sub>n</sub>² − y<sub>n</sub>² + ax<sub>n</sub> + by<sub>n</sub><br>y<sub>n+1</sub> = 2x<sub>n</sub>y<sub>n</sub> + cx<sub>n</sub> + dy<sub>n</sub>",
+            M: (x, y, p) => [x * x - y * y + p.a * x + p.b * y, 2 * x * y + p.c * x + p.d * y],
+            ic: [-0.72, -0.64], N: 40000,
+            note: "Named for the flight of Tinker Bell’s wand. (The 2017 page listed it but used ^ as a power, which in JavaScript is a bitwise XOR — fixed here.)",
+        },
+        {
+            id: "ikeda", name: "Ikeda map", kind: "map",
+            params: [["u", "u", 0.9, 0.5, 1]],
+            eq: "t<sub>n</sub> = 0.4 − 6 / (1 + x<sub>n</sub>² + y<sub>n</sub>²)<br>x<sub>n+1</sub> = 1 + u(x<sub>n</sub> cos t<sub>n</sub> − y<sub>n</sub> sin t<sub>n</sub>)<br>y<sub>n+1</sub> = u(x<sub>n</sub> sin t<sub>n</sub> + y<sub>n</sub> cos t<sub>n</sub>)",
+            M: (x, y, p) => { const t = 0.4 - 6 / (1 + x * x + y * y); const c = Math.cos(t), s = Math.sin(t); return [1 + p.u * (x * c - y * s), p.u * (x * s + y * c)]; },
+            ic: [0, 0], N: 40000,
+            note: "Light circulating in a ring cavity with a nonlinear medium (Ikeda, 1979). At u = 0.9 the chaotic attractor (λ ≈ 0.5) coexists with a stable fixed point near (3, 4): some initial conditions, such as (1, 1), end on the fixed point instead — try “Random initial condition”. At u = 0.918 the fixed point captures the orbit even from (0, 0).",
+        },
+        {
+            id: "clifford", name: "Clifford map", kind: "map",
+            params: [["a", "a", -1.4, -3, 3], ["b", "b", 1.6, -3, 3], ["c", "c", 1, -3, 3], ["d", "d", 0.7, -3, 3]],
+            eq: "x<sub>n+1</sub> = sin(ay<sub>n</sub>) + c cos(ax<sub>n</sub>)<br>y<sub>n+1</sub> = sin(bx<sub>n</sub>) + d cos(by<sub>n</sub>)",
+            M: (x, y, p) => [Math.sin(p.a * y) + p.c * Math.cos(p.a * x), Math.sin(p.b * x) + p.d * Math.cos(p.b * y)],
+            ic: [0.1, 0.1], N: 150000,
+            note: "Pickover’s (Clifford) attractors: bounded for any parameters, and every slider position gives a different texture — colour by speed to see where the orbit lingers.",
+        },
+    ];
+
+    const S = { sys: SYSTEMS[0], p: {}, ic: [1, 1, 1], int: "rk4", dt: 0.005, T: 60, skip: false, twin: false, delta: 1e-8 };
+    const V = { yaw: -0.65, pitch: 0.38, zoom: 1, panX: 0, panY: 0, persp: true, spin: false, color: "time" };
+    let traj = null;            // { pts: Float32Array(3n), n, twin: Float32Array|null, sep: Float32Array, t: Float32Array, speed, lambda, escaped }
+    let head = Infinity, playing = false;
+
+    const el = {
+        sys: $("sys"), eq: $("eq"), params: $("params"), ics: $("ics"), int: $("int"), dt: $("dt"), intBox: $("intBox"),
+        T: $("T"), Tlabel: $("Tlabel"), skip: $("skip"), twin: $("twin"), delta: $("delta"),
+        view: $("view"), ts: $("ts"), sep: $("sep"), sepNote: $("sepNote"), readout: $("readout"), notes: $("notes"),
+        play: $("play"), spin: $("spin"), persp: $("persp"), color: $("color"), speed: $("speed"),
+    };
+
+    const flows = document.createElement("optgroup"); flows.label = "Flows (differential equations)";
+    const maps = document.createElement("optgroup"); maps.label = "Maps (iterated)";
+    SYSTEMS.forEach((s) => (s.kind === "flow" ? flows : maps).appendChild(new Option(s.name, s.id)));
+    el.sys.append(flows, maps);
+
+    /* ---------- controls ---------- */
+
+    function buildControls() {
+        const s = S.sys;
+        el.sys.value = s.id;
+        el.eq.innerHTML = s.eq;
+        el.notes.innerHTML = `<p>${s.note}</p>` + Chaos.refs(REFS[s.id]);
+        el.params.innerHTML = "";
+        s.params.forEach(([label, key, , min, max]) => {
+            const box = document.createElement("div");
+            box.className = "ctl";
+            box.innerHTML = `<label><span><i>${label}</i></span></label><div class="row"><input type="range"><input type="number" step="any"></div>`;
+            const [range, num] = box.querySelectorAll("input");
+            range.setAttribute("aria-label", label);
+            num.setAttribute("aria-label", label + " value");
+            Chaos.setPair(range, num, S.p[key], min, max, (max - min) / 1000);
+            Chaos.pair(range, num, (v) => { S.p[key] = v; recompute(); });
+            el.params.appendChild(box);
+        });
+        el.ics.innerHTML = "";
+        const names = ["x₀", "y₀", "z₀"];
+        S.ic.forEach((v, i) => {
+            const inp = document.createElement("input");
+            inp.type = "number"; inp.step = "any"; inp.value = v;
+            inp.setAttribute("aria-label", names[i]);
+            inp.title = names[i];
+            inp.addEventListener("change", () => { const x = parseFloat(inp.value); if (Number.isFinite(x)) { S.ic[i] = x; recompute(); } });
+            el.ics.appendChild(inp);
+        });
+        const flow = s.kind === "flow";
+        el.intBox.style.visibility = flow ? "visible" : "hidden";
+        el.Tlabel.textContent = flow ? "Duration T" : "Iterations N";
+        el.int.value = S.int;
+        el.dt.value = S.dt;
+        el.T.value = S.T;
+        el.skip.checked = S.skip;
+        el.twin.checked = S.twin;
+        el.delta.value = S.delta;
+    }
+
+    function defaults(s, keepIc) {
+        S.sys = s;
+        S.p = {};
+        s.params.forEach(([, key, v]) => { S.p[key] = v; });
+        if (!keepIc) S.ic = s.ic.slice();
+        S.dt = s.kind === "flow" ? s.dt : 1;
+        S.T = s.kind === "flow" ? s.T : s.N;
+    }
+
+    function saveHash() {
+        const o = { s: S.sys.id };
+        S.sys.params.forEach(([, key]) => { o[key] = +S.p[key].toPrecision(8); });
+        o.ic = S.ic.map((v) => +v.toPrecision(10)).join(",");
+        o.T = S.T;
+        if (S.sys.kind === "flow") { o.dt = S.dt; if (S.int !== "rk4") o.int = S.int; }
+        if (S.skip) o.skip = 1;
+        if (S.twin) { o.twin = 1; o.d = S.delta; }
+        Chaos.writeHash(o);
+    }
+
+    function loadHash() {
+        const h = Chaos.readHash();
+        const s = SYSTEMS.find((q) => q.id === h.s) || SYSTEMS[0];
+        defaults(s);
+        s.params.forEach(([, key, v]) => { S.p[key] = Chaos.num(h[key], v); });
+        if (h.ic) {
+            const ic = h.ic.split(",").map(Number);
+            if (ic.length === S.ic.length && ic.every(Number.isFinite)) S.ic = ic;
+        }
+        if (s.kind === "flow") {
+            S.dt = Chaos.num(h.dt, s.dt, 1e-4, 1);
+            S.T = Chaos.num(h.T, s.T, 1, 1e5);
+            S.int = h.int === "euler" ? "euler" : "rk4";
+        } else {
+            S.T = Chaos.num(h.T, s.N, 100, 1e6) | 0;
+        }
+        S.skip = h.skip === "1";
+        S.twin = h.twin === "1";
+        S.delta = Chaos.num(h.d, 1e-8, 1e-15, 1);
+        buildControls();
+    }
+
+    /* ---------- integration ---------- */
+
+    function stepper() {
+        const s = S.sys, p = S.p;
+        if (s.kind === "map") return (v) => { const r = s.M(v[0], v[1], p); return [r[0], r[1], 0]; };
+        const F = (v) => s.F(v[0], v[1], v[2], p), h = S.dt;
+        if (S.int === "euler") return (v) => { const k = F(v); return [v[0] + h * k[0], v[1] + h * k[1], v[2] + h * k[2]]; };
+        return (v) => {
+            const k1 = F(v);
+            const k2 = F([v[0] + h / 2 * k1[0], v[1] + h / 2 * k1[1], v[2] + h / 2 * k1[2]]);
+            const k3 = F([v[0] + h / 2 * k2[0], v[1] + h / 2 * k2[1], v[2] + h / 2 * k2[2]]);
+            const k4 = F([v[0] + h * k3[0], v[1] + h * k3[1], v[2] + h * k3[2]]);
+            return [
+                v[0] + h / 6 * (k1[0] + 2 * k2[0] + 2 * k3[0] + k4[0]),
+                v[1] + h / 6 * (k1[1] + 2 * k2[1] + 2 * k3[1] + k4[1]),
+                v[2] + h / 6 * (k1[2] + 2 * k2[2] + 2 * k3[2] + k4[2]),
+            ];
+        };
+    }
+
+    const bad = (v) => !(Math.abs(v[0]) < 1e6 && Math.abs(v[1]) < 1e6 && Math.abs(v[2]) < 1e6);
+
+    function compute() {
+        const s = S.sys, flow = s.kind === "flow";
+        const n = Math.min(400000, Math.max(10, Math.round(flow ? S.T / S.dt : S.T)));
+        const step = stepper();
+        const dt = flow ? S.dt : 1;
+        const pts = new Float32Array(3 * (n + 1));
+        const twin = S.twin ? new Float32Array(3 * (n + 1)) : null;
+        const sep = S.twin ? new Float32Array(n + 1) : null;
+        const speed = new Float32Array(n + 1);
+        let v = S.ic.length === 2 ? [S.ic[0], S.ic[1], 0] : S.ic.slice();
+        let w = [v[0] + S.delta, v[1], v[2]];
+        const d0 = 1e-8;
+        let u = [v[0] + d0, v[1], v[2]];     // Benettin companion
+        let lsum = 0, lt = 0, escaped = false, count = n;
+        const ltStart = Math.floor(n * 0.05);
+        for (let i = 0; i <= n; i++) {
+            pts[3 * i] = v[0]; pts[3 * i + 1] = v[1]; pts[3 * i + 2] = v[2];
+            if (twin) {
+                twin[3 * i] = w[0]; twin[3 * i + 1] = w[1]; twin[3 * i + 2] = w[2];
+                sep[i] = Math.hypot(w[0] - v[0], w[1] - v[1], w[2] - v[2]);
+            }
+            if (i === n) break;
+            const nv = step(v);
+            if (bad(nv)) { escaped = true; count = i; break; }
+            speed[i] = Math.hypot(nv[0] - v[0], nv[1] - v[1], nv[2] - v[2]) / dt;
+            if (twin) { w = step(w); if (bad(w)) w = nv.slice(); }
+            u = step(u);
+            const dx = u[0] - nv[0], dy = u[1] - nv[1], dz = u[2] - nv[2];
+            const d = Math.hypot(dx, dy, dz);
+            if (d > 0 && Number.isFinite(d)) {
+                if (i >= ltStart) { lsum += Math.log(d / d0); lt += dt; }
+                u = [nv[0] + dx * d0 / d, nv[1] + dy * d0 / d, nv[2] + dz * d0 / d];
+            } else {
+                u = [nv[0] + d0, nv[1], nv[2]];
+            }
+            v = nv;
+        }
+        // Short runs do not converge: keep the Benettin pair going (without storing) up to a minimum span.
+        const lMin = flow ? 400 : 20000;
+        if (!escaped) {
+            let extra = 0;
+            const cap = 400000;
+            while (lt < lMin && extra < cap) {
+                const nv = step(v);
+                if (bad(nv)) break;
+                u = step(u);
+                const dx = u[0] - nv[0], dy = u[1] - nv[1], dz = u[2] - nv[2];
+                const d = Math.hypot(dx, dy, dz);
+                if (d > 0 && Number.isFinite(d)) {
+                    lsum += Math.log(d / d0); lt += dt;
+                    u = [nv[0] + dx * d0 / d, nv[1] + dy * d0 / d, nv[2] + dz * d0 / d];
+                } else {
+                    u = [nv[0] + d0, nv[1], nv[2]];
+                }
+                v = nv;
+                extra++;
+            }
+        }
+        speed[count] = speed[Math.max(0, count - 1)];
+        const start = S.skip ? Math.floor(count * 0.05) : 0;
+        // bounding sphere of the visible part
+        let mn = [Infinity, Infinity, Infinity], mx = [-Infinity, -Infinity, -Infinity];
+        for (let i = start; i <= count; i++) for (let k = 0; k < 3; k++) { const q = pts[3 * i + k]; if (q < mn[k]) mn[k] = q; if (q > mx[k]) mx[k] = q; }
+        const center = [0, 1, 2].map((k) => (mn[k] + mx[k]) / 2);
+        let R = 0;
+        for (let i = start; i <= count; i += Math.max(1, Math.floor(count / 4000))) {
+            R = Math.max(R, Math.hypot(pts[3 * i] - center[0], pts[3 * i + 1] - center[1], pts[3 * i + 2] - center[2]));
+        }
+        let smin = Infinity, smax = -Infinity;
+        for (let i = start; i <= count; i++) { const q = speed[i]; if (q < smin) smin = q; if (q > smax) smax = q; }
+        return { pts, twin, sep, speed, n: count, start, dt, center, R: R || 1, mn, mx, smin, smax, lambda: lt > 0 ? lsum / lt : NaN, lt, escaped, flow };
+    }
+
+    function recompute() {
+        traj = compute();
+        if (!playing) head = Infinity;
+        drawAll();
+        saveHash();
+    }
+
+    /* ---------- 3D view ---------- */
+
+    function project() {
+        const c = el.view, W = c.width, H = c.height, d = Chaos.dpr();
+        const cy = Math.cos(V.yaw), sy = Math.sin(V.yaw), cp = Math.cos(V.pitch), sp = Math.sin(V.pitch);
+        const s = Math.min(W, H) / 2 * 0.9 / traj.R * V.zoom;
+        const ox = W / 2 + V.panX * d, oy = H / 2 + V.panY * d;
+        const [c0, c1, c2] = traj.center;
+        const focal = 3.2;
+        return (x, y, z) => {
+            x -= c0; y -= c1; z -= c2;
+            const x1 = x * cy - y * sy, y1 = x * sy + y * cy;
+            const y2 = y1 * cp - z * sp, z2 = y1 * sp + z * cp;
+            const f = V.persp ? focal / (focal + y2 / traj.R) : 1;
+            return [ox + x1 * s * f, oy - z2 * s * f, y2];
+        };
+    }
+
+    function ramp(t) {
+        // blue → violet → orange, readable on light and dark backgrounds
+        const dark = matchMedia("(prefers-color-scheme: dark)").matches && document.documentElement.getAttribute("data-theme") !== "light" || document.documentElement.getAttribute("data-theme") === "dark";
+        const hue = 225 + t * 165;
+        return `hsl(${hue % 360}, ${dark ? 85 : 72}%, ${dark ? 66 : 48}%)`;
+    }
+
+    function drawView() {
+        const c = el.view, ctx = c.getContext("2d"), W = c.width, H = c.height, d = Chaos.dpr();
+        ctx.clearRect(0, 0, W, H);
+        if (!traj) return;
+        const P = project();
+        const { pts, start } = traj;
+        const end = Math.min(traj.n, head);
+        const B = 48;
+        const accent = Chaos.css("--accent"), warm = Chaos.css("--warm");
+        const colorIdx = (i) => {
+            if (S.twin || V.color === "mono") return 0;
+            let t;
+            if (V.color === "time") t = (i - start) / Math.max(1, traj.n - start);
+            else if (V.color === "speed") t = (traj.speed[i] - traj.smin) / Math.max(1e-12, traj.smax - traj.smin);
+            else t = (pts[3 * i + 2] - traj.mn[2]) / Math.max(1e-12, traj.mx[2] - traj.mn[2]);
+            return Math.max(0, Math.min(B - 1, Math.floor(t * B)));
+        };
+        const colors = [];
+        for (let b = 0; b < B; b++) colors.push(ramp(b / (B - 1)));
+        const single = S.twin || V.color === "mono";
+
+        // axes gizmo
+        drawGizmo(ctx, W, H, d);
+
+        if (traj.flow) {
+            const paths = Array.from({ length: single ? 1 : B }, () => new Path2D());
+            let prev = P(pts[3 * start], pts[3 * start + 1], pts[3 * start + 2]);
+            for (let i = start + 1; i <= end; i++) {
+                const q = P(pts[3 * i], pts[3 * i + 1], pts[3 * i + 2]);
+                const path = paths[single ? 0 : colorIdx(i)];
+                path.moveTo(prev[0], prev[1]);
+                path.lineTo(q[0], q[1]);
+                prev = q;
+            }
+            ctx.lineWidth = 1.05 * d;
+            ctx.lineCap = "round";
+            ctx.globalAlpha = 0.9;
+            paths.forEach((p, b) => { ctx.strokeStyle = single ? accent : colors[b]; ctx.stroke(p); });
+            if (S.twin && traj.twin) {
+                const tw = traj.twin, path = new Path2D();
+                let pv = P(tw[3 * start], tw[3 * start + 1], tw[3 * start + 2]);
+                for (let i = start + 1; i <= end; i++) {
+                    const q = P(tw[3 * i], tw[3 * i + 1], tw[3 * i + 2]);
+                    path.moveTo(pv[0], pv[1]); path.lineTo(q[0], q[1]); pv = q;
+                }
+                ctx.strokeStyle = warm;
+                ctx.globalAlpha = 0.8;
+                ctx.stroke(path);
+            }
+            ctx.globalAlpha = 1;
+        } else {
+            const sz = Math.max(1, Math.round(d * (traj.n > 60000 ? 1 : 1.4)));
+            ctx.globalAlpha = traj.n > 60000 ? 0.55 : 0.8;
+            if (single) {
+                ctx.fillStyle = accent;
+                for (let i = start; i <= end; i++) { const q = P(pts[3 * i], pts[3 * i + 1], 0); ctx.fillRect(q[0], q[1], sz, sz); }
+                if (S.twin && traj.twin) {
+                    ctx.fillStyle = warm;
+                    const tw = traj.twin;
+                    for (let i = start; i <= end; i++) { const q = P(tw[3 * i], tw[3 * i + 1], 0); ctx.fillRect(q[0], q[1], sz, sz); }
+                }
+            } else {
+                const buckets = Array.from({ length: B }, () => []);
+                for (let i = start; i <= end; i++) buckets[colorIdx(i)].push(i);
+                buckets.forEach((list, b) => {
+                    ctx.fillStyle = colors[b];
+                    for (const i of list) { const q = P(pts[3 * i], pts[3 * i + 1], 0); ctx.fillRect(q[0], q[1], sz, sz); }
+                });
+            }
+            ctx.globalAlpha = 1;
+        }
+
+        // heads
+        if (end < traj.n || playing) {
+            const i = Math.max(start, Math.min(traj.n, end));
+            const q = P(pts[3 * i], pts[3 * i + 1], pts[3 * i + 2]);
+            ctx.fillStyle = accent;
+            ctx.beginPath(); ctx.arc(q[0], q[1], 4.2 * d, 0, TAU); ctx.fill();
+            if (S.twin && traj.twin) {
+                const tw = traj.twin, r = P(tw[3 * i], tw[3 * i + 1], tw[3 * i + 2]);
+                ctx.fillStyle = warm;
+                ctx.beginPath(); ctx.arc(r[0], r[1], 4.2 * d, 0, TAU); ctx.fill();
+            }
+        }
+    }
+
+    function drawGizmo(ctx, W, H, d) {
+        const cy = Math.cos(V.yaw), sy = Math.sin(V.yaw), cp = Math.cos(V.pitch), sp = Math.sin(V.pitch);
+        const L = 22 * d, ox = 34 * d, oy = H - 30 * d;
+        const axes = [["x", [1, 0, 0], Chaos.css("--accent")], ["y", [0, 1, 0], Chaos.css("--warm")], ["z", [0, 0, 1], Chaos.css("--good")]];
+        ctx.save();
+        ctx.lineWidth = 1.5 * d;
+        ctx.font = `${10.5 * d}px ui-monospace, Menlo, monospace`;
+        axes.forEach(([name, [x, y, z], col]) => {
+            const x1 = x * cy - y * sy, y1 = x * sy + y * cy, z2 = y1 * sp + z * cp;
+            ctx.strokeStyle = col; ctx.fillStyle = col;
+            ctx.beginPath(); ctx.moveTo(ox, oy); ctx.lineTo(ox + x1 * L, oy - z2 * L); ctx.stroke();
+            ctx.fillText(name, ox + x1 * (L + 6 * d) - 3 * d, oy - z2 * (L + 6 * d) + 4 * d);
+        });
+        ctx.restore();
+    }
+
+    /* ---------- side panels ---------- */
+
+    function drawTS() {
+        const c = el.ts, ctx = c.getContext("2d"), W = c.width, H = c.height, d = Chaos.dpr();
+        ctx.clearRect(0, 0, W, H);
+        if (!traj) return;
+        const { pts, start } = traj;
+        const flow = traj.flow;
+        const last = flow ? traj.n : Math.min(traj.n, start + 300);
+        const t0 = start * traj.dt, t1 = last * traj.dt;
+        const comps = flow ? [0, 1, 2] : [0, 1];
+        let lo = Infinity, hi = -Infinity;
+        comps.forEach((k) => { lo = Math.min(lo, traj.mn[k]); hi = Math.max(hi, traj.mx[k]); });
+        const pad = (hi - lo) * 0.06 || 1;
+        const yr = [lo - pad, hi + pad];
+        Chaos.axes(ctx, [t0, t1], yr, "grid");
+        const cols = [Chaos.css("--accent"), Chaos.css("--warm"), Chaos.css("--good")];
+        const stride = Math.max(1, Math.floor((last - start) / (W * 1.5)));
+        comps.forEach((k) => {
+            ctx.strokeStyle = cols[k];
+            ctx.lineWidth = d;
+            ctx.globalAlpha = 0.85;
+            ctx.beginPath();
+            for (let i = start, j = 0; i <= last; i += stride, j++) {
+                const X = (i - start) / Math.max(1, last - start) * W;
+                const Y = H - (pts[3 * i + k] - yr[0]) / (yr[1] - yr[0]) * H;
+                j ? ctx.lineTo(X, Y) : ctx.moveTo(X, Y);
+            }
+            ctx.stroke();
+        });
+        ctx.globalAlpha = 1;
+        if (head < traj.n) {
+            const X = (Math.max(start, head) - start) / Math.max(1, last - start) * W;
+            if (X <= W) {
+                ctx.strokeStyle = Chaos.css("--fg");
+                ctx.globalAlpha = 0.5;
+                ctx.beginPath(); ctx.moveTo(X, 0); ctx.lineTo(X, H); ctx.stroke();
+                ctx.globalAlpha = 1;
+            }
+        }
+        Chaos.axes(ctx, [t0, t1], yr, "labels");
+    }
+
+    function drawSep() {
+        const c = el.sep, ctx = c.getContext("2d"), W = c.width, H = c.height, d = Chaos.dpr();
+        ctx.clearRect(0, 0, W, H);
+        if (!traj || !traj.sep) {
+            el.sepNote.innerHTML = "<p>Turn on the <b>twin trajectory</b> to start a second orbit δ away and watch the gap explode.</p>";
+            ctx.fillStyle = Chaos.css("--muted");
+            ctx.font = `${12 * d}px system-ui, sans-serif`;
+            ctx.fillText("twin trajectory off", 12 * d, H / 2);
+            return;
+        }
+        const sep = traj.sep, n = traj.n, dt = traj.dt;
+        const t1 = n * dt;
+        const L = new Float32Array(n + 1);
+        let lo = Infinity, hi = -Infinity;
+        for (let i = 0; i <= n; i++) { const v = Math.log10(Math.max(sep[i], 1e-17)); L[i] = v; if (v < lo) lo = v; if (v > hi) hi = v; }
+        lo = Math.floor(lo) - 0.5; hi = Math.ceil(hi) + 0.5;
+        const yr = [lo, hi];
+        Chaos.axes(ctx, [0, t1], yr, "grid");
+        const X = (i) => i / n * W, Y = (v) => H - (v - yr[0]) / (yr[1] - yr[0]) * H;
+        // reference slope λ / ln 10
+        if (Number.isFinite(traj.lambda) && traj.lambda > 0) {
+            ctx.strokeStyle = Chaos.css("--muted");
+            ctx.setLineDash([5 * d, 4 * d]);
+            ctx.lineWidth = d;
+            ctx.beginPath();
+            const v0 = L[0];
+            const tEnd = Math.min(t1, (hi - v0) / (traj.lambda / Math.LN10));
+            ctx.moveTo(0, Y(v0));
+            ctx.lineTo(tEnd / t1 * W, Y(v0 + traj.lambda / Math.LN10 * tEnd));
+            ctx.stroke();
+            ctx.setLineDash([]);
+        }
+        const stride = Math.max(1, Math.floor(n / (W * 1.5)));
+        const end = Math.min(n, head);
+        ctx.strokeStyle = Chaos.css("--warm");
+        ctx.lineWidth = 1.2 * d;
+        ctx.beginPath();
+        for (let i = 0, j = 0; i <= end; i += stride, j++) j ? ctx.lineTo(X(i), Y(L[i])) : ctx.moveTo(X(i), Y(L[i]));
+        ctx.stroke();
+        Chaos.axes(ctx, [0, t1], yr, "labels");
+        // time for the gap to reach 10% of the attractor size
+        const big = 0.1 * traj.R;
+        let tb = null;
+        for (let i = 0; i <= n; i++) if (sep[i] > big) { tb = i * dt; break; }
+        const unit = traj.flow ? "time units" : "iterations";
+        el.sepNote.innerHTML = `<p>δ = ${Chaos.fmt(S.delta, 3)} → the gap reaches 10% of the attractor ${tb == null ? "not within this run" : `after ${Chaos.fmt(tb, 3)} ${unit}`}. ${Number.isFinite(traj.lambda) && traj.lambda > 0 ? `Predicted: ln(0.1 R / δ) / λ ≈ ${Chaos.fmt(Math.log(big / S.delta) / traj.lambda, 3)} ${unit}.` : ""}</p>`;
+    }
+
+    function updateReadout() {
+        if (!traj) return;
+        const rows = [];
+        const add = (k, v) => rows.push(`<dt>${k}</dt><dd>${v}</dd>`);
+        const unit = traj.flow ? "per time unit" : "per iteration";
+        const lam = traj.lambda;
+        let tag;
+        if (!Number.isFinite(lam)) tag = "";
+        else if (lam > 0.01) tag = '<span class="tag chaos">chaotic</span>';
+        else if (lam > -0.01) tag = '<span class="tag">marginal / quasi-periodic</span>';
+        else tag = '<span class="tag order">converges to a stable set</span>';
+        add("λ<sub>max</sub>", `${Chaos.fmt(lam, 4)} ${unit} ${tag}<br><span class="note">averaged over ${Chaos.fmt(traj.lt, 4)} ${traj.flow ? "time units" : "iterations"}</span>`);
+        if (traj.flow && Number.isFinite(lam) && lam > 0) add("Lyapunov time", `${Chaos.fmt(1 / lam, 3)} (e-folding of errors)`);
+        add(traj.flow ? "Steps" : "Points", `${(traj.n + 1).toLocaleString("en-US")}${traj.flow ? ` × dt = ${S.dt}` : ""}`);
+        const box = [0, 1, 2].slice(0, traj.flow ? 3 : 2).map((k, i) => `${"xyz"[i]} ∈ [${Chaos.fmt(traj.mn[k], 3)}, ${Chaos.fmt(traj.mx[k], 3)}]`).join("<br>");
+        add("Extent", box);
+        if (head < traj.n) {
+            const i = Math.max(0, head);
+            add(traj.flow ? "t" : "n", traj.flow ? Chaos.fmt(i * traj.dt, 4) : i);
+        }
+        if (traj.escaped) add("Warning", '<span class="tag chaos">orbit escaped to infinity — try other parameters or a smaller dt</span>');
+        el.readout.innerHTML = rows.join("");
+    }
+
+    function drawAll() {
+        drawView();
+        drawTS();
+        drawSep();
+        updateReadout();
+    }
+
+    /* ---------- interaction ---------- */
+
+    const pointers = new Map();
+    let pinch0 = null, last = null;
+
+    el.view.addEventListener("pointerdown", (e) => {
+        el.view.setPointerCapture(e.pointerId);
+        pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+        el.view.classList.add("dragging");
+        if (pointers.size === 2) {
+            const [a, b] = [...pointers.values()];
+            pinch0 = { dist: Math.hypot(a.x - b.x, a.y - b.y), zoom: V.zoom };
+        }
+        last = { x: e.clientX, y: e.clientY, shift: e.shiftKey || e.button === 2 };
+    });
+    el.view.addEventListener("pointermove", (e) => {
+        if (!pointers.has(e.pointerId)) return;
+        pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+        if (pointers.size === 2 && pinch0) {
+            const [a, b] = [...pointers.values()];
+            V.zoom = Math.max(0.2, Math.min(40, pinch0.zoom * Math.hypot(a.x - b.x, a.y - b.y) / pinch0.dist));
+            drawView();
+            return;
+        }
+        const dx = e.clientX - last.x, dy = e.clientY - last.y;
+        last.x = e.clientX; last.y = e.clientY;
+        if (last.shift || e.shiftKey) { V.panX += dx; V.panY += dy; }
+        else {
+            V.yaw -= dx * 0.008;
+            V.pitch = Math.max(-Math.PI / 2, Math.min(Math.PI / 2, V.pitch + dy * 0.008));
+        }
+        drawView();
+    });
+    const up = (e) => {
+        pointers.delete(e.pointerId);
+        if (pointers.size < 2) pinch0 = null;
+        if (!pointers.size) el.view.classList.remove("dragging");
+    };
+    el.view.addEventListener("pointerup", up);
+    el.view.addEventListener("pointercancel", up);
+    el.view.addEventListener("contextmenu", (e) => e.preventDefault());
+    el.view.addEventListener("wheel", (e) => {
+        e.preventDefault();
+        const f = Math.exp(-e.deltaY * 0.0015);
+        V.zoom = Math.max(0.2, Math.min(40, V.zoom * f));
+        drawView();
+    }, { passive: false });
+    el.view.addEventListener("dblclick", () => setView(S.sys.kind === "map" ? "xy" : "3d"));
+
+    function setView(name) {
+        V.zoom = 1; V.panX = 0; V.panY = 0;
+        if (name === "3d") { V.yaw = -0.65; V.pitch = 0.38; }
+        if (name === "xy") { V.yaw = 0; V.pitch = Math.PI / 2; }
+        if (name === "xz") { V.yaw = 0; V.pitch = 0; }
+        if (name === "yz") { V.yaw = -Math.PI / 2; V.pitch = 0; }
+        drawView();
+    }
+    document.querySelectorAll("[data-view]").forEach((b) => b.addEventListener("click", () => setView(b.dataset.view)));
+
+    /* animation loop: playback and spin */
+    function frame() {
+        let dirty = false;
+        if (V.spin) { V.yaw -= 0.005; dirty = true; }
+        if (playing && traj) {
+            const per = traj.flow ? Math.max(1, Math.round(+el.speed.value * 0.02 / traj.dt * 4)) : Math.max(1, Math.round(+el.speed.value * traj.n / 3000));
+            head = (head === Infinity ? traj.start : head) + per;
+            if (head >= traj.n) { head = Infinity; playing = false; el.play.textContent = "Play"; }
+            drawTS(); drawSep(); updateReadout();
+            dirty = true;
+        }
+        if (dirty) drawView();
+        requestAnimationFrame(frame);
+    }
+
+    el.play.addEventListener("click", () => {
+        if (playing) { playing = false; el.play.textContent = "Play"; return; }
+        if (head === Infinity || head >= (traj ? traj.n : 0)) head = traj ? traj.start : 0;
+        playing = true;
+        el.play.textContent = "Pause";
+    });
+    el.spin.addEventListener("change", () => { V.spin = el.spin.checked; });
+    el.persp.addEventListener("change", () => { V.persp = el.persp.checked; drawView(); });
+    el.color.addEventListener("change", () => { V.color = el.color.value; drawView(); });
+
+    el.sys.addEventListener("change", () => {
+        defaults(SYSTEMS.find((s) => s.id === el.sys.value));
+        buildControls();
+        playing = false; el.play.textContent = "Play"; head = Infinity;
+        setView(S.sys.kind === "map" ? "xy" : "3d");
+        recompute();
+    });
+    el.int.addEventListener("change", () => { S.int = el.int.value; recompute(); });
+    el.dt.addEventListener("change", () => { S.dt = Chaos.num(el.dt.value, S.dt, 1e-4, 1); el.dt.value = S.dt; recompute(); });
+    el.T.addEventListener("change", () => {
+        S.T = S.sys.kind === "flow" ? Chaos.num(el.T.value, S.T, 1, 1e5) : Chaos.num(el.T.value, S.T, 100, 400000) | 0;
+        el.T.value = S.T;
+        recompute();
+    });
+    el.skip.addEventListener("change", () => { S.skip = el.skip.checked; recompute(); });
+    el.twin.addEventListener("change", () => { S.twin = el.twin.checked; recompute(); });
+    el.delta.addEventListener("change", () => { S.delta = Chaos.num(el.delta.value, 1e-8, 1e-15, 1); el.delta.value = S.delta; recompute(); });
+    $("defaults").addEventListener("click", () => { defaults(S.sys); buildControls(); recompute(); });
+    $("random").addEventListener("click", () => {
+        const base = S.sys.ic;
+        S.ic = base.map((v) => +(v + (Math.random() - 0.5) * (Math.abs(v) * 0.5 + 1)).toFixed(4));
+        buildControls();
+        recompute();
+    });
+    $("link").addEventListener("click", (e) => Chaos.copyLink(e.currentTarget));
+    $("png").addEventListener("click", () => {
+        const c = el.view, d = Chaos.dpr();
+        const out = document.createElement("canvas");
+        out.width = c.width; out.height = c.height;
+        const ctx = out.getContext("2d");
+        ctx.fillStyle = Chaos.css("--panel");
+        ctx.fillRect(0, 0, out.width, out.height);
+        ctx.drawImage(c, 0, 0);
+        ctx.fillStyle = Chaos.css("--muted");
+        ctx.font = `${11 * d}px ui-monospace, Menlo, monospace`;
+        ctx.fillText(`${S.sys.name}: ${S.sys.params.map(([l, k]) => `${l} = ${+S.p[k].toPrecision(6)}`).join(", ")}`, 10 * d, 18 * d);
+        Chaos.download(out, `attractor-${S.sys.id}.png`);
+    });
+
+    /* ---------- layout ---------- */
+
+    function layout() {
+        const w = el.view.clientWidth;
+        const narrow = window.innerWidth <= 900;
+        Chaos.fit(el.view, Math.round(narrow ? Math.min(w, 520) : Math.max(420, Math.min(680, w * 0.82))));
+        Chaos.fit(el.ts, 150);
+        Chaos.fit(el.sep, 150);
+        drawAll();
+    }
+
+    let rt = null;
+    new ResizeObserver(() => { clearTimeout(rt); rt = setTimeout(layout, 100); }).observe(document.querySelector(".wrap"));
+    Chaos.onTheme(drawAll);
+    Chaos.initThemeButton($("theme"));
+    window.addEventListener("hashchange", () => { loadHash(); recompute(); });
+
+    loadHash();
+    if (S.sys.kind === "map") { V.yaw = 0; V.pitch = Math.PI / 2; }
+    traj = compute();
+    layout();
+    requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

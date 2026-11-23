@@ -1,0 +1,907 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bifurcation Explorer</title>
+<meta name="description" content="Interactive explorer of one-dimensional maps: orbit, cobweb, bifurcation diagram, Lyapunov exponent and invariant density.">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="../chaos.css">
+<script src="../chaos.js"></script>
+<style>
+    .grid3 {
+        display: grid;
+        grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr) minmax(0, 0.95fr);
+        gap: 12px;
+        margin: 12px 0;
+    }
+    .grid2 {
+        display: grid;
+        grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+        gap: 12px;
+        margin-top: 12px;
+    }
+    @media (max-width: 900px) {
+        .grid3, .grid2 { grid-template-columns: minmax(0, 1fr); }
+    }
+    #bif { cursor: crosshair; }
+    #cob { cursor: pointer; }
+    .bif-tools { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px; margin-top: 10px; }
+    .sub2 { margin-top: 12px; }
+    #pbox[hidden] { display: none; }
+    body.embedded .wrap { padding-top: 12px; }
+    body.embedded header.top { display: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+    <div>
+        <h1>Bifurcation explorer</h1>
+        <div class="sub">One-dimensional maps x<sub>n+1</sub> = f(x<sub>n</sub>): orbit, cobweb, bifurcation diagram and Lyapunov exponent</div>
+    </div>
+    <nav>
+        <a href="../">All tools</a>
+        <a href="../illustration/">Attractors →</a>
+        <button id="theme" type="button">Theme</button>
+    </nav>
+</header>
+
+<section class="panel controls" aria-label="Controls">
+    <div class="ctl">
+        <label for="map">Map</label>
+        <select id="map"></select>
+    </div>
+    <div class="ctl" style="grid-column: span 2; min-width: 0;">
+        <label>Equation</label>
+        <div><span class="eq" id="eq"></span></div>
+    </div>
+    <div class="ctl">
+        <label for="r"><span>Parameter <i id="rname">r</i></span><span class="hint">← → keys</span></label>
+        <div class="row"><input type="range" id="r"><input type="number" id="rnum" step="any" aria-label="Parameter value"></div>
+    </div>
+    <div class="ctl" id="pbox" hidden>
+        <label for="p"><span>Fixed parameter <i id="pname">p</i></span></label>
+        <div class="row"><input type="range" id="p"><input type="number" id="pnum" step="any" aria-label="Fixed parameter value"></div>
+    </div>
+    <div class="ctl">
+        <label for="x0">Initial condition x₀</label>
+        <div class="row"><input type="range" id="x0"><input type="number" id="x0num" step="any" aria-label="Initial condition value"></div>
+    </div>
+    <div class="ctl">
+        <label for="k">Cobweb of the k-th iterate</label>
+        <select id="k"></select>
+    </div>
+    <div class="ctl">
+        <label for="T">Transient · plotted iterations per r</label>
+        <div class="row"><input type="number" id="T" min="0" max="20000" step="100" aria-label="Transient iterations"><input type="number" id="P" min="10" max="5000" step="50" aria-label="Plotted iterations"></div>
+    </div>
+    <div class="ctl">
+        <label for="seeds">Initial conditions per r</label>
+        <select id="seeds">
+            <option value="1">1 (x₀)</option>
+            <option value="2">2</option>
+            <option value="4">4</option>
+            <option value="8">8</option>
+        </select>
+    </div>
+    <div class="ctl">
+        <label for="ink">Ink density</label>
+        <div class="row"><input type="range" id="ink" min="0.1" max="3" step="0.05"><label class="check"><input type="checkbox" id="tint"> tint λ &gt; 0</label></div>
+    </div>
+</section>
+
+<div class="grid3">
+    <section class="panel">
+        <h2>Orbit <span class="hint" id="tsHint"></span></h2>
+        <canvas id="ts" aria-label="Time series of the orbit"></canvas>
+    </section>
+    <section class="panel">
+        <h2>Cobweb <span class="hint">click: set x₀</span></h2>
+        <canvas id="cob" aria-label="Cobweb diagram"></canvas>
+    </section>
+    <section class="panel">
+        <h2>At this parameter</h2>
+        <dl class="readout" id="readout"></dl>
+    </section>
+</div>
+
+<section class="panel">
+    <h2>Bifurcation diagram <span class="hint" id="bifHint">click: set parameter · drag: zoom box</span></h2>
+    <canvas id="bif" aria-label="Bifurcation diagram"></canvas>
+    <h2 class="sub2">Lyapunov exponent λ <span class="hint" id="lyHint">λ &gt; 0: chaos · λ &lt; 0: periodic</span></h2>
+    <canvas id="ly" aria-label="Lyapunov exponent"></canvas>
+    <div class="bif-tools">
+        <div class="btns">
+            <button type="button" id="back" disabled>Back</button>
+            <button type="button" id="reset">Reset view</button>
+            <button type="button" id="full">Full range</button>
+            <button type="button" id="png">Download PNG</button>
+            <button type="button" id="link">Copy link</button>
+        </div>
+        <div class="status mono" id="status"></div>
+    </div>
+</section>
+
+<div class="grid2">
+    <section class="panel">
+        <h2>Invariant density <span class="hint">where the orbit spends its time (60 000 iterates)</span></h2>
+        <canvas id="hist" aria-label="Histogram of the orbit"></canvas>
+    </section>
+    <section class="panel note">
+        <h2>About this map</h2>
+        <div id="notes"></div>
+    </section>
+</div>
+
+<details class="help">
+    <summary>How to read and use it</summary>
+    <div class="note">
+        <p><b>Orbit:</b> the first 120 iterates from x₀; the shaded band is the transient that the bifurcation diagram discards.</p>
+        <p><b>Cobweb:</b> the graph of f<sup>k</sup> against the diagonal; each step goes up to the curve and across to the diagonal. Fixed points of f<sup>k</sup> (period-k points) are marked: filled = stable (|(f<sup>k</sup>)′| &lt; 1), hollow = unstable.</p>
+        <p><b>Bifurcation diagram:</b> for every parameter value, the iterates left after the transient, shaded by how often they land on each pixel. Drag a box to zoom (a horizontal drag zooms the parameter only); Back undoes a zoom. Self-similar copies of the whole diagram appear inside every periodic window.</p>
+        <p><b>Lyapunov exponent:</b> λ = lim (1/n) Σ ln |f′(x<sub>i</sub>)|, the average exponential rate at which nearby orbits separate. It touches 0 at every bifurcation and dives to −∞ at superstable cycles.</p>
+        <p><b>Sharing:</b> the address bar keeps the map, parameters and zoom, so “Copy link” reproduces the exact view.</p>
+    </div>
+</details>
+
+<footer class="foot">
+    H. Sandmann · rewritten in 2026 from the <a href="http://sandmann.sdf.org/chaos/bifurcation/" target="_blank" rel="noopener">2017 version</a> ·
+    <a href="https://hsandmann.github.io/">hsandmann.github.io</a>
+</footer>
+</div>
+
+<script>
+"use strict";
+(() => {
+    if (window.self !== window.top) document.body.classList.add("embedded");
+
+    const TAU = 2 * Math.PI;
+    const $ = (id) => document.getElementById(id);
+
+    /* Original papers (DOIs checked against Crossref). */
+    const R = {
+        may: ["May, R. M. (1976). Simple mathematical models with very complicated dynamics. <i>Nature</i>, 261, 459–467.", "10.1038/261459a0"],
+        feig: ["Feigenbaum, M. J. (1978). Quantitative universality for a class of nonlinear transformations. <i>Journal of Statistical Physics</i>, 19, 25–52.", "10.1007/BF01020332"],
+        liyorke: ["Li, T.-Y., &amp; Yorke, J. A. (1975). Period three implies chaos. <i>The American Mathematical Monthly</i>, 82(10), 985–992.", "10.1080/00029890.1975.11994008"],
+        mss: ["Metropolis, N., Stein, M. L., &amp; Stein, P. R. (1973). On finite limit sets for transformations on the unit interval. <i>Journal of Combinatorial Theory, Series A</i>, 15, 25–44.", "10.1016/0097-3165(73)90033-2"],
+        tent: ["Yoshida, T., Mori, H., &amp; Shigematsu, H. (1983). Analytic study of chaos of the tent map: band structures, power spectra, and critical behaviors. <i>Journal of Statistical Physics</i>, 31, 279–308.", "10.1007/BF01011583"],
+        henon: ["Hénon, M. (1976). A two-dimensional mapping with a strange attractor. <i>Communications in Mathematical Physics</i>, 50, 69–77.", "10.1007/BF01608556"],
+        ricker: ["Ricker, W. E. (1954). Stock and recruitment. <i>Journal of the Fisheries Research Board of Canada</i>, 11(5), 559–623.", "10.1139/f54-039"],
+        hilborn: ["Hilborn, R. C. (2000). <i>Chaos and Nonlinear Dynamics: An Introduction for Scientists and Engineers</i> (2nd ed.). Oxford University Press — textbook source of the Gauss map; no single original paper.", "10.1093/acprof:oso/9780198507239.001.0001"],
+        arnold: ["Arnold, V. I. (1961). Small denominators. I. Mappings of the circumference onto itself. <i>Izvestiya Akademii Nauk SSSR, Seriya Matematicheskaya</i>, 25, 21–86.", null],
+        jbb: ["Jensen, M. H., Bak, P., &amp; Bohr, T. (1983). Complete devil’s staircase, fractal dimension, and universality of mode-locking structure in the circle map. <i>Physical Review Letters</i>, 50, 1637–1639.", "10.1103/PhysRevLett.50.1637"],
+    };
+    const REFS = {
+        logistic: [R.may, R.feig, R.liyorke],
+        sine: [R.mss, R.feig],
+        tent: [R.tent],
+        quadratic: [R.henon, R.feig],
+        cubic: [],
+        ricker: [R.ricker],
+        gauss: [R.hilborn],
+        circle: [R.arnold, R.jbb],
+    };
+
+    const MAPS = [
+        {
+            id: "logistic", name: "Logistic", rn: "r",
+            eq: "x<sub>n+1</sub> = r x<sub>n</sub> (1 − x<sub>n</sub>)",
+            f: (x, r) => r * x * (1 - x), df: (x, r) => r * (1 - 2 * x),
+            view: [2.5, 4, 0, 1], full: [-2, 4, -0.5, 1.5], r: 3.5, x0: 0.2,
+            note: "The textbook route to chaos (May, 1976). A stable fixed point for 1 &lt; r &lt; 3, then period doubling at r = 3, 3.449, 3.544, 3.564… accumulating at r<sub>∞</sub> ≈ 3.5699 with the Feigenbaum ratio δ ≈ 4.6692. Beyond it, chaos is interrupted by periodic windows; the widest is the period-3 window opening at r = 1 + √8 ≈ 3.8284 (“period three implies chaos”).",
+        },
+        {
+            id: "sine", name: "Sine", rn: "r",
+            eq: "x<sub>n+1</sub> = r sin(π x<sub>n</sub>)",
+            f: (x, r) => r * Math.sin(Math.PI * x), df: (x, r) => r * Math.PI * Math.cos(Math.PI * x),
+            view: [-Math.PI, Math.PI, -Math.PI, Math.PI], full: [-Math.PI, Math.PI, -Math.PI, Math.PI], r: 2.6, x0: 0.2,
+            note: "For |r| ≤ 1 an orbit started in [0, 1] stays on a single hump of the sine and repeats the logistic story: drag a box over r ∈ [0.7, 1], x ∈ [0, 1] and the period-doubling cascade appears with exactly the same Feigenbaum ratio δ ≈ 4.6692 — universality, the reason δ shows up in fluids, circuits and lasers. For |r| &gt; 1 the orbit can jump between humps of the wave, and the diagram grows a ladder of chaotic bands, symmetric under r → −r.",
+        },
+        {
+            id: "tent", name: "Tent", rn: "r",
+            eq: "x<sub>n+1</sub> = r min(x<sub>n</sub>, 1 − x<sub>n</sub>)",
+            f: (x, r) => r * Math.min(x, 1 - x), df: (x, r) => (x < 0.5 ? r : -r),
+            view: [0.9, 2, 0, 1], full: [0, 2, 0, 1], r: 1.5, x0: 0.2,
+            note: "Piecewise linear, so |f′| = r everywhere and λ = ln r exactly: chaotic for every r &gt; 1, with no period-doubling cascade; instead the chaotic bands merge pairwise as r grows. At r = 2 floating point cannot follow the orbit (each step shifts one binary digit out), so orbits collapse to 0.",
+        },
+        {
+            id: "quadratic", name: "Quadratic 1 − a x²", rn: "a",
+            eq: "x<sub>n+1</sub> = 1 − a x<sub>n</sub><sup>2</sup>",
+            f: (x, a) => 1 - a * x * x, df: (x, a) => -2 * a * x,
+            view: [0, 2, -1, 1], full: [-0.5, 2, -1.2, 1.2], r: 1.4, x0: 0.1,
+            note: "Conjugate to the logistic map through a linear change of variables, so its diagram is the same picture rescaled; it is also the Hénon map with b = 0. At a = 2 chaos is fully developed (λ = ln 2) and the invariant density is 1/(π√(1 − x²)).",
+        },
+        {
+            id: "cubic", name: "Cubic", rn: "r", seeds: 2,
+            eq: "x<sub>n+1</sub> = r x<sub>n</sub> − x<sub>n</sub><sup>3</sup>",
+            f: (x, r) => r * x - x * x * x, df: (x, r) => r - 3 * x * x,
+            view: [1, 3, -2, 2], full: [0, 3, -2, 2], r: 2.3, x0: 0.1,
+            note: "An odd map, f(−x) = −f(x): two mirror-image attractors coexist and a single initial condition finds only one of them; with 2 or more initial conditions per parameter both appear. Each undergoes its own cascade until they merge into one symmetric chaotic attractor near r ≈ 2.6.",
+        },
+        {
+            id: "ricker", name: "Ricker (population)", rn: "r",
+            eq: "x<sub>n+1</sub> = x<sub>n</sub> e<sup>r(1 − x<sub>n</sub>)</sup>",
+            f: (x, r) => x * Math.exp(r * (1 - x)), df: (x, r) => Math.exp(r * (1 - x)) * (1 - r * x),
+            view: [1.5, 4, 0, 5.2], full: [0, 4, 0, 6], r: 2.6, x0: 0.5,
+            note: "Ricker’s (1954) model of fish stocks with overcompensation: unlike the logistic map, the population can never go negative. The equilibrium x* = 1 loses stability at r = 2, and chaos sets in above r ≈ 2.69, with occasional population crashes close to zero.",
+        },
+        {
+            id: "gauss", name: "Gauss (mouse map)", rn: "β", p: { name: "α", v: 4.9, min: 1, max: 12, step: 0.1 },
+            eq: "x<sub>n+1</sub> = e<sup>−α x<sub>n</sub><sup>2</sup></sup> + β",
+            f: (x, b, a) => Math.exp(-a * x * x) + b, df: (x, b, a) => -2 * a * x * Math.exp(-a * x * x),
+            view: [-1, 1, -1, 1.5], full: [-1, 1, -1, 1.5], r: -0.5, x0: 0.1,
+            note: "Doubling and then undoing the doublings: the diagram traces a “mouse”. The fixed parameter α controls how far it goes: below α ≈ 4 there is no chaos at all; around α ≈ 4.9 chaotic bands appear; raise α further for richer structure.",
+        },
+        {
+            id: "circle", name: "Circle map (Arnold)", rn: "Ω", p: { name: "K", v: 1, min: 0, max: 4, step: 0.01 },
+            eq: "θ<sub>n+1</sub> = θ<sub>n</sub> + Ω − (K / 2π) sin(2π θ<sub>n</sub>)  mod 1",
+            f: (x, r, K) => { let v = x + r - K / TAU * Math.sin(TAU * x); return v - Math.floor(v); },
+            lift: (x, r, K) => x + r - K / TAU * Math.sin(TAU * x),
+            df: (x, r, K) => 1 - K * Math.cos(TAU * x),
+            view: [0, 1, 0, 1], full: [0, 1, 0, 1], r: 0.4, x0: 0.1,
+            note: "A kicked rotor, or two coupled oscillators. Where the rotation number W is rational the motion locks to a periodic cycle (Arnold tongues). At K = 1 the locked plateaus fill the whole Ω axis — the devil’s staircase, read off in the panel as W; for K &gt; 1 tongues overlap and chaos appears. For K &lt; 1 and irrational W the motion is quasi-periodic (λ = 0).",
+        },
+    ];
+
+    const S = { map: MAPS[0], r: 3.5, p: 0, x0: 0.2, k: 1, T: 500, P: 400, seeds: 1, ink: 1, tint: false, view: null, xw: null, stack: [] };
+
+    const el = {
+        map: $("map"), eq: $("eq"), r: $("r"), rnum: $("rnum"), rname: $("rname"),
+        pbox: $("pbox"), p: $("p"), pnum: $("pnum"), pname: $("pname"),
+        x0: $("x0"), x0num: $("x0num"), k: $("k"), T: $("T"), P: $("P"), seeds: $("seeds"), ink: $("ink"), tint: $("tint"),
+        ts: $("ts"), cob: $("cob"), bif: $("bif"), ly: $("ly"), hist: $("hist"),
+        readout: $("readout"), notes: $("notes"), status: $("status"),
+        bifHint: $("bifHint"), lyHint: $("lyHint"), tsHint: $("tsHint"), back: $("back"),
+    };
+
+    MAPS.forEach((m, i) => el.map.add(new Option(m.name, m.id)));
+    const sup = ["", "", "²", "³", "⁴", "⁵", "⁶", "⁷", "⁸"];
+    for (let k = 1; k <= 8; k++) el.k.add(new Option(k === 1 ? "f (k = 1)" : `f${sup[k]} (k = ${k})`, k));
+
+    /* ---------- state <-> controls <-> URL ---------- */
+
+    function fx(x, r) { return S.map.f(x, r, S.p); }
+    function dfx(x, r) { return S.map.df(x, r, S.p); }
+    /* x window of the orbit, cobweb and histogram: the map's default window, or its full range after "Full range" */
+    const xr = () => S.xw;
+
+    function setMap(m, keepState) {
+        S.map = m;
+        if (!keepState) {
+            S.r = m.r;
+            S.p = m.p ? m.p.v : 0;
+            S.x0 = m.x0;
+            S.view = m.view.slice();
+            S.xw = [m.view[2], m.view[3]];
+            S.seeds = m.seeds || 1;
+            S.stack = [];
+        }
+        el.map.value = m.id;
+        el.eq.innerHTML = m.eq;
+        el.rname.textContent = m.rn;
+        el.pbox.hidden = !m.p;
+        if (m.p) {
+            el.pname.textContent = m.p.name;
+            Chaos.setPair(el.p, el.pnum, S.p, m.p.min, m.p.max, m.p.step);
+        }
+        const [a, b] = xr();
+        Chaos.setPair(el.x0, el.x0num, S.x0, a, b, (b - a) / 1000);
+        el.seeds.value = String(S.seeds);
+        el.notes.innerHTML = `<p>${m.note}</p>` + Chaos.refs(REFS[m.id]);
+        syncR();
+    }
+
+    function syncR() {
+        const [r0, r1] = S.view;
+        Chaos.setPair(el.r, el.rnum, S.r, r0, r1, (r1 - r0) / 4000);
+        el.back.disabled = S.stack.length === 0;
+    }
+
+    function saveHash() {
+        Chaos.writeHash({
+            m: S.map.id, r: +S.r.toPrecision(9), x0: +S.x0.toPrecision(9),
+            ...(S.map.p ? { p: S.p } : {}),
+            k: S.k, T: S.T, P: S.P, s: S.seeds, ink: S.ink, ...(S.tint ? { tint: 1 } : {}),
+            v: S.view.map((v) => +v.toPrecision(9)).join(","),
+            ...(S.xw[0] !== S.map.view[2] || S.xw[1] !== S.map.view[3] ? { xw: S.xw.map((v) => +v.toPrecision(9)).join(",") } : {}),
+        });
+    }
+
+    function loadHash() {
+        const h = Chaos.readHash();
+        const m = MAPS.find((q) => q.id === h.m) || MAPS[0];
+        setMap(m, false);
+        S.r = Chaos.num(h.r, S.r);
+        S.x0 = Chaos.num(h.x0, S.x0);
+        if (m.p) S.p = Chaos.num(h.p, S.p, m.p.min, m.p.max);
+        S.k = Chaos.num(h.k, 1, 1, 8) | 0;
+        S.T = Chaos.num(h.T, 500, 0, 20000) | 0;
+        S.P = Chaos.num(h.P, 400, 10, 5000) | 0;
+        S.seeds = [1, 2, 4, 8].includes(+h.s) ? +h.s : S.seeds;
+        S.ink = Chaos.num(h.ink, 1, 0.1, 3);
+        S.tint = h.tint === "1";
+        if (h.v) {
+            const v = h.v.split(",").map(Number);
+            if (v.length === 4 && v.every(Number.isFinite) && v[1] > v[0] && v[3] > v[2]) S.view = v;
+        }
+        if (h.xw) {
+            const w = h.xw.split(",").map(Number);
+            if (w.length === 2 && w.every(Number.isFinite) && w[1] > w[0]) S.xw = w;
+        }
+        setMap(m, true);
+        el.k.value = String(S.k);
+        el.T.value = S.T;
+        el.P.value = S.P;
+        el.ink.value = S.ink;
+        el.tint.checked = S.tint;
+    }
+
+    /* ---------- local analysis at the current parameter ---------- */
+
+    function analyze() {
+        const r = S.r, [a, b] = xr(), span = b - a;
+        let x = S.x0;
+        for (let t = 0; t < 3000; t++) { x = fx(x, r); if (!(Math.abs(x) < 1e9)) return { diverges: true }; }
+        const seq = [];
+        for (let i = 0; i < 400; i++) { seq.push(x); x = fx(x, r); }
+        const tol = 1e-6 * span;
+        let period = 0;
+        for (let p = 1; p <= 128 && !period; p++) {
+            let ok = true;
+            for (let i = 0; i < 64 && ok; i++) if (Math.abs(seq[i + p] - seq[i]) > tol) ok = false;
+            if (ok) period = p;
+        }
+        let sum = 0, n = 0, superstable = false;
+        x = seq[0];
+        for (let i = 0; i < 20000; i++) {
+            const d = Math.abs(dfx(x, r));
+            if (d < 1e-300) { superstable = true; sum += Math.log(1e-300); } else sum += Math.log(d);
+            n++;
+            x = fx(x, r);
+            if (!(Math.abs(x) < 1e9)) break;
+        }
+        const lambda = sum / n;
+        let W = null;
+        if (S.map.lift) {
+            let y = S.x0;
+            for (let t = 0; t < 500; t++) y = S.map.lift(y, r, S.p);
+            const y0 = y, N = 5000;
+            for (let t = 0; t < N; t++) y = S.map.lift(y, r, S.p);
+            W = (y - y0) / N;
+        }
+        return { period, cycle: period ? seq.slice(0, period).sort((p, q) => p - q) : null, lambda, superstable, W };
+    }
+
+    /* Roots of f^k(x) = x in the map's x range, with the multiplier (f^k)'(x). */
+    function periodicPoints(k) {
+        const r = S.r, [a, b] = xr(), N = 1500, span = b - a;
+        const fk = (x) => { for (let i = 0; i < k; i++) x = fx(x, r); return x; };
+        const out = [];
+        let xp = a, gp = fk(a) - a;
+        for (let i = 1; i <= N; i++) {
+            const xc = a + span * i / N, gc = fk(xc) - xc;
+            if (Number.isFinite(gp) && Number.isFinite(gc) && (gp === 0 || gp * gc < 0) && Math.abs(gc - gp) < 0.5 * span) {
+                let lo = xp, hi = xc, glo = gp;
+                for (let it = 0; it < 60; it++) {
+                    const mid = (lo + hi) / 2, gm = fk(mid) - mid;
+                    if (glo * gm <= 0) hi = mid; else { lo = mid; glo = gm; }
+                }
+                let xs = (lo + hi) / 2;
+                if (Math.abs(xs) < 1e-9 * span) xs = 0;
+                let m = 1, y = xs;
+                for (let j = 0; j < k; j++) { m *= dfx(y, r); y = fx(y, r); }
+                if (Math.abs(fk(xs) - xs) < 1e-6 * span && !out.some((q) => Math.abs(q.x - xs) < 1e-7 * span)) out.push({ x: xs, m });
+            }
+            xp = xc; gp = gc;
+        }
+        return out;
+    }
+
+    function updateReadout(A) {
+        const rows = [];
+        const add = (k, v) => rows.push(`<dt>${k}</dt><dd>${v}</dd>`);
+        add(`<i>${S.map.rn}</i>`, Chaos.fmt(S.r, 7));
+        if (S.map.p) add(`<i>${S.map.p.name}</i>`, Chaos.fmt(S.p, 5));
+        add("x₀", Chaos.fmt(S.x0, 6));
+        if (A.diverges) {
+            add("Regime", '<span class="tag chaos">orbit escapes to infinity</span>');
+        } else {
+            let regime;
+            if (A.period) regime = `<span class="tag order">period ${A.period}</span>`;
+            else if (A.lambda > 1e-3) regime = '<span class="tag chaos">chaotic</span>';
+            else if (A.lambda > -1e-3) regime = '<span class="tag">quasi-periodic / marginal</span>';
+            else regime = '<span class="tag order">periodic, period &gt; 128 or slow</span>';
+            add("Regime", regime);
+            add("λ", A.superstable || A.lambda < -30 ? "−∞ (superstable)" : Chaos.fmt(A.lambda, 4));
+            if (A.W != null) add("Rotation no.", Chaos.fmt(A.W, 6));
+            if (A.cycle && A.period <= 8) add("Attractor", A.cycle.map((v) => Chaos.fmt(v, 5)).join(", "));
+        }
+        const fp = periodicPoints(1);
+        add("Fixed points", fp.length ? fp.slice(0, 6).map((q) =>
+            `${Chaos.fmt(q.x, 5)} <span class="tag ${Math.abs(q.m) < 1 ? "order" : ""}">${Math.abs(q.m) < 1 ? "stable" : "unstable"}, f′ = ${Chaos.fmt(q.m, 3)}</span>`).join("<br>") : "none in range");
+        el.readout.innerHTML = rows.join("");
+    }
+
+    /* ---------- drawing: orbit, cobweb, histogram ---------- */
+
+    function drawTS() {
+        const c = el.ts, ctx = c.getContext("2d"), W = c.width, H = c.height, d = Chaos.dpr();
+        const N = 120, r = S.r;
+        const [a, b] = xr(), pad = (b - a) * 0.05, yr = [a - pad, b + pad];
+        ctx.clearRect(0, 0, W, H);
+        const X = (n) => 6 * d + (W - 12 * d) * n / N;
+        const Y = (v) => H - (v - yr[0]) / (yr[1] - yr[0]) * H;
+        const trans = Math.min(N, S.T);
+        ctx.fillStyle = Chaos.css("--chip");
+        ctx.fillRect(X(0), 0, X(trans) - X(0), H);
+        Chaos.axes(ctx, [0, N], yr, "grid", { noX: true });
+        const pts = [];
+        let x = S.x0;
+        for (let n = 0; n <= N; n++) { pts.push(x); x = fx(x, r); if (!(Math.abs(x) < 1e9)) break; }
+        ctx.strokeStyle = Chaos.css("--accent");
+        ctx.lineWidth = 1.2 * d;
+        ctx.beginPath();
+        pts.forEach((v, n) => { const yy = Math.max(-H, Math.min(2 * H, Y(v))); n ? ctx.lineTo(X(n), yy) : ctx.moveTo(X(n), yy); });
+        ctx.stroke();
+        ctx.fillStyle = Chaos.css("--accent");
+        pts.forEach((v, n) => { ctx.beginPath(); ctx.arc(X(n), Y(v), 1.7 * d, 0, TAU); ctx.fill(); });
+        Chaos.axes(ctx, [0, N], yr, "labels", { noX: true });
+        el.tsHint.textContent = `n = 0…${N}`;
+    }
+
+    function drawCob() {
+        const c = el.cob, ctx = c.getContext("2d"), W = c.width, H = c.height, d = Chaos.dpr();
+        const [a, b] = xr(), r = S.r, k = S.k;
+        const X = (v) => (v - a) / (b - a) * W;
+        const Y = (v) => H - (v - a) / (b - a) * H;
+        const fk = (x) => { for (let i = 0; i < k; i++) x = fx(x, r); return x; };
+        ctx.clearRect(0, 0, W, H);
+        Chaos.axes(ctx, [a, b], [a, b], "grid");
+        ctx.strokeStyle = Chaos.css("--muted");
+        ctx.setLineDash([4 * d, 4 * d]);
+        ctx.lineWidth = d;
+        ctx.beginPath(); ctx.moveTo(0, H); ctx.lineTo(W, 0); ctx.stroke();
+        ctx.setLineDash([]);
+        // curve of f^k
+        ctx.strokeStyle = Chaos.css("--accent");
+        ctx.lineWidth = 1.6 * d;
+        ctx.beginPath();
+        const M = Math.max(400, Math.round(W / d) * 2);
+        let prev = null;
+        for (let i = 0; i <= M; i++) {
+            const x = a + (b - a) * i / M, y = fk(x);
+            if (!Number.isFinite(y)) { prev = null; continue; }
+            const py = Math.max(-H, Math.min(2 * H, Y(y)));
+            if (prev === null || Math.abs(y - prev) > 0.45 * (b - a)) ctx.moveTo(X(x), py); else ctx.lineTo(X(x), py);
+            prev = y;
+        }
+        ctx.stroke();
+        // cobweb
+        const steps = 80, warm = Chaos.css("--warm");
+        let x = S.x0;
+        ctx.strokeStyle = warm;
+        ctx.lineWidth = 1.1 * d;
+        for (let i = 0; i < steps; i++) {
+            const y = fk(x);
+            if (!(Math.abs(y) < 1e6)) break;
+            ctx.globalAlpha = 0.15 + 0.85 * (i / steps);
+            ctx.beginPath();
+            ctx.moveTo(X(x), i === 0 ? Y(x) : Y(x));
+            ctx.lineTo(X(x), Y(y));
+            ctx.lineTo(X(y), Y(y));
+            ctx.stroke();
+            x = y;
+        }
+        ctx.globalAlpha = 1;
+        ctx.fillStyle = warm;
+        ctx.beginPath(); ctx.arc(X(S.x0), Y(S.x0), 3.2 * d, 0, TAU); ctx.fill();
+        // period-k points
+        const good = Chaos.css("--good"), fg = Chaos.css("--fg");
+        periodicPoints(k).forEach((q) => {
+            ctx.beginPath();
+            ctx.arc(X(q.x), Y(q.x), 3.6 * d, 0, TAU);
+            if (Math.abs(q.m) < 1) { ctx.fillStyle = good; ctx.fill(); } else { ctx.strokeStyle = fg; ctx.lineWidth = 1.4 * d; ctx.stroke(); }
+        });
+        Chaos.axes(ctx, [a, b], [a, b], "labels");
+    }
+
+    function drawHist() {
+        const c = el.hist, ctx = c.getContext("2d"), W = c.width, H = c.height;
+        const [a, b] = xr(), r = S.r, B = Math.max(60, Math.min(240, Math.round(W / Chaos.dpr() / 3)));
+        const bins = new Float64Array(B);
+        let x = S.x0;
+        for (let t = 0; t < 1000; t++) x = fx(x, r);
+        for (let i = 0; i < 60000; i++) {
+            x = fx(x, r);
+            if (!(Math.abs(x) < 1e9)) break;
+            const j = Math.floor((x - a) / (b - a) * B);
+            if (j >= 0 && j < B) bins[j]++;
+        }
+        const sorted = Array.from(bins).sort((p, q) => p - q);
+        const cap = Math.max(1, sorted[Math.floor(B * 0.97)] * 1.15);
+        ctx.clearRect(0, 0, W, H);
+        Chaos.axes(ctx, [a, b], [0, 1], "grid", { noY: true });
+        ctx.fillStyle = Chaos.css("--accent");
+        ctx.globalAlpha = 0.85;
+        const bw = W / B;
+        for (let j = 0; j < B; j++) {
+            const h = Math.min(1, bins[j] / cap) * (H - 18 * Chaos.dpr());
+            if (h > 0) ctx.fillRect(j * bw, H - h, Math.max(1, bw - 0.5), h);
+        }
+        ctx.globalAlpha = 1;
+        Chaos.axes(ctx, [a, b], [0, 1], "labels", { noY: true });
+    }
+
+    function drawLocal() {
+        const A = analyze();
+        drawTS();
+        drawCob();
+        drawHist();
+        updateReadout(A);
+        drawBif();
+        drawLy();
+    }
+
+    /* ---------- bifurcation diagram + Lyapunov, computed progressively ---------- */
+
+    const off = document.createElement("canvas");
+    const offctx = off.getContext("2d");
+    let job = 0, dens = null, lyap = null, done = 0, img = null, painted = 0;
+    let drag = null, hover = null;
+
+    function seedList() {
+        if (S.seeds === 1) return [S.x0];
+        const [a, b] = xr(), out = [S.x0];
+        for (let i = 1; i < S.seeds; i++) out.push(a + (b - a) * (i - 0.5) / (S.seeds - 1) * 0.98 + (b - a) * 0.01);
+        return out;
+    }
+
+    function startBif() {
+        const W = el.bif.width, H = el.bif.height;
+        const my = ++job;
+        dens = new Float32Array(W * H);
+        lyap = new Float32Array(W).fill(NaN);
+        done = 0;
+        painted = 0;
+        off.width = W;
+        off.height = H;
+        img = offctx.createImageData(W, H);
+        const [r0, r1, y0, y1] = S.view;
+        const f = S.map.f, df = S.map.df, p = S.p, T = S.T, P = S.P, seeds = seedList();
+        el.status.textContent = "computing…";
+        const t00 = performance.now();
+        function step() {
+            if (my !== job) return;
+            const t0 = performance.now();
+            while (done < W && performance.now() - t0 < 14) {
+                const c = done++;
+                const r = r0 + (c + Math.random()) / W * (r1 - r0);
+                let ls = 0, ln = 0;
+                for (let s = 0; s < seeds.length; s++) {
+                    let x = seeds[s], ok = true;
+                    for (let t = 0; t < T; t++) { x = f(x, r, p); if (!(Math.abs(x) < 1e9)) { ok = false; break; } }
+                    if (!ok) continue;
+                    for (let i = 0; i < P; i++) {
+                        if (s === 0) { const dv = Math.abs(df(x, r, p)); ls += Math.log(dv > 1e-300 ? dv : 1e-300); ln++; }
+                        x = f(x, r, p);
+                        if (!(Math.abs(x) < 1e9)) break;
+                        const row = Math.floor((y1 - x) / (y1 - y0) * H);
+                        if (row >= 0 && row < H) dens[row * W + c]++;
+                    }
+                }
+                lyap[c] = ln ? ls / ln : NaN;
+            }
+            paint(painted, done);
+            painted = done;
+            drawBif();
+            drawLy();
+            if (done < W) requestAnimationFrame(step);
+            else el.status.textContent = `${W} × ${H} px · ${seeds.length * (T + P) * W / 1e6 < 1 ? Math.round(seeds.length * (T + P) * W / 1e3) + " k" : (seeds.length * (T + P) * W / 1e6).toFixed(1) + " M"} iterations · ${Math.round(performance.now() - t00)} ms`;
+        }
+        requestAnimationFrame(step);
+    }
+
+    function paint(c0, c1) {
+        if (!img || c1 <= c0) return;
+        const W = off.width, H = off.height, data = img.data;
+        const ink = Chaos.css("--plot-ink").split(",").map((v) => parseInt(v, 10));
+        const warm = hexToRgb(Chaos.css("--warm"));
+        const g = S.ink * 0.25 * H / (S.P * S.seeds);
+        for (let c = c0; c < c1; c++) {
+            const col = S.tint && lyap[c] > 0 ? warm : ink;
+            for (let row = 0; row < H; row++) {
+                const dv = dens[row * W + c], o = (row * W + c) * 4;
+                const al = dv > 0 ? 1 - Math.exp(-dv * g) : 0;
+                data[o] = col[0]; data[o + 1] = col[1]; data[o + 2] = col[2];
+                data[o + 3] = Math.round(Math.min(1, al * 1.0 + (dv > 0 ? 0.06 : 0)) * 255);
+            }
+        }
+        offctx.putImageData(img, 0, 0, c0, 0, c1 - c0, H);
+    }
+
+    function repaintAll() { paint(0, done); }
+
+    function hexToRgb(h) {
+        h = h.replace("#", "");
+        if (h.length === 3) h = h.split("").map((ch) => ch + ch).join("");
+        const n = parseInt(h, 16);
+        return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+    }
+
+    function drawBif() {
+        const c = el.bif, ctx = c.getContext("2d"), W = c.width, H = c.height, d = Chaos.dpr();
+        const [r0, r1, y0, y1] = S.view;
+        ctx.clearRect(0, 0, W, H);
+        Chaos.axes(ctx, [r0, r1], [y0, y1], "grid");
+        if (off.width === W && off.height === H) ctx.drawImage(off, 0, 0);
+        // current parameter
+        const X = (r) => (r - r0) / (r1 - r0) * W;
+        ctx.strokeStyle = Chaos.css("--accent");
+        ctx.lineWidth = 1.5 * d;
+        ctx.globalAlpha = 0.9;
+        ctx.beginPath(); ctx.moveTo(Math.round(X(S.r)) + 0.5, 0); ctx.lineTo(Math.round(X(S.r)) + 0.5, H); ctx.stroke();
+        ctx.globalAlpha = 1;
+        if (hover && !drag) {
+            ctx.strokeStyle = Chaos.css("--muted");
+            ctx.lineWidth = d;
+            ctx.setLineDash([3 * d, 3 * d]);
+            ctx.beginPath();
+            ctx.moveTo(hover.px, 0); ctx.lineTo(hover.px, H);
+            ctx.moveTo(0, hover.py); ctx.lineTo(W, hover.py);
+            ctx.stroke();
+            ctx.setLineDash([]);
+        }
+        if (drag && drag.moved) {
+            const xa = Math.min(drag.ax, drag.bx), xb = Math.max(drag.ax, drag.bx);
+            let ya = Math.min(drag.ay, drag.by), yb = Math.max(drag.ay, drag.by);
+            if (yb - ya < 8 * d) { ya = 0; yb = H; }
+            ctx.fillStyle = Chaos.css("--accent-soft");
+            ctx.fillRect(xa, ya, xb - xa, yb - ya);
+            ctx.strokeStyle = Chaos.css("--accent");
+            ctx.lineWidth = d;
+            ctx.strokeRect(xa + 0.5, ya + 0.5, xb - xa, yb - ya);
+        }
+        Chaos.axes(ctx, [r0, r1], [y0, y1], "labels");
+    }
+
+    function lyRange() {
+        let lo = Infinity, hi = -Infinity;
+        if (lyap) for (let i = 0; i < done; i++) { const v = lyap[i]; if (Number.isFinite(v)) { if (v < lo) lo = v; if (v > hi) hi = v; } }
+        if (!Number.isFinite(lo)) { lo = -1; hi = 1; }
+        lo = Math.max(-3, Math.min(lo, -0.2));
+        hi = Math.min(3, Math.max(hi, 0.3));
+        const pad = (hi - lo) * 0.06;
+        return [lo - pad, hi + pad];
+    }
+
+    function drawLy() {
+        const c = el.ly, ctx = c.getContext("2d"), W = c.width, H = c.height, d = Chaos.dpr();
+        const [r0, r1] = S.view, yr = lyRange();
+        const Y = (v) => H - (v - yr[0]) / (yr[1] - yr[0]) * H;
+        ctx.clearRect(0, 0, W, H);
+        Chaos.axes(ctx, [r0, r1], yr, "grid", { noX: false });
+        if (lyap) {
+            const sx = W / el.bif.width;
+            const z = Y(0);
+            ctx.fillStyle = Chaos.css("--warm");
+            ctx.globalAlpha = 0.45;
+            for (let i = 0; i < done; i++) {
+                const v = lyap[i];
+                if (v > 0) ctx.fillRect(i * sx, Math.max(0, Y(v)), Math.max(1, sx), z - Math.max(0, Y(v)));
+            }
+            ctx.globalAlpha = 1;
+            ctx.strokeStyle = Chaos.css("--accent");
+            ctx.lineWidth = 1.1 * d;
+            ctx.beginPath();
+            let pen = false;
+            for (let i = 0; i < done; i++) {
+                const v = lyap[i];
+                if (!Number.isFinite(v)) { pen = false; continue; }
+                const y = Math.max(0, Math.min(H, Y(v)));
+                if (pen) ctx.lineTo(i * sx, y); else { ctx.moveTo(i * sx, y); pen = true; }
+            }
+            ctx.stroke();
+        }
+        ctx.strokeStyle = Chaos.css("--fg");
+        ctx.globalAlpha = 0.6;
+        ctx.lineWidth = d;
+        ctx.beginPath(); ctx.moveTo(0, Math.round(Y(0)) + 0.5); ctx.lineTo(W, Math.round(Y(0)) + 0.5); ctx.stroke();
+        ctx.globalAlpha = 1;
+        const X = (r) => (r - r0) / (r1 - r0) * W;
+        ctx.strokeStyle = Chaos.css("--accent");
+        ctx.lineWidth = 1.5 * d;
+        ctx.beginPath(); ctx.moveTo(Math.round(X(S.r)) + 0.5, 0); ctx.lineTo(Math.round(X(S.r)) + 0.5, H); ctx.stroke();
+        if (hover) {
+            ctx.strokeStyle = Chaos.css("--muted");
+            ctx.setLineDash([3 * d, 3 * d]);
+            ctx.lineWidth = d;
+            ctx.beginPath(); ctx.moveTo(hover.px * W / el.bif.width, 0); ctx.lineTo(hover.px * W / el.bif.width, H); ctx.stroke();
+            ctx.setLineDash([]);
+        }
+        Chaos.axes(ctx, [r0, r1], yr, "labels", { noXLabels: true });
+    }
+
+    /* ---------- interaction ---------- */
+
+    function rAt(canvas, clientX) {
+        const rect = canvas.getBoundingClientRect();
+        const [r0, r1] = S.view;
+        return r0 + (clientX - rect.left) / rect.width * (r1 - r0);
+    }
+
+    function setR(r, fromSlider) {
+        S.r = r;
+        if (!fromSlider) Chaos.setPair(el.r, el.rnum, r);
+        else el.rnum.value = +r.toPrecision(8);
+        drawLocal();
+        saveHash();
+    }
+
+    function zoomTo(v) {
+        S.stack.push(S.view.slice());
+        S.view = v;
+        if (S.r < v[0] || S.r > v[1]) S.r = (v[0] + v[1]) / 2;
+        syncR();
+        startBif();
+        drawLocal();
+        saveHash();
+    }
+
+    el.bif.addEventListener("pointerdown", (e) => {
+        el.bif.setPointerCapture(e.pointerId);
+        const d = Chaos.dpr(), rect = el.bif.getBoundingClientRect();
+        const px = (e.clientX - rect.left) * el.bif.width / rect.width, py = (e.clientY - rect.top) * el.bif.height / rect.height;
+        drag = { ax: px, ay: py, bx: px, by: py, moved: false };
+    });
+    el.bif.addEventListener("pointermove", (e) => {
+        const rect = el.bif.getBoundingClientRect();
+        const px = (e.clientX - rect.left) * el.bif.width / rect.width, py = (e.clientY - rect.top) * el.bif.height / rect.height;
+        const [r0, r1, y0, y1] = S.view;
+        const r = r0 + px / el.bif.width * (r1 - r0), x = y1 - py / el.bif.height * (y1 - y0);
+        hover = { px, py };
+        el.bifHint.textContent = `${S.map.rn} = ${Chaos.fmt(r, 6)} · x = ${Chaos.fmt(x, 5)}`;
+        if (drag) {
+            drag.bx = px; drag.by = py;
+            if (Math.abs(drag.bx - drag.ax) > 6 * Chaos.dpr()) drag.moved = true;
+        }
+        drawBif();
+        drawLy();
+    });
+    el.bif.addEventListener("pointerleave", () => {
+        hover = null;
+        el.bifHint.textContent = "click: set parameter · drag: zoom box";
+        drawBif();
+        drawLy();
+    });
+    el.bif.addEventListener("pointerup", (e) => {
+        if (!drag) return;
+        const W = el.bif.width, H = el.bif.height, d = Chaos.dpr();
+        const [r0, r1, y0, y1] = S.view;
+        if (drag.moved) {
+            const xa = Math.min(drag.ax, drag.bx), xb = Math.max(drag.ax, drag.bx);
+            let ya = Math.min(drag.ay, drag.by), yb = Math.max(drag.ay, drag.by);
+            const v = [r0 + xa / W * (r1 - r0), r0 + xb / W * (r1 - r0), y0, y1];
+            if (yb - ya >= 8 * d) { v[2] = y1 - yb / H * (y1 - y0); v[3] = y1 - ya / H * (y1 - y0); }
+            drag = null;
+            if (v[1] - v[0] > 1e-12 && v[3] - v[2] > 1e-12) zoomTo(v);
+        } else {
+            drag = null;
+            setR(rAt(el.bif, e.clientX));
+        }
+    });
+    el.bif.addEventListener("pointercancel", () => { drag = null; drawBif(); });
+
+    el.ly.addEventListener("pointermove", (e) => {
+        const rect = el.ly.getBoundingClientRect();
+        const fx = (e.clientX - rect.left) / rect.width;
+        hover = { px: fx * el.bif.width, py: -10 };
+        const i = Math.floor(fx * (lyap ? lyap.length : 0));
+        el.lyHint.textContent = `${S.map.rn} = ${Chaos.fmt(rAt(el.ly, e.clientX), 6)} · λ = ${lyap && i >= 0 && i < done ? Chaos.fmt(lyap[i], 4) : "—"}`;
+        drawBif();
+        drawLy();
+    });
+    el.ly.addEventListener("pointerleave", () => { hover = null; el.lyHint.textContent = "λ > 0: chaos · λ < 0: periodic"; drawBif(); drawLy(); });
+    el.ly.addEventListener("click", (e) => setR(rAt(el.ly, e.clientX)));
+
+    el.cob.addEventListener("click", (e) => {
+        const rect = el.cob.getBoundingClientRect(), [a, b] = xr();
+        S.x0 = a + (e.clientX - rect.left) / rect.width * (b - a);
+        Chaos.setPair(el.x0, el.x0num, S.x0);
+        if (S.seeds >= 1) startBif();
+        drawLocal();
+        saveHash();
+    });
+
+    Chaos.pair(el.r, el.rnum, (v) => setR(v, true));
+    Chaos.pair(el.x0, el.x0num, (v) => { S.x0 = v; startBif(); drawLocal(); saveHash(); });
+    Chaos.pair(el.p, el.pnum, (v) => { S.p = v; startBif(); drawLocal(); saveHash(); });
+    el.map.addEventListener("change", () => {
+        setMap(MAPS.find((m) => m.id === el.map.value), false);
+        startBif(); drawLocal(); saveHash();
+    });
+    el.k.addEventListener("change", () => { S.k = +el.k.value; drawCob(); saveHash(); });
+    el.T.addEventListener("change", () => { S.T = Chaos.num(el.T.value, 500, 0, 20000) | 0; el.T.value = S.T; startBif(); drawTS(); saveHash(); });
+    el.P.addEventListener("change", () => { S.P = Chaos.num(el.P.value, 400, 10, 5000) | 0; el.P.value = S.P; startBif(); saveHash(); });
+    el.seeds.addEventListener("change", () => { S.seeds = +el.seeds.value; startBif(); saveHash(); });
+    el.ink.addEventListener("input", () => { S.ink = +el.ink.value; repaintAll(); drawBif(); saveHash(); });
+    el.tint.addEventListener("change", () => { S.tint = el.tint.checked; repaintAll(); drawBif(); saveHash(); });
+
+    $("back").addEventListener("click", () => {
+        if (!S.stack.length) return;
+        S.view = S.stack.pop();
+        if (S.r < S.view[0] || S.r > S.view[1]) S.r = (S.view[0] + S.view[1]) / 2;
+        syncR(); startBif(); drawLocal(); saveHash();
+    });
+    $("reset").addEventListener("click", () => {
+        S.stack = [];
+        S.view = S.map.view.slice();
+        if (S.r < S.view[0] || S.r > S.view[1]) S.r = S.map.r;
+        setXWindow([S.map.view[2], S.map.view[3]]);
+        syncR(); startBif(); drawLocal(); saveHash();
+    });
+    $("full").addEventListener("click", () => {
+        setXWindow([S.map.full[2], S.map.full[3]]);
+        zoomTo(S.map.full.slice());
+    });
+
+    function setXWindow(w) {
+        S.xw = w;
+        if (S.x0 < w[0] || S.x0 > w[1]) S.x0 = Math.min(w[1], Math.max(w[0], S.x0));
+        Chaos.setPair(el.x0, el.x0num, S.x0, w[0], w[1], (w[1] - w[0]) / 1000);
+    }
+    $("link").addEventListener("click", (e) => Chaos.copyLink(e.currentTarget));
+    $("png").addEventListener("click", () => {
+        const d = Chaos.dpr(), b = el.bif, l = el.ly, pad = 14 * d, head = 26 * d;
+        const out = document.createElement("canvas");
+        out.width = b.width + 2 * pad;
+        out.height = head + b.height + pad + l.height + pad;
+        const ctx = out.getContext("2d");
+        ctx.fillStyle = Chaos.css("--panel");
+        ctx.fillRect(0, 0, out.width, out.height);
+        ctx.fillStyle = Chaos.css("--fg");
+        ctx.font = `${12 * d}px ui-monospace, Menlo, monospace`;
+        const [r0, r1, y0, y1] = S.view;
+        ctx.fillText(`${S.map.name} map${S.map.p ? `, ${S.map.p.name} = ${S.p}` : ""} · ${S.map.rn} ∈ [${Chaos.fmt(r0, 6)}, ${Chaos.fmt(r1, 6)}] · x ∈ [${Chaos.fmt(y0, 5)}, ${Chaos.fmt(y1, 5)}]`, pad, pad + 6 * d);
+        ctx.drawImage(b, pad, head);
+        ctx.drawImage(l, pad, head + b.height + pad);
+        Chaos.download(out, `bifurcation-${S.map.id}.png`);
+    });
+
+    document.addEventListener("keydown", (e) => {
+        if (e.target.closest && e.target.closest("input, select, textarea")) return;
+        if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+        e.preventDefault();
+        const [r0, r1] = S.view;
+        const step = (r1 - r0) / 1000 * (e.shiftKey ? 10 : 1) * (e.key === "ArrowLeft" ? -1 : 1);
+        setR(Math.min(r1, Math.max(r0, S.r + step)));
+    });
+
+    /* ---------- layout ---------- */
+
+    function layout() {
+        const cobW = el.cob.clientWidth;
+        const narrow = window.innerWidth <= 900;
+        Chaos.fit(el.cob, Math.round(narrow ? Math.min(cobW, 420) : cobW));
+        Chaos.fit(el.ts, narrow ? 200 : Math.round(Math.min(cobW, 340)));
+        Chaos.fit(el.hist, 170);
+        const bw = el.bif.clientWidth;
+        const changed = Chaos.fit(el.bif, Math.round(Math.max(260, Math.min(520, bw * 0.48))));
+        Chaos.fit(el.ly, 120);
+        if (changed || !dens) startBif();
+        drawLocal();
+    }
+
+    let resizeTimer = null;
+    new ResizeObserver(() => { clearTimeout(resizeTimer); resizeTimer = setTimeout(layout, 120); }).observe(document.querySelector(".wrap"));
+    Chaos.onTheme(() => { repaintAll(); drawLocal(); });
+    Chaos.initThemeButton($("theme"));
+    window.addEventListener("hashchange", () => { /* manual edits of the URL */ loadHash(); startBif(); drawLocal(); });
+
+    loadHash();
+    layout();
+})();
+</script>
+</body>
+</html>

@@ -6,8 +6,8 @@
 <title>Strange Attractors</title>
 <meta name="description" content="Interactive 3D illustration of strange attractors (Lorenz, Rössler, Chen, Chua, Thomas, Aizawa…) and chaotic maps, with sensitivity to initial conditions and the largest Lyapunov exponent.">
 <meta name="robots" content="noindex">
-<link rel="stylesheet" href="../chaos.css">
-<script src="../chaos.js"></script>
+<link rel="stylesheet" href="../tools.css">
+<script src="../tools.js"></script>
 <style>
     .main {
         display: grid;
@@ -42,7 +42,8 @@
     </div>
     <nav>
         <a href="../">All tools</a>
-        <a href="../bifurcation/">← Bifurcation</a>
+        <a href="../bifurcation/">Bifurcation</a>
+        <a href="../kuramoto/">Kuramoto</a>
         <button id="theme" type="button">Theme</button>
     </nav>
 </header>
@@ -317,7 +318,7 @@
         const s = S.sys;
         el.sys.value = s.id;
         el.eq.innerHTML = s.eq;
-        el.notes.innerHTML = `<p>${s.note}</p>` + Chaos.refs(REFS[s.id]);
+        el.notes.innerHTML = `<p>${s.note}</p>` + Tools.refs(REFS[s.id]);
         el.params.innerHTML = "";
         s.params.forEach(([label, key, , min, max]) => {
             const box = document.createElement("div");
@@ -326,8 +327,8 @@
             const [range, num] = box.querySelectorAll("input");
             range.setAttribute("aria-label", label);
             num.setAttribute("aria-label", label + " value");
-            Chaos.setPair(range, num, S.p[key], min, max, (max - min) / 1000);
-            Chaos.pair(range, num, (v) => { S.p[key] = v; recompute(); });
+            Tools.setPair(range, num, S.p[key], min, max, (max - min) / 1000);
+            Tools.pair(range, num, (v) => { S.p[key] = v; recompute(); });
             el.params.appendChild(box);
         });
         el.ics.innerHTML = "";
@@ -368,28 +369,28 @@
         if (S.sys.kind === "flow") { o.dt = S.dt; if (S.int !== "rk4") o.int = S.int; }
         if (S.skip) o.skip = 1;
         if (S.twin) { o.twin = 1; o.d = S.delta; }
-        Chaos.writeHash(o);
+        Tools.writeHash(o);
     }
 
     function loadHash() {
-        const h = Chaos.readHash();
+        const h = Tools.readHash();
         const s = SYSTEMS.find((q) => q.id === h.s) || SYSTEMS[0];
         defaults(s);
-        s.params.forEach(([, key, v]) => { S.p[key] = Chaos.num(h[key], v); });
+        s.params.forEach(([, key, v]) => { S.p[key] = Tools.num(h[key], v); });
         if (h.ic) {
             const ic = h.ic.split(",").map(Number);
             if (ic.length === S.ic.length && ic.every(Number.isFinite)) S.ic = ic;
         }
         if (s.kind === "flow") {
-            S.dt = Chaos.num(h.dt, s.dt, 1e-4, 1);
-            S.T = Chaos.num(h.T, s.T, 1, 1e5);
+            S.dt = Tools.num(h.dt, s.dt, 1e-4, 1);
+            S.T = Tools.num(h.T, s.T, 1, 1e5);
             S.int = h.int === "euler" ? "euler" : "rk4";
         } else {
-            S.T = Chaos.num(h.T, s.N, 100, 1e6) | 0;
+            S.T = Tools.num(h.T, s.N, 100, 1e6) | 0;
         }
         S.skip = h.skip === "1";
         S.twin = h.twin === "1";
-        S.delta = Chaos.num(h.d, 1e-8, 1e-15, 1);
+        S.delta = Tools.num(h.d, 1e-8, 1e-15, 1);
         buildControls();
     }
 
@@ -498,7 +499,7 @@
     /* ---------- 3D view ---------- */
 
     function project() {
-        const c = el.view, W = c.width, H = c.height, d = Chaos.dpr();
+        const c = el.view, W = c.width, H = c.height, d = Tools.dpr();
         const cy = Math.cos(V.yaw), sy = Math.sin(V.yaw), cp = Math.cos(V.pitch), sp = Math.sin(V.pitch);
         const s = Math.min(W, H) / 2 * 0.9 / traj.R * V.zoom;
         const ox = W / 2 + V.panX * d, oy = H / 2 + V.panY * d;
@@ -521,14 +522,14 @@
     }
 
     function drawView() {
-        const c = el.view, ctx = c.getContext("2d"), W = c.width, H = c.height, d = Chaos.dpr();
+        const c = el.view, ctx = c.getContext("2d"), W = c.width, H = c.height, d = Tools.dpr();
         ctx.clearRect(0, 0, W, H);
         if (!traj) return;
         const P = project();
         const { pts, start } = traj;
         const end = Math.min(traj.n, head);
         const B = 48;
-        const accent = Chaos.css("--accent"), warm = Chaos.css("--warm");
+        const accent = Tools.css("--accent"), warm = Tools.css("--warm");
         const colorIdx = (i) => {
             if (S.twin || V.color === "mono") return 0;
             let t;
@@ -609,7 +610,7 @@
     function drawGizmo(ctx, W, H, d) {
         const cy = Math.cos(V.yaw), sy = Math.sin(V.yaw), cp = Math.cos(V.pitch), sp = Math.sin(V.pitch);
         const L = 22 * d, ox = 34 * d, oy = H - 30 * d;
-        const axes = [["x", [1, 0, 0], Chaos.css("--accent")], ["y", [0, 1, 0], Chaos.css("--warm")], ["z", [0, 0, 1], Chaos.css("--good")]];
+        const axes = [["x", [1, 0, 0], Tools.css("--accent")], ["y", [0, 1, 0], Tools.css("--warm")], ["z", [0, 0, 1], Tools.css("--good")]];
         ctx.save();
         ctx.lineWidth = 1.5 * d;
         ctx.font = `${10.5 * d}px ui-monospace, Menlo, monospace`;
@@ -625,7 +626,7 @@
     /* ---------- side panels ---------- */
 
     function drawTS() {
-        const c = el.ts, ctx = c.getContext("2d"), W = c.width, H = c.height, d = Chaos.dpr();
+        const c = el.ts, ctx = c.getContext("2d"), W = c.width, H = c.height, d = Tools.dpr();
         ctx.clearRect(0, 0, W, H);
         if (!traj) return;
         const { pts, start } = traj;
@@ -637,8 +638,8 @@
         comps.forEach((k) => { lo = Math.min(lo, traj.mn[k]); hi = Math.max(hi, traj.mx[k]); });
         const pad = (hi - lo) * 0.06 || 1;
         const yr = [lo - pad, hi + pad];
-        Chaos.axes(ctx, [t0, t1], yr, "grid");
-        const cols = [Chaos.css("--accent"), Chaos.css("--warm"), Chaos.css("--good")];
+        Tools.axes(ctx, [t0, t1], yr, "grid");
+        const cols = [Tools.css("--accent"), Tools.css("--warm"), Tools.css("--good")];
         const stride = Math.max(1, Math.floor((last - start) / (W * 1.5)));
         comps.forEach((k) => {
             ctx.strokeStyle = cols[k];
@@ -656,21 +657,21 @@
         if (head < traj.n) {
             const X = (Math.max(start, head) - start) / Math.max(1, last - start) * W;
             if (X <= W) {
-                ctx.strokeStyle = Chaos.css("--fg");
+                ctx.strokeStyle = Tools.css("--fg");
                 ctx.globalAlpha = 0.5;
                 ctx.beginPath(); ctx.moveTo(X, 0); ctx.lineTo(X, H); ctx.stroke();
                 ctx.globalAlpha = 1;
             }
         }
-        Chaos.axes(ctx, [t0, t1], yr, "labels");
+        Tools.axes(ctx, [t0, t1], yr, "labels");
     }
 
     function drawSep() {
-        const c = el.sep, ctx = c.getContext("2d"), W = c.width, H = c.height, d = Chaos.dpr();
+        const c = el.sep, ctx = c.getContext("2d"), W = c.width, H = c.height, d = Tools.dpr();
         ctx.clearRect(0, 0, W, H);
         if (!traj || !traj.sep) {
             el.sepNote.innerHTML = "<p>Turn on the <b>twin trajectory</b> to start a second orbit δ away and watch the gap explode.</p>";
-            ctx.fillStyle = Chaos.css("--muted");
+            ctx.fillStyle = Tools.css("--muted");
             ctx.font = `${12 * d}px system-ui, sans-serif`;
             ctx.fillText("twin trajectory off", 12 * d, H / 2);
             return;
@@ -682,11 +683,11 @@
         for (let i = 0; i <= n; i++) { const v = Math.log10(Math.max(sep[i], 1e-17)); L[i] = v; if (v < lo) lo = v; if (v > hi) hi = v; }
         lo = Math.floor(lo) - 0.5; hi = Math.ceil(hi) + 0.5;
         const yr = [lo, hi];
-        Chaos.axes(ctx, [0, t1], yr, "grid");
+        Tools.axes(ctx, [0, t1], yr, "grid");
         const X = (i) => i / n * W, Y = (v) => H - (v - yr[0]) / (yr[1] - yr[0]) * H;
         // reference slope λ / ln 10
         if (Number.isFinite(traj.lambda) && traj.lambda > 0) {
-            ctx.strokeStyle = Chaos.css("--muted");
+            ctx.strokeStyle = Tools.css("--muted");
             ctx.setLineDash([5 * d, 4 * d]);
             ctx.lineWidth = d;
             ctx.beginPath();
@@ -699,18 +700,18 @@
         }
         const stride = Math.max(1, Math.floor(n / (W * 1.5)));
         const end = Math.min(n, head);
-        ctx.strokeStyle = Chaos.css("--warm");
+        ctx.strokeStyle = Tools.css("--warm");
         ctx.lineWidth = 1.2 * d;
         ctx.beginPath();
         for (let i = 0, j = 0; i <= end; i += stride, j++) j ? ctx.lineTo(X(i), Y(L[i])) : ctx.moveTo(X(i), Y(L[i]));
         ctx.stroke();
-        Chaos.axes(ctx, [0, t1], yr, "labels");
+        Tools.axes(ctx, [0, t1], yr, "labels");
         // time for the gap to reach 10% of the attractor size
         const big = 0.1 * traj.R;
         let tb = null;
         for (let i = 0; i <= n; i++) if (sep[i] > big) { tb = i * dt; break; }
         const unit = traj.flow ? "time units" : "iterations";
-        el.sepNote.innerHTML = `<p>δ = ${Chaos.fmt(S.delta, 3)} → the gap reaches 10% of the attractor ${tb == null ? "not within this run" : `after ${Chaos.fmt(tb, 3)} ${unit}`}. ${Number.isFinite(traj.lambda) && traj.lambda > 0 ? `Predicted: ln(0.1 R / δ) / λ ≈ ${Chaos.fmt(Math.log(big / S.delta) / traj.lambda, 3)} ${unit}.` : ""}</p>`;
+        el.sepNote.innerHTML = `<p>δ = ${Tools.fmt(S.delta, 3)} → the gap reaches 10% of the attractor ${tb == null ? "not within this run" : `after ${Tools.fmt(tb, 3)} ${unit}`}. ${Number.isFinite(traj.lambda) && traj.lambda > 0 ? `Predicted: ln(0.1 R / δ) / λ ≈ ${Tools.fmt(Math.log(big / S.delta) / traj.lambda, 3)} ${unit}.` : ""}</p>`;
     }
 
     function updateReadout() {
@@ -724,14 +725,14 @@
         else if (lam > 0.01) tag = '<span class="tag chaos">chaotic</span>';
         else if (lam > -0.01) tag = '<span class="tag">marginal / quasi-periodic</span>';
         else tag = '<span class="tag order">converges to a stable set</span>';
-        add("λ<sub>max</sub>", `${Chaos.fmt(lam, 4)} ${unit} ${tag}<br><span class="note">averaged over ${Chaos.fmt(traj.lt, 4)} ${traj.flow ? "time units" : "iterations"}</span>`);
-        if (traj.flow && Number.isFinite(lam) && lam > 0) add("Lyapunov time", `${Chaos.fmt(1 / lam, 3)} (e-folding of errors)`);
+        add("λ<sub>max</sub>", `${Tools.fmt(lam, 4)} ${unit} ${tag}<br><span class="note">averaged over ${Tools.fmt(traj.lt, 4)} ${traj.flow ? "time units" : "iterations"}</span>`);
+        if (traj.flow && Number.isFinite(lam) && lam > 0) add("Lyapunov time", `${Tools.fmt(1 / lam, 3)} (e-folding of errors)`);
         add(traj.flow ? "Steps" : "Points", `${(traj.n + 1).toLocaleString("en-US")}${traj.flow ? ` × dt = ${S.dt}` : ""}`);
-        const box = [0, 1, 2].slice(0, traj.flow ? 3 : 2).map((k, i) => `${"xyz"[i]} ∈ [${Chaos.fmt(traj.mn[k], 3)}, ${Chaos.fmt(traj.mx[k], 3)}]`).join("<br>");
+        const box = [0, 1, 2].slice(0, traj.flow ? 3 : 2).map((k, i) => `${"xyz"[i]} ∈ [${Tools.fmt(traj.mn[k], 3)}, ${Tools.fmt(traj.mx[k], 3)}]`).join("<br>");
         add("Extent", box);
         if (head < traj.n) {
             const i = Math.max(0, head);
-            add(traj.flow ? "t" : "n", traj.flow ? Chaos.fmt(i * traj.dt, 4) : i);
+            add(traj.flow ? "t" : "n", traj.flow ? Tools.fmt(i * traj.dt, 4) : i);
         }
         if (traj.escaped) add("Warning", '<span class="tag chaos">orbit escaped to infinity — try other parameters or a smaller dt</span>');
         el.readout.innerHTML = rows.join("");
@@ -836,15 +837,15 @@
         recompute();
     });
     el.int.addEventListener("change", () => { S.int = el.int.value; recompute(); });
-    el.dt.addEventListener("change", () => { S.dt = Chaos.num(el.dt.value, S.dt, 1e-4, 1); el.dt.value = S.dt; recompute(); });
+    el.dt.addEventListener("change", () => { S.dt = Tools.num(el.dt.value, S.dt, 1e-4, 1); el.dt.value = S.dt; recompute(); });
     el.T.addEventListener("change", () => {
-        S.T = S.sys.kind === "flow" ? Chaos.num(el.T.value, S.T, 1, 1e5) : Chaos.num(el.T.value, S.T, 100, 400000) | 0;
+        S.T = S.sys.kind === "flow" ? Tools.num(el.T.value, S.T, 1, 1e5) : Tools.num(el.T.value, S.T, 100, 400000) | 0;
         el.T.value = S.T;
         recompute();
     });
     el.skip.addEventListener("change", () => { S.skip = el.skip.checked; recompute(); });
     el.twin.addEventListener("change", () => { S.twin = el.twin.checked; recompute(); });
-    el.delta.addEventListener("change", () => { S.delta = Chaos.num(el.delta.value, 1e-8, 1e-15, 1); el.delta.value = S.delta; recompute(); });
+    el.delta.addEventListener("change", () => { S.delta = Tools.num(el.delta.value, 1e-8, 1e-15, 1); el.delta.value = S.delta; recompute(); });
     $("defaults").addEventListener("click", () => { defaults(S.sys); buildControls(); recompute(); });
     $("random").addEventListener("click", () => {
         const base = S.sys.ic;
@@ -852,19 +853,19 @@
         buildControls();
         recompute();
     });
-    $("link").addEventListener("click", (e) => Chaos.copyLink(e.currentTarget));
+    $("link").addEventListener("click", (e) => Tools.copyLink(e.currentTarget));
     $("png").addEventListener("click", () => {
-        const c = el.view, d = Chaos.dpr();
+        const c = el.view, d = Tools.dpr();
         const out = document.createElement("canvas");
         out.width = c.width; out.height = c.height;
         const ctx = out.getContext("2d");
-        ctx.fillStyle = Chaos.css("--panel");
+        ctx.fillStyle = Tools.css("--panel");
         ctx.fillRect(0, 0, out.width, out.height);
         ctx.drawImage(c, 0, 0);
-        ctx.fillStyle = Chaos.css("--muted");
+        ctx.fillStyle = Tools.css("--muted");
         ctx.font = `${11 * d}px ui-monospace, Menlo, monospace`;
         ctx.fillText(`${S.sys.name}: ${S.sys.params.map(([l, k]) => `${l} = ${+S.p[k].toPrecision(6)}`).join(", ")}`, 10 * d, 18 * d);
-        Chaos.download(out, `attractor-${S.sys.id}.png`);
+        Tools.download(out, `attractor-${S.sys.id}.png`);
     });
 
     /* ---------- layout ---------- */
@@ -872,16 +873,16 @@
     function layout() {
         const w = el.view.clientWidth;
         const narrow = window.innerWidth <= 900;
-        Chaos.fit(el.view, Math.round(narrow ? Math.min(w, 520) : Math.max(420, Math.min(680, w * 0.82))));
-        Chaos.fit(el.ts, 150);
-        Chaos.fit(el.sep, 150);
+        Tools.fit(el.view, Math.round(narrow ? Math.min(w, 520) : Math.max(420, Math.min(680, w * 0.82))));
+        Tools.fit(el.ts, 150);
+        Tools.fit(el.sep, 150);
         drawAll();
     }
 
     let rt = null;
     new ResizeObserver(() => { clearTimeout(rt); rt = setTimeout(layout, 100); }).observe(document.querySelector(".wrap"));
-    Chaos.onTheme(drawAll);
-    Chaos.initThemeButton($("theme"));
+    Tools.onTheme(drawAll);
+    Tools.initThemeButton($("theme"));
     window.addEventListener("hashchange", () => { loadHash(); recompute(); });
 
     loadHash();

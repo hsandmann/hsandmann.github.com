@@ -10,3 +10,4 @@ site/
 
 # Python bytecode
 __pycache__/
+.env
